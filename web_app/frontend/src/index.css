@@ -800,6 +800,8 @@ footer {
   border-radius: 10px;
   background: rgba(0, 146, 63, 0.15);
   color: var(--uffs-green);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .slide-cards-subtitle {

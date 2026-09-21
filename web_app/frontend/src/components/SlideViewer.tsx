@@ -95,7 +95,9 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             <ul className="slide-icon-list">
               {slide.items?.map((item, i) => (
                 <li key={i}>
-                  <span className="slide-icon-badge"><Icon name={item.icon} size={20} /></span>
+                  <span className="slide-icon-badge">
+                    {item.label ? item.label : <Icon name={item.icon} size={20} />}
+                  </span>
                   <span>{item.text}</span>
                 </li>
               ))}

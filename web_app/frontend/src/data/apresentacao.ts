@@ -4,7 +4,9 @@
 // original dos textos e figuras usados aqui.
 
 export type SlideImage = { file: string; caption?: string };
-export type IconItem = { icon: string; text: string };
+// "icon" usa um icone Lucide; "label" usa um selo de texto curto (ex: "Q1", "i") --
+// so um dos dois costuma ser usado por item.
+export type IconItem = { icon?: string; label?: string; text: string };
 export type CardItem = { icon?: string; title: string; text: string };
 export type Column = { icon?: string; title: string; items: string[] };
 
@@ -55,31 +57,48 @@ const slides: Slide[] = [
   },
   {
     kind: 'icons',
-    title: 'Justificativa',
+    title: 'Justificativa: uma mercantilização inesperada',
     items: [
-      { icon: 'AlertTriangle', text: 'Transformação estrutural da formação docente sem precedentes no período' },
-      { icon: 'TrendingUp', text: 'Expansão inédita da EaD privada nas licenciaturas' },
-      { icon: 'TrendingDown', text: 'Recuo da oferta presencial, especialmente nas Universidades Federais' },
-      { icon: 'SearchX', text: 'Lacuna analítica: poucos estudos integram políticas públicas, microdados e a escala nacional do fenômeno' },
+      { icon: 'AlertTriangle', text: 'Transformação estrutural da formação docente sem precedentes durante a vigência do PNE (2014-2024)' },
+      { icon: 'Landmark', text: 'A EaD foi fomentada pelo Estado para reduzir o déficit de professores sem diplomação adequada' },
+      { icon: 'TrendingUp', text: 'Mas os dados mais recentes mostram as IES privadas com fins lucrativos dominando esse campo' },
+      { icon: 'Scale', text: 'Inversão dos indicadores: matrículas privadas em EaD explodem enquanto as IES públicas presenciais estagnam e evadem' },
     ],
   },
   {
     kind: 'icons',
-    title: 'Problemática e questões de pesquisa',
+    title: 'Relevância da pesquisa',
     items: [
-      { icon: 'HelpCircle', text: 'Como a flexibilização regulatória e as políticas neoliberais impulsionaram a EaD no período do PNE?' },
-      { icon: 'HelpCircle', text: 'Como as tensões entre interesse público e mercado moldaram a regulação do MEC/INEP?' },
-      { icon: 'HelpCircle', text: 'Como os microdados evidenciam a reconfiguração da oferta de licenciaturas nas UFs frente ao crescimento privado?' },
-      { icon: 'HelpCircle', text: 'Quais estratégias (ou ausência delas) as UFs adotaram diante da concorrência do mercado privado?' },
+      { icon: 'Database', text: 'Intersecção entre pesquisa educacional e Ciência de Dados: Data Warehouse próprio e ETL sobre dezenas de milhões de registros do Censo da Educação Superior' },
+      { icon: 'CalendarClock', text: 'Realizada no término do PNE 2014-2024, oferecendo subsídios baseados em evidências para o próximo ciclo de planejamento educacional' },
+      { icon: 'Building2', text: 'Relevância institucional para a UFFS: articula a linha de Políticas Educacionais do PPGE com a atuação técnica do autor na Secretaria de Tecnologia da Informação (SETI)' },
     ],
   },
   {
     kind: 'icons',
-    title: 'Objetivos',
+    title: 'Questões de pesquisa',
     items: [
-      { icon: 'Target', text: 'Geral: analisar a disputa de campo e os impactos da mercantilização na expansão da oferta de licenciaturas em EaD no Brasil (2014-2024)' },
-      { icon: 'Building2', text: 'Investigar a dinâmica de participação e os limites de atuação das Universidades Federais nesse processo' },
-      { icon: 'Scale', text: 'Analisar o impacto da flexibilização regulatória neoliberal na precarização da formação docente' },
+      { label: 'Q1', text: 'Como a flexibilização regulatória e as políticas neoliberais de educação superior impulsionaram a modalidade EaD no período do PNE (2014-2024)?' },
+      { label: 'Q2', text: 'De que maneira as tensões entre o interesse público e o mercado moldaram os instrumentos de regulação e avaliação do MEC/INEP, permitindo que a massificação da EaD se sobrepusesse a um projeto crítico de formação de professores?' },
+      { label: 'Q3', text: 'Como os microdados da educação superior entre 2014 e 2024 evidenciam a reconfiguração da oferta de licenciaturas, considerando o comportamento das Universidades Federais frente ao crescimento exponencial das instituições privadas na EaD?' },
+      { label: 'Q4', text: 'Quais foram as estratégias institucionais (ou a ausência delas) adotadas pelas Universidades Federais para enfrentar a concorrência do mercado privado e preservar a qualidade e a natureza pública da formação docente?' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Objetivo geral',
+    items: [
+      { icon: 'Target', text: 'Compreender e analisar as reações e estratégias das Universidades Federais frente ao avanço e à consolidação da hegemonia das instituições privadas na oferta de cursos de licenciatura a distância, em um contexto de precarização da formação docente impulsionado pelas políticas educacionais vigentes durante o PNE (2014-2024)' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Objetivos específicos',
+    items: [
+      { label: 'i', text: 'Analisar o impacto da flexibilização regulatória e das políticas educacionais neoliberais na expansão da EaD no período do PNE (2014-2024)' },
+      { label: 'ii', text: 'Examinar como as tensões entre interesse público e lógica de mercado moldaram os instrumentos de regulação e avaliação do MEC/INEP, favorecendo a massificação da EaD em detrimento de um projeto crítico de formação de professores' },
+      { label: 'iii', text: 'Analisar a reconfiguração da oferta de licenciaturas (2014-2024), contrastando o crescimento exponencial do EaD privado com o comportamento institucional das Universidades Federais, a partir dos microdados de cursos, ingressos, concluintes e evasão' },
+      { label: 'iv', text: 'Investigar as estratégias institucionais — ou a ausência destas — adotadas pelas Universidades Federais para enfrentar a concorrência do mercado privado e preservar a natureza pública e a qualidade da formação docente' },
     ],
   },
   {
