@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { BookOpen, Home, BookText, Presentation, BarChart3 } from 'lucide-react';
+import { Home, BookText, Presentation, BarChart3 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import themes from '../themes';
 import { getTree, getSiteSettings, assetUrl } from '../lib/content';
@@ -78,14 +78,13 @@ const Layout: React.FC = () => {
       <ul className="tree-view" style={{ paddingLeft: '2.5rem', listStyle: 'none', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
         {chapterNode.children.filter(c => c.order < 900).map((section, idx) => (
           <li key={section.id} style={{ marginBottom: '0.5rem' }}>
-            <a 
-              href={`#${section.slug}`} 
+            <a
+              href={`#${section.slug}`}
               onClick={(e) => scrollToSection(e, section.slug)}
-              style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s ease' }}
-              onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-primary)'}
-              onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+              className="sidebar-subnav-link"
             >
-              • {chapterNumber}.{idx + 1} {section.title}
+              <span className="sidebar-subnav-number">{chapterNumber}.{idx + 1}</span>
+              <span className="nav-label">{section.title}</span>
             </a>
           </li>
         ))}
@@ -98,7 +97,12 @@ const Layout: React.FC = () => {
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="sidebar-header">
-          <BookOpen color="var(--accent-primary)" size={24} />
+          <img
+            src={assetUrl('assets/logo_uffs.png')}
+            alt="UFFS"
+            className="sidebar-header-logo"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
           <h3>{settings?.sidebar_title || "EaD no Brasil"}</h3>
         </div>
         
@@ -136,7 +140,8 @@ const Layout: React.FC = () => {
               return (
                 <li key={chapter.id}>
                   <NavLink to={`/capitulo/${chapter.slug}`} className={({ isActive }) => isActive ? 'active' : ''}>
-                    <IconComponent size={18} /> {chapterNumber}. {chapter.title}
+                    <IconComponent size={18} />
+                    <span>{chapterNumber}. <span className="nav-label">{chapter.title}</span></span>
                   </NavLink>
                   {renderTreeView(chapter, chapterNumber)}
                 </li>
