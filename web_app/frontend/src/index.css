@@ -84,6 +84,50 @@ body {
   color: var(--text-primary);
 }
 
+/* Trecho de codigo-fonte extraido do texto (nao um print): mesma familia visual do
+   code-panel, mas com o codigo de verdade em fonte monoespacada dentro de <pre>. */
+.code-block {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+}
+
+.code-block-title {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3a3a3a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: #1e1e1e;
+}
+
+.code-block code {
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #d4d4d4;
+  white-space: pre;
+}
+
+.code-block-fonte {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid #3a3a3a;
+}
+
 /* Typography */
 h1, h2, h3, h4 {
   font-weight: 700;

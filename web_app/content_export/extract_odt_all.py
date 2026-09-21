@@ -24,6 +24,7 @@ Saida:
 
 Rode a partir da raiz do repo: python web_app/content_export/extract_odt_all.py
 """
+import html
 import json
 import os
 import re
@@ -52,6 +53,7 @@ NS = {
     "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0",
     "draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
     "xlink": "http://www.w3.org/1999/xlink",
+    "style": "urn:oasis:names:tc:opendocument:xmlns:style:1.0",
 }
 
 
@@ -66,6 +68,13 @@ NOTE_TAG = tag("note")
 FRAME_TAG = tag("frame", "draw")
 IMAGE_TAG = tag("image", "draw")
 OUTLINE_LEVEL_ATTR = tag("outline-level")
+STYLE_NAME_ATTR = tag("style-name")
+TAB_TAG = tag("tab")
+S_TAG = tag("s")
+SPACE_COUNT_ATTR = tag("c")
+STYLE_TAG = tag("style", "style")
+STYLE_STYLE_NAME_ATTR = tag("name", "style")
+STYLE_PARENT_ATTR = tag("parent-style-name", "style")
 
 INDEX_WRAPPER_TAGS = {
     tag("table-of-content"),
@@ -86,6 +95,58 @@ APENDICE_TITLE_RE = re.compile(r"^AP[ÊE]NDICE\s+([IVXLCDM]+)\s*(.*)$")
 # Dentro do apendice, as subsecoes tambem nao usam Heading, so um paragrafo comecando
 # com "N. Titulo" (numeracao propria do documento, descartada -- o site gera a sua).
 SUBSECTION_RE = re.compile(r"^\d+\.\s+([A-ZÀ-Ý].{0,110})$")
+
+# Trechos de codigo-fonte usam um estilo de paragrafo proprio ("ABNT - ScriptDB": fundo
+# cinza, fonte Tahoma 8pt), diferente do texto corrido -- e como reconhecemos uma linha
+# de codigo, mesmo sem imagem nenhuma associada. A legenda que abre o bloco segue o
+# mesmo padrao das demais ("Script N - Nome do script").
+CODE_STYLE_NAME = "ABNT_20_-_20_ScriptDB"
+SCRIPT_CAPTION_RE = re.compile(r"^Script\s+(\d+)\s*[-–]\s*(.+)$")
+
+
+def load_style_parents(*roots):
+    """Mapa {nome_do_estilo: nome_do_estilo_pai}, juntando os estilos automaticos de
+    content.xml com os estilos nomeados de styles.xml (um herda do outro)."""
+    parents = {}
+    for root in roots:
+        for style in root.iter(STYLE_TAG):
+            name = style.get(STYLE_STYLE_NAME_ATTR)
+            parent = style.get(STYLE_PARENT_ATTR)
+            if name:
+                parents[name] = parent
+    return parents
+
+
+def is_code_style(style_name, style_parents, target=CODE_STYLE_NAME, _depth=0):
+    if not style_name or _depth > 20:
+        return False
+    if style_name == target:
+        return True
+    return is_code_style(style_parents.get(style_name), style_parents, target, _depth + 1)
+
+
+def code_line_text(elem, skip_tags=(NOTE_TAG,)):
+    """Como local_text, mas preserva espacos/tabs literais (indentacao de codigo)
+    em vez de colapsar todo whitespace -- so remove a quebra de linha final do proprio
+    paragrafo (cada linha de codigo e um <text:p> separado)."""
+    parts = []
+
+    def walk(e):
+        if e.tag in skip_tags:
+            return
+        if e.tag == TAB_TAG:
+            parts.append("\t")
+        elif e.tag == S_TAG:
+            parts.append(" " * int(e.get(SPACE_COUNT_ATTR) or 1))
+        if e.text:
+            parts.append(e.text)
+        for c in e:
+            walk(c)
+            if c.tail:
+                parts.append(c.tail)
+
+    walk(elem)
+    return "".join(parts).rstrip("\n")
 
 
 LINE_BREAK_TAG = tag("line-break")
@@ -152,8 +213,8 @@ class Walker:
       block_id do paragrafo onde apareceu (usado tanto para posicao quanto para
       localizar o bloco a mutar depois do casamento)."""
 
-    def __init__(self):
-        self.blocks = []  # cada item: {'kind': 'p'|'h4'|'ul'|'removed'|'figure', ...}
+    def __init__(self, style_parents=None):
+        self.blocks = []  # cada item: {'kind': 'p'|'h4'|'ul'|'removed'|'figure'|'code', ...}
         self.chapters = []
         self.current_chapter = None
         self.current_section = None
@@ -161,6 +222,9 @@ class Walker:
         self.captions = []  # {block_id, tipo, numero, legenda}
         self.images = []  # {block_id, href, fonte}
         self.in_apendice = False
+        self.style_parents = style_parents or {}
+        self.code_lines = []
+        self.code_title = None
 
     def unique_slug(self, base):
         s = base
@@ -178,6 +242,19 @@ class Walker:
         if target is not None:
             target["block_ids"].append(block_id)
         return block_id
+
+    def flush_code_block(self, fonte=None):
+        if not self.code_lines and not self.code_title:
+            return
+        code_text = html.escape("\n".join(self.code_lines))
+        title_html = f'<p class="code-block-title">{html.escape(self.code_title)}</p>' if self.code_title else ""
+        fonte_html = f'<p class="code-block-fonte">Fonte: {html.escape(fonte)}</p>' if fonte else ""
+        self.new_block({
+            "kind": "code",
+            "html": f'<div class="code-block">{title_html}<pre><code>{code_text}</code></pre>{fonte_html}</div>',
+        })
+        self.code_lines = []
+        self.code_title = None
 
     def walk(self, elem):
         for child in elem:
@@ -211,7 +288,24 @@ class Walker:
                     self.new_block({"kind": "h4", "html": f"<h4>{title}</h4>"})
                 continue
             if et == P_TAG:
+                style_name = child.get(STYLE_NAME_ATTR)
+                if is_code_style(style_name, self.style_parents):
+                    self.code_lines.append(code_line_text(child))
+                    continue
+
                 txt = local_text(child)
+
+                if self.code_lines or self.code_title:
+                    fonte = extract_fonte(txt)
+                    self.flush_code_block(fonte=fonte)
+                    if fonte:
+                        continue
+                    # nao era a linha de fonte: cai para o processamento normal abaixo
+
+                m_script = SCRIPT_CAPTION_RE.match(txt)
+                if m_script:
+                    self.code_title = txt
+                    continue
 
                 if not self.in_apendice and self.current_chapter and self.current_chapter["slug"] == "referencias":
                     m_ap = APENDICE_TITLE_RE.match(txt)
@@ -351,9 +445,12 @@ def main():
         raw_xml = z.read("content.xml").decode("utf-8")
         root = ET.fromstring(raw_xml)
         body = root.find(f".//{tag('body', 'office')}/{tag('text', 'office')}")
+        styles_root = ET.fromstring(z.read("styles.xml").decode("utf-8"))
 
-        w = Walker()
+        style_parents = load_style_parents(root, styles_root)
+        w = Walker(style_parents=style_parents)
         w.walk(body)
+        w.flush_code_block()  # nao deixa um bloco de codigo pendente sem "Fonte:" no fim
         page_index = load_page_index(raw_xml)
         matches = match_captions_to_images(w.captions, w.images)
 
