@@ -2,1063 +2,1299 @@
   {
     "tipo": "Tabela",
     "numero": 1,
-    "legenda": "Relação das fontes de pesquisa, descritores e quantidade de títulos43",
-    "pagina": 43,
-    "capitulo_slug": null,
-    "secao_slug": null,
-    "arquivo": "tabela_01.png"
-  },
-  {
-    "tipo": "Tabela",
-    "numero": 1,
     "legenda": "Relação das fontes de pesquisa, descritores e quantidade de títulos",
+    "chave": "tabela_01",
+    "arquivo": "tabela_01.png",
+    "fonte": "Elaborado pelo autor junto às bases de dados do levantamento bibliográfico nas fontes citadas.",
     "pagina": 43,
     "capitulo_slug": "procedimentos-metodologicos",
-    "secao_slug": "estado-do-conhecimento",
-    "arquivo": "tabela_01.png"
+    "secao_slug": "estado-do-conhecimento"
   },
   {
     "tipo": "Tabela",
     "numero": 2,
     "legenda": "Quantitativo de obras avaliadas e selecionadas para a pesquisa",
+    "chave": "tabela_02",
+    "arquivo": "tabela_02.png",
+    "fonte": "Elaborado pelo autor junto às bases de dados do levantamento bibliográfico nas fontes citadas.",
     "pagina": 44,
     "capitulo_slug": "procedimentos-metodologicos",
-    "secao_slug": "estado-do-conhecimento",
-    "arquivo": "tabela_02.png"
+    "secao_slug": "estado-do-conhecimento"
   },
   {
     "tipo": "Quadro",
     "numero": 1,
     "legenda": "Bourdieu e Ball: Dimensões Analíticas da Disputa pela EaD (2014-2024)",
+    "chave": "quadro_01",
+    "arquivo": "quadro_01.png",
+    "fonte": "Elaborado pelo autor a partir de Ball (2004, 2014) e Bourdieu (1989)",
     "pagina": 68,
     "capitulo_slug": "as-politicas-de-educacao-superior-como-campo-de-disputas",
-    "secao_slug": "a-disputa-por-hegemonia-no-campo-educacional",
-    "arquivo": "quadro_01.png"
+    "secao_slug": "a-disputa-por-hegemonia-no-campo-educacional"
   },
   {
     "tipo": "Gráfico",
     "numero": 1,
     "legenda": "Evolução do PIB Brasileiro entre 2006 e 2024 - Valores em bilhões de reais",
+    "chave": "grafico_01",
+    "arquivo": "grafico_01.png",
+    "fonte": "Elaborado pelo autor a partir dos dados do IBGE (2004, 2010, 2014, 2016, 2020, 2024)",
     "pagina": 88,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_01.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Tabela",
     "numero": 3,
     "legenda": "Orçamento destinado para a educação superior (em bilhões de R$): 2006-2024",
+    "chave": "tabela_03",
+    "arquivo": "tabela_03.png",
+    "fonte": "Elaborado pelo autor a partir dos dados do IBGE e da LOA (2006, 2010, 2014, 2016, 2020, 2024)",
     "pagina": 89,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "tabela_03.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 2,
     "legenda": "Orçamento destinado para a educação superior (em bilhões de R$) 2006-2024",
+    "chave": "grafico_02",
+    "arquivo": "grafico_02.png",
+    "fonte": "Elaborado pelo autor a partir dos dados da LOA (2006, 2010, 2014, 2016, 2020, 2024)",
     "pagina": 92,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_02.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Tabela",
     "numero": 4,
     "legenda": "Orçamento das maiores UFs brasileiras (em biçhões de R$) 2006-2024",
+    "chave": "tabela_04",
+    "arquivo": "tabela_04.png",
+    "fonte": "Elaborado pelo autor a partir dos dados da LOA (2006, 2010, 2014, 2016, 2020, 2024)* Percentual de variação entre os dois anos apresentados",
     "pagina": 93,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "tabela_04.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 3,
     "legenda": "Evolução das bolsas PROUNI totais por ano (2006-2014)",
+    "chave": "grafico_03",
+    "arquivo": "grafico_03.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2006-2014)",
     "pagina": 96,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_03.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 4,
     "legenda": "Evolução dos contratos do FIES (2006-2014)",
+    "chave": "grafico_04",
+    "arquivo": "grafico_04.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2006-2014)",
     "pagina": 97,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_04.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 5,
     "legenda": "Evolução das matrículas por categoria administrativa (2006-2014)",
+    "chave": "grafico_05",
+    "arquivo": "grafico_05.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2006-2014)",
     "pagina": 98,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_05.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 6,
     "legenda": "Evolução do número de municípios com polos de EaD (2006-2014)",
+    "chave": "grafico_06",
+    "arquivo": "grafico_06.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2006-2014)",
     "pagina": 99,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "grafico_06.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Figura",
     "numero": 1,
     "legenda": "Municípios brasileiros com polos EaD em 2006 e 2024",
+    "chave": "figura_01",
+    "arquivo": "figura_01.png",
+    "fonte": null,
     "pagina": 99,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "figura_01.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Tabela",
     "numero": 5,
     "legenda": "Proporção dos contratos de FIES e PROUNI nas matrículas (2006-2014)",
+    "chave": "tabela_05",
+    "arquivo": "tabela_05.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2006-2014)",
     "pagina": 100,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais",
-    "arquivo": "tabela_05.png"
+    "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
   },
   {
     "tipo": "Gráfico",
     "numero": 7,
     "legenda": "Evolução do número de municípios com EaD no Brasil (2014-2024)",
+    "chave": "grafico_07",
+    "arquivo": "grafico_07.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 114,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_07.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Figura",
     "numero": 2,
     "legenda": "Municípios brasileiros com polos EaD em 2014 e 2024",
+    "chave": "figura_02",
+    "arquivo": "figura_02.png",
+    "fonte": null,
     "pagina": 114,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "figura_02.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Figura",
     "numero": 3,
     "legenda": "Municípios brasileiros com IES cursos presenciais em 2014 e 2024",
+    "chave": "figura_03",
+    "arquivo": "figura_03.png",
+    "fonte": null,
     "pagina": 115,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "figura_03.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 8,
     "legenda": "Evolução dos ingressos por modalidade de ensino (2014-2024)",
+    "chave": "grafico_08",
+    "arquivo": "grafico_08.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 115,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_08.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 9,
     "legenda": "Evolução dos ingressos por tipo de rede e por modalidade de ensino (2014-2024)",
+    "chave": "grafico_09",
+    "arquivo": "grafico_09.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 116,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_09.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 10,
     "legenda": "Evolução das matrículas por modalidade de ensino (2014-2024)",
+    "chave": "grafico_10",
+    "arquivo": "grafico_10.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 119,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_10.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 11,
     "legenda": "Evolução das matrículas por tipo de rede e modalidade de ensino (2014-2024)",
+    "chave": "grafico_11",
+    "arquivo": "grafico_11.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 120,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_11.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 12,
     "legenda": "Participação relativa de IES públicas e privadas na oferta de EaD (2014-2024)",
+    "chave": "grafico_12",
+    "arquivo": "grafico_12.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 120,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_12.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Figura",
     "numero": 4,
     "legenda": "Municípios brasileiros com cursos de licenciaturas em 2014 e 2024",
+    "chave": "figura_04",
+    "arquivo": "figura_04.png",
+    "fonte": null,
     "pagina": 123,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "figura_04.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 13,
     "legenda": "Evolução dos ingressos nas licenciaturas por modalidade de ensino (2014-2024)",
+    "chave": "grafico_13",
+    "arquivo": "grafico_13.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 124,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_13.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 14,
     "legenda": "Evolução dos ingressos nas licenciaturas por tipo de rede e modalidade de ensino (2014-2024)",
+    "chave": "grafico_14",
+    "arquivo": "grafico_14.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 125,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_14.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 15,
     "legenda": "Evolução das matrículas nas licenciaturas por modalidade de ensino (2014-2024)",
+    "chave": "grafico_15",
+    "arquivo": "grafico_15.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 127,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_15.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 16,
     "legenda": "Participação relativa nas matrículas nas licenciaturas presenciais e em EaD (2014-2024)",
+    "chave": "grafico_16",
+    "arquivo": "grafico_16.png",
+    "fonte": null,
     "pagina": 128,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_16.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 17,
     "legenda": "Evolução das matrículas nas licenciaturas por tipo de rede e modalidade de ensino (2014-2024)",
+    "chave": "grafico_17",
+    "arquivo": "grafico_17.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 128,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_17.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 18,
     "legenda": "Participação relativa nas matrículas nas IES públicas e privadas nas licenciaturas em EaD (2014-2024)",
+    "chave": "grafico_18",
+    "arquivo": "grafico_18.png",
+    "fonte": "Produzido pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 129,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "grafico_18.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Tabela",
     "numero": 6,
     "legenda": "Evolução de matrículas, trancadas, transferidas e evadidas por modalidade de ensino nas licenciaturas (2014-2024)",
+    "chave": "tabela_06",
+    "arquivo": "tabela_06.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 130,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "tabela_06.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Tabela",
     "numero": 7,
     "legenda": "Transformações nas licenciaturas (2004-2024)",
+    "chave": "tabela_07",
+    "arquivo": "tabela_07.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014, 2024)",
     "pagina": 135,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "tabela_07.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Tabela",
     "numero": 8,
     "legenda": "Participação por categoria administrativa nas matrículas das licenciaturas (2014-2024)",
+    "chave": "tabela_08",
+    "arquivo": "tabela_08.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2004-2024)",
     "pagina": 136,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores",
-    "arquivo": "tabela_08.png"
+    "secao_slug": "o-plano-nacional-de-educacao-2014-2024-e-a-formacao-de-professores"
   },
   {
     "tipo": "Tabela",
     "numero": 9,
     "legenda": "Evolução e participação por mantenedora nas matrículas (2014-2025)",
+    "chave": "tabela_09",
+    "arquivo": "tabela_09.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 139,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores",
-    "arquivo": "tabela_09.png"
+    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 19,
     "legenda": "Evolução em matrículas 8 maiores mantenedoras (2014-2024)",
+    "chave": "grafico_19",
+    "arquivo": "grafico_19.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 140,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores",
-    "arquivo": "grafico_19.png"
+    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 20,
     "legenda": "Retração do FIES e Explosão da EaD Privada (2014-2024)",
+    "chave": "grafico_20",
+    "arquivo": "grafico_20.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 142,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores",
-    "arquivo": "grafico_20.png"
+    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores"
   },
   {
     "tipo": "Gráfico",
     "numero": 21,
     "legenda": "Comparativo de municípios com polo de EaD nas licenciaturas (2014 e 2024)",
+    "chave": "grafico_21",
+    "arquivo": "grafico_21.png",
+    "fonte": null,
     "pagina": 145,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores",
-    "arquivo": "grafico_21.png"
+    "secao_slug": "a-ead-como-eixo-estruturante-da-expansao-privada-e-da-reconfiguracao-da-formacao-de-professores"
   },
   {
     "tipo": "Quadro",
     "numero": 2,
     "legenda": "Estratégias, capitais dos conglomerados e efeitos estruturais produzidos",
+    "chave": "quadro_02",
+    "arquivo": "quadro_02.png",
+    "fonte": null,
     "pagina": 148,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_02.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 3,
     "legenda": "Relação de unidades acadêmicas controladas pelo Grupo Cogna",
+    "chave": "quadro_03",
+    "arquivo": "quadro_03.png",
+    "fonte": "Elaborado pelo autor a partir do site da Cogna Educação (www.cogna.com.br) (2025)",
     "pagina": 150,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_03.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 22,
     "legenda": "Evolução da receita líquida e da EBITDA da Cogna Educação (2018-2024)",
+    "chave": "grafico_22",
+    "arquivo": "grafico_22.png",
+    "fonte": "Elaborado pelo autor a partir de Demonstrações Financeiras da Cogna Educação (2018-2024) * Dados em milhões de reais",
     "pagina": 151,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "grafico_22.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Tabela",
     "numero": 10,
     "legenda": "Mensalidade dos cursos nas modalidades presencial e EAD na Cogna Educação",
+    "chave": "tabela_10",
+    "arquivo": "tabela_10.png",
+    "fonte": null,
     "pagina": 154,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "tabela_10.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 4,
     "legenda": "Relação de unidades acadêmicas controladas pelo Grupo Vitru",
+    "chave": "quadro_04",
+    "arquivo": "quadro_04.png",
+    "fonte": "Elaborado pelo autor a partir do site da Cogna Educação (www.cogna.com.br) (2025)",
     "pagina": 158,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_04.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 23,
     "legenda": "Evolução da receita líquida e da EBITDA da Vitru Educação (2018-2024)",
+    "chave": "grafico_23",
+    "arquivo": "grafico_23.png",
+    "fonte": "Elaborado pelo autor a partir de Demonstrações Financeiras da Vitru Educação (2018-2024) * Dados em milhões de reais",
     "pagina": 158,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "grafico_23.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Tabela",
     "numero": 11,
     "legenda": "Mensalidade dos cursos nas modalidades presencial e EaD na Vitru Educação",
+    "chave": "tabela_11",
+    "arquivo": "tabela_11.png",
+    "fonte": null,
     "pagina": 159,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "tabela_11.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 5,
     "legenda": "Relação de unidades acadêmicas controladas pelo Grupo YDUQS",
+    "chave": "quadro_05",
+    "arquivo": "quadro_05.png",
+    "fonte": "Elaborado pelo autor a partir do site da YDUQS (www.yduqs.com.br) (2025)",
     "pagina": 161,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_05.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 24,
     "legenda": "Evolução da receita líquida e da EBITDA da YUDQS (2018-2024)",
+    "chave": "grafico_24",
+    "arquivo": "grafico_24.png",
+    "fonte": "Elaborado pelo autor a partir de Demonstrações Financeiras da YUDQS Educação (2018-2024) * Dados em milhões de reais",
     "pagina": 161,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "grafico_24.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Tabela",
     "numero": 12,
     "legenda": "Mensalidade dos cursos nas modalidades presencial e EaD na YDUQS",
+    "chave": "tabela_12",
+    "arquivo": "tabela_12.png",
+    "fonte": null,
     "pagina": 162,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "tabela_12.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 6,
     "legenda": "Relação de unidades acadêmicas controladas pelo Grupo Ânima Educação",
+    "chave": "quadro_06",
+    "arquivo": "quadro_06.png",
+    "fonte": "Elaborado pelo autor a partir do site da Ânima (www.animaeducacao.com.br) (2025)",
     "pagina": 164,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_06.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 25,
     "legenda": "Evolução da receita líquida e da EBITDA da Anima Educação (2018-2024)",
+    "chave": "grafico_25",
+    "arquivo": "grafico_25.png",
+    "fonte": "Elaborado pelo autor a partir de Demonstrações Financeiras da Anima Educação (2018-2024) * Dados em milhões de reais",
     "pagina": 166,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "grafico_25.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Tabela",
     "numero": 13,
     "legenda": "Mensalidade dos cursos nas modalidades presencial e EaD na Ânima Educação",
+    "chave": "tabela_13",
+    "arquivo": "tabela_13.png",
+    "fonte": null,
     "pagina": 166,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "tabela_13.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 7,
     "legenda": "Relação de unidades acadêmicas controladas pelo Grupo SER Educacional",
+    "chave": "quadro_07",
+    "arquivo": "quadro_07.png",
+    "fonte": "Elaborado pelo autor a partir do site da Ser Educacional (www.sereducacional.com.br) (2025)",
     "pagina": 168,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_07.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 26,
     "legenda": "Evolução da receita líquida e da EBITDA da Ser Educacional (2018-2024)",
+    "chave": "grafico_26",
+    "arquivo": "grafico_26.png",
+    "fonte": "Elaborado pelo autor a partir de Demonstrações Financeiras da Ser Educacional (2018-2024) * Dados em milhões de reais",
     "pagina": 170,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "grafico_26.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Tabela",
     "numero": 14,
     "legenda": "Mensalidade dos cursos nas modalidades presencial e EaD na Ser Educacional",
+    "chave": "tabela_14",
+    "arquivo": "tabela_14.png",
+    "fonte": null,
     "pagina": 170,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "tabela_14.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Quadro",
     "numero": 8,
     "legenda": "Tipologia dos capitais investidos na EaD",
+    "chave": "quadro_08",
+    "arquivo": "quadro_08.png",
+    "fonte": "Elaborado pelo Autor",
     "pagina": 172,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "quadro_08.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Figura",
     "numero": 5,
     "legenda": "Evolução da capilaridade dos polos EaD da Cogna Educação (2005-2014-2024)",
+    "chave": "figura_05",
+    "arquivo": "figura_05.png",
+    "fonte": null,
     "pagina": 173,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "figura_05.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Figura",
     "numero": 6,
     "legenda": "Evolução da capilaridade dos polos EaD da Vitru Educação (2005-2014-2024)",
+    "chave": "figura_06",
+    "arquivo": "figura_06.png",
+    "fonte": null,
     "pagina": 174,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "figura_06.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Figura",
     "numero": 7,
     "legenda": "Evolução da capilaridade dos polos EaD da YDUQS (2005-2014-2024)",
+    "chave": "figura_07",
+    "arquivo": "figura_07.png",
+    "fonte": null,
     "pagina": 174,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "figura_07.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Figura",
     "numero": 8,
     "legenda": "Evolução da capilaridade dos polos EaD da Ânima Educação (2005-2014-2024)",
+    "chave": "figura_08",
+    "arquivo": "figura_08.png",
+    "fonte": null,
     "pagina": 175,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "figura_08.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Figura",
     "numero": 9,
     "legenda": "Evolução da capilaridade dos polos EaD da Ser Educacional (2005-2014-2024)",
+    "chave": "figura_09",
+    "arquivo": "figura_09.png",
+    "fonte": null,
     "pagina": 175,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
-    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira",
-    "arquivo": "figura_09.png"
+    "secao_slug": "os-principais-grupos-empresariais-da-educacao-superior-brasileira"
   },
   {
     "tipo": "Gráfico",
     "numero": 27,
     "legenda": "Evolução da criação de UFs por década (1920-2019)",
+    "chave": "grafico_27",
+    "arquivo": "grafico_27.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024) e do Portal da Legislação",
     "pagina": 178,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade",
-    "arquivo": "grafico_27.png"
+    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade"
   },
   {
     "tipo": "Tabela",
     "numero": 15,
     "legenda": "Relação das UFs brasileiras em ordem de criação",
+    "chave": "tabela_15",
+    "arquivo": "tabela_15.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024) e do Portal da Legislação",
     "pagina": 178,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade",
-    "arquivo": "tabela_15.png"
+    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade"
   },
   {
     "tipo": "Tabela",
     "numero": 16,
     "legenda": "Distribuição das UFs por Unidade da Federação (2014-2024)",
+    "chave": "tabela_16",
+    "arquivo": "tabela_16.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 182,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade",
-    "arquivo": "tabela_16.png"
+    "secao_slug": "caracterizacao-do-segmento-das-universidades-federais-trajetoria-legitimidade-e-territorialidade"
   },
   {
     "tipo": "Gráfico",
     "numero": 28,
     "legenda": "Evolução de UFs que ofertam licenciatura (2014-2024)",
+    "chave": "grafico_28",
+    "arquivo": "grafico_28.png",
+    "fonte": null,
     "pagina": 183,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "grafico_28.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Gráfico",
     "numero": 29,
     "legenda": "Evolução das IES privadas por organização acadêmica que ofertam licenciatura (2014-2024)",
+    "chave": "grafico_29",
+    "arquivo": "grafico_29.png",
+    "fonte": null,
     "pagina": 184,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "grafico_29.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Tabela",
     "numero": 17,
     "legenda": "Evolução de UFs que ofertam licenciaturas por região (2014-2024)",
+    "chave": "tabela_17",
+    "arquivo": "tabela_17.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 185,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "tabela_17.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Tabela",
     "numero": 18,
     "legenda": "Evolução de UFs que ofertam licenciatura por região e por modalidade ensino (2014-2024)",
+    "chave": "tabela_18",
+    "arquivo": "tabela_18.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 186,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "tabela_18.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Tabela",
     "numero": 19,
     "legenda": "Evolução territorial das UFs e dos polos UAB com cursos de licenciaturas (2014-2024)",
+    "chave": "tabela_19",
+    "arquivo": "tabela_19.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 186,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "tabela_19.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Figura",
     "numero": 10,
     "legenda": "Mapa com a presença das UFs com licenciaturas (2014 e 2024)",
+    "chave": "figura_10",
+    "arquivo": "figura_10.png",
+    "fonte": null,
     "pagina": 188,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "figura_10.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Figura",
     "numero": 11,
     "legenda": "Mapa com a presença das UFs com licenciaturas na modalidade presencial (2014 e 2024)",
+    "chave": "figura_11",
+    "arquivo": "figura_11.png",
+    "fonte": null,
     "pagina": 189,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "figura_11.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Figura",
     "numero": 12,
     "legenda": "Mapa com a presença territorial da UAB (2014 e 2024)",
+    "chave": "figura_12",
+    "arquivo": "figura_12.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014,2024)",
     "pagina": 189,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "figura_12.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Figura",
     "numero": 13,
     "legenda": "Mapa com a presença dos polos UAB vinculados a UFs (2014 e 2024)",
+    "chave": "figura_13",
+    "arquivo": "figura_13.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014,2024)",
     "pagina": 190,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "figura_13.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Figura",
     "numero": 14,
     "legenda": "Mapa com a presença dos polos UAB não vinculados a UFs (2014x2024)",
+    "chave": "figura_14",
+    "arquivo": "figura_14.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014,2024)",
     "pagina": 191,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade",
-    "arquivo": "figura_14.png"
+    "secao_slug": "a-formacao-de-professores-nas-ufs-segundo-a-regionalidade"
   },
   {
     "tipo": "Gráfico",
     "numero": 30,
     "legenda": "Evolução dos cursos de licenciaturas nas UFs brasileiras (2014-2024)",
+    "chave": "grafico_30",
+    "arquivo": "grafico_30.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014,2024)",
     "pagina": 193,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_30.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 31,
     "legenda": "Evolução dos cursos de licenciaturas presenciais por região nas UFs (2014-2024)",
+    "chave": "grafico_31",
+    "arquivo": "grafico_31.png",
+    "fonte": null,
     "pagina": 193,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_31.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Tabela",
     "numero": 20,
     "legenda": "Dados sobre as licenciaturas nas UFs brasileiras (2024)",
+    "chave": "tabela_20",
+    "arquivo": "tabela_20.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024) e do Censo da UAB (2014-2024)",
     "pagina": 197,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "tabela_20.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 32,
     "legenda": "Evolução dos cursos de licenciaturas em EaD nas UFs",
+    "chave": "grafico_32",
+    "arquivo": "grafico_32.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024)",
     "pagina": 198,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_32.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 33,
     "legenda": "Evolução do número de UFs que ofertam licenciaturas em EaD (2014-2024)",
+    "chave": "grafico_33",
+    "arquivo": "grafico_33.png",
+    "fonte": null,
     "pagina": 199,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_33.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 34,
     "legenda": "Evolução do número de cursos de licenciaturas nas UFs por EaD (2014-2024)",
+    "chave": "grafico_34",
+    "arquivo": "grafico_34.png",
+    "fonte": null,
     "pagina": 200,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_34.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 35,
     "legenda": "Evolução dos percentuais das matrículas nas UFs por Modalidade (2014-2024)",
+    "chave": "grafico_35",
+    "arquivo": "grafico_35.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024)",
     "pagina": 202,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_35.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 36,
     "legenda": "Dependência da UAB nas matrículas em licenciaturas por UFs em 2024",
+    "chave": "grafico_36",
+    "arquivo": "grafico_36.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2024)",
     "pagina": 203,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais",
-    "arquivo": "grafico_36.png"
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
+  },
+  {
+    "tipo": "Tabela",
+    "numero": 21,
+    "legenda": "Tipologias institucionais das UFs diante do EaD em 2024",
+    "chave": "tabela_21",
+    "arquivo": "tabela_21.png",
+    "fonte": null,
+    "pagina": 206,
+    "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
+    "secao_slug": "evolucao-das-licenciaturas-nas-universidades-federais"
   },
   {
     "tipo": "Gráfico",
     "numero": 37,
     "legenda": "Evolução das matrículas em licenciaturas nas UFs (2014-2024)",
+    "chave": "grafico_37",
+    "arquivo": "grafico_37.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 214,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "grafico_37.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Gráfico",
     "numero": 38,
     "legenda": "Evolução das matrículas em licenciaturas na modalidade presecial nas UFs (2014-2024)",
+    "chave": "grafico_38",
+    "arquivo": "grafico_38.png",
+    "fonte": null,
     "pagina": 215,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "grafico_38.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Gráfico",
     "numero": 39,
     "legenda": "Evolução das matrículas em licenciaturas na modalidade presencial nas UFs por região (2014-2024)",
+    "chave": "grafico_39",
+    "arquivo": "grafico_39.png",
+    "fonte": null,
     "pagina": 216,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "grafico_39.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Tabela",
     "numero": 22,
     "legenda": "Matrículas presenciais em licenciaturas nas UFs, população regional e densidade territorial (2022)",
+    "chave": "tabela_22",
+    "arquivo": "tabela_22.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2022) e IBGE (2022)",
     "pagina": 217,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "tabela_22.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Gráfico",
     "numero": 40,
     "legenda": "Evolução das matrículas nas licenciaturas das UFs por modalidade (2014-2024)",
+    "chave": "grafico_40",
+    "arquivo": "grafico_40.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 219,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "grafico_40.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Gráfico",
     "numero": 41,
     "legenda": "Evolução do número de campus, polos EaD próprios e pela UAB vinculados às UFs (2014-2024)",
+    "chave": "grafico_41",
+    "arquivo": "grafico_41.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 221,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas",
-    "arquivo": "grafico_41.png"
+    "secao_slug": "reconfiguracao-das-matriculas-nas-licenciaturas"
   },
   {
     "tipo": "Gráfico",
     "numero": 42,
     "legenda": "Dinâmica dos ingressantes nos cursos de licenciaturas nas UFs brasileiras por modalidade de ensino (2014-2024)",
+    "chave": "grafico_42",
+    "arquivo": "grafico_42.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 224,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_42.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 43,
     "legenda": "Dinâmica dos concluintes nos cursos de licenciaturas nas UFs brasileiras por modalidade de ensino (2014-2024)",
+    "chave": "grafico_43",
+    "arquivo": "grafico_43.png",
+    "fonte": null,
     "pagina": 227,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_43.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Tabela",
     "numero": 23,
     "legenda": "Razão de concluites por ingressante nas licenciaturas modalidade presencial nas UFs brasileiras (2018-2024)",
+    "chave": "tabela_23",
+    "arquivo": "tabela_23.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 229,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "tabela_23.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Tabela",
     "numero": 24,
     "legenda": "Razão de concluites por ingressante nas licenciaturas na UAB nas UFs brasileiras (2018-2024)",
+    "chave": "tabela_24",
+    "arquivo": "tabela_24.png",
+    "fonte": null,
     "pagina": 230,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "tabela_24.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Tabela",
     "numero": 25,
     "legenda": "Razão de concluites por ingressante nas licenciaturas na EaD Própria nas UFs brasileiras (2018-2024)",
+    "chave": "tabela_25",
+    "arquivo": "tabela_25.png",
+    "fonte": null,
     "pagina": 230,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "tabela_25.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 44,
     "legenda": "Evasão total (Desligados, Transferidos e Trancados) nos cursos de licenciatura nas UFs (2014-2024)",
+    "chave": "grafico_44",
+    "arquivo": "grafico_44.png",
+    "fonte": null,
     "pagina": 232,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_44.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 45,
     "legenda": "Evasão por tipo de desligamento nas licenciaturas das UFs (2014-2024)",
+    "chave": "grafico_45",
+    "arquivo": "grafico_45.png",
+    "fonte": null,
     "pagina": 233,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_45.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 46,
     "legenda": "Evasão por tipo de desligamento nas licenciaturas presenciais nas UFs (2014-2024)",
+    "chave": "grafico_46",
+    "arquivo": "grafico_46.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 234,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_46.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 47,
     "legenda": "Eavsão por tipo de desligamento nos cursos de licenciatura da UAB nas UFs (2014-2024)",
+    "chave": "grafico_47",
+    "arquivo": "grafico_47.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 235,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_47.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 48,
     "legenda": "Evasão por tipo de desligamento nas licenciaturas de EaD próprio das UFs (2014-2024)",
+    "chave": "grafico_48",
+    "arquivo": "grafico_48.png",
+    "fonte": null,
     "pagina": 236,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
-    "arquivo": "grafico_48.png"
+    "secao_slug": "ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs"
   },
   {
     "tipo": "Gráfico",
     "numero": 49,
     "legenda": "Evolução das matrículas em licenciaturas: UFs × privadas com fins lucrativos × privadas sem fins lucrativos (2014-2024)",
+    "chave": "grafico_49",
+    "arquivo": "grafico_49.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 239,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024",
-    "arquivo": "grafico_49.png"
+    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024"
   },
   {
     "tipo": "Gráfico",
     "numero": 50,
     "legenda": "Ingressos em licenciaturas EaD: UFs (UAB + próprio) × privadas (2014-2024)",
+    "chave": "grafico_50",
+    "arquivo": "grafico_50.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 240,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024",
-    "arquivo": "grafico_50.png"
+    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024"
   },
   {
     "tipo": "Gráfico",
     "numero": 51,
     "legenda": "Concluintes em licenciaturas: UFs × privadas (2014-2024)",
+    "chave": "grafico_51",
+    "arquivo": "grafico_51.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 242,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024",
-    "arquivo": "grafico_51.png"
+    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024"
   },
   {
     "tipo": "Tabela",
     "numero": 26,
     "legenda": "Síntese comparativa: variação % de matrículas, ingressos, concluintes e evasão por categoria administrativa (2014-2024)",
+    "chave": "tabela_26",
+    "arquivo": "tabela_26.png",
+    "fonte": "Elaborado pelo autor a partir dos microdados do INEP (2014-2024)",
     "pagina": 244,
     "capitulo_slug": "a-modalidade-ead-nas-universidades-publicas-federais-analise-dos-indicadores-dos-cursos-de-licenciaturas-2014-2024",
-    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024",
-    "arquivo": "tabela_26.png"
+    "secao_slug": "analise-comparativa-ufs-setor-privado-2014-2024"
   },
   {
     "tipo": "Figura",
     "numero": 15,
     "legenda": "Dicionário de dados do cadastro de IES no microdados do INEP",
+    "chave": "figura_15",
+    "arquivo": "figura_15.png",
+    "fonte": "elaborado pelo autor (2025)",
     "pagina": 309,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_15.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 16,
     "legenda": "Importação dos dados do censo das IES do microdados do INEP (2024)",
+    "chave": "figura_16",
+    "arquivo": "figura_16.png",
+    "fonte": null,
     "pagina": 310,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_16.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 17,
     "legenda": "Dicionário de dados do censo dos cursos no microdados do INEP",
+    "chave": "figura_17",
+    "arquivo": "figura_17.png",
+    "fonte": null,
     "pagina": 311,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_17.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 18,
     "legenda": "Parte do modelo de dicionário de dados do Data Warehouse projetado",
+    "chave": "figura_18",
+    "arquivo": "figura_18.png",
+    "fonte": "elaborado pelo autor (2025).",
     "pagina": 315,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_18.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 19,
     "legenda": "Ambiente de Desenvolvimento Integrado (IDE) utilizada para desenvolvimento de scripts e códigos em Python",
+    "chave": "figura_19",
+    "arquivo": "figura_19.png",
+    "fonte": null,
     "pagina": 332,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_19.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 20,
     "legenda": "Resultado do script 7 sobre a base de dados do INEP",
+    "chave": "figura_20",
+    "arquivo": "figura_20.png",
+    "fonte": null,
     "pagina": 334,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_20.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 21,
     "legenda": "Painel interativo em PowerBI sobre a evasão na educação superior",
+    "chave": "figura_21",
+    "arquivo": "figura_21.png",
+    "fonte": null,
     "pagina": 335,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_21.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 22,
     "legenda": "Painel interativo em PowerBI sobre a titulação docente nas IES",
+    "chave": "figura_22",
+    "arquivo": "figura_22.png",
+    "fonte": null,
     "pagina": 336,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_22.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 23,
     "legenda": "Organização dos arquivos utilizados na pesquisa na IDE",
+    "chave": "figura_23",
+    "arquivo": "figura_23.png",
+    "fonte": null,
     "pagina": 337,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_23.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 24,
     "legenda": "Exemplo de código em python que executa um SQL e elementos gráficos",
+    "chave": "figura_24",
+    "arquivo": "figura_24.png",
+    "fonte": null,
     "pagina": 337,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_24.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 25,
     "legenda": "Página principal da Landing Page de divulgação da pesquisa",
+    "chave": "figura_25",
+    "arquivo": "figura_25.png",
+    "fonte": null,
     "pagina": 338,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_25.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 26,
     "legenda": "Página da Landing Page com análise dos 20 principais cursos de licenciaturas",
+    "chave": "figura_26",
+    "arquivo": "figura_26.png",
+    "fonte": null,
     "pagina": 339,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_26.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 27,
     "legenda": "Página da Landing Page com dados dos principais cursos de licenciaturas",
+    "chave": "figura_27",
+    "arquivo": "figura_27.png",
+    "fonte": null,
     "pagina": 339,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_27.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 28,
     "legenda": "Página da Landing Page com indicadores das licenciatura presenciais",
+    "chave": "figura_28",
+    "arquivo": "figura_28.png",
+    "fonte": null,
     "pagina": 340,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_28.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 29,
     "legenda": "Tela principal do Collaboratio com menu de acesso às funcionalidades",
+    "chave": "figura_29",
+    "arquivo": "figura_29.png",
+    "fonte": null,
     "pagina": 343,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_29.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 30,
     "legenda": "Tela para manter Issues e das deliberações destes no Collaboratio",
+    "chave": "figura_30",
+    "arquivo": "figura_30.png",
+    "fonte": null,
     "pagina": 344,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_30.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 31,
     "legenda": "Tela de gestão de Artefatos no Collaboratio",
+    "chave": "figura_31",
+    "arquivo": "figura_31.png",
+    "fonte": null,
     "pagina": 344,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_31.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 32,
     "legenda": "Tela de detalhes de um trabalho no Collaboratio",
+    "chave": "figura_32",
+    "arquivo": "figura_32.png",
+    "fonte": null,
     "pagina": 345,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_32.png"
+    "secao_slug": null
   },
   {
     "tipo": "Figura",
     "numero": 33,
     "legenda": "Fluxograma geral do pipeline metodológico, do dado bruto ao conhecimento",
+    "chave": "figura_33",
+    "arquivo": "figura_33.png",
+    "fonte": null,
     "pagina": 347,
     "capitulo_slug": "referencias",
-    "secao_slug": null,
-    "arquivo": "figura_33.png"
+    "secao_slug": null
   }
 ]

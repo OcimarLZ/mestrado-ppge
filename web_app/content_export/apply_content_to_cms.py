@@ -1,7 +1,11 @@
 """
 Carrega o conteudo real extraido do .odt (dissertacao_conteudo.json) e as figuras reais
-da dissertacao (dissertacao_figuras_extraidas.json, ver extract_odt_figures.py) dentro do
+da dissertacao (dissertacao_figuras_extraidas.json, ver extract_odt_all.py) dentro do
 site_cms.db existente, substituindo os capitulos placeholder de seed_data.py.
+
+O content_html de cada capitulo/secao ja vem com marcadores [FIG:chave] no lugar exato
+onde o texto referencia a figura (nao no fim da secao) -- este script so precisa trocar
+cada [FIG:chave] pelo [v:ID] real depois de inserir a SectionVisual correspondente.
 
 Roda com sqlite3 puro (stdlib) para nao depender do ambiente virtual do backend.
 Rode a partir da raiz do repo: python web_app/content_export/apply_content_to_cms.py
@@ -59,9 +63,9 @@ def load_chapters():
 def load_figures_manifest():
     with open(os.path.join(CONTENT_EXPORT, "dissertacao_figuras_extraidas.json"), encoding="utf-8") as f:
         figures = json.load(f)
-    # Descarta figuras sem capitulo valido (apendice/metodologia solta apos Referencias,
-    # cuja atribuicao de capitulo nao e confiavel) -- ja em ordem de documento.
-    return [f for f in figures if f["capitulo_slug"] not in (None, "referencias")]
+    # Descarta so as que nao tem nenhum capitulo (apareceriam antes do 1o heading -- nao
+    # deveria acontecer, mas nao ha pagina para anexar a SectionVisual nesse caso).
+    return [f for f in figures if f["capitulo_slug"] is not None]
 
 
 def wrap_epigrafe(content):
@@ -113,7 +117,8 @@ def main():
             )
             slug_to_id[sec["slug"]] = cur.lastrowid
 
-    # Insere as figuras reais (em ordem de documento) e injeta [v:ID] no fim da secao/capitulo alvo.
+    # Insere as figuras reais e troca o marcador [FIG:chave] (ja no lugar certo do texto,
+    # vindo do extract_odt_all.py) pelo [v:ID] real da SectionVisual criada.
     skipped = 0
     for fig in figures:
         target_slug = fig["secao_slug"] or fig["capitulo_slug"]
@@ -125,16 +130,22 @@ def main():
 
         image_url = GRAFICOS_ORIGINAIS_URL_PREFIX + fig["arquivo"]
         titulo = f"{fig['tipo']} {fig['numero']} - {fig['legenda']}"
+        fonte = fig.get("fonte") or DEFAULT_FONTE
         cur.execute(
             """INSERT INTO section_visuals
                (page_content_id, type, title, source, "order", image_url, pdf_page)
                VALUES (?, 'image', ?, ?, 0, ?, ?)""",
-            (page_id, titulo, DEFAULT_FONTE, image_url, fig["pagina"]),
+            (page_id, titulo, fonte, image_url, fig["pagina"]),
         )
         visual_id = cur.lastrowid
+        marker = f"[FIG:{fig['chave']}]"
         cur.execute("SELECT content FROM page_content WHERE id = ?", (page_id,))
         (content,) = cur.fetchone()
-        content = (content or "") + f"<p>[v:{visual_id}]</p>"
+        if marker not in (content or ""):
+            print(f"AVISO: marcador {marker} nao encontrado no texto de {target_slug}, anexando no fim")
+            content = (content or "") + f"<p>[v:{visual_id}]</p>"
+        else:
+            content = content.replace(marker, f"[v:{visual_id}]")
         cur.execute("UPDATE page_content SET content = ? WHERE id = ?", (content, page_id))
 
     con.commit()
