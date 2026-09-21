@@ -79,6 +79,17 @@ INDEX_WRAPPER_TAGS = {
 CAPTION_RE = re.compile(r"^(Gráfico|Figura|Quadro|Tabela)\s+(\d+)\s*-\s*(.+)$")
 TIPO_SLUG = {"Gráfico": "grafico", "Figura": "figura", "Quadro": "quadro", "Tabela": "tabela"}
 
+# Apendices nao usam o estilo de titulo (Heading) do documento -- so aparecem no
+# sumario -- entao sao detectados pelo proprio texto. Ex: "APÊNDICE I" seguido
+# (por quebra de linha, nao paragrafo novo) do subtitulo.
+APENDICE_TITLE_RE = re.compile(r"^AP[ÊE]NDICE\s+([IVXLCDM]+)\s*(.*)$")
+# Dentro do apendice, as subsecoes tambem nao usam Heading, so um paragrafo comecando
+# com "N. Titulo" (numeracao propria do documento, descartada -- o site gera a sua).
+SUBSECTION_RE = re.compile(r"^\d+\.\s+([A-ZÀ-Ý].{0,110})$")
+
+
+LINE_BREAK_TAG = tag("line-break")
+
 
 def local_text(elem, skip_tags=(NOTE_TAG,)):
     parts = []
@@ -86,6 +97,8 @@ def local_text(elem, skip_tags=(NOTE_TAG,)):
     def walk(e):
         if e.tag in skip_tags:
             return
+        if e.tag == LINE_BREAK_TAG:
+            parts.append(" ")  # sem isso, texto antes/depois de uma quebra de linha gruda
         if e.text:
             parts.append(e.text)
         for c in e:
@@ -147,6 +160,7 @@ class Walker:
         self.used_slugs = set()
         self.captions = []  # {block_id, tipo, numero, legenda}
         self.images = []  # {block_id, href, fonte}
+        self.in_apendice = False
 
     def unique_slug(self, base):
         s = base
@@ -198,6 +212,36 @@ class Walker:
                 continue
             if et == P_TAG:
                 txt = local_text(child)
+
+                if not self.in_apendice and self.current_chapter and self.current_chapter["slug"] == "referencias":
+                    m_ap = APENDICE_TITLE_RE.match(txt)
+                    if m_ap:
+                        self.in_apendice = True
+                        numeral, subtitle = m_ap.group(1), m_ap.group(2).strip()
+                        self.current_chapter = {
+                            "slug": self.unique_slug(f"apendice-{numeral.lower()}"),
+                            "title": f"APÊNDICE {numeral}",
+                            "order": len(self.chapters) + 1,
+                            "block_ids": [],
+                        }
+                        self.chapters.append(self.current_chapter)
+                        self.current_section = None
+                        if subtitle:
+                            self.new_block({"kind": "p", "html": f'<p class="apendice-subtitulo">{subtitle}</p>'})
+                        continue
+
+                if self.in_apendice:
+                    m_sub = SUBSECTION_RE.match(txt)
+                    if m_sub:
+                        self.current_section = {
+                            "slug": self.unique_slug(slugify(m_sub.group(1))),
+                            "title": m_sub.group(1),
+                            "order": len(self.current_chapter.setdefault("sections", [])) + 1,
+                            "block_ids": [],
+                        }
+                        self.current_chapter["sections"].append(self.current_section)
+                        continue
+
                 block_id = self.new_block({"kind": "p", "html": f"<p>{txt}</p>" if txt else ""})
 
                 hrefs = frame_hrefs_within(child)
@@ -378,34 +422,11 @@ def main():
             except Exception as e:
                 print(f"AVISO: falha ao aparar margens de {m['arquivo']}: {e}")
 
-    # O "Apendice I" nao usa um estilo de titulo (Heading), entao ele nao vira um
-    # capitulo proprio na varredura -- suas figuras (Figura 15 em diante) acabam
-    # dentro do capitulo "Referencias". Separa a bibliografia (texto corrido, antes
-    # da primeira figura) da parte de figuras, que vira um capitulo sintetico.
-    refs_chap = next((c for c in w.chapters if c["slug"] == "referencias"), None)
-    apendice_block_ids = []
-    if refs_chap:
-        block_ids = refs_chap["block_ids"]
-        split_at = next((i for i, bid in enumerate(block_ids) if w.blocks[bid]["kind"] == "figure"), None)
-        if split_at:
-            apendice_block_ids = block_ids[split_at:]
-            refs_chap["block_ids"] = block_ids[:split_at]
-            idx = w.chapters.index(refs_chap)
-            apendice_chap = {
-                "slug": "apendice-i",
-                "title": "APÊNDICE I",
-                "order": refs_chap["order"] + 1,
-                "block_ids": apendice_block_ids,
-            }
-            w.chapters.insert(idx + 1, apendice_chap)
-            for c in w.chapters[idx + 2:]:
-                c["order"] += 1
-
-    apendice_block_set = set(apendice_block_ids)
+    # O capitulo/secao de cada figura ja foi capturado corretamente durante a varredura
+    # (Walker.walk ja detecta o titulo do Apendice I e suas subsecoes numeradas como
+    # limites de capitulo/secao); so falta descartar o campo interno de posicao.
     for m in manifest:
-        if m.pop("_insertion_block_id") in apendice_block_set:
-            m["capitulo_slug"] = "apendice-i"
-            m["secao_slug"] = None
+        m.pop("_insertion_block_id")
 
     # Monta o content_html final de cada capitulo/secao a partir dos blocos resolvidos.
     def render_blocks(block_ids):

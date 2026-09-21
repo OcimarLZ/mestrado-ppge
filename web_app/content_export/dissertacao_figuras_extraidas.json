@@ -71,7 +71,7 @@
     "legenda": "Orçamento das maiores UFs brasileiras (em biçhões de R$) 2006-2024",
     "chave": "tabela_04",
     "arquivo": "tabela_04.png",
-    "fonte": "Elaborado pelo autor a partir dos dados da LOA (2006, 2010, 2014, 2016, 2020, 2024)* Percentual de variação entre os dois anos apresentados",
+    "fonte": "Elaborado pelo autor a partir dos dados da LOA (2006, 2010, 2014, 2016, 2020, 2024) * Percentual de variação entre os dois anos apresentados",
     "pagina": 93,
     "capitulo_slug": "as-politicas-de-ead-e-a-reconfiguracao-da-educacao-superior-brasileira",
     "secao_slug": "transformacoes-estruturais-do-estado-brasileiro-e-reconfiguracao-das-politicas-educacionais"
@@ -1097,7 +1097,7 @@
     "fonte": "elaborado pelo autor (2025)",
     "pagina": 309,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "analise-dos-dicionarios-de-dados-dos-microdados"
   },
   {
     "tipo": "Figura",
@@ -1108,7 +1108,7 @@
     "fonte": null,
     "pagina": 310,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "analise-dos-dicionarios-de-dados-dos-microdados"
   },
   {
     "tipo": "Figura",
@@ -1119,7 +1119,7 @@
     "fonte": null,
     "pagina": 311,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "analise-dos-dicionarios-de-dados-dos-microdados"
   },
   {
     "tipo": "Figura",
@@ -1130,7 +1130,7 @@
     "fonte": "elaborado pelo autor (2025).",
     "pagina": 315,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "tratamento-dos-dados-e-demais-fontes-oficiais"
   },
   {
     "tipo": "Figura",
@@ -1141,7 +1141,7 @@
     "fonte": null,
     "pagina": 332,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "tratamento-dos-dados-e-demais-fontes-oficiais"
   },
   {
     "tipo": "Figura",
@@ -1152,7 +1152,7 @@
     "fonte": null,
     "pagina": 334,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1163,7 +1163,7 @@
     "fonte": null,
     "pagina": 335,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1174,7 +1174,7 @@
     "fonte": null,
     "pagina": 336,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1185,7 +1185,7 @@
     "fonte": null,
     "pagina": 337,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1196,7 +1196,7 @@
     "fonte": null,
     "pagina": 337,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1207,7 +1207,7 @@
     "fonte": null,
     "pagina": 338,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1218,7 +1218,7 @@
     "fonte": null,
     "pagina": 339,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1229,7 +1229,7 @@
     "fonte": null,
     "pagina": 339,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1240,7 +1240,7 @@
     "fonte": null,
     "pagina": 340,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-analise-e-apresentacao-dos-dados"
   },
   {
     "tipo": "Figura",
@@ -1251,7 +1251,7 @@
     "fonte": null,
     "pagina": 343,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-apoio-e-gestao-da-pesquisa"
   },
   {
     "tipo": "Figura",
@@ -1262,7 +1262,7 @@
     "fonte": null,
     "pagina": 344,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-apoio-e-gestao-da-pesquisa"
   },
   {
     "tipo": "Figura",
@@ -1273,7 +1273,7 @@
     "fonte": null,
     "pagina": 344,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-apoio-e-gestao-da-pesquisa"
   },
   {
     "tipo": "Figura",
@@ -1284,7 +1284,7 @@
     "fonte": null,
     "pagina": 345,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "ferramentas-de-apoio-e-gestao-da-pesquisa"
   },
   {
     "tipo": "Figura",
@@ -1295,6 +1295,6 @@
     "fonte": null,
     "pagina": 347,
     "capitulo_slug": "apendice-i",
-    "secao_slug": null
+    "secao_slug": "sintese-do-fluxo-metodologico"
   }
 ]

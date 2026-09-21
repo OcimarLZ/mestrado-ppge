@@ -242,6 +242,13 @@ p {
   margin: 0 0 1.25rem 0;
 }
 
+.apendice-subtitulo {
+  font-size: 1.2rem !important;
+  font-style: italic;
+  color: var(--accent-primary) !important;
+  margin-bottom: 1.5rem !important;
+}
+
 /* Epígrafe no padrão ABNT: fonte reduzida, sem aspas, recuada à direita,
    com a autoria alinhada à direita logo abaixo do texto. */
 .epigrafe {
