@@ -54,6 +54,36 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Print de codigo/IDE/terminal: moldura de editor (barra de titulo "semaforo" no
+   estilo macOS/VS Code) em vez do cartao de vidro padrao usado para graficos e mapas. */
+.code-panel {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: var(--glass-shadow);
+}
+
+.code-panel-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.9rem;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3a3a3a;
+  border-radius: 10px 10px 0 0;
+}
+
+.code-panel-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.code-panel p {
+  color: var(--text-primary);
+}
+
 /* Typography */
 h1, h2, h3, h4 {
   font-weight: 700;

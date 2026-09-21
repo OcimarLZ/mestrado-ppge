@@ -23,6 +23,10 @@ interface VisualData {
 
 const COLORS = ['#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
 
+// Prints de tela de codigo/IDE/terminal recebem uma moldura no estilo de editor de
+// codigo (barra de titulo com "semaforo", fonte monoespacada) em vez do cartao padrao.
+const CODE_SCREENSHOT_RE = /c[oó]digo|script|\bIDE\b|ambiente de desenvolvimento|\bpython\b|terminal/i;
+
 const VisualElement: React.FC<{ visual: VisualData }> = ({ visual }) => {
   const chartData = visual.data ?? null;
 
@@ -132,21 +136,39 @@ const VisualElement: React.FC<{ visual: VisualData }> = ({ visual }) => {
     }
   };
 
+  const isCodeScreenshot = CODE_SCREENSHOT_RE.test(visual.title || '');
+
   return (
-    <div className="glass-panel" style={{ padding: '1.5rem', margin: '1.5rem 0' }}>
-      {renderVisual()}
+    <div className={isCodeScreenshot ? 'code-panel' : 'glass-panel'} style={{ padding: isCodeScreenshot ? 0 : '1.5rem', margin: '1.5rem 0', overflow: 'hidden' }}>
+      {isCodeScreenshot && (
+        <div className="code-panel-titlebar">
+          <span className="code-panel-dot" style={{ background: '#ff5f56' }} />
+          <span className="code-panel-dot" style={{ background: '#ffbd2e' }} />
+          <span className="code-panel-dot" style={{ background: '#27c93f' }} />
+        </div>
+      )}
+      <div style={{ padding: isCodeScreenshot ? '1.25rem' : 0 }}>
+        {renderVisual()}
+      </div>
       {visual.title && (
-        <p style={{ textAlign: 'center', margin: '0.75rem 0 0 0', fontSize: '0.9rem', fontWeight: 600 }}>
+        <p style={{
+          textAlign: 'center',
+          margin: isCodeScreenshot ? '0 0 1rem 0' : '0.75rem 0 0 0',
+          padding: isCodeScreenshot ? '0 1.25rem' : 0,
+          fontSize: '0.9rem',
+          fontWeight: 600,
+          fontFamily: isCodeScreenshot ? "'Fira Code', 'Consolas', monospace" : undefined,
+        }}>
           {visual.title}
         </p>
       )}
       {visual.source && (
-        <p style={{ textAlign: 'center', margin: '0.25rem 0 0 0', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+        <p style={{ textAlign: 'center', margin: '0.25rem 0 0 0', padding: isCodeScreenshot ? '0 1.25rem' : 0, fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
           Fonte: {visual.source}
         </p>
       )}
       {visual.pdf_page && (
-        <p style={{ textAlign: 'center', margin: '0.25rem 0 0 0', fontSize: '0.8rem' }}>
+        <p style={{ textAlign: 'center', margin: isCodeScreenshot ? '0.25rem 0 1.25rem 0' : '0.25rem 0 0 0', padding: isCodeScreenshot ? '0 1.25rem' : 0, fontSize: '0.8rem' }}>
           <a
             href={`${assetUrl('assets/dissertacao.pdf')}#page=${visual.pdf_page}`}
             target="_blank"

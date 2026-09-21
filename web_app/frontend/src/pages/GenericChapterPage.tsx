@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import DynamicSection, { type VisualData } from '../components/DynamicSection';
+import ContentWithVisuals from '../components/ContentWithVisuals';
 import { getChapter } from '../lib/content';
 
 export interface ContentItem {
@@ -57,7 +58,7 @@ const GenericChapterPage: React.FC = () => {
     <div className="container" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
       <div className="chapter-header">
         <h1>{chapter.numbering}. {chapter.title}</h1>
-        {chapter.content && <div className="lead" dangerouslySetInnerHTML={{ __html: chapter.content }} />}
+        {chapter.content && <ContentWithVisuals html={chapter.content} visuals={chapter.visuals} className="lead" />}
       </div>
       
       {sections.map(section => (

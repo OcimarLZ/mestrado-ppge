@@ -1,7 +1,7 @@
 import React from 'react';
 import * as LucideIcons from 'lucide-react';
 import DataVisualization from './DataVisualization';
-import VisualElement from './VisualElement';
+import ContentWithVisuals from './ContentWithVisuals';
 
 export interface ContentItem {
   id: number;
@@ -71,29 +71,9 @@ const DynamicSection: React.FC<DynamicSectionProps> = ({ sectionData, fallbackTi
     }
   }
 
-  const renderContent = (html: string) => {
-    if (!visuals || visuals.length === 0) {
-      return <div className="text-content" dangerouslySetInnerHTML={{ __html: html }} />;
-    }
-
-    const parts = html.split(/(\[v:\d+\])/g);
-    return (
-      <div className="text-content">
-        {parts.map((part, idx) => {
-          const match = part.match(/^\[v:(\d+)\]$/);
-          if (match) {
-            const visualId = parseInt(match[1]);
-            const visual = visuals.find(v => v.id === visualId);
-            if (visual) {
-              return <VisualElement key={idx} visual={visual} />;
-            }
-            return <p key={idx} style={{ color: '#ef4444', fontSize: '0.85rem' }}>[v:{visualId} — elemento não encontrado]</p>;
-          }
-          return <span key={idx} dangerouslySetInnerHTML={{ __html: part }} />;
-        })}
-      </div>
-    );
-  };
+  const renderContent = (html: string) => (
+    <ContentWithVisuals html={html} visuals={visuals} />
+  );
 
   return (
     <section id={sectionData.slug} className="section-block">
