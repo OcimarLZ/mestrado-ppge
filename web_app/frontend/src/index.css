@@ -645,17 +645,25 @@ footer {
 .mb-4 { margin-bottom: 2rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* Apresentacao (SlideViewer) -- identidade visual UFFS (verde extraido da logo oficial) */
+/* Apresentacao (SlideViewer) -- identidade visual UFFS (verde extraido da logo oficial).
+   Cores FIXAS, independentes do tema dinamico do site (que pode estar em modo claro):
+   a apresentacao e sempre um fundo escuro tipo telao, entao o texto tem que ser sempre
+   claro, nao herdar --text-primary/--text-secondary do tema atual. */
 .slide-viewer {
   --uffs-green: #00923f;
   --uffs-green-dark: #004729;
+  --slide-text-primary: #f8fafc;
+  --slide-text-secondary: #cbd5e1;
+  --slide-border: rgba(255, 255, 255, 0.14);
+  --slide-card-bg: rgba(255, 255, 255, 0.06);
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 78vh;
   background:
-    radial-gradient(circle at 15% 0%, rgba(0, 146, 63, 0.16), transparent 45%),
-    linear-gradient(165deg, #041a0f 0%, var(--bg-dark) 55%);
+    radial-gradient(circle at 15% 0%, rgba(0, 146, 63, 0.2), transparent 45%),
+    linear-gradient(165deg, #041a0f 0%, #0a2818 55%);
+  color: var(--slide-text-primary);
   border-radius: 16px;
   border: 1px solid rgba(0, 146, 63, 0.3);
   overflow: hidden;
@@ -712,7 +720,7 @@ footer {
 
 .slide-brand-bar span {
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   letter-spacing: 0.03em;
 }
 
@@ -756,7 +764,7 @@ footer {
 .slide-bullets li {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   padding-left: 1.5rem;
   position: relative;
 }
@@ -787,7 +795,7 @@ footer {
   gap: 1rem;
   font-size: 1.05rem;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
 }
 
 .slide-icon-badge {
@@ -805,7 +813,7 @@ footer {
 }
 
 .slide-cards-subtitle {
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -830,12 +838,12 @@ footer {
 .slide-card h4 {
   font-size: 1rem;
   margin-bottom: 0.4rem;
-  color: var(--text-primary);
+  color: var(--slide-text-primary);
 }
 
 .slide-card p {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   margin: 0;
 }
 
@@ -855,7 +863,7 @@ footer {
 
 .slide-column-title h3 {
   font-size: 1.2rem;
-  color: var(--text-primary);
+  color: var(--slide-text-primary);
   margin: 0;
 }
 
@@ -891,7 +899,7 @@ footer {
 
 .slide-image-area figcaption {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   margin-top: 0.5rem;
 }
 
@@ -918,7 +926,7 @@ footer {
 
 .slide-stat-card .stat-label {
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   margin-top: 0.25rem;
 }
 
@@ -928,7 +936,7 @@ footer {
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid var(--slide-border);
   background: rgba(0, 0, 0, 0.15);
 }
 
@@ -939,9 +947,9 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--glass-border);
-  background: var(--bg-card);
-  color: var(--text-primary);
+  border: 1px solid var(--slide-border);
+  background: var(--slide-card-bg);
+  color: var(--slide-text-primary);
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -958,7 +966,7 @@ footer {
 
 .slide-counter {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--slide-text-secondary);
   min-width: 60px;
   text-align: center;
 }
