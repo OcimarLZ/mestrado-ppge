@@ -20,6 +20,10 @@ BACKEND_STATIC_DIR = os.path.join(BACKEND_DIR, "static")
 FRONTEND_ASSETS_DIR = os.path.join(FRONTEND_DIR, "public", "assets")
 OUT_JSON = os.path.join(FRONTEND_DIR, "src", "data", "site-content.json")
 
+# A versao oficial da dissertacao e a que esta em docs/ (nao a copia antiga em
+# web_app/backend/static/, que pode ficar desatualizada).
+DISSERTACAO_PDF_SRC = os.path.join(ROOT, "docs", "OLZ_Defesa_V_2.03.pdf")
+
 BACKEND_STATIC_PREFIX = "http://127.0.0.1:8000/static/"
 ASSET_PREFIX = "assets/"  # combinado em runtime com import.meta.env.BASE_URL
 
@@ -115,7 +119,11 @@ def main():
 
     # Copia os assets referenciados (logos, dissertacao em pdf, graficos curados).
     os.makedirs(FRONTEND_ASSETS_DIR, exist_ok=True)
-    for name in ("dissertacao.pdf", "logo_uffs.png", "logo_uffs_horizontal.png", "logo_ppge.png"):
+    if os.path.exists(DISSERTACAO_PDF_SRC):
+        shutil.copyfile(DISSERTACAO_PDF_SRC, os.path.join(FRONTEND_ASSETS_DIR, "dissertacao.pdf"))
+    else:
+        print(f"AVISO: dissertacao nao encontrada em {DISSERTACAO_PDF_SRC}, pulando copia")
+    for name in ("logo_uffs.png", "logo_uffs_horizontal.png", "logo_ppge.png"):
         copy_asset(name)
     graficos_dir = os.path.join(BACKEND_STATIC_DIR, "graficos")
     if os.path.isdir(graficos_dir):
