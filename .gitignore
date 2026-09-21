@@ -1,0 +1,33 @@
+# Python
+venv/
+web_app/backend/.venv/
+__pycache__/
+*.pyc
+
+# Node
+web_app/frontend/node_modules/
+web_app/frontend/dist/
+
+# Segredos / config local
+.env
+web_app/backend/.env
+config.ini
+.claude/settings.local.json
+
+# Bases de dados brutas (grandes, baixadas/geradas a partir do INEP; nao cabem no git)
+bdados/*.db
+ead_brasil.db
+web_app/backend/ead_brasil.db
+
+# Artefatos derivados do pipeline de export estatico (regerados a partir de site_cms.db
+# por web_app/content_export/export_static_site.py antes de cada build/deploy)
+web_app/backend/static/graficos/
+web_app/frontend/public/assets/
+web_app/frontend/src/data/site-content.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs de depuracao locais (ex: servidores de dev iniciados manualmente)
+*.log

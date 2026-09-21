@@ -1,0 +1,119 @@
+[
+  {
+    "file": "numeros_da_educacao_superior.png",
+    "target": "chapter:introducao",
+    "title": "Números da Educação Superior no Brasil",
+    "source": "Elaborado pelo autor com base em dados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "matriculas_por_modalidade.png",
+    "target": "section:problematica",
+    "title": "Evolução das matrículas por modalidade de ensino",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "matriculas_por_grande_categoria.png",
+    "target": "section:problematica",
+    "title": "Matrículas por categoria administrativa (pública x privada)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "mapa_cogna_painel_a4.png",
+    "target": "section:os-principais-grupos-empresariais-da-educacao-superior-brasileira",
+    "title": "Evolução da capilaridade dos polos EaD da Cogna Educação (2005-2014-2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 5",
+    "pdf_page": 173,
+    "confidence": "alta"
+  },
+  {
+    "file": "mapa_vitru_painel_a4.png",
+    "target": "section:os-principais-grupos-empresariais-da-educacao-superior-brasileira",
+    "title": "Evolução da capilaridade dos polos EaD da Vitru Educação (2005-2014-2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 6",
+    "pdf_page": 174,
+    "confidence": "alta"
+  },
+  {
+    "file": "mapa_yduqs_painel_a4.png",
+    "target": "section:os-principais-grupos-empresariais-da-educacao-superior-brasileira",
+    "title": "Evolução da capilaridade dos polos EaD da YDUQS (2005-2014-2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 7",
+    "pdf_page": 174,
+    "confidence": "alta"
+  },
+  {
+    "file": "mapa_anima_painel_a4.png",
+    "target": "section:os-principais-grupos-empresariais-da-educacao-superior-brasileira",
+    "title": "Evolução da capilaridade dos polos EaD da Ânima Educação (2005-2014-2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 8",
+    "pdf_page": 175,
+    "confidence": "alta"
+  },
+  {
+    "file": "mapa_ser_educacional_painel_a4.png",
+    "target": "section:os-principais-grupos-empresariais-da-educacao-superior-brasileira",
+    "title": "Evolução da capilaridade dos polos EaD da Ser Educacional (2005-2014-2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 9",
+    "pdf_page": 175,
+    "confidence": "alta"
+  },
+  {
+    "file": "mapa_municipios_2periodos_licenciatura_2014_2024_a4.png",
+    "target": "section:reconfiguracao-das-matriculas-nas-licenciaturas",
+    "title": "Municípios brasileiros com cursos de licenciaturas em 2014 e 2024",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": "Figura 4",
+    "pdf_page": 123,
+    "confidence": "media"
+  },
+  {
+    "file": "mapa_municipios_lic_2periodos_ufs_2014_2024.png",
+    "target": "section:evolucao-das-licenciaturas-nas-universidades-federais",
+    "title": "Municípios com licenciaturas nas Universidades Federais (2014 e 2024)",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "licenciaturas_matriculas_por_rede.png",
+    "target": "section:reconfiguracao-das-matriculas-nas-licenciaturas",
+    "title": "Matrículas em licenciaturas por tipo de rede",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "licenciaturas_relacao_conc_tranc_evad_por_ingressante_ead.png",
+    "target": "section:ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
+    "title": "Concluintes, trancamentos e evasão por ingressante — licenciaturas EaD",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  },
+  {
+    "file": "licenciaturas_relacao_conc_tranc_evad_por_ingressante_presencial.png",
+    "target": "section:ingressos-concluintes-e-evasao-a-trajetoria-do-estudante-de-licenciatura-nas-ufs",
+    "title": "Concluintes, trancamentos e evasão por ingressante — licenciaturas presenciais",
+    "source": "Elaborado pelo autor com base em microdados do Censo da Educação Superior/INEP",
+    "pdf_figura": null,
+    "pdf_page": null,
+    "confidence": "tematico"
+  }
+]

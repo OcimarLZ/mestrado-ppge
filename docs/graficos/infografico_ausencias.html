@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico - Ausências estratégicas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --primary: #0284c7;
+            --secondary: #4f46e5;
+            --text-light: #0f172a;
+            --text-muted: #1e293b;
+            --card-bg: rgba(248, 250, 252, 0.8);
+            --card-border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient glowing background */
+        .ambient-light {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.05), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.05), transparent 25%);
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        /* Glassmorphism Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Highlight left border for cards */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            opacity: 0.7;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+            min-width: 50px;
+            height: 50px;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+
+        .card-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .card-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* Badges/Highlights inside text */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-alert {
+            color: #e11d48; /* rose-600 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+
+    <div class="container">
+        <header>
+            <h1>Ausências estratégicas</h1>
+            <p class="subtitle">O "não agir" como posição de campo nas Universidades Federais frente à expansão do mercado educacional.</p>
+        </header>
+
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">❌</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de sistema federal coordenado de EaD</h2>
+                    <p class="card-content">
+                        As UFs não constituíram uma rede articulada de oferta de licenciaturas a distância; cada instituição agiu <span class="highlight-alert">isoladamente</span>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">📉</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de expansão agressiva do UAB</h2>
+                    <p class="card-content">
+                        O sistema operou como política de segundo nível, <span class="highlight-alert">instável e permanentemente ameaçada</span>; não houve iniciativa institucional coletiva para escalar o UAB como resposta ao setor privado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">🚫</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de apropriação crítica da modalidade EaD</h2>
+                    <p class="card-content">
+                        Marcada por uma "resistência sem apropriação". Ao recusar o EaD em vez de apropriar-se criticamente dele, as UFs produziram <span class="highlight-alert">autoexclusão</span> do campo formativo em expansão.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-icon">⚠️</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de políticas sistemáticas de retenção</h2>
+                    <p class="card-content">
+                        A evasão cresceu <span class="highlight-alert">6,3%</span> nas UFs e os trancamentos aumentaram <span class="highlight-alert">30,8%</span>. Não houve resposta institucional estruturada para conter a perda de trajetórias.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de competição em EaD de larga escala</h2>
+                    <p class="card-content">
+                        Nenhuma UF desenvolveu modelo de EaD escalável; o setor privado com fins lucrativos passou a controlar <span class="highlight-alert">88%</span> dos ingressantes em EaD sem concorrência pública.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de articulação interinstitucional</h2>
+                    <p class="card-content">
+                        Não houve consórcios, ofertas compartilhadas ou cooperação sistemática entre UFs para licenciaturas em EaD; cada instituição preservou sua autonomia em <span class="highlight-alert">detrimento da coordenação</span> de campo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-icon">🖥️</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Ausência de investimento em infraestrutura tecnológica</h2>
+                    <p class="card-content">
+                        Nenhuma UF investiu em plataforma tecnológica compatível com a escala demandada pelo PNE; o <span class="highlight-alert">distanciamento tecnológico</span> em relação aos conglomerados privados tornou-se estrutural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

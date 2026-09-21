@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(nohup npm run dev -- --port 5173)",
+      "Bash(disown)",
+      "Bash(curl -s http://127.0.0.1:5173/ -o /dev/null -w \"http_status=%{http_code}\\\\n\")",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(curl -s http://localhost:5173/ -o /dev/null -w \"http_status=%{http_code}\\\\n\")"
+    ]
+  }
+}

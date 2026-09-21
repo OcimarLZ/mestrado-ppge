@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrículas por Modalidade e Grande Categoria</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .table { border-collapse: collapse; width: 100%; }
+        .table th, .table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .table th { background-color: #f2f2f2; }
+        .table-striped tbody tr:nth-child(odd) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>Matrículas por Modalidade e Grande Categoria</h1>
+    <table border="1" class="dataframe table table-striped" id="tabela-matriculas">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ano</th>
+      <th>grande_categoria</th>
+      <th>modalidade</th>
+      <th>Matriculas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2005</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>149104</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1933945</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>14103</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1636564</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>96751</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1248095</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>299173</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2024459</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>99782</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1617393</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>95317</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1238645</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>201620</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2370816</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>97381</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1459131</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>100668</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1272915</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>292197</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2448801</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>168363</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1357290</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>285069</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1271312</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>528480</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2927381</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>137786</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>867036</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>172696</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1352494</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>463984</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1602489</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>285334</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2412255</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>181602</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1462069</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>515160</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1739304</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>299978</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2437456</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>177924</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1595718</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>659629</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1898816</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>287340</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2436940</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>166989</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1608370</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>748157</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2024512</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>266210</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2482567</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>139273</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1662245</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>918371</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2252929</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>287801</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2532643</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>135704</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1712317</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>964209</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2364560</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>303881</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2520283</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>125690</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1754951</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>1050088</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2337241</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>324835</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2419882</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>119504</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1800704</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>1233825</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2363575</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>357588</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2301089</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>167837</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1866997</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>1635555</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2605784</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>248029</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1909595</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>172975</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1879810</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>1973751</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2472729</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>318857</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1782729</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>157657</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1898803</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>2612390</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>2221209</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>336041</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1581310</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>157372</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1772623</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>3173511</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1959851</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>370638</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1427923</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>172221</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1882976</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>3726875</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1905979</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>421967</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1337716</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>182092</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1869487</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>4256614</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1906475</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>457578</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1322949</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>199078</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1834512</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Privada com fins lucrativos</td>
+      <td>A Distância</td>
+      <td>4457496</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Privada com fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1914978</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>A Distância</td>
+      <td>518814</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Privada sem fins lucrativos</td>
+      <td>Presencial</td>
+      <td>1316296</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Pública</td>
+      <td>A Distância</td>
+      <td>213066</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Pública</td>
+      <td>Presencial</td>
+      <td>1806601</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

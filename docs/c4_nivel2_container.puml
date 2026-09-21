@@ -1,0 +1,92 @@
+@startuml C4_Container_INEP
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+' ============================================================
+' C4 Model - Nível 2: Diagrama de Containers
+' Sistema: Plataforma de Análise do Censo da Educação Superior
+' Layout vertical (portrait) — adequado para dissertação
+' ============================================================
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+skinparam nodesep 8
+skinparam ranksep 40
+
+title Diagrama de Containers — Plataforma de Análise do Censo da Educação Superior (INEP)
+
+' -------------------------------------------------------
+' Nível 1 – Pessoas (topo)
+' -------------------------------------------------------
+Person(pesquisador, "Pesquisador / Analista", "Executa relatórios e analisa dados do Censo da Educação Superior")
+Person(dba, "Administrador de Dados", "Carrega e mantém os microdados nas bases de dados")
+
+' -------------------------------------------------------
+' Nível 2 – Sistema principal (meio)
+' -------------------------------------------------------
+System_Boundary(sistema, "Plataforma de Análise do Censo da Educação Superior") {
+
+    Container(flask_app, "Aplicação Web Flask", "Python / Flask", "Permite selecionar e executar relatórios por categoria. Exibe resultados em tabelas e gráficos HTML.")
+
+    Container(relatorios, "Módulo de Relatórios", "Python / Pandas\nMatplotlib / Seaborn / Geopandas", "Scripts que consultam o banco, agregam dados e geram tabelas, gráficos e mapas.\n(relats/, olz/, unoesc/)")
+
+    Container(utilities, "Utilitários", "Python", "Formatação de tabelas, log, tratamento de dados e persistência de arquivos externos.\n(utilities/)")
+
+    Container(bdados, "Camada de Acesso a Dados", "Python / SQLAlchemy", "Abstrai leitura e escrita no banco. Expõe salvar_bdados(), ler_ies().\n(bdados/)")
+
+    ContainerDb(sqlite_db, "Banco de Dados SQLite", "SQLite — INEP.db", "Armazenamento principal local: IES, Cursos, Censo, Discentes, Docentes, Geografia, CAPES.")
+
+    ContainerDb(postgres_db, "Banco de Dados PostgreSQL", "PostgreSQL — observa_edubr", "Banco alternativo para implantação em servidor. Mesma estrutura do SQLite.")
+
+    Container(etl_inep, "Pipeline ETL – INEP", "Python / Pandas", "Lê CSV/XLSX do INEP, trata dados faltantes, normaliza tipos e persiste no banco.\n(inep_carregar_*.py)")
+
+    Container(etl_ibge, "Pipeline ETL – IBGE", "Python / Pandas", "Carrega tabelas de referência geográfica e demográfica do IBGE.\n(ibge_*.py)")
+
+    Container(etl_capes, "Pipeline ETL – CAPES", "Python / Pandas", "Carrega dados de bolsas nacionais e do Censo UAB.\n(capes_*.py)")
+
+    Container(arquivos_entrada, "Arquivos de Microdados", "CSV / XLSX / ODS", "Microdados brutos: IES_AAAA.csv, Censo_AAAA.csv, dicionários e sinopses.\nPastas locais mapeadas no config.ini.")
+}
+
+' -------------------------------------------------------
+' Nível 3 – Sistemas externos (base)
+' -------------------------------------------------------
+System_Ext(inep_src, "Portal INEP", "Microdados do Censo da Educação Superior e cadastro de IES\n(gov.br/inep)")
+System_Ext(ibge_src, "Portal IBGE", "Tabelas geográficas: municípios, mesorregiões, UFs e dados demográficos")
+System_Ext(capes_src, "Portal CAPES", "Dados de bolsas nacionais e do Programa UAB")
+
+' -------------------------------------------------------
+' Relações: Pessoas → Containers
+' -------------------------------------------------------
+Rel_D(pesquisador, flask_app, "Acessa via navegador", "HTTP")
+Rel_D(dba, etl_inep, "Executa manualmente", "CLI / Python")
+Rel_D(dba, etl_ibge, "Executa manualmente", "CLI / Python")
+Rel_D(dba, etl_capes, "Executa manualmente", "CLI / Python")
+
+' -------------------------------------------------------
+' Relações internas: Flask → Relatórios → bdados → BDs
+' -------------------------------------------------------
+Rel_D(flask_app, relatorios, "Invoca script de relatório", "subprocess / importlib")
+Rel_D(flask_app, utilities, "Log e tratamento", "Chamada direta")
+Rel_D(relatorios, utilities, "Formatação e log", "Chamada direta")
+Rel_D(relatorios, bdados, "Consulta dados", "ler_ies() / SQLAlchemy")
+Rel_D(bdados, sqlite_db, "Lê / Escreve", "SQLAlchemy / ORM")
+Rel_D(bdados, postgres_db, "Lê / Escreve (prod)", "SQLAlchemy / psycopg2")
+
+' -------------------------------------------------------
+' Relações internas: ETL → arquivos → bdados
+' -------------------------------------------------------
+Rel_D(etl_inep, arquivos_entrada, "Lê CSV/XLSX", "pandas read_csv / read_excel")
+Rel_D(etl_ibge, arquivos_entrada, "Lê tabelas geográficas", "pandas read_csv")
+Rel_D(etl_capes, arquivos_entrada, "Lê dados CAPES", "pandas read_excel")
+Rel_D(etl_inep, bdados, "Persiste registros", "salvar_bdados()")
+Rel_D(etl_ibge, bdados, "Persiste registros", "salvar_bdados()")
+Rel_D(etl_capes, bdados, "Persiste registros", "salvar_bdados()")
+
+' -------------------------------------------------------
+' Relações: Sistemas externos → Arquivos de Entrada (de baixo para cima)
+' -------------------------------------------------------
+Rel_U(inep_src, arquivos_entrada, "Download de microdados", "HTTPS / Manual")
+Rel_U(ibge_src, arquivos_entrada, "Download de tabelas geográficas", "HTTPS / Manual")
+Rel_U(capes_src, arquivos_entrada, "Download de bolsas/UAB", "HTTPS / Manual")
+
+@enduml

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico - Estratégias adotadas pelas UFs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --primary: #0284c7;
+            --secondary: #4f46e5;
+            --text-light: #0f172a;
+            --text-muted: #1e293b;
+            --card-bg: rgba(248, 250, 252, 0.8);
+            --card-border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient glowing background */
+        .ambient-light {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.05), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.05), transparent 25%);
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        /* Glassmorphism Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Highlight left border for cards */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            opacity: 0.7;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+            min-width: 50px;
+            height: 50px;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+
+        .card-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .card-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* Badges/Highlights inside text */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-alert {
+            color: #e11d48; /* rose-600 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+
+    <div class="container">
+        <header>
+            <h1>Estratégias adotadas pelas UFs</h1>
+            <p class="subtitle">Um panorama sobre as dinâmicas institucionais, modalidades de ensino e resistências acadêmicas nas Universidades Federais.</p>
+        </header>
+
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">🏛️</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Manutenção do núcleo presencial</h2>
+                    <p class="card-content">
+                        Preservação do capital simbólico acadêmico. Os cursos presenciais cresceram apenas <span class="highlight">4,4%</span> (1.928 → 2.012), enquanto as matrículas presenciais permaneceram quase estáveis (<span class="highlight">+2,2%</span>).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Expansão modesta do sistema UAB</h2>
+                    <p class="card-content">
+                        Os polos UAB cresceram de 435 para <span class="highlight">584 municípios</span>. No entanto, as matrículas via UAB recuaram expressivos <span class="highlight-alert">26,1%</span> no período.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Desenvolvimento limitado de EaD própria</h2>
+                    <p class="card-content">
+                        Apenas <span class="highlight">6 UFs</span> institucionalizaram a modalidade EaD com matrículas significativas (0,3% a 6,2% do total). As matrículas em EaD própria colapsaram <span class="highlight-alert">89%</span>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Implementação restrita de assistência estudantil</h2>
+                    <p class="card-content">
+                        As políticas de permanência universitária são <span class="highlight-alert">limitadas ao modelo presencial</span>, revelando uma baixíssima cobertura e apoio para os estudantes matriculados em EaD.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Resistência institucional ao EaD</h2>
+                    <p class="card-content">
+                        Há forte resistência enraizada: <span class="highlight">14 UFs</span> não ofertam nenhuma modalidade a distância, e <span class="highlight">29 UFs</span> mantêm um modelo predominantemente presencial operando com a UAB apenas como via complementar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Inovações pontuais e isoladas</h2>
+                    <p class="card-content">
+                        Algumas poucas UFs desenvolveram plataformas digitais próprias e projetos piloto, mas que operam <span class="highlight-alert">sem escala</span> nem articulação interinstitucional capaz de sustentar um ecossistema EaD unificado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <div class="card-text-container">
+                    <h2 class="card-title">Preservação do habitus acadêmico</h2>
+                    <p class="card-content">
+                        O corpo docente defende fortemente a presencialidade como espaço de <span class="highlight">distinção e rigor</span>. A gestão evita conflitos estruturais, enquanto os estudantes carecem de poder político para pressionar por mudança.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
