@@ -102,19 +102,60 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'columns',
-    title: 'Referencial teórico',
-    columns: [
-      {
-        icon: 'Layers',
-        title: 'Pierre Bourdieu',
-        items: ['Ensino superior como campo', 'Capitais e habitus', 'Disputas por hegemonia simbólica', 'EaD como redistribuição de capitais'],
-      },
-      {
-        icon: 'Network',
-        title: 'Stephen Ball',
-        items: ['Políticas como mercado', 'Performatividade', 'Redes políticas', 'Currículo neoliberal global'],
-      },
+    kind: 'cards',
+    title: 'Referencial teórico: uma arquitetura conceitual',
+    subtitle: 'Cinco pilares que se articulam numa progressão, do político ao econômico',
+    cards: [
+      { icon: 'FileText', title: 'Stephen Ball', text: 'Políticas educacionais como campo de disputas: textos e discursos ambíguos e disputáveis' },
+      { icon: 'Layers', title: 'Pierre Bourdieu', text: 'Teoria dos campos: capitais, hegemonia simbólica e agentes em disputa' },
+      { icon: 'Landmark', title: 'Raymundo Faoro', text: 'Estamento e patrimonialismo: a porosidade histórica entre público e privado no Estado brasileiro' },
+      { icon: 'Cog', title: 'Dardot e Laval', text: 'Neoliberalismo como racionalidade política, não apenas um programa econômico' },
+      { icon: 'CircleDollarSign', title: 'Sguissardi, Amaral, Chaves', text: 'Mercantilização e financeirização: a universidade como ativo financeiro' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Ball: políticas educacionais como campo de disputas',
+    items: [
+      { icon: 'FileText', text: 'As políticas educacionais são "textos e discursos" produzidos em arenas permeadas por conflitos, interesses econômicos e disputas por interpretação' },
+      { icon: 'AlertTriangle', text: 'A expansão da EaD não decorre de escolhas pedagógicas, mas de escolhas regulatórias que favoreceram grandes grupos privados' },
+      { icon: 'FileSearch', text: 'Políticas são "ambíguas e disputáveis": conglomerados privados exploram as lacunas dos marcos regulatórios para flexibilizar credenciamentos e reduzir exigências acadêmicas' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Bourdieu: a disputa por hegemonia no campo educacional',
+    items: [
+      { icon: 'Layers', text: 'A teoria dos campos: a educação superior como espaço social estruturado de posições em confronto' },
+      { icon: 'Users', text: 'Estado, conglomerados privados, universidades públicas e organismos multilaterais disputam a autoridade legítima de definir o que é educação superior' },
+      { icon: 'Swords', text: 'A reconfiguração do ensino superior é uma disputa estruturada de poder — não uma questão meramente pedagógica ou tecnológica' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Faoro: estamento e patrimonialismo no Estado brasileiro',
+    items: [
+      { icon: 'Landmark', text: 'Estamento e patrimonialismo mobilizados como pressupostos teórico-contextuais, não como objeto central de investigação' },
+      { icon: 'Shuffle', text: 'Descrevem a porosidade histórica entre as esferas pública e privada, nunca plenamente separadas na formação do Estado brasileiro' },
+      { icon: 'Handshake', text: 'Essa porosidade torna inteligíveis as trocas de favores e os acordos regulatórios entre governantes e o setor econômico educacional' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Neoliberalismo como racionalidade política (Dardot e Laval)',
+    items: [
+      { icon: 'Cog', text: 'Neoliberalismo não como um conjunto de políticas econômicas, mas como uma racionalidade política — uma forma específica de governar' },
+      { icon: 'Building2', text: 'Introduz a lógica da concorrência e da gestão empresarial em esferas antes regidas por outros princípios, incluindo a educação pública' },
+      { icon: 'Zap', text: 'A EaD é sua materialização mais acabada: escalabilidade, padronização curricular e gestão algorítmica construídas para uma economia educacional orientada por desempenho e retorno sobre investimento' },
+    ],
+  },
+  {
+    kind: 'icons',
+    title: 'Mercantilização e financeirização (Sguissardi, Amaral, Chaves)',
+    items: [
+      { icon: 'CircleDollarSign', text: 'A educação superior se converte em ativo financeiro: fusões, aquisições, abertura de capital (IPOs) e instrumentos do capitalismo financeiro' },
+      { icon: 'ArrowRightLeft', text: 'O valor econômico, e não o valor formativo, torna-se o eixo organizador das decisões acadêmicas' },
+      { icon: 'Gauge', text: 'A EaD é o modelo ideal para essa lógica: maximiza a relação aluno/docente e viabiliza margens de lucro em escala nacional' },
     ],
   },
   {
