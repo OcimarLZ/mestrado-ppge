@@ -849,3 +849,42 @@ footer {
 .pesquisa-images figure {
   margin: 0;
 }
+
+/* Citacoes autor-data (ex: "Bourdieu (1989)") com hint da referencia completa, sem
+   sair da pagina -- CSS puro (::after com o texto vindo de data-ref), funciona por
+   hover (mouse) e por foco/tap (touch e navegacao por teclado). */
+.cite-hint {
+  color: inherit;
+  border-bottom: 1px dotted var(--accent-primary);
+  cursor: help;
+  position: relative;
+}
+
+.cite-hint::after {
+  content: attr(data-ref);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(360px, 80vw);
+  padding: 0.6rem 0.8rem;
+  background: #111827;
+  color: #f1f5f9;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.cite-hint:hover::after,
+.cite-hint:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

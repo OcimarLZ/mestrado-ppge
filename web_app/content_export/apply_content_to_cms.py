@@ -10,6 +10,7 @@ cada [FIG:chave] pelo [v:ID] real depois de inserir a SectionVisual corresponden
 Roda com sqlite3 puro (stdlib) para nao depender do ambiente virtual do backend.
 Rode a partir da raiz do repo: python web_app/content_export/apply_content_to_cms.py
 """
+import html
 import json
 import os
 import re
@@ -69,6 +70,66 @@ def load_figures_manifest():
     return [f for f in figures if f["capitulo_slug"] is not None]
 
 
+# Citacoes autor-data no padrao ABNT: "Bourdieu (1989)" (narrativa) ou "(Bourdieu, 1989)"
+# (parentetica), com suporte a multiplos autores ("Bianchetti; Sguissardi, 2017",
+# "Dardot e Laval, 2017") e sufixo de letra para mesmo autor/ano ("2015b").
+CITATION_RE = re.compile(
+    r"(?P<n_authors>[A-ZÀ-Ü][a-zà-ÿ']+(?:\s*[;e]\s*[A-ZÀ-Ü][a-zà-ÿ']+)*)\s*\((?P<n_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
+    r"|"
+    r"\((?P<p_authors>[A-ZÀ-Ü][A-Za-zà-ÿ';\s]+?),\s*(?P<p_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
+)
+
+REF_ENTRY_LEAD_AUTHOR_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Üa-zà-ÿ\-'\s]*?),")
+REF_ENTRY_ORG_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Ü]+)\.")
+REF_ENTRY_EXTRA_AUTHOR_RE = re.compile(r";\s*([A-ZÀ-Ü][A-ZÀ-Üa-zà-ÿ\-']*)")
+REF_ENTRY_YEAR_RE = re.compile(r",\s*(\d{4}[a-z]?)\.")
+
+
+def build_reference_index(referencias_content_html):
+    """Le os paragrafos da lista de referencias e monta {(SOBRENOME, ano): texto da
+    referencia}, para o hover das citacoes no texto apontar a referencia certa."""
+    index = {}
+    entries = re.findall(r"<p>(.*?)</p>", referencias_content_html, re.S)
+    for entry in entries:
+        plain = re.sub(r"<[^>]+>", "", entry).strip()
+        if not plain:
+            continue
+        year_match = REF_ENTRY_YEAR_RE.search(plain)
+        if not year_match:
+            continue
+        year = year_match.group(1)
+
+        surnames = []
+        m = REF_ENTRY_LEAD_AUTHOR_RE.match(plain)
+        if m:
+            surnames.append(m.group(1).strip().upper())
+        else:
+            m2 = REF_ENTRY_ORG_RE.match(plain)
+            if m2:
+                surnames.append(m2.group(1).strip().upper())
+        for m3 in REF_ENTRY_EXTRA_AUTHOR_RE.finditer(plain[:200]):
+            surnames.append(m3.group(1).strip().upper())
+
+        for surname in surnames:
+            index.setdefault((surname, year), plain)
+    return index
+
+
+def link_citations(content, ref_index):
+    def replace(m):
+        whole = m.group(0)
+        authors_raw = m.group("n_authors") or m.group("p_authors")
+        years_raw = m.group("n_years") or m.group("p_years")
+        first_author = re.split(r"\s*[;e]\s*", authors_raw)[0].strip().upper()
+        first_year = re.split(r"[,;]\s*", years_raw)[0].strip()
+        ref_text = ref_index.get((first_author, first_year))
+        if not ref_text:
+            return whole
+        return f'<span class="cite-hint" tabindex="0" data-ref="{html.escape(ref_text)}">{whole}</span>'
+
+    return CITATION_RE.sub(replace, content)
+
+
 def wrap_epigrafe(content):
     m = EPIGRAFE_RE.match(content)
     if not m:
@@ -85,6 +146,10 @@ def main():
     chapters = load_chapters()
     figures = load_figures_manifest()
 
+    referencias_chap = next((c for c in chapters if c["slug"] == "referencias"), None)
+    ref_index = build_reference_index(referencias_chap["content_html"]) if referencias_chap else {}
+    citation_chapters = set(CHAPTER_ICONS) - {"referencias", "apendice-i"}
+
     con = sqlite3.connect(DB_PATH)
     cur = con.cursor()
     ensure_columns(cur)
@@ -94,13 +159,22 @@ def main():
     cur.execute("DELETE FROM page_content")
 
     slug_to_id = {}
+    n_citations_linked = 0
     for chap in chapters:
         icon = CHAPTER_ICONS.get(chap["slug"])
         content = chap["content_html"]
+        link_here = chap["slug"] in citation_chapters
+        # A epigrafe precisa ser isolada ANTES do link de citacoes: algumas autorias de
+        # epigrafe sao no formato "Sobrenome (Ano)", que e exatamente o padrao de citacao
+        # narrativa -- se linkado primeiro, o <span> inserido quebra o regex da epigrafe
+        # (que exige a linha de autoria sem nenhuma tag).
         if chap["slug"] in EPIGRAFE_SLUGS:
             content, ok = wrap_epigrafe(content)
             if not ok:
                 print(f"AVISO: padrao de epigrafe nao encontrado em: {chap['slug']}")
+        if link_here:
+            content = link_citations(content, ref_index)
+            n_citations_linked += content.count('class="cite-hint"')
         cur.execute(
             """INSERT INTO page_content
                (parent_id, slug, title, content, "order", icon_name, content_type)
@@ -110,11 +184,15 @@ def main():
         chap_id = cur.lastrowid
         slug_to_id[chap["slug"]] = chap_id
         for sec in chap["sections"]:
+            sec_content = sec["content_html"]
+            if link_here:
+                sec_content = link_citations(sec_content, ref_index)
+                n_citations_linked += sec_content.count('class="cite-hint"')
             cur.execute(
                 """INSERT INTO page_content
                    (parent_id, slug, title, content, "order", icon_name, content_type)
                    VALUES (?, ?, ?, ?, ?, NULL, 'text')""",
-                (chap_id, sec["slug"], sec["title"], sec["content_html"], sec["order"]),
+                (chap_id, sec["slug"], sec["title"], sec_content, sec["order"]),
             )
             slug_to_id[sec["slug"]] = cur.lastrowid
 
@@ -155,7 +233,7 @@ def main():
     cur.execute("SELECT COUNT(*) FROM section_visuals")
     n_visuals = cur.fetchone()[0]
     con.close()
-    print(f"OK: {n_pages} linhas em page_content, {n_visuals} figuras aplicadas ({skipped} puladas).")
+    print(f"OK: {n_pages} linhas em page_content, {n_visuals} figuras aplicadas ({skipped} puladas), {n_citations_linked} citações linkadas.")
 
 
 if __name__ == "__main__":
