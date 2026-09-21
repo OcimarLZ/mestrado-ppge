@@ -2,6 +2,7 @@ import React from 'react';
 import * as LucideIcons from 'lucide-react';
 import DataVisualization from './DataVisualization';
 import ContentWithVisuals from './ContentWithVisuals';
+import ZoomableImage from './ZoomableImage';
 
 export interface ContentItem {
   id: number;
@@ -100,7 +101,7 @@ const DynamicSection: React.FC<DynamicSectionProps> = ({ sectionData, fallbackTi
 
       {sectionData.content_type === 'image' && sectionData.image_url && (
         <div style={{ margin: '2rem 0', textAlign: 'center' }}>
-          <img src={sectionData.image_url} alt={sectionData.title} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+          <ZoomableImage src={sectionData.image_url} alt={sectionData.title} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
         </div>
       )}
 

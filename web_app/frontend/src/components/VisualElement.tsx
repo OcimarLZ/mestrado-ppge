@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { assetUrl } from '../lib/content';
+import ZoomableImage from './ZoomableImage';
 
 interface VisualData {
   id: number;
@@ -33,7 +34,7 @@ const VisualElement: React.FC<{ visual: VisualData }> = ({ visual }) => {
   const renderVisual = () => {
     if (visual.type === 'image' && visual.image_url) {
       return (
-        <img
+        <ZoomableImage
           src={visual.image_url}
           alt={visual.title}
           style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
