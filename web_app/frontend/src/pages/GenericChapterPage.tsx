@@ -57,7 +57,7 @@ const GenericChapterPage: React.FC = () => {
     <div className="container" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
       <div className="chapter-header">
         <h1>{chapter.numbering}. {chapter.title}</h1>
-        {chapter.content && <p className="lead" dangerouslySetInnerHTML={{ __html: chapter.content }} />}
+        {chapter.content && <div className="lead" dangerouslySetInnerHTML={{ __html: chapter.content }} />}
       </div>
       
       {sections.map(section => (

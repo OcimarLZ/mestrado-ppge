@@ -205,10 +205,38 @@ p {
   color: var(--text-primary);
 }
 
-.chapter-header p.lead {
+.chapter-header div.lead p {
   font-size: 1.25rem;
   color: var(--accent-primary);
+  margin: 0 0 1.25rem 0;
+}
+
+/* Epígrafe no padrão ABNT: fonte reduzida, sem aspas, recuada à direita,
+   com a autoria alinhada à direita logo abaixo do texto. */
+.epigrafe {
+  margin: 0 0 2.5rem auto;
+  max-width: 60%;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.epigrafe p {
   margin: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.epigrafe .epigrafe-autor {
+  margin-top: 0.5rem;
+  text-align: right;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .epigrafe {
+    max-width: 100%;
+  }
 }
 
 .section-block {
