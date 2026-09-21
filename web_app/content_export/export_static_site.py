@@ -24,14 +24,16 @@ OUT_JSON = os.path.join(FRONTEND_DIR, "src", "data", "site-content.json")
 # web_app/backend/static/, que pode ficar desatualizada).
 DISSERTACAO_PDF_SRC = os.path.join(ROOT, "docs", "OLZ_Defesa_V_2.03.pdf")
 
-# Os graficos curados sao copiados direto de docs/graficos/ (rastreado no git), nao da
-# copia intermediaria em web_app/backend/static/graficos/ (que e local/gitignorada e
-# nao existe num checkout limpo do CI).
-DOCS_GRAFICOS_DIR = os.path.join(ROOT, "docs", "graficos")
-
 BACKEND_STATIC_PREFIX = "http://127.0.0.1:8000/static/"
-GRAFICOS_URL_PREFIX = BACKEND_STATIC_PREFIX + "graficos/"
 ASSET_PREFIX = "assets/"  # combinado em runtime com import.meta.env.BASE_URL
+
+# Pastas de imagens copiadas direto de docs/ (rastreadas no git), nao de uma copia
+# intermediaria em web_app/backend/static/ (que e local/gitignorada e nao existe num
+# checkout limpo do CI). Cada entrada: (prefixo de URL usado no banco -> pasta fonte).
+GRAFICOS_SOURCE_DIRS = {
+    BACKEND_STATIC_PREFIX + "graficos/": os.path.join(ROOT, "docs", "graficos"),
+    BACKEND_STATIC_PREFIX + "graficos_originais/": os.path.join(ROOT, "docs", "graficos_originais"),
+}
 
 
 def rows_as_dicts(cur, sql, params=()):
@@ -101,11 +103,16 @@ def main():
     all_pages = rows_as_dicts(cur, 'SELECT * FROM page_content ORDER BY parent_id ASC, "order" ASC')
     all_visuals = rows_as_dicts(cur, 'SELECT * FROM section_visuals ORDER BY "order" ASC')
 
-    grafico_filenames = set()
+    # Para cada pasta fonte de graficos, quais nomes de arquivo sao realmente referenciados.
+    grafico_filenames_by_prefix = {prefix: set() for prefix in GRAFICOS_SOURCE_DIRS}
     for row in all_pages + all_visuals:
         url = row.get("image_url")
-        if url and url.startswith(GRAFICOS_URL_PREFIX):
-            grafico_filenames.add(url[len(GRAFICOS_URL_PREFIX):])
+        if not url:
+            continue
+        for prefix in GRAFICOS_SOURCE_DIRS:
+            if url.startswith(prefix):
+                grafico_filenames_by_prefix[prefix].add(url[len(prefix):])
+                break
 
     visuals_by_page = {}
     for v in all_visuals:
@@ -138,13 +145,16 @@ def main():
         print(f"AVISO: dissertacao nao encontrada em {DISSERTACAO_PDF_SRC}, pulando copia")
     for name in ("logo_uffs.png", "logo_uffs_horizontal.png", "logo_ppge.png"):
         copy_asset(name)
-    os.makedirs(os.path.join(FRONTEND_ASSETS_DIR, "graficos"), exist_ok=True)
-    for fname in sorted(grafico_filenames):
-        src = os.path.join(DOCS_GRAFICOS_DIR, fname)
-        if not os.path.exists(src):
-            print(f"AVISO: grafico referenciado mas nao encontrado em docs/graficos/: {fname}")
-            continue
-        shutil.copyfile(src, os.path.join(FRONTEND_ASSETS_DIR, "graficos", fname))
+    for prefix, src_dir in GRAFICOS_SOURCE_DIRS.items():
+        subfolder = prefix[len(BACKEND_STATIC_PREFIX):].rstrip("/")
+        dst_dir = os.path.join(FRONTEND_ASSETS_DIR, subfolder)
+        os.makedirs(dst_dir, exist_ok=True)
+        for fname in sorted(grafico_filenames_by_prefix[prefix]):
+            src = os.path.join(src_dir, fname)
+            if not os.path.exists(src):
+                print(f"AVISO: grafico referenciado mas nao encontrado em {src_dir}: {fname}")
+                continue
+            shutil.copyfile(src, os.path.join(dst_dir, fname))
 
     output = {
         "site_settings": site_settings,

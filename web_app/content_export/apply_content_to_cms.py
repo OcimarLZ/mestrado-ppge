@@ -1,22 +1,26 @@
 """
-Carrega o conteudo real extraido do .odt (dissertacao_conteudo.json) e os graficos
-curados (graficos_selecionados.json) dentro do site_cms.db existente, substituindo os
-capitulos placeholder de seed_data.py.
+Carrega o conteudo real extraido do .odt (dissertacao_conteudo.json) e as figuras reais
+da dissertacao (dissertacao_figuras_extraidas.json, ver extract_odt_figures.py) dentro do
+site_cms.db existente, substituindo os capitulos placeholder de seed_data.py.
 
 Roda com sqlite3 puro (stdlib) para nao depender do ambiente virtual do backend.
 Rode a partir da raiz do repo: python web_app/content_export/apply_content_to_cms.py
 """
 import json
 import os
-import shutil
+import re
 import sqlite3
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CONTENT_EXPORT = os.path.join(ROOT, "web_app", "content_export")
 BACKEND_DIR = os.path.join(ROOT, "web_app", "backend")
 DB_PATH = os.path.join(BACKEND_DIR, "site_cms.db")
-GRAFICOS_SRC_DIR = os.path.join(ROOT, "docs", "graficos")
-GRAFICOS_DST_DIR = os.path.join(BACKEND_DIR, "static", "graficos")
+
+# Marcador reconhecido por export_static_site.py para copiar de docs/graficos_originais/
+# (as figuras reais extraidas do .odt) em vez de docs/graficos/ (rascunhos exploratorios).
+GRAFICOS_ORIGINAIS_URL_PREFIX = "http://127.0.0.1:8000/static/graficos_originais/"
+
+DEFAULT_FONTE = "Elaborado pelo autor com base nos dados da pesquisa."
 
 CHAPTER_ICONS = {
     "introducao": "BookOpen",
@@ -28,6 +32,11 @@ CHAPTER_ICONS = {
     "consideracoes-finais": "Flag",
     "referencias": "Library",
 }
+
+# Capitulos que abrem com epigrafe (citacao + autoria) logo apos o titulo -- todos
+# exceto Referencias, que e so a lista bibliografica.
+EPIGRAFE_SLUGS = set(CHAPTER_ICONS) - {"referencias"}
+EPIGRAFE_RE = re.compile(r"^<p>(.*?)</p><p>([^<]{0,80})</p>", re.S)
 
 
 def ensure_columns(cur):
@@ -47,44 +56,51 @@ def load_chapters():
         return json.load(f)
 
 
-def load_visual_selection():
-    with open(os.path.join(CONTENT_EXPORT, "graficos_selecionados.json"), encoding="utf-8") as f:
-        return json.load(f)
+def load_figures_manifest():
+    with open(os.path.join(CONTENT_EXPORT, "dissertacao_figuras_extraidas.json"), encoding="utf-8") as f:
+        figures = json.load(f)
+    # Descarta figuras sem capitulo valido (apendice/metodologia solta apos Referencias,
+    # cuja atribuicao de capitulo nao e confiavel) -- ja em ordem de documento.
+    return [f for f in figures if f["capitulo_slug"] not in (None, "referencias")]
 
 
-def copy_selected_images(selection):
-    os.makedirs(GRAFICOS_DST_DIR, exist_ok=True)
-    for item in selection:
-        src = os.path.join(GRAFICOS_SRC_DIR, item["file"])
-        dst = os.path.join(GRAFICOS_DST_DIR, item["file"])
-        if not os.path.exists(src):
-            print(f"AVISO: imagem nao encontrada, pulando: {src}")
-            continue
-        shutil.copyfile(src, dst)
+def wrap_epigrafe(content):
+    m = EPIGRAFE_RE.match(content)
+    if not m:
+        return content, False
+    quote, autor = m.group(1), m.group(2)
+    replacement = (
+        f'<blockquote class="epigrafe"><p>{quote}</p>'
+        f'<p class="epigrafe-autor">{autor}</p></blockquote>'
+    )
+    return EPIGRAFE_RE.sub(replacement, content, count=1), True
 
 
 def main():
     chapters = load_chapters()
-    selection = load_visual_selection()
-    copy_selected_images(selection)
+    figures = load_figures_manifest()
 
     con = sqlite3.connect(DB_PATH)
     cur = con.cursor()
     ensure_columns(cur)
 
-    # Repopula page_content do zero (hoje so tem placeholders de seed_data.py).
+    # Repopula page_content do zero.
     cur.execute("DELETE FROM section_visuals")
     cur.execute("DELETE FROM page_content")
 
     slug_to_id = {}
-    # Passo 1: insere capitulos e secoes, guarda o id de cada slug.
     for chap in chapters:
         icon = CHAPTER_ICONS.get(chap["slug"])
+        content = chap["content_html"]
+        if chap["slug"] in EPIGRAFE_SLUGS:
+            content, ok = wrap_epigrafe(content)
+            if not ok:
+                print(f"AVISO: padrao de epigrafe nao encontrado em: {chap['slug']}")
         cur.execute(
             """INSERT INTO page_content
                (parent_id, slug, title, content, "order", icon_name, content_type)
                VALUES (NULL, ?, ?, ?, ?, ?, 'text')""",
-            (chap["slug"], chap["title"], chap["content_html"], chap["order"], icon),
+            (chap["slug"], chap["title"], content, chap["order"], icon),
         )
         chap_id = cur.lastrowid
         slug_to_id[chap["slug"]] = chap_id
@@ -97,21 +113,23 @@ def main():
             )
             slug_to_id[sec["slug"]] = cur.lastrowid
 
-    # Passo 2: insere os visuais curados e injeta o token [v:ID] no content do alvo.
-    for item in selection:
-        target = item["target"]
-        target_slug = target.split(":", 1)[1]
+    # Insere as figuras reais (em ordem de documento) e injeta [v:ID] no fim da secao/capitulo alvo.
+    skipped = 0
+    for fig in figures:
+        target_slug = fig["secao_slug"] or fig["capitulo_slug"]
         page_id = slug_to_id.get(target_slug)
         if page_id is None:
-            print(f"AVISO: slug alvo nao encontrado, pulando visual: {target}")
+            print(f"AVISO: slug alvo nao encontrado, pulando figura: {target_slug} ({fig['tipo']} {fig['numero']})")
+            skipped += 1
             continue
 
-        image_url = f"http://127.0.0.1:8000/static/graficos/{item['file']}"
+        image_url = GRAFICOS_ORIGINAIS_URL_PREFIX + fig["arquivo"]
+        titulo = f"{fig['tipo']} {fig['numero']} - {fig['legenda']}"
         cur.execute(
             """INSERT INTO section_visuals
                (page_content_id, type, title, source, "order", image_url, pdf_page)
                VALUES (?, 'image', ?, ?, 0, ?, ?)""",
-            (page_id, item["title"], item["source"], image_url, item["pdf_page"]),
+            (page_id, titulo, DEFAULT_FONTE, image_url, fig["pagina"]),
         )
         visual_id = cur.lastrowid
         cur.execute("SELECT content FROM page_content WHERE id = ?", (page_id,))
@@ -125,7 +143,7 @@ def main():
     cur.execute("SELECT COUNT(*) FROM section_visuals")
     n_visuals = cur.fetchone()[0]
     con.close()
-    print(f"OK: {n_pages} linhas em page_content, {n_visuals} visuais aplicados.")
+    print(f"OK: {n_pages} linhas em page_content, {n_visuals} figuras aplicadas ({skipped} puladas).")
 
 
 if __name__ == "__main__":
