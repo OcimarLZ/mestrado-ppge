@@ -35,11 +35,12 @@ CHAPTER_ICONS = {
     "as-universidades-federais-e-a-ead-politicas-e-estrategias-institucionais": "Users",
     "consideracoes-finais": "Flag",
     "referencias": "Library",
+    "apendice-i": "Paperclip",
 }
 
 # Capitulos que abrem com epigrafe (citacao + autoria) logo apos o titulo -- todos
-# exceto Referencias, que e so a lista bibliografica.
-EPIGRAFE_SLUGS = set(CHAPTER_ICONS) - {"referencias"}
+# exceto Referencias (lista bibliografica) e Apendice I (galeria de figuras).
+EPIGRAFE_SLUGS = set(CHAPTER_ICONS) - {"referencias", "apendice-i"}
 EPIGRAFE_RE = re.compile(r"^<p>(.*?)</p><p>([^<]{0,80})</p>", re.S)
 
 

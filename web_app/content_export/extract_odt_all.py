@@ -352,6 +352,7 @@ def main():
                     "pagina": page_index.get((cap["tipo"], cap["numero"])),
                     "capitulo_slug": cap["capitulo_slug"],
                     "secao_slug": cap["secao_slug"],
+                    "_insertion_block_id": insertion_id,
                 })
 
             if to_convert:
@@ -376,6 +377,35 @@ def main():
                 trim_whitespace(final_path)
             except Exception as e:
                 print(f"AVISO: falha ao aparar margens de {m['arquivo']}: {e}")
+
+    # O "Apendice I" nao usa um estilo de titulo (Heading), entao ele nao vira um
+    # capitulo proprio na varredura -- suas figuras (Figura 15 em diante) acabam
+    # dentro do capitulo "Referencias". Separa a bibliografia (texto corrido, antes
+    # da primeira figura) da parte de figuras, que vira um capitulo sintetico.
+    refs_chap = next((c for c in w.chapters if c["slug"] == "referencias"), None)
+    apendice_block_ids = []
+    if refs_chap:
+        block_ids = refs_chap["block_ids"]
+        split_at = next((i for i, bid in enumerate(block_ids) if w.blocks[bid]["kind"] == "figure"), None)
+        if split_at:
+            apendice_block_ids = block_ids[split_at:]
+            refs_chap["block_ids"] = block_ids[:split_at]
+            idx = w.chapters.index(refs_chap)
+            apendice_chap = {
+                "slug": "apendice-i",
+                "title": "APÊNDICE I",
+                "order": refs_chap["order"] + 1,
+                "block_ids": apendice_block_ids,
+            }
+            w.chapters.insert(idx + 1, apendice_chap)
+            for c in w.chapters[idx + 2:]:
+                c["order"] += 1
+
+    apendice_block_set = set(apendice_block_ids)
+    for m in manifest:
+        if m.pop("_insertion_block_id") in apendice_block_set:
+            m["capitulo_slug"] = "apendice-i"
+            m["secao_slug"] = None
 
     # Monta o content_html final de cada capitulo/secao a partir dos blocos resolvidos.
     def render_blocks(block_ids):
