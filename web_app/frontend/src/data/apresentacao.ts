@@ -4,16 +4,23 @@
 // original dos textos e figuras usados aqui.
 
 export type SlideImage = { file: string; caption?: string };
+export type IconItem = { icon: string; text: string };
+export type CardItem = { icon?: string; title: string; text: string };
+export type Column = { icon?: string; title: string; items: string[] };
 
 export interface Slide {
-  kind: 'cover' | 'section' | 'text' | 'image' | 'images' | 'stats' | 'closing';
+  kind: 'cover' | 'section' | 'text' | 'icons' | 'image' | 'images' | 'stats' | 'cards' | 'columns' | 'closing';
   title: string;
   subtitle?: string;
   bullets?: string[];
+  items?: IconItem[];
+  cards?: CardItem[];
+  columns?: Column[];
   image?: SlideImage;
   images?: SlideImage[];
   stats?: { value: string; label: string }[];
   note?: string;
+  showLogos?: boolean;
 }
 
 const slides: Slide[] = [
@@ -26,6 +33,7 @@ const slides: Slide[] = [
       'Orientador: Prof. Dr. Joviles Vitório Trevisol',
       'Programa de Pós-Graduação em Educação — UFFS',
     ],
+    showLogos: true,
   },
   {
     kind: 'text',
@@ -36,8 +44,9 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'text',
+    kind: 'image',
     title: 'Tema e contexto',
+    image: { file: 'figura_01', caption: 'Municípios brasileiros com polos EaD em 2006 e 2024' },
     bullets: [
       'Recorte temporal: 2014-2024, período de vigência do Plano Nacional de Educação (PNE)',
       'Entre 2014 e 2024, o eixo presencial/universitário deixa de ser dominante na formação docente',
@@ -45,51 +54,58 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'text',
+    kind: 'icons',
     title: 'Justificativa',
-    bullets: [
-      'Transformação estrutural da formação docente sem precedentes no período',
-      'Expansão inédita da EaD privada nas licenciaturas',
-      'Recuo da oferta presencial, especialmente nas Universidades Federais',
-      'Lacuna analítica: poucos estudos integram políticas públicas, microdados e a escala nacional do fenômeno',
+    items: [
+      { icon: 'AlertTriangle', text: 'Transformação estrutural da formação docente sem precedentes no período' },
+      { icon: 'TrendingUp', text: 'Expansão inédita da EaD privada nas licenciaturas' },
+      { icon: 'TrendingDown', text: 'Recuo da oferta presencial, especialmente nas Universidades Federais' },
+      { icon: 'SearchX', text: 'Lacuna analítica: poucos estudos integram políticas públicas, microdados e a escala nacional do fenômeno' },
     ],
   },
   {
-    kind: 'text',
+    kind: 'icons',
     title: 'Problemática e questões de pesquisa',
-    bullets: [
-      'Como a flexibilização regulatória e as políticas neoliberais impulsionaram a EaD no período do PNE?',
-      'Como as tensões entre interesse público e mercado moldaram a regulação do MEC/INEP?',
-      'Como os microdados evidenciam a reconfiguração da oferta de licenciaturas nas UFs frente ao crescimento privado?',
-      'Quais estratégias (ou ausência delas) as UFs adotaram diante da concorrência do mercado privado?',
+    items: [
+      { icon: 'HelpCircle', text: 'Como a flexibilização regulatória e as políticas neoliberais impulsionaram a EaD no período do PNE?' },
+      { icon: 'HelpCircle', text: 'Como as tensões entre interesse público e mercado moldaram a regulação do MEC/INEP?' },
+      { icon: 'HelpCircle', text: 'Como os microdados evidenciam a reconfiguração da oferta de licenciaturas nas UFs frente ao crescimento privado?' },
+      { icon: 'HelpCircle', text: 'Quais estratégias (ou ausência delas) as UFs adotaram diante da concorrência do mercado privado?' },
     ],
   },
   {
-    kind: 'text',
+    kind: 'icons',
     title: 'Objetivos',
-    bullets: [
-      'Geral: analisar a disputa de campo e os impactos da mercantilização na expansão da oferta de licenciaturas em EaD no Brasil (2014-2024)',
-      'Investigar a dinâmica de participação e os limites de atuação das Universidades Federais nesse processo',
-      'Analisar o impacto da flexibilização regulatória neoliberal na precarização da formação docente',
+    items: [
+      { icon: 'Target', text: 'Geral: analisar a disputa de campo e os impactos da mercantilização na expansão da oferta de licenciaturas em EaD no Brasil (2014-2024)' },
+      { icon: 'Building2', text: 'Investigar a dinâmica de participação e os limites de atuação das Universidades Federais nesse processo' },
+      { icon: 'Scale', text: 'Analisar o impacto da flexibilização regulatória neoliberal na precarização da formação docente' },
     ],
   },
   {
-    kind: 'text',
+    kind: 'columns',
     title: 'Referencial teórico',
-    bullets: [
-      'Ensino superior como campo (Pierre Bourdieu): campo, capitais, habitus, disputas por hegemonia simbólica',
-      'Políticas como mercado (Stephen Ball): performatividade, redes políticas e o currículo neoliberal global',
-      'EaD como dispositivo de redistribuição de capitais entre agentes do campo educacional',
+    columns: [
+      {
+        icon: 'Layers',
+        title: 'Pierre Bourdieu',
+        items: ['Ensino superior como campo', 'Capitais e habitus', 'Disputas por hegemonia simbólica', 'EaD como redistribuição de capitais'],
+      },
+      {
+        icon: 'Network',
+        title: 'Stephen Ball',
+        items: ['Políticas como mercado', 'Performatividade', 'Redes políticas', 'Currículo neoliberal global'],
+      },
     ],
   },
   {
-    kind: 'text',
+    kind: 'icons',
     title: 'Percurso metodológico',
-    bullets: [
-      'Pesquisa quantitativa baseada em Data Warehouse próprio, construído a partir dos microdados do INEP, CAPES e IBGE',
-      'Processos de ETL (Extract, Transform, Load) integralmente reproduzíveis por código',
-      'Consultas parametrizadas, rotinas automatizadas e visualizações geradas programaticamente',
-      'Análise documental complementar (legislação, decretos, demonstrações financeiras)',
+    items: [
+      { icon: 'Database', text: 'Data Warehouse próprio, construído a partir dos microdados do INEP, CAPES e IBGE' },
+      { icon: 'GitBranch', text: 'Processos de ETL (Extract, Transform, Load) integralmente reproduzíveis por código' },
+      { icon: 'Code2', text: 'Consultas parametrizadas, rotinas automatizadas e visualizações geradas programaticamente' },
+      { icon: 'FileSearch', text: 'Análise documental complementar (legislação, decretos, demonstrações financeiras)' },
     ],
   },
   {
@@ -138,12 +154,15 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'text',
+    kind: 'cards',
     title: 'Os grandes grupos educacionais',
-    bullets: [
-      'Cinco conglomerados concentram a expansão da EaD privada no Brasil',
-      'Cogna Educação · Vitru Educação · YDUQS · Ânima Educação · Ser Educacional',
-      'Estratégias de fusões, aquisições e financeirização convertem a educação em ativo de mercado de capitais',
+    subtitle: 'Cinco conglomerados concentram a expansão da EaD privada no Brasil',
+    cards: [
+      { title: 'Cogna Educação', text: 'Megafusões presenciais e pivô para EaD, com padronização curricular' },
+      { title: 'Vitru Educação', text: 'Modelo asset-light: desmaterialização do campus e logística em rede' },
+      { title: 'YDUQS', text: 'Hibridização premium e expansão metropolitana da EaD' },
+      { title: 'Ânima Educação', text: 'Aquisições seletivas com foco em prestígio e portfólio de marcas' },
+      { title: 'Ser Educacional', text: 'Dominação regional e interiorização, com foco de baixo custo' },
     ],
   },
   {
@@ -247,12 +266,12 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'text',
+    kind: 'icons',
     title: 'Contribuições da pesquisa',
-    bullets: [
-      'Empírica: mapeamento inédito da expansão privada da EaD nas licenciaturas e do recuo presencial, especialmente nas federais',
-      'Metodológica: integração de políticas públicas, microdados em larga escala e Data Warehouse próprio, reprodutível por código',
-      'Para políticas públicas: subsídios para o próximo ciclo de planejamento educacional decidir entre aprofundar a bifurcação formativa ou reconstruir o pacto estatal pela formação de professores',
+    items: [
+      { icon: 'FlaskConical', text: 'Empírica: mapeamento inédito da expansão privada da EaD nas licenciaturas e do recuo presencial, especialmente nas federais' },
+      { icon: 'Cpu', text: 'Metodológica: integração de políticas públicas, microdados em larga escala e Data Warehouse próprio, reprodutível por código' },
+      { icon: 'Landmark', text: 'Para políticas públicas: subsídios para o próximo ciclo de planejamento educacional decidir entre aprofundar a bifurcação formativa ou reconstruir o pacto estatal pela formação de professores' },
     ],
   },
   {
@@ -265,6 +284,7 @@ const slides: Slide[] = [
       'Banca: Prof. Dr. Jaime Giolo (UFFS) · Prof. Dr. Lucídio Bianchetti (UFSC) · Prof. Dr. Derlan Trombeta (UFFS)',
       'Programa de Pós-Graduação em Educação — UFFS',
     ],
+    showLogos: true,
   },
 ];
 

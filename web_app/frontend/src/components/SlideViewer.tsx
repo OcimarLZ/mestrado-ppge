@@ -1,10 +1,17 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Maximize, Minimize } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import ZoomableImage from './ZoomableImage';
 import { assetUrl } from '../lib/content';
 import type { Slide } from '../data/apresentacao';
 
 const imgUrl = (file: string) => assetUrl(`assets/graficos_originais/${file}.png`);
+
+const Icon: React.FC<{ name?: string; size?: number; className?: string }> = ({ name, size = 20, className }) => {
+  // @ts-ignore
+  const Comp = (name && LucideIcons[name]) || LucideIcons.Circle;
+  return <Comp size={size} className={className} />;
+};
 
 const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
   const [index, setIndex] = useState(0);
@@ -47,12 +54,20 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
     </ul>
   );
 
+  const renderLogos = (size: 'lg' | 'sm' = 'lg') => (
+    <div className={`slide-logos slide-logos-${size}`}>
+      <img src={assetUrl('assets/logo_uffs.png')} alt="UFFS" />
+      <img src={assetUrl('assets/logo_ppge.png')} alt="PPGE" />
+    </div>
+  );
+
   const renderBody = () => {
     switch (slide.kind) {
       case 'cover':
       case 'closing':
         return (
           <div className="slide-cover">
+            {slide.showLogos && renderLogos('lg')}
             <h1>{slide.title}</h1>
             {slide.subtitle && <p className="slide-subtitle">{slide.subtitle}</p>}
             {renderBullets(slide.bullets)}
@@ -73,6 +88,55 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             {renderBullets(slide.bullets)}
           </div>
         );
+      case 'icons':
+        return (
+          <div className="slide-body">
+            <h2>{slide.title}</h2>
+            <ul className="slide-icon-list">
+              {slide.items?.map((item, i) => (
+                <li key={i}>
+                  <span className="slide-icon-badge"><Icon name={item.icon} size={20} /></span>
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      case 'cards':
+        return (
+          <div className="slide-body">
+            <h2>{slide.title}</h2>
+            {slide.subtitle && <p className="slide-cards-subtitle">{slide.subtitle}</p>}
+            <div className="slide-cards-grid">
+              {slide.cards?.map((c, i) => (
+                <div key={i} className="slide-card">
+                  {c.icon && <Icon name={c.icon} size={22} className="slide-card-icon" />}
+                  <h4>{c.title}</h4>
+                  <p>{c.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      case 'columns':
+        return (
+          <div className="slide-body">
+            <h2>{slide.title}</h2>
+            <div className="slide-columns">
+              {slide.columns?.map((col, i) => (
+                <div key={i} className="slide-column">
+                  <div className="slide-column-title">
+                    {col.icon && <Icon name={col.icon} size={22} />}
+                    <h3>{col.title}</h3>
+                  </div>
+                  <ul className="slide-bullets">
+                    {col.items.map((it, j) => <li key={j}>{it}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       case 'image':
         return (
           <div className="slide-body slide-body-image">
@@ -80,7 +144,7 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             <div className="slide-image-area">
               {slide.image && (
                 <figure>
-                  <ZoomableImage src={imgUrl(slide.image.file)} alt={slide.image.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '48vh', width: 'auto', borderRadius: '8px' }} />
+                  <ZoomableImage src={imgUrl(slide.image.file)} alt={slide.image.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '42vh', width: 'auto', borderRadius: '8px' }} />
                   {slide.image.caption && <figcaption>{slide.image.caption}</figcaption>}
                 </figure>
               )}
@@ -95,7 +159,7 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             <div className="slide-image-area slide-image-area-multi">
               {slide.images?.map((img, i) => (
                 <figure key={i}>
-                  <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '40vh', width: 'auto', borderRadius: '8px' }} />
+                  <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '38vh', width: 'auto', borderRadius: '8px' }} />
                   {img.caption && <figcaption>{img.caption}</figcaption>}
                 </figure>
               ))}
@@ -113,8 +177,16 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
     }
   };
 
+  const isCoverLike = slide.kind === 'cover' || slide.kind === 'closing';
+
   return (
     <div id="slide-viewer-root" className={`slide-viewer ${isFullscreen ? 'is-fullscreen' : ''}`}>
+      {!isCoverLike && (
+        <div className="slide-brand-bar">
+          <img src={assetUrl('assets/logo_uffs_horizontal.png')} alt="UFFS" />
+          <span>PPGE · Educação a Distância no Brasil (2014-2024)</span>
+        </div>
+      )}
       <div className="slide-frame">
         {renderBody()}
       </div>

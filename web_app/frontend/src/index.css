@@ -599,15 +599,19 @@ footer {
 .mb-4 { margin-bottom: 2rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* Apresentacao (SlideViewer) */
+/* Apresentacao (SlideViewer) -- identidade visual UFFS (verde extraido da logo oficial) */
 .slide-viewer {
+  --uffs-green: #00923f;
+  --uffs-green-dark: #004729;
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 78vh;
-  background: var(--bg-dark);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(0, 146, 63, 0.16), transparent 45%),
+    linear-gradient(165deg, #041a0f 0%, var(--bg-dark) 55%);
   border-radius: 16px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0, 146, 63, 0.3);
   overflow: hidden;
   margin: 1rem auto;
   max-width: 1100px;
@@ -642,8 +646,46 @@ footer {
 
 .slide-subtitle {
   font-size: 1.2rem;
-  color: var(--accent-primary);
+  color: var(--uffs-green);
   margin-bottom: 2rem;
+}
+
+.slide-brand-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  background: rgba(0, 71, 41, 0.35);
+  border-bottom: 1px solid rgba(0, 146, 63, 0.25);
+}
+
+.slide-brand-bar img {
+  height: 22px;
+  width: auto;
+}
+
+.slide-brand-bar span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.slide-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.slide-logos-lg img {
+  height: 64px;
+  width: auto;
+}
+
+.slide-logos-sm img {
+  height: 32px;
+  width: auto;
 }
 
 .slide-body {
@@ -681,7 +723,92 @@ footer {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-primary);
+  background: var(--uffs-green);
+}
+
+.slide-icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slide-icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.slide-icon-badge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0, 146, 63, 0.15);
+  color: var(--uffs-green);
+}
+
+.slide-cards-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.slide-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.slide-card {
+  background: rgba(0, 71, 41, 0.25);
+  border: 1px solid rgba(0, 146, 63, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.slide-card-icon {
+  color: var(--uffs-green);
+  margin-bottom: 0.5rem;
+}
+
+.slide-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+
+.slide-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.slide-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.slide-column-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--uffs-green);
+  margin-bottom: 1rem;
+}
+
+.slide-column-title h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 .slide-cover .slide-bullets li::before {
@@ -728,8 +855,8 @@ footer {
 }
 
 .slide-stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
+  background: rgba(0, 71, 41, 0.25);
+  border: 1px solid rgba(0, 146, 63, 0.3);
   border-radius: 10px;
   padding: 1.1rem;
   text-align: center;
@@ -738,7 +865,7 @@ footer {
 .slide-stat-card .stat-value {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--accent-primary);
+  color: var(--uffs-green);
 }
 
 .slide-stat-card .stat-label {
@@ -772,7 +899,7 @@ footer {
 }
 
 .slide-controls button:hover:not(:disabled) {
-  background: var(--accent-primary);
+  background: var(--uffs-green);
   color: #fff;
 }
 
@@ -801,6 +928,12 @@ footer {
   }
   .slide-body h2 {
     font-size: 1.4rem;
+  }
+  .slide-logos-lg img {
+    height: 44px;
+  }
+  .slide-brand-bar span {
+    display: none;
   }
 }
 
