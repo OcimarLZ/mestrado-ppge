@@ -24,7 +24,13 @@ OUT_JSON = os.path.join(FRONTEND_DIR, "src", "data", "site-content.json")
 # web_app/backend/static/, que pode ficar desatualizada).
 DISSERTACAO_PDF_SRC = os.path.join(ROOT, "docs", "OLZ_Defesa_V_2.03.pdf")
 
+# Os graficos curados sao copiados direto de docs/graficos/ (rastreado no git), nao da
+# copia intermediaria em web_app/backend/static/graficos/ (que e local/gitignorada e
+# nao existe num checkout limpo do CI).
+DOCS_GRAFICOS_DIR = os.path.join(ROOT, "docs", "graficos")
+
 BACKEND_STATIC_PREFIX = "http://127.0.0.1:8000/static/"
+GRAFICOS_URL_PREFIX = BACKEND_STATIC_PREFIX + "graficos/"
 ASSET_PREFIX = "assets/"  # combinado em runtime com import.meta.env.BASE_URL
 
 
@@ -94,6 +100,13 @@ def main():
 
     all_pages = rows_as_dicts(cur, 'SELECT * FROM page_content ORDER BY parent_id ASC, "order" ASC')
     all_visuals = rows_as_dicts(cur, 'SELECT * FROM section_visuals ORDER BY "order" ASC')
+
+    grafico_filenames = set()
+    for row in all_pages + all_visuals:
+        url = row.get("image_url")
+        if url and url.startswith(GRAFICOS_URL_PREFIX):
+            grafico_filenames.add(url[len(GRAFICOS_URL_PREFIX):])
+
     visuals_by_page = {}
     for v in all_visuals:
         if v.get("sql_query"):
@@ -125,10 +138,13 @@ def main():
         print(f"AVISO: dissertacao nao encontrada em {DISSERTACAO_PDF_SRC}, pulando copia")
     for name in ("logo_uffs.png", "logo_uffs_horizontal.png", "logo_ppge.png"):
         copy_asset(name)
-    graficos_dir = os.path.join(BACKEND_STATIC_DIR, "graficos")
-    if os.path.isdir(graficos_dir):
-        for fname in os.listdir(graficos_dir):
-            copy_asset(os.path.join("graficos", fname))
+    os.makedirs(os.path.join(FRONTEND_ASSETS_DIR, "graficos"), exist_ok=True)
+    for fname in sorted(grafico_filenames):
+        src = os.path.join(DOCS_GRAFICOS_DIR, fname)
+        if not os.path.exists(src):
+            print(f"AVISO: grafico referenciado mas nao encontrado em docs/graficos/: {fname}")
+            continue
+        shutil.copyfile(src, os.path.join(FRONTEND_ASSETS_DIR, "graficos", fname))
 
     output = {
         "site_settings": site_settings,
