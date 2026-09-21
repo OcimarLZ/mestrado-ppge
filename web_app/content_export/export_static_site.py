@@ -156,6 +156,15 @@ def main():
                 continue
             shutil.copyfile(src, os.path.join(dst_dir, fname))
 
+    # docs/graficos_originais/ e copiado por inteiro (nao so o referenciado no CMS): e
+    # pasta pequena (~118 PNGs) e tambem alimenta a Apresentacao, que nao passa pelo CMS.
+    originais_dir = os.path.join(ROOT, "docs", "graficos_originais")
+    if os.path.isdir(originais_dir):
+        dst_dir = os.path.join(FRONTEND_ASSETS_DIR, "graficos_originais")
+        os.makedirs(dst_dir, exist_ok=True)
+        for fname in os.listdir(originais_dir):
+            shutil.copyfile(os.path.join(originais_dir, fname), os.path.join(dst_dir, fname))
+
     output = {
         "site_settings": site_settings,
         "dashboard_summary": dashboard_summary,
