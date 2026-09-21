@@ -206,8 +206,9 @@ p {
 }
 
 .chapter-header div.lead p {
-  font-size: 1.25rem;
-  color: var(--accent-primary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
   margin: 0 0 1.25rem 0;
 }
 
