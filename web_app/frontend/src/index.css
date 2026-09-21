@@ -803,3 +803,49 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+/* Pesquisa */
+.pesquisa-index-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.pesquisa-index-card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.pesquisa-card {
+  text-align: left;
+}
+
+.pesquisa-card-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+}
+
+.pesquisa-card-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.pesquisa-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pesquisa-images figure {
+  margin: 0;
+}
