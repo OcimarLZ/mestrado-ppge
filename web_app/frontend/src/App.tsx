@@ -3,6 +3,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import GenericChapterPage from './pages/GenericChapterPage';
+import Apresentacao from './pages/Apresentacao';
+import Pesquisa from './pages/Pesquisa';
 
 // O Admin (CRUD contra o FastAPI local) só existe em desenvolvimento: `import.meta.env.DEV`
 // é substituído por uma constante em build-time, então o Vite remove este ramo (e o import
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="apresentacao" element={<Apresentacao />} />
+          <Route path="pesquisa" element={<Pesquisa />} />
           <Route path="capitulo/:slug" element={<GenericChapterPage />} />
           {Admin && (
             <Route path="admin" element={<Suspense fallback={null}><Admin /></Suspense>} />

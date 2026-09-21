@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { BookOpen, Home, BookText } from 'lucide-react';
+import { BookOpen, Home, BookText, Presentation, BarChart3 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import themes from '../themes';
 import { getTree, getSiteSettings, assetUrl } from '../lib/content';
@@ -109,7 +109,19 @@ const Layout: React.FC = () => {
                 <Home size={18} /> Início
               </NavLink>
             </li>
-            
+            <li>
+              <NavLink to="/apresentacao" className={({ isActive }) => isActive ? 'active' : ''}>
+                <Presentation size={18} /> Apresentação
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/pesquisa" className={({ isActive }) => isActive ? 'active' : ''}>
+                <BarChart3 size={18} /> Pesquisa
+              </NavLink>
+            </li>
+
+            <li className="sidebar-group-label">Dissertação</li>
+
             {/* Renderização Dinâmica dos Capítulos */}
             {tree.filter(chapter => chapter.order < 900).map((chapter, idx) => {
               const chapterNumber = idx + 1;
