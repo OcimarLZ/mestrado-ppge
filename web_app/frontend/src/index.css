@@ -1343,6 +1343,80 @@ footer {
   color: var(--text-secondary);
 }
 
+.data-table-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Linhas expansiveis (polo -> cursos daquele polo) */
+.data-table-expand-col {
+  position: sticky;
+  left: 0;
+  background: var(--bg-card);
+  z-index: 1;
+  width: 26px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.data-table thead th.data-table-expand-col {
+  z-index: 3;
+  cursor: default;
+}
+
+.data-table:has(.data-table-expand-col) td.is-sticky,
+.data-table:has(.data-table-expand-col) th.is-sticky {
+  left: 26px;
+}
+
+.data-table-row-expandable {
+  cursor: pointer;
+}
+
+.data-table-row-expandable:hover td {
+  background: color-mix(in srgb, var(--accent-primary) 8%, transparent);
+}
+
+.data-table-subrow td {
+  padding: 0 !important;
+  background: color-mix(in srgb, var(--text-secondary) 4%, transparent);
+}
+
+.data-subtable {
+  width: 100%;
+  max-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  margin: 0.5rem 0.75rem 0.5rem 2.5rem;
+}
+
+.data-subtable th,
+.data-subtable td {
+  padding: 0.3rem 0.6rem;
+  border-bottom: 1px solid var(--glass-border);
+  text-align: left;
+}
+
+.data-subtable th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.data-subtable .is-numeric,
+.data-subtable th.is-numeric {
+  text-align: right;
+}
+
+.data-subtable-empty {
+  padding: 0.6rem 0.75rem 0.6rem 2.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
 @media (max-width: 640px) {
   .data-table-count {
     margin-left: 0;

@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react';
-import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { ArrowUpDown, ArrowUp, ArrowDown, ChevronRight, ChevronDown } from 'lucide-react';
 import type { LicPoloRegistro } from '../lib/licPolosData';
+import { getCursosDoPolo, type LicPoloCursoRegistro } from '../lib/licPolosCursosData';
 
 type ColKey = keyof LicPoloRegistro;
 
@@ -25,11 +26,16 @@ const COLUMNS: ColDef[] = [
   { key: 'matriculas', label: 'Matrículas', title: 'Total de matrículas em licenciatura neste polo', numeric: true, format: intFmt },
 ];
 
+const TOTAL_COLS = COLUMNS.length + 1; // +1 pela coluna do chevron de expandir
+
 type SortDir = 'asc' | 'desc';
+
+const chaveLinha = (r: LicPoloRegistro) => `${r.sigla}|${r.ano_censo}|${r.municipio}|${r.tipo_polo}`;
 
 const DataTablePolos: React.FC<{ registros: LicPoloRegistro[] }> = ({ registros }) => {
   const [sortKey, setSortKey] = useState<ColKey>('matriculas');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
+  const [expandidos, setExpandidos] = useState<Set<string>>(new Set());
 
   const ordenados = useMemo(() => {
     const copia = [...registros];
@@ -53,12 +59,23 @@ const DataTablePolos: React.FC<{ registros: LicPoloRegistro[] }> = ({ registros 
     }
   };
 
+  const toggleExpandido = (k: string) => {
+    setExpandidos((prev) => {
+      const novo = new Set(prev);
+      if (novo.has(k)) novo.delete(k);
+      else novo.add(k);
+      return novo;
+    });
+  };
+
   return (
     <div className="data-table-wrapper glass-panel">
+      <p className="data-table-hint">Clique numa linha para ver os cursos ofertados naquele polo/campus.</p>
       <div className="data-table-scroll">
         <table className="data-table">
           <thead>
             <tr>
+              <th className="data-table-expand-col" />
               {COLUMNS.map((col) => (
                 <th
                   key={col.key}
@@ -79,22 +96,78 @@ const DataTablePolos: React.FC<{ registros: LicPoloRegistro[] }> = ({ registros 
             </tr>
           </thead>
           <tbody>
-            {ordenados.map((r, i) => (
-              <tr key={`${r.sigla}-${r.municipio}-${r.tipo_polo}-${i}`}>
-                {COLUMNS.map((col) => (
-                  <td key={col.key} className={`${col.numeric ? 'is-numeric' : ''} ${col.key === 'ies_nome' ? 'is-sticky' : ''}`}>
-                    {col.format ? col.format(r[col.key]) : String(r[col.key])}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {ordenados.map((r, i) => {
+              const k = chaveLinha(r);
+              const aberto = expandidos.has(k);
+              return (
+                <React.Fragment key={`${k}-${i}`}>
+                  <tr className="data-table-row-expandable" onClick={() => toggleExpandido(k)}>
+                    <td className="data-table-expand-col">
+                      {aberto ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                    </td>
+                    {COLUMNS.map((col) => (
+                      <td key={col.key} className={`${col.numeric ? 'is-numeric' : ''} ${col.key === 'ies_nome' ? 'is-sticky' : ''}`}>
+                        {col.format ? col.format(r[col.key]) : String(r[col.key])}
+                      </td>
+                    ))}
+                  </tr>
+                  {aberto && (
+                    <tr className="data-table-subrow">
+                      <td colSpan={TOTAL_COLS}>
+                        <CursosDoPolo registro={r} />
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              );
+            })}
             {ordenados.length === 0 && (
-              <tr><td colSpan={COLUMNS.length} className="data-table-empty">Nenhum polo encontrado para este filtro.</td></tr>
+              <tr><td colSpan={TOTAL_COLS} className="data-table-empty">Nenhum polo encontrado para este filtro.</td></tr>
             )}
           </tbody>
         </table>
       </div>
     </div>
+  );
+};
+
+const CursosDoPolo: React.FC<{ registro: LicPoloRegistro }> = ({ registro }) => {
+  const [cursos, setCursos] = useState<LicPoloCursoRegistro[] | null>(null);
+
+  useEffect(() => {
+    let ativo = true;
+    setCursos(null);
+    getCursosDoPolo(registro.sigla, registro.ano_censo, registro.municipio, registro.tipo_polo).then((lista) => {
+      if (ativo) setCursos(lista);
+    });
+    return () => { ativo = false; };
+  }, [registro]);
+
+  if (cursos === null) {
+    return <div className="data-subtable-empty">Carregando cursos...</div>;
+  }
+
+  if (cursos.length === 0) {
+    return <div className="data-subtable-empty">Nenhum curso com matrícula registrada neste polo/ano.</div>;
+  }
+
+  return (
+    <table className="data-subtable">
+      <thead>
+        <tr>
+          <th>Curso</th>
+          <th className="is-numeric">Matrículas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {cursos.map((c) => (
+          <tr key={c.curso}>
+            <td>{c.curso}</td>
+            <td className="is-numeric">{c.matriculas.toLocaleString('pt-BR')}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
