@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { ArrowUpDown, ArrowUp, ArrowDown, Search } from 'lucide-react';
-import { getLicIesRegistros, type LicIesRegistro } from '../lib/licIesData';
+import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
+import type { LicIesRegistro } from '../lib/licIesData';
 
 type ColKey = keyof LicIesRegistro;
 
@@ -49,26 +49,12 @@ const GROUPS = COLUMNS.reduce<{ group: string; span: number }[]>((acc, col) => {
 
 type SortDir = 'asc' | 'desc';
 
-const DataTableLicIES: React.FC = () => {
-  const registros = useMemo(() => getLicIesRegistros(), []);
-  const [busca, setBusca] = useState('');
-  const [uf, setUf] = useState('');
+const DataTableLicIES: React.FC<{ registros: LicIesRegistro[] }> = ({ registros }) => {
   const [sortKey, setSortKey] = useState<ColKey>('ies_nome');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
 
-  const ufs = useMemo(() => Array.from(new Set(registros.map((r) => r.estado))).sort(), [registros]);
-
-  const filtrados = useMemo(() => {
-    const termo = busca.trim().toLowerCase();
-    return registros.filter((r) => {
-      if (uf && r.estado !== uf) return false;
-      if (!termo) return true;
-      return r.ies_nome.toLowerCase().includes(termo) || r.sigla.toLowerCase().includes(termo);
-    });
-  }, [registros, busca, uf]);
-
   const ordenados = useMemo(() => {
-    const copia = [...filtrados];
+    const copia = [...registros];
     copia.sort((a, b) => {
       const va = a[sortKey];
       const vb = b[sortKey];
@@ -80,7 +66,7 @@ const DataTableLicIES: React.FC = () => {
       return sortDir === 'asc' ? cmp : -cmp;
     });
     return copia;
-  }, [filtrados, sortKey, sortDir]);
+  }, [registros, sortKey, sortDir]);
 
   const toggleSort = (key: ColKey) => {
     if (key === sortKey) {
@@ -93,23 +79,6 @@ const DataTableLicIES: React.FC = () => {
 
   return (
     <div className="data-table-wrapper glass-panel">
-      <div className="data-table-toolbar">
-        <div className="data-table-search">
-          <Search size={16} />
-          <input
-            type="text"
-            placeholder="Buscar por nome ou sigla..."
-            value={busca}
-            onChange={(e) => setBusca(e.target.value)}
-          />
-        </div>
-        <select value={uf} onChange={(e) => setUf(e.target.value)} className="data-table-uf-select">
-          <option value="">Todas as UFs</option>
-          {ufs.map((u) => <option key={u} value={u}>{u}</option>)}
-        </select>
-        <span className="data-table-count">{ordenados.length} de {registros.length} instituições</span>
-      </div>
-
       <div className="data-table-scroll">
         <table className="data-table">
           <thead>
