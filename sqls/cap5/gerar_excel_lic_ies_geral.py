@@ -46,8 +46,8 @@ def main():
             i.nome AS ies_nome,
             i.sigla,
             i.estado
-        FROM ies i
-        LEFT JOIN uab_censo uc ON i.codigo = uc.ies 
+        FROM superior_ies i
+        LEFT JOIN superior_uab_censo uc ON i.codigo = uc.ies 
                                AND uc.tp_grau_academico = 2 
                                AND uc.ano_censo > 2013
         WHERE i.categoria = 1 
@@ -56,39 +56,39 @@ def main():
     ),
     ult_ano_presencial AS (
         SELECT ies, MAX(ano_censo) as ult_ano
-        FROM curso_censo
+        FROM superior_curso_censo
         WHERE tp_grau_academico = 2 AND tp_modalidade_ensino = 1
         GROUP BY ies
     ),
     mun_presencial_ult_ano AS (
         SELECT c.ies, COUNT(DISTINCT c.municipio) as qtd_mun_presencial, COUNT(DISTINCT c.curso) as qtd_cursos_presencial
-        FROM curso_censo c
+        FROM superior_curso_censo c
         JOIN ult_ano_presencial u ON c.ies = u.ies AND c.ano_censo = u.ult_ano
         WHERE c.tp_grau_academico = 2 AND c.tp_modalidade_ensino = 1
         GROUP BY c.ies
     ),
     ult_ano_ead AS (
         SELECT ies, MAX(ano_censo) as ult_ano
-        FROM curso_censo
+        FROM superior_curso_censo
         WHERE tp_grau_academico = 2 AND tp_modalidade_ensino = 2
         GROUP BY ies
     ),
     mun_ead_ult_ano AS (
         SELECT c.ies, COUNT(DISTINCT c.municipio) as qtd_mun_ead, COUNT(DISTINCT c.curso) as qtd_cursos_ead
-        FROM curso_censo c
+        FROM superior_curso_censo c
         JOIN ult_ano_ead u ON c.ies = u.ies AND c.ano_censo = u.ult_ano
         WHERE c.tp_grau_academico = 2 AND c.tp_modalidade_ensino = 2
         GROUP BY c.ies
     ),
     ult_ano_uab AS (
         SELECT ies, MAX(ano_censo) as ult_ano
-        FROM uab_censo
+        FROM superior_uab_censo
         WHERE tp_grau_academico = 2 AND situacao_polo = 'Ativo'
         GROUP BY ies
     ),
     polos_uab_ult_ano AS (
         SELECT c.ies, COUNT(DISTINCT c.id_polo) as qtd_polos_uab, COUNT(DISTINCT c.nm_curso) as qtd_cursos_uab
-        FROM uab_censo c
+        FROM superior_uab_censo c
         JOIN ult_ano_uab u ON c.ies = u.ies AND c.ano_censo = u.ult_ano
         WHERE c.tp_grau_academico = 2 AND c.situacao_polo = 'Ativo'
         GROUP BY c.ies
@@ -100,10 +100,10 @@ def main():
             SUM(CASE WHEN c.tp_grau_academico = 2 THEN c.qt_mat ELSE 0 END) AS tot_mat_lic,
             SUM(CASE WHEN c.tp_grau_academico = 2 AND c.tp_modalidade_ensino = 2 AND u.municipio IS NULL THEN c.qt_mat ELSE 0 END) AS tot_mat_lic_ead_proprios,
             SUM(CASE WHEN c.tp_grau_academico = 2 AND c.tp_modalidade_ensino = 2 AND u.municipio IS NOT NULL THEN c.qt_mat ELSE 0 END) AS tot_mat_lic_ead_uab
-        FROM curso_censo c
+        FROM superior_curso_censo c
         LEFT JOIN (
             SELECT DISTINCT ies, ano_censo, municipio 
-            FROM uab_censo 
+            FROM superior_uab_censo 
             WHERE tp_grau_academico = 2
         ) u ON c.ies = u.ies AND c.ano_censo = u.ano_censo AND c.municipio = u.municipio
         WHERE c.ano_censo = 2024
