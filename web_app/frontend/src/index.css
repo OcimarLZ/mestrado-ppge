@@ -1159,6 +1159,25 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+.data-crosslink {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.data-crosslink span {
+  flex: 1;
+}
+
+.data-crosslink strong {
+  color: var(--text-primary);
+}
+
 .data-table-search {
   display: flex;
   align-items: center;
@@ -1188,6 +1207,37 @@ footer {
   padding: 0.4rem 0.65rem;
   color: var(--text-primary);
   font-size: 0.82rem;
+}
+
+.data-table-ano-toggle {
+  display: inline-flex;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table-ano-toggle button {
+  background: var(--bg-dark);
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.data-table-ano-toggle button + button {
+  border-left: 1px solid var(--glass-border);
+}
+
+.data-table-ano-toggle button:hover {
+  color: var(--text-primary);
+}
+
+.data-table-ano-toggle button.is-active {
+  background: var(--accent-primary);
+  color: #fff;
 }
 
 .data-table-count {

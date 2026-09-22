@@ -10,11 +10,12 @@ const IndicadoresLicIES: React.FC<{ registros: LicIesRegistro[]; totalGeral: num
 
   const tiles = [
     { label: 'Instituições no filtro', value: `${ind.totalIes} de ${totalGeral}` },
-    { label: 'Matrículas totais (2024)', value: intFmt(ind.totalMatriculas) },
-    { label: 'Matrículas em licenciatura (2024)', value: intFmt(ind.totalMatriculasLic) },
+    { label: 'Matrículas totais', value: intFmt(ind.totalMatriculas) },
+    { label: 'Matrículas em licenciatura', value: intFmt(ind.totalMatriculasLic) },
     { label: '% licenciatura via UAB', value: pctFmt(ind.percLicUab) },
-    { label: 'Polos UAB ativos (licenciatura)', value: intFmt(ind.totalPolosUab) },
-    { label: 'Municípios com licenciatura presencial', value: intFmt(ind.totalMunPresencial) },
+    { label: 'Polos UAB', value: intFmt(ind.totalPolosUab) },
+    { label: 'Polos EaD próprio', value: intFmt(ind.totalPolosEadProprio) },
+    { label: 'Campus presenciais', value: intFmt(ind.totalCampusPresencial) },
   ];
 
   return (

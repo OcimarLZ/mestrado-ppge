@@ -13,7 +13,6 @@ interface ColDef {
   format?: (v: LicIesRegistro[ColKey]) => string;
 }
 
-const anoFmt = (v: LicIesRegistro[ColKey]) => (v === null || v === undefined ? '—' : String(v));
 const pctFmt = (v: LicIesRegistro[ColKey]) => `${Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 const intFmt = (v: LicIesRegistro[ColKey]) => Number(v).toLocaleString('pt-BR');
 
@@ -21,22 +20,18 @@ const COLUMNS: ColDef[] = [
   { key: 'ies_nome', label: 'IES', title: 'Instituição de ensino superior', group: 'Identificação' },
   { key: 'sigla', label: 'Sigla', title: 'Sigla da instituição', group: 'Identificação' },
   { key: 'estado', label: 'UF', title: 'Unidade da federação', group: 'Identificação' },
-  { key: 'a_ultimo_ano_presencial', label: 'Últ. ano', title: 'Último ano do censo com oferta presencial de licenciatura', group: 'Presencial', numeric: true, format: anoFmt },
-  { key: 'b_qtd_mun_presencial', label: 'Municípios', title: 'Municípios com oferta presencial de licenciatura no último ano ofertado', group: 'Presencial', numeric: true, format: intFmt },
-  { key: 'b_qtd_cursos_presencial', label: 'Cursos', title: 'Cursos de licenciatura presencial no último ano ofertado', group: 'Presencial', numeric: true, format: intFmt },
-  { key: 'c_ultimo_ano_ead', label: 'Últ. ano', title: 'Último ano do censo com oferta EaD de licenciatura', group: 'EaD', numeric: true, format: anoFmt },
-  { key: 'd_qtd_mun_ead', label: 'Municípios', title: 'Municípios com oferta EaD de licenciatura no último ano ofertado', group: 'EaD', numeric: true, format: intFmt },
-  { key: 'd_qtd_cursos_ead', label: 'Cursos', title: 'Cursos de licenciatura EaD no último ano ofertado', group: 'EaD', numeric: true, format: intFmt },
-  { key: 'e_ultimo_ano_uab', label: 'Últ. ano', title: 'Último ano do censo com polo UAB ativo de licenciatura', group: 'UAB', numeric: true, format: anoFmt },
-  { key: 'f_qtd_polos_uab', label: 'Polos', title: 'Polos UAB ativos de licenciatura no último ano ofertado', group: 'UAB', numeric: true, format: intFmt },
-  { key: 'f_qtd_cursos_uab', label: 'Cursos', title: 'Cursos de licenciatura via UAB no último ano ofertado', group: 'UAB', numeric: true, format: intFmt },
-  { key: 'g_total_matriculas_2024', label: 'Total IES', title: 'Total de matrículas da instituição em todos os cursos (2024)', group: 'Matrículas (2024)', numeric: true, format: intFmt },
-  { key: 'h_total_matriculas_lic_2024', label: 'Licenciatura', title: 'Total de matrículas em licenciatura (2024)', group: 'Matrículas (2024)', numeric: true, format: intFmt },
-  { key: 'k_perc_licenciatura', label: '% Lic.', title: 'Percentual de matrículas em licenciatura sobre o total da instituição', group: 'Matrículas (2024)', numeric: true, format: pctFmt },
-  { key: 'i_mat_lic_ead_proprios', label: 'EaD próprio', title: 'Matrículas de licenciatura em EaD com polo próprio da instituição (2024)', group: 'Matrículas (2024)', numeric: true, format: intFmt },
-  { key: 'j_mat_lic_ead_uab', label: 'EaD UAB', title: 'Matrículas de licenciatura em EaD via polo UAB (2024)', group: 'Matrículas (2024)', numeric: true, format: intFmt },
-  { key: 'l_perc_ead_proprios', label: '% EaD próprio', title: 'Percentual das matrículas de licenciatura em EaD com polo próprio', group: 'Matrículas (2024)', numeric: true, format: pctFmt },
-  { key: 'm_perc_ead_uab', label: '% EaD UAB', title: 'Percentual das matrículas de licenciatura em EaD via UAB', group: 'Matrículas (2024)', numeric: true, format: pctFmt },
+  { key: 'num_cursos_lic', label: 'Cursos', title: 'Cursos de licenciatura no ano selecionado', group: 'Oferta', numeric: true, format: intFmt },
+  { key: 'num_campus_presencial', label: 'Campus', title: 'Municípios com licenciatura presencial no ano selecionado', group: 'Oferta', numeric: true, format: intFmt },
+  { key: 'num_polos_ead_proprio', label: 'Polos EaD próprio', title: 'Municípios com licenciatura EaD própria (fora da UAB) no ano selecionado', group: 'Oferta', numeric: true, format: intFmt },
+  { key: 'num_polos_uab', label: 'Polos UAB', title: 'Municípios com licenciatura via UAB no ano selecionado', group: 'Oferta', numeric: true, format: intFmt },
+  { key: 'total_matriculas', label: 'Total IES', title: 'Total de matrículas da instituição em todos os cursos', group: 'Matrículas', numeric: true, format: intFmt },
+  { key: 'total_matriculas_lic', label: 'Licenciatura', title: 'Total de matrículas em licenciatura', group: 'Matrículas', numeric: true, format: intFmt },
+  { key: 'perc_licenciatura', label: '% Lic.', title: 'Percentual de matrículas em licenciatura sobre o total da instituição', group: 'Matrículas', numeric: true, format: pctFmt },
+  { key: 'mat_lic_presencial', label: 'Presencial', title: 'Matrículas de licenciatura presencial', group: 'Matrículas', numeric: true, format: intFmt },
+  { key: 'mat_lic_ead_proprio', label: 'EaD próprio', title: 'Matrículas de licenciatura em EaD própria (fora da UAB)', group: 'Matrículas', numeric: true, format: intFmt },
+  { key: 'mat_lic_uab', label: 'EaD UAB', title: 'Matrículas de licenciatura via UAB', group: 'Matrículas', numeric: true, format: intFmt },
+  { key: 'perc_lic_ead_proprio', label: '% EaD próprio', title: 'Percentual das matrículas de licenciatura em EaD própria sobre o total em licenciatura', group: 'Matrículas', numeric: true, format: pctFmt },
+  { key: 'perc_lic_uab', label: '% EaD UAB', title: 'Percentual das matrículas de licenciatura via UAB sobre o total em licenciatura', group: 'Matrículas', numeric: true, format: pctFmt },
 ];
 
 // Agrupa colunas adjacentes com o mesmo "group" para o cabeçalho de duas linhas

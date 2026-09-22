@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
-import { ArrowRight, Database } from 'lucide-react';
+import { ArrowRight, Database, MapPinned } from 'lucide-react';
 import temas from '../data/pesquisa';
 
 const Pesquisa: React.FC = () => {
@@ -20,11 +20,22 @@ const Pesquisa: React.FC = () => {
           <Database color="var(--accent-primary)" size={32} />
           <h3 style={{ margin: '1rem 0 0.5rem 0' }}>Explorar dados: IES x licenciatura</h3>
           <p style={{ fontSize: '0.9rem', flex: 1 }}>
-            Tabela interativa com as 69 universidades federais que ofertam licenciatura: presença
-            por modalidade e matrículas do Censo 2024, IES a IES.
+            Indicadores, gráficos e tabela interativa com as universidades federais que ofertam
+            licenciatura: presença por modalidade e matrículas, comparando 2014 e 2024.
           </p>
           <span className="pesquisa-index-card-link">
-            Abrir tabela <ArrowRight size={16} />
+            Abrir painel <ArrowRight size={16} />
+          </span>
+        </Link>
+        <Link to="/pesquisa/dados-ies/polos" className="glass-panel pesquisa-index-card pesquisa-index-card-data">
+          <MapPinned color="var(--accent-primary)" size={32} />
+          <h3 style={{ margin: '1rem 0 0.5rem 0' }}>Detalhamento por campus e polo</h3>
+          <p style={{ fontSize: '0.9rem', flex: 1 }}>
+            Cada campus presencial e cada polo de EaD (próprio ou via UAB), com o número de
+            matrículas naquele local — 2014 e 2024.
+          </p>
+          <span className="pesquisa-index-card-link">
+            Abrir detalhamento <ArrowRight size={16} />
           </span>
         </Link>
         {temas.map((tema) => {

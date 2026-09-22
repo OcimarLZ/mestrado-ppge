@@ -7,6 +7,7 @@ import Apresentacao from './pages/Apresentacao';
 import Pesquisa from './pages/Pesquisa';
 import PesquisaTema from './pages/PesquisaTema';
 import PesquisaDadosIES from './pages/PesquisaDadosIES';
+import PesquisaPolosIES from './pages/PesquisaPolosIES';
 
 // O Admin (CRUD contra o FastAPI local) só existe em desenvolvimento: `import.meta.env.DEV`
 // é substituído por uma constante em build-time, então o Vite remove este ramo (e o import
@@ -22,6 +23,7 @@ function App() {
           <Route path="apresentacao" element={<Apresentacao />} />
           <Route path="pesquisa" element={<Pesquisa />} />
           <Route path="pesquisa/dados-ies" element={<PesquisaDadosIES />} />
+          <Route path="pesquisa/dados-ies/polos" element={<PesquisaPolosIES />} />
           <Route path="pesquisa/:slug" element={<PesquisaTema />} />
           <Route path="capitulo/:slug" element={<GenericChapterPage />} />
           {Admin && (
