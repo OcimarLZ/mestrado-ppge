@@ -331,6 +331,19 @@ p {
   opacity: 0.85;
 }
 
+.nav-badge {
+  margin-left: auto;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sidebar-accent) 16%, transparent);
+  color: var(--sidebar-accent);
+  white-space: nowrap;
+}
+
 /* Titulos vindos do texto original (capitulos/secoes) chegam em CAIXA ALTA ou
    variados; padroniza para "Primeira maiuscula, resto minusculo" so na exibicao,
    sem alterar o texto de verdade usado no restante do site. */
