@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Home, BookText, Presentation, BarChart3, LayoutDashboard } from 'lucide-react';
+import { Home, BookText, Presentation, BarChart3, LayoutDashboard, BookOpenText, ListOrdered } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import themes from '../themes';
 import { getTree, getSiteSettings, assetUrl } from '../lib/content';
@@ -131,6 +131,17 @@ const Layout: React.FC = () => {
             </li>
 
             <li className="sidebar-group-label">Dissertação</li>
+
+            <li>
+              <NavLink to="/glossario" className={({ isActive }) => isActive ? 'active' : ''}>
+                <BookOpenText size={18} /> Glossário
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/abreviaturas" className={({ isActive }) => isActive ? 'active' : ''}>
+                <ListOrdered size={18} /> Abreviaturas
+              </NavLink>
+            </li>
 
             {/* Renderização Dinâmica dos Capítulos */}
             {tree.filter(chapter => chapter.order < 900).map((chapter, idx) => {
