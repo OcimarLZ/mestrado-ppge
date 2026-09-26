@@ -480,6 +480,24 @@ p {
   }
 }
 
+/* Citacao longa no padrao ABNT (NBR 10520): recuo a esquerda, fonte menor, entrelinhas
+   simples, sem aspas -- usada para citacoes diretas com mais de 3 linhas dentro do corpo
+   do texto (diferente da .epigrafe, que e a epigrafe de abertura do capitulo). */
+.citacao-longa {
+  margin: 0 0 1.25rem 3rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--glass-border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .citacao-longa {
+    margin-left: 1.25rem;
+  }
+}
+
 .section-block {
   margin-bottom: 3rem;
 }
@@ -508,6 +526,19 @@ p {
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
+}
+
+/* Links dentro do corpo do texto (ex: URLs "Disponível em:" nas Referências), que abrem em
+   nova aba -- sem isso ficam com o azul/sublinhado padrão do navegador, destoando do tema. */
+.text-content a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-all;
+}
+
+.text-content a:hover {
+  color: var(--accent-hover, var(--accent-primary));
 }
 
 .info-box {
