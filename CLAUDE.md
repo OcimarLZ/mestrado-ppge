@@ -5,90 +5,183 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this repository is
 
 Data/analysis workspace for a master's dissertation (UFFS, Programa de Pós-Graduação em Educação) about
-private/EaD expansion in teacher-training higher education in Brazil, built from INEP/CAPES census
-microdata. The repo has two layers that should be kept mentally separate:
+private/EaD expansion in teacher-training higher education in Brazil, built from INEP census microdata
+(2014-2024). The repo is a git repository (`origin` → `github.com/OcimarLZ/mestrado-ppge`, branch
+`main`) with three layers:
 
 1. **The research pipeline** (root-level `bdados/`, `relats/`, `sqls/`, `utilities/`, `modelos_dados/`,
-   `app/base/`) — Python scripts that build local SQLite databases from INEP/CAPES open data and produce
-   the charts/tables already committed under `docs/graficos/` and `docs/tabelas/`.
-2. **`web_app/`** — a FastAPI + React application that turns that research into a website. This is
-   presently a *single* full-stack project (DB-backed CMS + admin UI), not yet split into the two
-   deliverables the user actually wants (see "Two distinct deliverables" below).
+   `app/base/`) — Python scripts that build/query a local SQLite warehouse from INEP open data and
+   produce the charts/tables committed under `docs/graficos/` and `docs/tabelas/`.
+2. **`web_app/`** — a FastAPI + React application, split into two roles:
+   - `backend/` is a **local-only editing tool**: a DB-backed CMS (`site_cms.db`) + Admin UI used to
+     write/curate the dissertation's chapter text and visuals. It is never deployed.
+   - `frontend/` is the **public static site**, built and deployed to GitHub Pages by
+     `.github/workflows/deploy.yml`. It has no live backend at request time — see "Static site
+     architecture" below.
+3. **`web_app/content_export/`** — the bridge between the two: Python scripts that read `site_cms.db`
+   and/or `bdados/INEP.db` and freeze the result into JSON files consumed by the frontend build.
 
-There is no git repository initialized here yet, and no top-level test suite.
+## The two deliverables (status)
 
-## Two distinct deliverables (important context, not yet reflected in the code layout)
+- **Deliverable 1 — static landing/dissertation site: built and live.** Published at
+  `ocimarlz.github.io/mestrado-ppge/` via GitHub Pages. Menu: **Início** (resumo/abstract/palavras-chave),
+  **Apresentação** (in-browser slide deck of the defense, `frontend/src/data/apresentacao.ts`),
+  **Pesquisa** (curated findings by theme, `frontend/src/data/pesquisa.ts`, plus two interactive data
+  panels — see below), **Painéis Interativos** (placeholder, "Em construção"), **Dissertação** (the 9
+  real chapters + Apêndice I, extracted from `docs/OLZ_Defesa_V_2.03.odt`, rendered as a chapter tree).
+- **Deliverable 2 — interactive data site: early stage.** Two things exist today: (a) the **Pesquisa
+  data panels** described below (IES-level and polo-level tables/charts, pre-computed and frozen into
+  JSON — not a live query engine), and (b) an empty **Painéis Interativos** menu placeholder for
+  whatever live/broader interactive dashboards come next. `web_app/backend`'s `microdata_engine` →
+  `bdados/INEP.db` (`database.py`) is the FastAPI-side wiring for eventually querying the microdata
+  warehouse live, but nothing in the deployed site calls it yet.
 
-- **Deliverable 1 — static landing page (urgent, this week).** A GitHub Pages–publishable site
-  (static HTML/CSS/JS, no live backend; at most a bundled JSON/XML data file) to present the
-  dissertation to advisors/committee members. Charts shown on this page should link back to the
-  original figure in `docs/OLZ_Defesa_V_2.03.pdf` (source content also available as
-  `docs/OLZ_Defesa_V_2.03.odt`) so reviewers can cross-check against the defense document.
-- **Deliverable 2 — interactive data site (later).** A site with live interactive queries/dashboards
-  backed by `bdados/INEP.db`. This is what `web_app/backend` is currently wired for
-  (`MICRODATA_DB_URL` in `web_app/backend/database.py` points straight at `bdados/INEP.db`).
+## Static site architecture (important — two different "freeze to JSON" strategies)
 
-`web_app/frontend` today hardcodes `http://127.0.0.1:8000` API calls (see `src/pages/Home.tsx`,
-`src/components/Layout.tsx`) and has no build-time static-export path, so it cannot be deployed to
-GitHub Pages as-is — it needs a running FastAPI backend. When working on the "landing page" ask, treat
-that as effectively a separate, static-only project: either a new lightweight site, or the existing
-`web_app/frontend` reworked to fetch pre-exported static JSON instead of calling a live API (with the
-admin/CRUD routes excluded from that build).
+`web_app/frontend` never calls a live API in production. `import.meta.env.DEV` gates this: routes and
+axios calls that hit `http://127.0.0.1:8000` (the FastAPI backend) only exist in `Admin.tsx` and
+`VisualManager.tsx`, and Vite drops that whole branch (including the `/admin` route) from the
+production bundle. Everything else reads from committed/generated JSON via `src/lib/*.ts` accessors.
+There are **two distinct pipelines** for that JSON, and they are *not* interchangeable:
+
+1. **`site-content.json`** (CMS content: chapters, hero cards, site settings) — generated by
+   `web_app/content_export/export_static_site.py` from `site_cms.db` (which **is** committed to git —
+   it's small). This script **runs in CI** (`.github/workflows/deploy.yml`, step "Congelar o conteúdo
+   de site_cms.db..."), so `site-content.json` itself is gitignored — never commit it by hand, it's
+   regenerated on every deploy.
+2. **`lic_ies_geral.json` / `lic_polos_detalhe.json` / `lic_polos_cursos.json`** (the Pesquisa data
+   panels) — generated by `web_app/content_export/export_lic_*.py` from **`bdados/INEP.db`**, which is
+   2.8 GB and gitignored (does **not** exist in the GitHub Actions runner). These scripts therefore
+   **do not run in CI**. You must run them locally (from the repo root, e.g.
+   `python web_app/content_export/export_lic_ies_geral.py`) whenever the underlying SQL or the census
+   data changes, and **commit the resulting JSON directly** — same pattern as `apresentacao.ts` /
+   `pesquisa.ts` (hand-authored/pre-computed data checked into git), just JSON instead of TS.
+
+Other conventions load-bearing for the static build:
+- `HashRouter` (not `BrowserRouter`) — GitHub Pages has no server-side rewrite, so `/#/pesquisa/...`
+  avoids 404s on direct navigation/refresh.
+- `vite.config.ts` uses `base: './'` (relative), so the same build works at both `<user>.github.io/`
+  and `<user>.github.io/<repo>/` without knowing the repo name in advance.
+- Large per-page datasets (e.g. `lic_polos_cursos.json`, ~2 MB) are loaded via dynamic `import()` inside
+  the component that needs them (see `lib/licPolosCursosData.ts`), not a static top-level import — the
+  app is not route-code-split, so anything imported statically ships in the one shared JS bundle for
+  *every* page.
+- `.main-content { min-width: 0 }` and `body { overflow-x: hidden }` in `index.css` exist specifically
+  to stop a wide table/component (a flex child) from forcing the whole page wider than the viewport —
+  don't remove them.
 
 ## Repository layout
 
 ```
 bdados/          SQLite databases + DB access layer for the research pipeline
-  INEP.db          Main microdata warehouse (census tables, see below)
-  CAPES.db, OBSERVA.db   Other data sources
+  INEP.db          Main microdata warehouse (2.8 GB, gitignored — see modelos_dados/ for schema)
+  CAPES.db, OBSERVA.db   Other data sources (currently empty)
   ler_bdados_to_df.py    carregar_dataframe(sql) -> pandas DataFrame, reads config.ini [BD_INEP]
   tratar_bdados_app.py   Connection/config handling (configparser over config.ini) + save helpers
-  tratar_dados_externos.py, atualizar_dados_locais.py   ETL from downloaded INEP source files
 
-relats/          One script per report/chart, e.g. `discentes_geral.py`, `cursos_por_area.py`.
-                  Pattern: build SQL -> bdados.ler_bdados_to_df.carregar_dataframe(sql) -> pandas ->
-                  matplotlib/seaborn/plotly figure and/or utilities.formatar_tabela.dataframe_to_html
-                  -> output written into docs/graficos/*.png (+ some *.html for interactive plotly
-                  charts) and docs/tabelas/*.html.
+relats/          One script per report/chart (e.g. discentes_geral.py). Pattern: SQL string ->
+                 bdados.ler_bdados_to_df.carregar_dataframe(sql) -> pandas -> matplotlib/seaborn/
+                 plotly figure and/or utilities.formatar_tabela.dataframe_to_html -> docs/graficos/*.png
+                 (+ *.html for interactive plotly) and docs/tabelas/*.html.
 
-sqls/            Ad-hoc/organized SQL queries (e.g. sqls/anped/*.sql) paired with exported .xlsx results.
+sqls/            Ad-hoc/organized SQL queries paired with exported .xlsx results.
+  cap5/            Cap. 5 (UFs x licenciatura x EaD) queries. lic_ies_geral.sql, lic_polos_detalhe.sql,
+                   lic_polos_cursos.sql are the three that feed the live site (see web_app/content_export/
+                   export_lic_*.py) — these are kept in sync with modelos_dados/ table names (superior_*
+                   prefix). Everything else in cap5/ is older ad-hoc analysis against the SAME real
+                   schema; only files with a matching gerar_excel_*.py were ever meant to produce a
+                   deliverable — treat one-off .sql without a runner script as exploratory.
+  anped/           Older SQL + .xlsx exports, unrelated to the current site pipeline.
 
 utilities/       formatar_tabela.py (HTML table styling), tratar_dados.py, log.py, salvar_arq_externo.py.
 
 modelos_dados/   SQLAlchemy models matching the CURRENT bdados/INEP.db schema: flat, prefixed table
-                  names (comum_*, superior_*, basica_*) with no DB schema/namespace, since SQLite has
-                  no cross-schema support. This is the authoritative model set.
+                 names (comum_*, superior_*, basica_*), no DB schema/namespace (SQLite has none). This
+                 is the authoritative source of truth for real table/column names — **always check here
+                 (or `sqlite3 bdados/INEP.db ".tables"` / `.schema <table>`) before writing new SQL**.
+                 Several older files in sqls/ and app/base/ were written against a *different*, older
+                 naming convention (bare `ies`, `curso_censo`, `uab_censo`, no prefix) that no longer
+                 exists in the database — that mismatch has caused real, silent bugs before (queries
+                 that looked fine but referenced nonexistent tables and had simply never been run
+                 successfully). Don't trust a `.sql` file's table names on faith.
 
-app/base/        Older/experimental code. inep_models.py, capes_models.py, observa_models.py here are
-                  a divergent version of the same models using Postgres-style schema-qualified table
-                  names (e.g. `graduacao.ies`, table_args={'schema': 'graduacao'}) — these do NOT match
-                  the current SQLite databases. gerar_grafico_*.py also has a stale hardcoded path
-                  (D:/ProjetosPY/inep/INEP.db) rather than the config.ini-driven path. Treat this
-                  directory as legacy/reference, not a source of truth — prefer modelos_dados/.
+app/base/        Older/experimental code, legacy/reference only — table names use a divergent
+                 Postgres-style schema-qualified convention (e.g. `graduacao.ies`) that does NOT match
+                 the current SQLite databases. Prefer modelos_dados/.
 
 docs/            Output/deliverable layer.
-  OLZ_Defesa_V_2.03.pdf / .odt   The dissertation defense document (source of truth for chart context).
-  graficos/        Pre-generated chart images (.png) and a few interactive plotly exports (.html).
-  tabelas/         Pre-generated HTML/CSV data tables.
-  c4_nivel2_container.puml   C4 container diagram (PlantUML).
+  OLZ_Defesa_V_2.03.pdf / .odt   The dissertation defense document — source of truth for chapter text
+                                  and figures used on the live site (extracted by
+                                  web_app/content_export/extract_odt_all.py).
+  graficos/        Pre-generated chart images from the exploratory research pipeline (relats/). NOT
+                   the same as the real dissertation figures — see graficos_originais/ below. A past
+                   mix-up here (showing relats/ exploratory charts where the dissertation text has none)
+                   was a real, user-caught bug; don't assume a docs/graficos/ file matches the thesis.
+  graficos_originais/   The REAL images embedded in the .odt (figura_*, grafico_*, quadro_*, tabela_*
+                        .png), extracted by extract_odt_all.py. This is what the live site actually
+                        displays and links back to the PDF page for.
+  tabelas/         Pre-generated HTML/CSV data tables from the research pipeline.
 
 web_app/
-  backend/   FastAPI app (main.py, models.py, schemas.py, database.py, seed_data.py). Two SQLite
-             engines: `engine` -> site_cms.db (CMS content: pages, hero cards, site settings, section
-             visuals) and `microdata_engine` -> bdados/INEP.db (raw analytical queries via
-             PageContent.sql_query / SectionVisual.sql_query, executed with pandas.read_sql_query).
-             Content model is a self-referencing tree (PageContent.parent_id) rendered as
-             chapters/sections; SectionVisual attaches images/charts/SQL-driven tables to a section.
-  frontend/  React 19 + TypeScript + Vite app (react-router-dom, recharts, lucide-react, axios).
-             Routes: `/` (Home.tsx), `/capitulo/:slug` (GenericChapterPage.tsx, renders the
-             PageContent tree), `/admin` (Admin.tsx, CRUD over the CMS). DynamicSection/VisualManager/
-             VisualElement/IconPicker components render the tree + attached visuals. themes.ts holds
-             site theme presets consumed by Layout.tsx.
+  backend/   FastAPI app — local-only CMS editing tool, never deployed. main.py, models.py, schemas.py,
+             database.py, seed_data.py, alter.py (manual/ad-hoc migrations, no Alembic). Two SQLite
+             engines: `engine` -> site_cms.db (committed to git; content: pages, hero cards, site
+             settings, section visuals, each with an optional pdf_page for "ver na dissertação (p. N)")
+             and `microdata_engine` -> bdados/INEP.db (wired for future live queries; unused by the
+             deployed site today).
+  content_export/   The static-export pipeline (all one-shot Python scripts, run locally, no server):
+    extract_odt_all.py         Parses docs/OLZ_Defesa_V_2.03.odt (zipfile + xml.etree, stdlib only) into
+                                dissertacao_conteudo.json (chapter/section tree) and
+                                dissertacao_figuras_extraidas.json (captions matched to images).
+    apply_content_to_cms.py    Loads those two JSONs into site_cms.db (chapters, citation hint-linking,
+                                epigraph styling, code-block styling, [FIG:key] -> [v:ID] markers).
+    export_static_site.py      site_cms.db (+ docs/graficos*, dissertacao.pdf, logo assets) ->
+                                web_app/frontend/src/data/site-content.json + public/assets/**.
+                                **Runs in CI** on every deploy.
+    export_lic_ies_geral.py, export_lic_polos_detalhe.py, export_lic_polos_cursos.py
+                                bdados/INEP.db (via sqls/cap5/lic_*.sql) -> the three lic_*.json files
+                                under frontend/src/data/. **Do NOT run in CI** (INEP.db isn't there) —
+                                run locally and commit the JSON output whenever the SQL or the census
+                                data changes.
+  frontend/  React 19 + TypeScript + Vite (react-router-dom v7, recharts, lucide-react, axios — axios
+             only used by the dev-only Admin/VisualManager). HashRouter, base: './'.
+    src/pages/       Home, Apresentacao (renders data/apresentacao.ts via SlideViewer), Pesquisa (theme
+                     index + 2 data-panel cards), PesquisaTema (:slug, curated findings),
+                     PesquisaDadosIES (/pesquisa/dados-ies — IES x licenciatura panel: filters, 6
+                     indicator tiles, 2 recharts bar charts, sortable table), PesquisaPolosIES
+                     (/pesquisa/dados-ies/polos — same pattern one level down, per campus/polo, rows
+                     expand to show per-course matrícula counts), PaineisInterativos (placeholder),
+                     GenericChapterPage (:slug, renders the site-content.json chapter tree), Admin
+                     (dev-only, CRUD against the local FastAPI backend).
+    src/lib/         content.ts (site-content.json accessors), licIesData.ts / licIesAgregados.ts,
+                     licPolosData.ts / licPolosAgregados.ts, licPolosCursosData.ts (dynamic-import
+                     accessor for the ~2 MB course-level dataset).
+    src/components/  ContentWithVisuals (splits chapter HTML on [v:\d+] tokens, resolves to
+                     VisualElement — shared by DynamicSection and GenericChapterPage), VisualElement
+                     (image/table/chart rendering incl. ZoomableImage lightbox + code-panel styling for
+                     script excerpts), SlideViewer (Apresentacao renderer, fixed UFFS-branded palette
+                     independent of the site's dynamic theme), FiltrosLicIES/IndicadoresLicIES/
+                     GraficosLicIES/DataTableLicIES and the Polos/Cursos equivalents (the two data
+                     panels — filter state lives in the page, passed down so indicators/charts/table
+                     all react to the same filter), Layout (sidebar/topbar, theme CSS vars, dynamic
+                     chapter tree nav), IconPicker/VisualManager (dev-only, Admin support).
+    src/data/        apresentacao.ts, pesquisa.ts (hand-authored, verified against
+                     dissertacao_conteudo.json), site-content.json (gitignored, CI-generated),
+                     lic_ies_geral.json / lic_polos_detalhe.json / lic_polos_cursos.json (committed,
+                     regenerate locally — see content_export/ above).
 
 config.ini       INI file read via configparser by bdados/tratar_bdados_app.py. `[BD_INEP]` section
-                  defines SGDB/PASTA_LOCAL/DW used to build the INEP.db connection string; also holds
-                  a `[Licenca]` key block (treat as sensitive, do not print/log its contents).
+                 defines SGDB/PASTA_LOCAL/DW used to build the INEP.db connection string; also holds a
+                 `[Licenca]` key block (sensitive — never print/log its contents). Gitignored.
+
+.github/workflows/deploy.yml   On push to main: pip install pandas -> export_static_site.py -> npm ci
+                                -> npm run build (web_app/frontend) -> deploy dist/ to GitHub Pages.
+                                Does NOT run any export_lic_*.py (see above — they need INEP.db).
 ```
+
+Two untracked, unrelated side folders currently sit at the repo root and are **not** part of the
+dissertation pipeline: `bi/` (two Power BI `.pbix` files, exploratory) and `relatorio_fiscal_2019_2025/`
+(a separate fiscal/FUNDEB analysis). Don't assume either is wired into anything above.
 
 ## Running things
 
@@ -107,7 +200,17 @@ python relats/discentes_geral.py
 
 This regenerates the corresponding file(s) under `docs/tabelas/` and/or `docs/graficos/`.
 
-### web_app backend (FastAPI)
+### Static site data panels (sqls/cap5/ -> web_app/content_export/export_lic_*.py)
+
+Requires `bdados/INEP.db` locally. Run from the repo root and commit the resulting JSON:
+
+```bash
+python web_app/content_export/export_lic_ies_geral.py
+python web_app/content_export/export_lic_polos_detalhe.py
+python web_app/content_export/export_lic_polos_cursos.py
+```
+
+### web_app backend (FastAPI, local CMS editing only)
 
 ```bash
 cd web_app/backend
@@ -118,34 +221,45 @@ uvicorn main:app --reload
 `web_app/backend/requirements.txt` is currently **empty** — if setting up a fresh environment, install
 at minimum: fastapi, uvicorn, sqlalchemy, pandas, python-dotenv, pydantic (check `.venv` for exact
 pinned versions if unsure). `.env` in `web_app/backend/` may hold `CMS_DB_URL` / `MICRODATA_DB_URL`
-overrides (see `database.py`) — do not print its contents.
+overrides (see `database.py`) — do not print its contents. On startup the app auto-creates CMS tables
+and seeds `DashboardSummary`/`SiteSettings`/`HomeCard` if empty.
 
-On startup the app auto-creates CMS tables and seeds `DashboardSummary`, `SiteSettings`, and
-`HomeCard` if empty (`seed_database()` in `main.py`, plus `seed_data.seed_all()`).
-
-### web_app frontend (Vite/React)
+### web_app frontend (Vite/React — the deployed static site)
 
 ```bash
 cd web_app/frontend
 npm install     # first time
-npm run dev     # dev server (expects backend at http://127.0.0.1:8000)
-npm run build   # tsc -b && vite build -> dist/
+npm run dev     # dev server at http://localhost:5173 (Admin route active; no backend needed for
+                # public pages, which all read committed/generated JSON — only Admin needs the FastAPI
+                # backend running)
+npm run build   # tsc -b && vite build -> dist/ (this is what CI runs before deploy)
+npm run preview # serve dist/ locally
 npm run lint    # oxlint
 ```
 
-No test runner is configured in either the frontend or backend.
+No test runner is configured anywhere in the repo.
 
 ## Working conventions specific to this repo
 
-- Prose, UI copy, commit-worthy comments, and variable/domain names throughout the codebase are in
-  Portuguese (pt-BR) — match that when adding content, labels, or docstrings meant for the dissertation
-  site.
+- Prose, UI copy, commit messages, and variable/domain names throughout the codebase are in Portuguese
+  (pt-BR) — match that for content, labels, or docstrings meant for the dissertation site.
+- **Never present a statistic or claim as fact unless it is verifiably present in the extracted
+  dissertation text** (`web_app/content_export/dissertacao_conteudo.json`) or directly computed from
+  `bdados/INEP.db`. When uncertain, search/verify first; flag or omit what can't be confirmed rather
+  than guessing. This project has been burned by exactly this failure mode before (see the
+  `docs/graficos/` vs `graficos_originais/` note above).
 - When adding a new report script under `relats/`, follow the existing pattern: SQL string ->
   `bdados.ler_bdados_to_df.carregar_dataframe` -> pandas transform -> `utilities.formatar_tabela` for
   HTML tables and/or matplotlib/seaborn/plotly for `docs/graficos/`. Don't invent a new data-access
   path — reuse `carregar_dataframe`.
-- When touching database models, cross-check the target file's table names against the actual SQLite
-  schema (`sqlite3 bdados/INEP.db ".tables"` or equivalent) before trusting `app/base/*_models.py` —
-  it's known to be stale relative to `modelos_dados/*_models.py`.
-- Any static/GitHub-Pages-facing work must not assume a reachable backend at request time; data needed
-  client-side has to be baked in at build time (static JSON/XML) rather than fetched from FastAPI.
+- When adding/editing anything under `web_app/content_export/export_lic_*.py` or `sqls/cap5/*.sql`:
+  cross-check table/column names against `modelos_dados/*_models.py` or the live schema first (see the
+  `sqls/` note above), run the export script locally, sanity-check the output (e.g. totals should match
+  numbers already verified elsewhere on the site), then commit the regenerated JSON alongside the code
+  change — the JSON is the actual data the deployed site reads, a code-only change does nothing live.
+- Any static/GitHub-Pages-facing frontend work must not assume a reachable backend at request time;
+  new data needed client-side has to be baked in at build time (JSON committed or CI-generated per the
+  two pipelines above), never fetched from a live FastAPI call outside the dev-only Admin routes.
+- Git commits use a trailing `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>` line (see the
+  session's own attribution instructions) and are pushed straight to `main` — there is no PR workflow
+  on this repo today.
