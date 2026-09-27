@@ -1102,12 +1102,103 @@ footer {
 
 .cite-hint::after {
   content: attr(data-ref);
+  /* Citacoes com mais de uma obra do mesmo autor (ex: "Sguissardi (2008; 2009; 2017)")
+     trazem uma referencia por linha em data-ref, separadas por \n -- pre-line preserva
+     essas quebras (o texto normal colapsaria tudo numa linha so). */
+  white-space: pre-line;
   position: absolute;
   left: 50%;
   bottom: calc(100% + 8px);
   transform: translateX(-50%) translateY(4px);
   width: max-content;
-  max-width: min(360px, 80vw);
+  max-width: min(420px, 85vw);
+  padding: 0.6rem 0.8rem;
+  background: #111827;
+  color: #f1f5f9;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.cite-hint:hover::after,
+.cite-hint:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Notas de rodape do texto original (ex: sigla explicada em nota) -- numero sobrescrito
+   com o mesmo mecanismo de tooltip via CSS puro do .cite-hint, so que o texto vem de
+   data-note em vez de data-ref. */
+.footnote-hint {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 0.7em;
+  line-height: 1;
+  color: var(--accent-primary);
+  font-weight: 700;
+  cursor: help;
+  position: relative;
+  padding: 0 0.1em;
+}
+
+.footnote-hint::after {
+  content: attr(data-note);
+  white-space: normal;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(320px, 80vw);
+  padding: 0.6rem 0.8rem;
+  background: #111827;
+  color: #f1f5f9;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.4;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.footnote-hint:hover::after,
+.footnote-hint:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Termos do Glossario (data/glossario.ts) linkados na 1a ocorrencia por secao -- mesmo
+   mecanismo de tooltip via CSS puro, mas com sublinhado tracejado (nao pontilhado, que e
+   o .cite-hint) para o leitor distinguir "isto e um termo do glossario" de "isto e uma
+   citacao autor-data" so pelo estilo. */
+.glossario-hint {
+  color: inherit;
+  border-bottom: 1px dashed var(--accent-secondary, #3b82f6);
+  cursor: help;
+  position: relative;
+}
+
+.glossario-hint::after {
+  content: attr(data-def);
+  white-space: normal;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(320px, 80vw);
   padding: 0.6rem 0.8rem;
   background: #111827;
   color: #f1f5f9;
@@ -1122,8 +1213,8 @@ footer {
   z-index: 20;
 }
 
-.cite-hint:hover::after,
-.cite-hint:focus::after {
+.glossario-hint:hover::after,
+.glossario-hint:focus::after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);

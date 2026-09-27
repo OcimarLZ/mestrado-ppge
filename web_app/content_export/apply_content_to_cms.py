@@ -15,6 +15,7 @@ import json
 import os
 import re
 import sqlite3
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CONTENT_EXPORT = os.path.join(ROOT, "web_app", "content_export")
@@ -73,16 +74,36 @@ def load_figures_manifest():
 # Citacoes autor-data no padrao ABNT: "Bourdieu (1989)" (narrativa) ou "(Bourdieu, 1989)"
 # (parentetica), com suporte a multiplos autores ("Bianchetti; Sguissardi, 2017",
 # "Dardot e Laval, 2017") e sufixo de letra para mesmo autor/ano ("2015b").
+#
+# O separador entre autores usa (?:\s*;\s*|\s+e\s+) -- exige espaco dos dois lados da
+# conjuncao "e" -- e nao a classe de caracteres `[;e]` (que casava ';' OU a letra 'e'
+# SOLTA). Com `[;e]`, uma citacao como "Pierre Bourdieu (1989)" fazia o regex, ao dar
+# backtrack, tratar o 'e' final de "Pierre" como se fosse a conjuncao "e" ligando dois
+# autores, produzindo n_authors="Pierre Bourdieu" (nome completo) em vez de so o
+# sobrenome -- e a busca no indice de referencias (chaveado so pelo sobrenome) falhava.
 CITATION_RE = re.compile(
-    r"(?P<n_authors>[A-ZÀ-Ü][a-zà-ÿ']+(?:\s*[;e]\s*[A-ZÀ-Ü][a-zà-ÿ']+)*)\s*\((?P<n_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
+    r"(?P<n_authors>[A-ZÀ-Ü][a-zà-ÿ']+(?:(?:\s*;\s*|\s+e\s+)[A-ZÀ-Ü][a-zà-ÿ']+)*)\s*\((?P<n_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
     r"|"
     r"\((?P<p_authors>[A-ZÀ-Ü][A-Za-zà-ÿ';\s]+?),\s*(?P<p_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
 )
 
 REF_ENTRY_LEAD_AUTHOR_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Üa-zà-ÿ\-'\s]*?),")
-REF_ENTRY_ORG_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Ü]+)\.")
+# Permite espaco dentro do nome (ex: "SER EDUCACIONAL.") -- a versao anterior so casava
+# uma unica palavra em maiusculas, entao entidades de dois nomes nunca entravam no indice.
+REF_ENTRY_ORG_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Ü\s]*[A-ZÀ-Ü])\.")
 REF_ENTRY_EXTRA_AUTHOR_RE = re.compile(r";\s*([A-ZÀ-Ü][A-ZÀ-Üa-zà-ÿ\-']*)")
-REF_ENTRY_YEAR_RE = re.compile(r",\s*(\d{4}[a-z]?)\.")
+# Aceita o ano precedido de virgula OU ponto (",  2005." e tambem "dez. 2004.", quando o
+# ano vem logo apos uma abreviatura de mes) -- so exigir virgula deixava referencias assim
+# de fora do indice (ex: "BALL... Educação & Sociedade... p. 1105-1126, set./dez. 2004.").
+REF_ENTRY_YEAR_RE = re.compile(r"[,.]\s*(\d{4}[a-z]?)\.")
+
+
+def normalize_surname(s: str) -> str:
+    """Remove acentos e caixa para comparar sobrenomes -- o texto da dissertacao as
+    vezes cita o mesmo autor ora acentuado ora nao (ex: "Chaui" e "Chauí"), o que fazia
+    a busca por igualdade exata no indice falhar para uma das grafias."""
+    sem_acento = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
+    return sem_acento.strip().upper()
 
 
 def build_reference_index(referencias_content_html):
@@ -102,13 +123,13 @@ def build_reference_index(referencias_content_html):
         surnames = []
         m = REF_ENTRY_LEAD_AUTHOR_RE.match(plain)
         if m:
-            surnames.append(m.group(1).strip().upper())
+            surnames.append(normalize_surname(m.group(1)))
         else:
             m2 = REF_ENTRY_ORG_RE.match(plain)
             if m2:
-                surnames.append(m2.group(1).strip().upper())
+                surnames.append(normalize_surname(m2.group(1)))
         for m3 in REF_ENTRY_EXTRA_AUTHOR_RE.finditer(plain[:200]):
-            surnames.append(m3.group(1).strip().upper())
+            surnames.append(normalize_surname(m3.group(1)))
 
         for surname in surnames:
             index.setdefault((surname, year), plain)
@@ -120,12 +141,28 @@ def link_citations(content, ref_index):
         whole = m.group(0)
         authors_raw = m.group("n_authors") or m.group("p_authors")
         years_raw = m.group("n_years") or m.group("p_years")
-        first_author = re.split(r"\s*[;e]\s*", authors_raw)[0].strip().upper()
-        first_year = re.split(r"[,;]\s*", years_raw)[0].strip()
-        ref_text = ref_index.get((first_author, first_year))
-        if not ref_text:
+        # Bug corrigido: `[;e]` eh uma CLASSE de caracteres (';' OU a letra 'e'), nao a
+        # palavra "e" como conjuncao -- isso truncava qualquer sobrenome que contivesse um
+        # "e" solto (Bourdieu -> "Bourdi", Chaves -> "Chav", Ferreira -> "F", etc.), fazendo
+        # a busca no indice de referencias falhar silenciosamente. `\s+e\s+` exige espaco
+        # dos dois lados, so casando a conjuncao de verdade ("Dardot e Laval").
+        first_author = normalize_surname(re.split(r"\s*;\s*|\s+e\s+", authors_raw)[0])
+        # Uma citacao pode reunir varias obras do mesmo autor (ex: "Sguissardi (2008;
+        # 2009; 2017)") -- busca a referencia de CADA ano citado, nao so do primeiro, e
+        # mostra todas no tooltip (uma por linha).
+        years = [y.strip() for y in re.split(r"[,;]\s*", years_raw) if y.strip()]
+        ref_texts = []
+        for year in years:
+            ref_text = ref_index.get((first_author, year))
+            if ref_text and ref_text not in ref_texts:
+                ref_texts.append(ref_text)
+        if not ref_texts:
             return whole
-        return f'<span class="cite-hint" tabindex="0" data-ref="{html.escape(ref_text)}">{whole}</span>'
+        if len(ref_texts) > 1:
+            data_ref = "\n".join(f"{i}) {t}" for i, t in enumerate(ref_texts, start=1))
+        else:
+            data_ref = ref_texts[0]
+        return f'<span class="cite-hint" tabindex="0" data-ref="{html.escape(data_ref)}">{whole}</span>'
 
     return CITATION_RE.sub(replace, content)
 

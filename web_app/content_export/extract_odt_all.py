@@ -21,6 +21,9 @@ Saida:
   web_app/content_export/dissertacao_figuras_extraidas.json
       Manifesto: tipo, numero, legenda, chave, arquivo, fonte, pagina, capitulo_slug,
       secao_slug.
+  web_app/content_export/dissertacao_notas_rodape.json
+      Mapa {numero_da_nota: texto da nota}. O texto dos capitulos traz o marcador
+      [FN:numero] no lugar exato onde a nota ocorre (ver apply_footnotes.py).
 
 Rode a partir da raiz do repo: python web_app/content_export/extract_odt_all.py
 """
@@ -150,13 +153,26 @@ def code_line_text(elem, skip_tags=(NOTE_TAG,)):
 
 
 LINE_BREAK_TAG = tag("line-break")
+NOTE_CITATION_TAG = tag("note-citation")
+NOTE_BODY_TAG = tag("note-body")
 
 
-def local_text(elem, skip_tags=(NOTE_TAG,)):
+def local_text(elem, notes_out=None):
+    """notes_out, quando passado (dict numero_da_nota -> texto da nota), faz as notas de
+    rodape virarem um marcador [FN:numero] inline (no lugar exato onde a nota ocorre no
+    texto) em vez de serem descartadas -- ver apply_footnotes.py, que troca [FN:n] por um
+    <sup> com tooltip depois que o texto ja foi inserido no CMS."""
     parts = []
 
     def walk(e):
-        if e.tag in skip_tags:
+        if e.tag == NOTE_TAG:
+            if notes_out is not None:
+                citation = e.find(NOTE_CITATION_TAG)
+                body = e.find(NOTE_BODY_TAG)
+                if citation is not None and citation.text and body is not None:
+                    n = citation.text.strip()
+                    notes_out[n] = local_text(body)
+                    parts.append(f"[FN:{n}]")
             return
         if e.tag == LINE_BREAK_TAG:
             parts.append(" ")  # sem isso, texto antes/depois de uma quebra de linha gruda
@@ -225,6 +241,7 @@ class Walker:
         self.style_parents = style_parents or {}
         self.code_lines = []
         self.code_title = None
+        self.footnotes = {}  # numero (str) -> texto da nota, na ordem em que aparecem
 
     def unique_slug(self, base):
         s = base
@@ -293,7 +310,7 @@ class Walker:
                     self.code_lines.append(code_line_text(child))
                     continue
 
-                txt = local_text(child)
+                txt = local_text(child, notes_out=self.footnotes)
 
                 if self.code_lines or self.code_title:
                     fonte = extract_fonte(txt)
@@ -358,7 +375,7 @@ class Walker:
             if et == LIST_TAG:
                 items_html = []
                 for p in child.iter(P_TAG):
-                    t = local_text(p)
+                    t = local_text(p, notes_out=self.footnotes)
                     if t:
                         items_html.append(f"<li>{t}</li>")
                 if items_html:
@@ -564,9 +581,14 @@ def main():
     with open(manifest_out, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
+    notas_out = os.path.join(OUT_DIR, "dissertacao_notas_rodape.json")
+    with open(notas_out, "w", encoding="utf-8") as f:
+        json.dump(w.footnotes, f, ensure_ascii=False, indent=2)
+
     n_sections = sum(len(c["sections"]) for c in chapters_out)
     print(f"OK: {len(chapters_out)} capitulos, {n_sections} secoes -> {content_out}")
     print(f"OK: {len(manifest)}/{len(w.captions)} legendas casadas com imagem -> {manifest_out}")
+    print(f"OK: {len(w.footnotes)} notas de rodape -> {notas_out}")
 
 
 if __name__ == "__main__":
