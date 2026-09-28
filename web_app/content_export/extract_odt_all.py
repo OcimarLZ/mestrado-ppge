@@ -176,6 +176,12 @@ def local_text(elem, notes_out=None):
             return
         if e.tag == LINE_BREAK_TAG:
             parts.append(" ")  # sem isso, texto antes/depois de uma quebra de linha gruda
+        elif e.tag == S_TAG:
+            # <text:s/> (opcionalmente text:c="N" para varios espacos) e como o .odt
+            # representa um espaco "de verdade" quando ele vem logo apos um campo (ex: o
+            # numero auto-gerado de "Quadro <ref>1</ref><text:s/>sintetiza..."). Sem isso
+            # o espaco simplesmente desaparecia e o numero colava na palavra seguinte.
+            parts.append(" " * int(e.get(SPACE_COUNT_ATTR) or 1))
         if e.text:
             parts.append(e.text)
         for c in e:

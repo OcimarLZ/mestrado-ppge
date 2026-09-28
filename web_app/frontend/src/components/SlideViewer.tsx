@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Maximize, Minimize } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import ZoomableImage from './ZoomableImage';
+import ComparisonSlider from './ComparisonSlider';
 import { assetUrl } from '../lib/content';
 import type { Slide } from '../data/apresentacao';
 
@@ -165,6 +166,27 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
                   {img.caption && <figcaption>{img.caption}</figcaption>}
                 </figure>
               ))}
+            </div>
+            {renderBullets(slide.bullets)}
+          </div>
+        );
+      case 'comparison':
+        return (
+          <div className="slide-body slide-body-image">
+            <h2>{slide.title}</h2>
+            <div className="slide-image-area">
+              {slide.comparison && (
+                <figure style={{ maxWidth: 520, width: '100%' }}>
+                  <ComparisonSlider
+                    beforeSrc={imgUrl(slide.comparison.before.file)}
+                    afterSrc={imgUrl(slide.comparison.after.file)}
+                    beforeLabel={slide.comparison.beforeLabel}
+                    afterLabel={slide.comparison.afterLabel}
+                    alt={slide.title}
+                  />
+                  {slide.note && <figcaption>{slide.note}</figcaption>}
+                </figure>
+              )}
             </div>
             {renderBullets(slide.bullets)}
           </div>

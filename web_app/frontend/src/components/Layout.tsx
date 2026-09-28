@@ -56,6 +56,17 @@ const Layout: React.FC = () => {
     }
   }, [settings]);
 
+  // Ao trocar de rota (ex: clicar num capitulo diferente no menu), volta o scroll pro
+  // topo da pagina -- sem isso, o React Router so troca o conteudo e mantem a posicao de
+  // rolagem anterior, deixando o titulo do capitulo novo fora da tela se o usuario ja
+  // estava rolado para baixo na pagina anterior. So dispara quando o PATHNAME muda (troca
+  // de capitulo/pagina de verdade), nunca quando o usuario clica num link de subsecao
+  // dentro do mesmo capitulo (isso usa scrollToSection, abaixo, que rola so ate a
+  // subsecao, sem navegar de rota).
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const scrollToSection = (e: React.MouseEvent, sectionSlug: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionSlug);

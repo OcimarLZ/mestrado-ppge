@@ -6,18 +6,35 @@ interface ContentWithVisualsProps {
   html: string;
   visuals?: VisualData[];
   className?: string;
+  h4Prefix?: string;
+}
+
+// O texto extraido do .odt nunca teve o numero das subsecoes de nivel 3 (<h4>, ex:
+// "3.3.1 Dinamicas do estamento...") -- essa numeracao vinha da lista automatica do
+// Word/LibreOffice, que nao faz parte do texto do paragrafo, so do estilo. Como o
+// numero da propria secao (nivel 2, ex "3.3") ja e calculado dinamicamente em
+// GenericChapterPage.tsx, os <h4> so precisam ganhar ".N" na frente, contando em ordem
+// dentro do conteudo da secao -- sem tocar no texto salvo no banco.
+function addH4Numbering(html: string, prefix: string): string {
+  let n = 0;
+  return html.replace(/<h4>(.*?)<\/h4>/g, (_match, inner) => {
+    n += 1;
+    return `<h4>${prefix}.${n} ${inner}</h4>`;
+  });
 }
 
 // Renderiza um bloco de HTML (conteudo de capitulo ou de secao) resolvendo os
 // marcadores [v:ID] embutidos no texto para o elemento visual correspondente,
 // no lugar exato onde aparecem -- usado tanto pelo texto de abertura do capitulo
 // (GenericChapterPage) quanto pelo conteudo de cada secao (DynamicSection).
-const ContentWithVisuals: React.FC<ContentWithVisualsProps> = ({ html, visuals, className = 'text-content' }) => {
+const ContentWithVisuals: React.FC<ContentWithVisualsProps> = ({ html, visuals, className = 'text-content', h4Prefix }) => {
+  const numberedHtml = h4Prefix ? addH4Numbering(html, h4Prefix) : html;
+
   if (!visuals || visuals.length === 0) {
-    return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+    return <div className={className} dangerouslySetInnerHTML={{ __html: numberedHtml }} />;
   }
 
-  const parts = html.split(/(\[v:\d+\])/g);
+  const parts = numberedHtml.split(/(\[v:\d+\])/g);
   return (
     <div className={className}>
       {parts.map((part, idx) => {

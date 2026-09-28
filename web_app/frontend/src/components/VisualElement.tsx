@@ -2,6 +2,7 @@ import React from 'react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { assetUrl } from '../lib/content';
 import ZoomableImage from './ZoomableImage';
+import ComparisonSlider from './ComparisonSlider';
 
 interface VisualData {
   id: number;
@@ -33,6 +34,65 @@ const VisualElement: React.FC<{ visual: VisualData }> = ({ visual }) => {
 
   const renderVisual = () => {
     if (visual.type === 'image' && visual.image_url) {
+      // A Figura 1 (municípios com polos EaD, 2006 x 2014) e a Figura 2 (2014 x 2024) foram
+      // recortadas em duas imagens cada (ex: figura_01_2006.png / figura_01_2014.png)
+      // especificamente para virar um comparador com controle deslizante, em vez da imagem
+      // única (os dois mapas lado a lado) que veio da extração original do .odt.
+      if (/figura_01\.png$/.test(visual.image_url)) {
+        return (
+          <ComparisonSlider
+            beforeSrc={visual.image_url.replace('figura_01.png', 'figura_01_2006.png')}
+            afterSrc={visual.image_url.replace('figura_01.png', 'figura_01_2014.png')}
+            beforeLabel="2006"
+            afterLabel="2014"
+            alt={visual.title}
+          />
+        );
+      }
+      if (/figura_02\.png$/.test(visual.image_url)) {
+        return (
+          <ComparisonSlider
+            beforeSrc={visual.image_url.replace('figura_02.png', 'figura_02_2014.png')}
+            afterSrc={visual.image_url.replace('figura_02.png', 'figura_02_2024.png')}
+            beforeLabel="2014"
+            afterLabel="2024"
+            alt={visual.title}
+          />
+        );
+      }
+      if (/figura_03\.png$/.test(visual.image_url)) {
+        return (
+          <ComparisonSlider
+            beforeSrc={visual.image_url.replace('figura_03.png', 'figura_03_2014.png')}
+            afterSrc={visual.image_url.replace('figura_03.png', 'figura_03_2024.png')}
+            beforeLabel="2014"
+            afterLabel="2024"
+            alt={visual.title}
+          />
+        );
+      }
+      // A Figura 4 tem uma legenda de cores (presencial/EaD/ambos) compartilhada pelos dois
+      // mapas, na parte de baixo da imagem original -- diferente das Figuras 1-3. Recortar
+      // no meio cortaria a legenda ao meio, então ela foi extraída à parte
+      // (figura_04_legenda.png) e é exibida abaixo do comparador, uma única vez.
+      if (/figura_04\.png$/.test(visual.image_url)) {
+        return (
+          <>
+            <ComparisonSlider
+              beforeSrc={visual.image_url.replace('figura_04.png', 'figura_04_2014.png')}
+              afterSrc={visual.image_url.replace('figura_04.png', 'figura_04_2024.png')}
+              beforeLabel="2014"
+              afterLabel="2024"
+              alt={visual.title}
+            />
+            <img
+              src={visual.image_url.replace('figura_04.png', 'figura_04_legenda.png')}
+              alt="Legenda: somente presencial, somente EaD, presencial e EaD"
+              style={{ display: 'block', maxWidth: '100%', margin: '0.75rem auto 0' }}
+            />
+          </>
+        );
+      }
       return (
         <ZoomableImage
           src={visual.image_url}

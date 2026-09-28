@@ -72,19 +72,30 @@ def load_figures_manifest():
 
 
 # Citacoes autor-data no padrao ABNT: "Bourdieu (1989)" (narrativa) ou "(Bourdieu, 1989)"
-# (parentetica), com suporte a multiplos autores ("Bianchetti; Sguissardi, 2017",
-# "Dardot e Laval, 2017") e sufixo de letra para mesmo autor/ano ("2015b").
+# (parentetica), com suporte a multiplos autores -- "Bianchetti; Sguissardi (2017)",
+# "Dardot e Laval (2017)", e o padrao de 3+ autores com virgula entre os primeiros e "e"
+# antes do ultimo: "Morosini, Kohls-Santos e Bittencourt (2021)" -- e sufixo de letra para
+# mesmo autor/ano ("2015b").
 #
-# O separador entre autores usa (?:\s*;\s*|\s+e\s+) -- exige espaco dos dois lados da
+# O separador entre autores usa (?:\s*[,;]\s*|\s+e\s+) -- exige espaco dos dois lados da
 # conjuncao "e" -- e nao a classe de caracteres `[;e]` (que casava ';' OU a letra 'e'
 # SOLTA). Com `[;e]`, uma citacao como "Pierre Bourdieu (1989)" fazia o regex, ao dar
 # backtrack, tratar o 'e' final de "Pierre" como se fosse a conjuncao "e" ligando dois
 # autores, produzindo n_authors="Pierre Bourdieu" (nome completo) em vez de so o
 # sobrenome -- e a busca no indice de referencias (chaveado so pelo sobrenome) falhava.
+# O nome de cada autor tambem aceita sobrenome composto por hifen com a SEGUNDA parte
+# tambem capitalizada (ex: "Kohls-Santos") -- so "-[a-z]" nao bastava, pois em nomes assim
+# as duas metades comecam com maiuscula.
+_NOME = r"[A-ZÀ-Ü][a-zà-ÿ']+(?:-[A-ZÀ-Ü][a-zà-ÿ']+)?"
+# Sufixo de pagina opcional (ABNT: "(Amaral, 2019, p. 73)", "(Chaui, 2003, p. 7)") -- sem
+# isso o ano deixava de ser o ultimo token antes do ")" e a citacao inteira nao casava,
+# perdendo o tooltip mesmo com a referencia presente no indice.
+_PAGINA = r"(?:,\s*pp?\.?\s*\d+(?:[-–]\d+)?)?"
 CITATION_RE = re.compile(
-    r"(?P<n_authors>[A-ZÀ-Ü][a-zà-ÿ']+(?:(?:\s*;\s*|\s+e\s+)[A-ZÀ-Ü][a-zà-ÿ']+)*)\s*\((?P<n_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
+    r"(?P<n_authors>" + _NOME + r"(?:(?:\s*[,;]\s*|\s+e\s+)" + _NOME + r")*)"
+    r"\s*\((?P<n_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)" + _PAGINA + r"\)"
     r"|"
-    r"\((?P<p_authors>[A-ZÀ-Ü][A-Za-zà-ÿ';\s]+?),\s*(?P<p_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)\)"
+    r"\((?P<p_authors>[A-ZÀ-Ü][A-Za-zà-ÿ';\s-]+?),\s*(?P<p_years>\d{4}[a-z]?(?:[,;]\s*\d{4}[a-z]?)*)" + _PAGINA + r"\)"
 )
 
 REF_ENTRY_LEAD_AUTHOR_RE = re.compile(r"^([A-ZÀ-Ü][A-ZÀ-Üa-zà-ÿ\-'\s]*?),")
@@ -146,7 +157,7 @@ def link_citations(content, ref_index):
         # "e" solto (Bourdieu -> "Bourdi", Chaves -> "Chav", Ferreira -> "F", etc.), fazendo
         # a busca no indice de referencias falhar silenciosamente. `\s+e\s+` exige espaco
         # dos dois lados, so casando a conjuncao de verdade ("Dardot e Laval").
-        first_author = normalize_surname(re.split(r"\s*;\s*|\s+e\s+", authors_raw)[0])
+        first_author = normalize_surname(re.split(r"\s*[,;]\s*|\s+e\s+", authors_raw)[0])
         # Uma citacao pode reunir varias obras do mesmo autor (ex: "Sguissardi (2008;
         # 2009; 2017)") -- busca a referencia de CADA ano citado, nao so do primeiro, e
         # mostra todas no tooltip (uma por linha).

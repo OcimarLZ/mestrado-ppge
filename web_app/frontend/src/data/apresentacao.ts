@@ -10,8 +10,10 @@ export type IconItem = { icon?: string; label?: string; text: string };
 export type CardItem = { icon?: string; title: string; text: string };
 export type Column = { icon?: string; title: string; items: string[] };
 
+export type ComparisonImage = { before: SlideImage; after: SlideImage; beforeLabel: string; afterLabel: string };
+
 export interface Slide {
-  kind: 'cover' | 'section' | 'text' | 'icons' | 'image' | 'images' | 'stats' | 'cards' | 'columns' | 'closing';
+  kind: 'cover' | 'section' | 'text' | 'icons' | 'image' | 'images' | 'comparison' | 'stats' | 'cards' | 'columns' | 'closing';
   title: string;
   subtitle?: string;
   bullets?: string[];
@@ -20,6 +22,7 @@ export interface Slide {
   columns?: Column[];
   image?: SlideImage;
   images?: SlideImage[];
+  comparison?: ComparisonImage;
   stats?: { value: string; label: string }[];
   note?: string;
   showLogos?: boolean;
@@ -46,9 +49,15 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'image',
+    kind: 'comparison',
     title: 'Tema e contexto',
-    image: { file: 'figura_01', caption: 'Municípios brasileiros com polos EaD em 2006 e 2024' },
+    comparison: {
+      before: { file: 'figura_01_2006' },
+      after: { file: 'figura_01_2014' },
+      beforeLabel: '2006',
+      afterLabel: '2014',
+    },
+    note: 'Municípios brasileiros com polos EaD — arraste para comparar 2006 e 2014',
     bullets: [
       'Recorte temporal: 2014-2024, período de vigência do Plano Nacional de Educação (PNE)',
       'Entre 2014 e 2024, o eixo presencial/universitário deixa de ser dominante na formação docente',

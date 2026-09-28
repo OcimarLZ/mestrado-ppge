@@ -73,7 +73,7 @@ const DynamicSection: React.FC<DynamicSectionProps> = ({ sectionData, fallbackTi
   }
 
   const renderContent = (html: string) => (
-    <ContentWithVisuals html={html} visuals={visuals} />
+    <ContentWithVisuals html={html} visuals={visuals} h4Prefix={prefixNumber} />
   );
 
   return (
