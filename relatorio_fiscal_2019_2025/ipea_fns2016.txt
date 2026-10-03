@@ -1,0 +1,1044 @@
+---PAGE 0---
+1 
+ 
+ 
+As transferências de 
+recursos do Fundo 
+Nacional de Saúde 
+para os fundos 
+estaduais e municipais 
+de saúde em 2016 
+Rodrigo Pucci de Sá e Benevides 
+Nº 46 
+Disoc 
+Diretoria de Estudos e Políticas Sociais 
+Janeiro de 2018 
+---PAGE 1---
+2 
+ 
+Governo Federal 
+Ministério do Planejamento, Desenvolvimento e Gestão 
+Ministro Dyogo Henrique de Oliveira 
+ 
+ 
+ 
+ 
+Fundação pública vinculada ao Ministério do Planejamento,  
+Desenvolvimento e Gestão, o Ipea fornece suporte técnico  
+e institucional às ações governamentais – possibilitando  
+a formulação de inúmeras políticas públicas e programas de  
+desenvolvimento brasileiros – e disponibiliza, para a sociedade,  
+pesquisas e estudos realizados por seus técnicos. 
+ 
+Presidente 
+Ernesto Lozardo 
+ 
+Diretor de Desenvolvimento Institucional 
+Rogério Boueri Miranda 
+ 
+Diretor de Estudos e Políticas do Estado, das 
+Instituições e da Democracia 
+Alexandre de Ávila Gomide 
+ 
+Diretor de Estudos e Políticas 
+Macroeconômicas 
+José Ronaldo de Castro Souza Júnior 
+ 
+Diretor de Estudos e Políticas Regionais, 
+Urbanas e Ambientais 
+Alexandre Xavier Ywata de Carvalho 
+ 
+Diretor de Estudos e Políticas Setoriais de Inovação 
+e Infraestrutura 
+Fabiano Mezadre Pompermayer 
+ 
+Diretora de Estudos e Políticas Sociais 
+Lenita Maria Turchi 
+ 
+Diretor de Estudos e Relações Econômicas e 
+Políticas Internacionais, Substituto 
+Edison Benedito da Silva Filho 
+ 
+Assessora-chefe de Imprensa e  
+Comunicação 
+Regina Alvarez 
+ 
+ 
+Ouvidoria: http://www.ipea.gov.br/ouvidoria 
+URL: http://www.ipea.gov.br 
+  
+---PAGE 2---
+3 
+ 
+AS TRANSFERÊNCIAS DE RECURSOS DO FUNDO NACIONAL DE SAÚDE PARA 
+OS FUNDOS ESTADUAIS E MUNICIPAIS DE SAÚDE EM 2016 
+ 
+Rodrigo Pucci de Sá e Benevides1 
+ 
+Sinopse 
+Esta Nota Técnica tem por objetivo descrever o atual formato da s transferências regulares e 
+automáticas do Fundo Nacional de Saúde (FNS) para os fundos est aduais e municipais de 
+saúde, detalhando os valores transferidos pelo menor nível de agregação existente nas 
+informações disponibilizadas pelo FNS: as linhas de repasse. A motivação é a proposta de 
+alteração do formato do financiamento federal do Sistema Único de Saúde (SUS), denominada 
+SUS Legal, que unificaria os repasses de custeio em um bloco de financiamento único. 
+ 
+Palavras-chave 
+Sistema Único de Saúde. Financiamento da saúde. SUS Legal. Tran sferências fundo a fundo. 
+Fundo Nacional de Saúde. Fundos de saúde. 
+ 
+1 – Introdução 
+O objetivo desta Nota Técnica é descrever o atual formato do si stema de transferências do 
+Fundo Nacional de Saúde (FNS) para os fundos estaduais e munici pais de saúde, cujos 
+contornos foram definidos pela  Portaria 204/2007, do Pacto de G e s t ã o ,  q u e  o r g a n i z o u  o s  
+diferentes tipos de repasse sob a forma de cinco Blocos de Fina nciamento para o custeio das 
+ações e serviços públicos de saúde (ASPS): Média e Alta Complexidade; Atenção Básica; 
+Assistência Farmacêutica; Vigilância em Saúde; e Gestão. Em 2009 foi criado mais um, para os 
+recursos de Investimentos. 
+A  p a r t i r  d e  u m  d i a g n ó s t i c o  d e  q u e  h á  i n e f i c i ê n c i a  n a  g e s t ã o  d e sses recursos derivada do 
+g r a n d e n ú m er o  d e p r o g r a m a s  e p o l í t i ca s  co m  a p l i ca çã o  co n d i ci o n ad a  – a q u i  d en o m i n a d o s 
+“linhas de repasse”2 –, a Comissão Intergestores Tripartite3 (CIT) aprovou, em janeiro de 2017, 
+uma proposta de mudança relevante no formato do sistema de tran sferências de recursos 
+federais para estados e municípios denominada de SUS Legal. A p roposta é repassar os 
+recursos em dois blocos de financiamento, um de custeio e outro de investimentos, unificando 
+                                                            
+1 Mestre em saúde coletiva. Economista. Membro da carreira federal de Especialista em Políticas Públicas e Gestão Governamental em exercício na 
+Diretoria de Estudos e Políticas Sociais (Disoc) do Ipea. E-mail: rodrigo.benevides@ipea.gov.br.   
+2 Nesta Nota Técnica utilizamos o termo “linha de repasse” para denominar o nível mais desagregado dos repasses do FNS para estados e municípios. 
+O FNS utiliza os termos “PROGRAMA” ou “Açã o / Serviço / Estratégia”, a depender da fo rma de consulta realiz ada em seu sítio, co nforme 
+detalhado no item 2 dessa Nota Técnica. Ultimamente tem sido utilizado o termo “rótulo” ou “rotulação” no âmbito das discussões sobre a proposta 
+do SUS Legal. Por fim, cabe lembrar que no MS utiliza-se info rmalmente o termo “caixinha” (consta inclusive da primeira minuta de portaria do 
+SUS Legal, entregue na reunião de janeiro de 2017 da Comissão Intergestores Tripartite – CIT).  
+3 Instância de articulação e pactuação que atua na direção naciona l do SUS, composta por gestores  das três esferas de governo – União, estados e 
+municípios, representados, respectivamente, pelo Ministério da Saúde, pelo Conselho Nacional de Secretarias Estaduais de Saúde (CONASS) e pelo 
+Conselho Nacional de Secretários Municipais de Saúde (CONASEMS). 
+---PAGE 3---
+4 
+ 
+os cinco blocos de custeio, o que, na visão de seus formuladore s ,  f a c i l i t a r i a  a  g e s t ã o  d o s  
+recursos ao conferir maior liberdade aos gestores na aplicação desses recursos. 
+São duas as dimensões do fracionamento do financiamento federal de custeio do SUS: uma é 
+a divisão dos recursos em cinco Blocos de Financiamento; outra é a subdivisão de cada Bloco 
+em dezenas de linhas de repasse, com regras específicas para apl i c a ç ã o  d o s  r e c u r s o s .  E m  
+apresentações realizadas pelos defensores da proposta do SUS Le gal, alega-se que há um 
+“empoçamento de recursos” decorrente dessas regras – sobrariam recursos nas contas dos 
+fundos de saúde estaduais e municipais relativos a alguns bloco s de financiamento que 
+poderiam ser utilizados para outra finalidade. Alega-se também que existiria um número 
+exagerado de diferentes tipos de linhas de repasses com regras específicas de aplicação4.  
+Com o objetivo de se traçar um panorama sobre o atual formato da partilha de recursos com 
+estados e municípios, tendo em vista a proposta do SUS Legal de  mudança no financiamento 
+f e d e r a l  d o  S U S  p o r  m e i o  d o  r e p a s s e  d e  r e c u r s o s  e m  b l o c o  ú n i c o  para custeio, esta Nota 
+Técnica apresenta dados e estatísticas sobre as transferências para estados e municípios em 
+2016, calculados a partir das informações disponíveis no sítio do FNS (BRASIL, 2017). 
+ 
+2 – Fontes de informação sobre as transferências fundo a fundo e formato de apresentação 
+dos resultados 
+As informações sobre os valores transferidos pelo FNS por Bloco de Financiamento e linha de 
+r e p a s s e  p o d e m  s e r  o b t i d a s  t a n t o  n o  s í t i o  d o  F N S  c o m o  n o  d a  S a l a de Apoio à Gestão 
+Estratégica (SAGE), com diferentes formas de consulta e detalhamentos. Esta Nota apresenta 
+as informações sobre os repasses obtidas no sítio do FNS5. 
+A s  i n f o r m a ç õ e s  s o b r e  o s  v a l o r e s  t r a n s f e r i d o s  p o r  O r d e m  B a n c á r i a (OB) para cada ente 
+federado estão disponíveis em “Consulta de pagamento consolidada”6, em que há três caixas 
+d e  s e l e ç ã o :  p a r a  “ A n o ” ,  “ E s t a d o ”  e  “ M u n i c í p i o ” .  P a r a  o b t e r  u m a  planilha com todos os 
+repasses estaduais para uma determinada competência, deve-se sel e c i o n a r  o  “ A n o ”  e  
+“ B R A S I L ” ,  n a  c a i x a  d e  s e l e ç ã o  d o  “ E s t a d o ” ,  d e  f o r m a  q u e  o  c a m p o “Município” ficará 
+indisponível para seleção. Já para obter a planilha com os repasses para os municípios, devem 
+ser extraídas as planilhas referentes a cada uma das UFs. As pl anilhas detalham as OBs para 
+todas as competências de um determinado ano, disponibilizando a s seguintes informações: 
+UF/município, código IBGE, CNPJ, entidade, Bloco, componente, A ção/Serviço/Estratégia7, 
+                                                            
+4 Os defensores da proposta frequentemente citam o número de 882 linhas de repasse (por exemplo em  SANTOS, 2017, DONIZETTI e 
+JUNQUEIRA, 2017 e CONASEMS, 2017), mas não há uma lista disponível para consulta no sítio do FNS. Em 19 de setembro solicitei essa lista 
+ao MS através da Lei de Acesso à Informação (LAI); no dia 19 de  outubro recebi resposta do DRAC /SAS/MS que informava a composiç ão do 
+Bloco de MAC, mas não esclareceu a questão. Recorri ao pedido de informação em 1ª instância, anexando alguns documentos para su bsidiar a 
+resposta, dessa vez recebida do FNS, que in formou que “O FNS utiliza os  procedimentos para informaç ões de pagamentos, indevidam ente 
+chamados de “caixinhas” para identificar os pagamentos ou transferências por ele realizadas de acordo com o estabelecido pela Portaria 204/2007 
+e as portarias instituídas pelo MS, conforme citado pela SAS na resposta da demanda original. To das as informações de pagamento  poderão ser 
+acessadas no site do FNS por meio da página www.fns.saude.gov.br. O detalhamento das ações e programas que compõe o SUS é de 
+responsabilidade das áreas finalísti cas”. De acordo com essa resposta, portanto, o procedimento adotado nesta NT, de buscar as informações no 
+sítio do FNS, mostrou-se a mais adequada para se obter o rol das linhas de repasse do FNS para estados e municípios. 
+5 Há algumas diferenças entre os valores da consulta do FNS e da SAGE (ambas pelo critério de competência) cuja causa não foi verificada por não 
+ser a finalidade deste estudo. O Bloco de Atenção Básica, por exem plo, registra R$ 16,74 bilhões no FNS e R$ 15,84 bilhões na S AGE (-5,4%), 
+enquanto o de MAC registra R$ 42,69 bilhões no FNS e R$ 43,85 bilhões na SAGE (+2,7%). 
+6 https://consultafns.saude.gov.br/#/consolidada  
+7 O FNS utiliza várias denominações para as linhas de repasse nos arquivos disponibilizados na internet: “Ação/Serviço/Estratégia”, nesta primeira 
+consulta, e “Programa”, nos arquivos disponibilizados na “BIBLIOTECA” do sítio do FNS, conforme descrito no próximo parágrafo. 
+---PAGE 4---
+5 
+ 
+competência, nº e data da OB, dados da conta bancária, valor líquido, desconto e valor bruto, 
+nº do processo e tipos de repasse.  
+É possível obter as informações sobre os repasses para governos  estaduais e municipais de 
+um determinado ano, após o encerramento do exercício, em uma única planilha, acessando o 
+link localizado no frame à esquerda do sítio do FNS, em “BIBLIOTECA”, “Arquivos de Repa sse 
+Anual Fundo a Fundo”8. Nesse caso a planilha é simplificada, e não há detalhamento por OB: 
+o s  v a l o r e s  s ã o  a g r e g a d o s  p o r  l i n h a s  d e  r e p a s s e ,  q u e  n o  a r q u i v o  são denominadas 
+“PROGRAMA”9. O arquivo está em formato “CSV”. 
+Os resultados das consultas são sumarizados nas seguintes tabelas: 
+ Valor total transferido para estados e municípios, por Bloco de Financiamento (tabela 1); 
+ Número de linhas de repasse recebidas pelos governos municipais, por faixa de população 
+(mínimo, mediana e máximo) e Bloco de Financiamento (tabela 2); 
+ N ú m e r o  d e  l i n h a s  d e  r e p a s s e  r e c e b i d a s  p e l o s  g o v e r n o s  e s t a d u a i s ,  p o r  U F  e  B l o c o  d e  
+Financiamento (tabela 3); 
+ Número de municípios por faixa de número de linhas de repasse; 
+ Valor total transferido e número de estados e de municípios que  recebem cada linha de 
+repasse, por Bloco de Financiamento (tabelas 5 a 10); 
+ Valor per capita transferido para os governos municipais por faixa de população e Bloco de 
+Financiamento (tabela 11); 
+ Valor per capita transferido para estados e municípios, por Bloco de Financiame nto e UF 
+(tabela 12). 
+ 
+3 – Resumo dos dados extraídos das planilhas do FNS 
+Em 2016 o FNS transferiu R$ 66,8 bilhões de forma regular e aut omática para os fundos 
+estaduais e municipais de saúde, o que correspondeu a 62,6% do valor empenhado no ano de 
+R$ 106,7 bilhões. A tabela 1, abaixo, apresenta os valores tran sferidos em 2016 pelo critério 
+de competência por Bloco de Financiamento. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                            
+8 http://portalfns.saude.gov.br/arquivos-de-repasse-anual-fundo-a-fundo  
+9 A coluna que nesse arquivo é denominada “PROGRAMA” refere-se ao menor nível de agregação das transferências fundo a fundo, denominado 
+de “linha de repasse” neste estudo; no arquivo descrito no parágrafo anterior, a coluna que contém as linhas de repasse é denominada 
+“Ação/Serviço/Estratégia”. 
+---PAGE 5---
+6 
+ 
+TABELA 1  
+Valor transferido pelo FNS aos fundos estaduais e municipais de  s a ú d e  p o r  B l o c o  d e  
+Financiamento em 2016  
+(em R$ milhões e R$ por habitante) 
+ 
+Fonte: FNS. Elaboração própria. 
+Para os governos municipais, o FNS transferiu recursos em 122 d iferentes tipos de linhas de 
+repasse de custeio em 2016. Levantamento realizado sobre a base  de dados dos repasses 
+mensais do FNS (tabela 2) demonstra que a mediana 10 do número de linhas de repasse 
+utilizadas para transferir recursos para os municípios foi de 22, sendo que naqueles municípios 
+com mais de um milhão de habitantes foi de 62. Os municípios qu e receberam recursos do 
+FNS em maior quantidade de linhas de repasse foram São Paulo e Belo Horizonte, com 75 
+cada.  
+  
+                                                            
+10 A mediana é uma medida de tendência central que divide ao meio um conjunto de números, o que significa que 
+metade dos municípios está acima dessa medida, e a outra metade abaixo. 
+R$ 
+milhões
+R$ por 
+habitante
+R$ 
+milhões
+R$ por 
+habitante
+R$ 
+milhões
+R$ por 
+habitante
+Total 66.832 324,2 17.493 84,9 49.339 242,9 73,8%
+Atenção Básica 16.740 81,2 141 0,7 16.600 81,7 99,2%
+Média e Alta Complexidade 42.686 207,1 15.342 74,4 27.345 134,6 64,1%
+Assistência Farmacêutica 1.969 9,6 978 4,7 991 4,9 50,3%
+Vigilância em Saúde 2.721 13,2 663 3,2 2.058 10,1 75,6%
+Gestão 63 0,3 29 0,1 34 0,2 53,9%
+Investimento 2.653 12,9 341 1,7 2.312 11,4 87,1%
+Total Estados Municípios % transferido 
+aos 
+municípios
+Bloco de financiamento
+---PAGE 6---
+7 
+ 
+TABELA 2  
+Mediana, mínimo e máximo do nº de linhas de repasse de custeio do FNS para os municípios 
+por Bloco de Financiamento, 2016  
+(por faixa de população) 
+ 
+Fonte: FNS. Elaboração própria. 
+A maioria dos municípios (87%) recebeu entre 11 e 30 linhas de repasse em 2016 (tabela 3). 
+TABELA 3  
+Nº de municípios por faixa de linhas de repasse, 2016 
+ 
+O FNS transferiu recursos para os governos estaduais em 2016 por meio de 96 linhas de 
+repasse. A unidade federada com maior número foi o Distrito Fed eral (70), por acumular as 
+funções de governo estadual e municipal, seguido por São Paulo, com 67 (tabela 4). Em média 
+2/3 do número de linhas de repasse para os governos estaduais foram referentes ao Bloco de 
+MAC. 
+Faixa de 
+População
+nº de 
+municípios Medida Total AB MAC AF VS Gestão
+M í n i m o 200020
+M e d i a n a 2 2 1 0 1190
+Máximo 75 20 43 4 13 5
+Mínimo 43 13 10 1 7 1
+M e d i a n a 6 21 63 1 2 1 2 2
+Máximo 75 20 42 2 12 3
+M í n i m o 3 8 7 1 1 171
+M e d i a n a 5 21 52 4 2 1 2 1
+Máximo 73 19 43 2 12 3
+M í n i m o 2 4 61061
+M e d i a n a 4 01 21 4 2 1 1 1
+Máximo 65 18 35 3 13 5
+M í n i m o 1 5 21060
+M e d i a n a 3 31 21 0 2 1 1 0
+Máximo 51 16 24 3 12 3
+M í n i m o 1 1 10050
+Mediana 29 11 6 1 10 0
+Máximo 52 20 26 4 12 2
+M í n i m o 810030
+Mediana 24 11 3 1 10 0
+Máximo 44 17 18 3 12 2
+M í n i m o 910030
+M e d i a n a 2 1 1 0 1190
+Máximo 35 16 12 3 11 2
+M í n i m o 610020
+M e d i a n a 2 0 1 0 1190
+Máximo 29 16 6 3 11 1
+M í n i m o 200020
+M e d i a n a 1 9 91190
+Máximo 28 15 5 2 11 1
+Total 5.569
+Acima de 1 
+milhão de 
+hab
+16
+De 500 mil a 
+1 milhão de 
+hab
+24
+Até 5 mil 
+hab 1.237
+De 200 mil a 
+500 mil hab 107
+De 100 mil a 
+200 mil hab 161
+De 50 mil a 
+100 mil hab 350
+De 20 mil a 
+50 mil hab 1.101
+De 10 mil a 
+20 mil hab 1.365
+De 5 mil a 10 
+mil hab 1.208
+Nº de 
+repasses
+Nº de 
+municípios
+% do 
+total
+Total 5.569          100,0%
+até 10 37                0,7%
+11 a 20 1.666          29,9%
+21 a 30 3.174          57,0%
+31 a 40 510             9,2%
+41 a 50 110             2,0%
+51 a 60 45                0,8%
+61 a 70 18                0,3%
+71 a 75 9                  0,2%
+---PAGE 7---
+8 
+ 
+TABELA 4 
+Nº de linhas de repasse de custeio do FNS para os governos esta d u a i s ,  p o r  B l o c o  d e  
+Financiamento, 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+As tabelas 5 a 10, a seguir, apresentam os valores totais (em R $ milhões) repassados para 
+estados e municípios em 2016 por linha de repasse para cada Bloco de Financiamento: Média 
+e Alta Complexidade (tabela 5), Atenção Básica (tabela 6), Assistência Farmacêutica (tabela 7), 
+Gestão (tabela 8), Vigilância em Saúde (tabela 9) e Investimentos (tabela 10). São informados 
+também o número de estados e de municípios que recebem cada lin ha de repasse e o 
+percentual recebido pelos municípios para cada uma delas. 
+O Bloco de Média e Alta Complexidade (tabela 5) transferiu R$ 4 2,7 bilhões em 2016 em 79 
+linhas de repasse, dos quais 64,1% foram destinados aos municípios. Do valor total transferido 
+para os governos estaduais, 87,7% estavam concentrados em cinco  linhas de repasse (Teto 
+Estadual da MAC, Teto Estadual da Rede de Urgência, Teto Estadu al de Rede Cegonha, Teto 
+Estadual Limite UPA e FAEC-SIA Nefrologia); no caso dos governos municipais, 85,2% do valor 
+total também estavam concentrados em cinco linhas de repasse (T eto Municipal da MAC, 
+FAEC-SIA Nefrologia, Teto Municipal da Rede de Urgência, Teto M unicipal Limite UPA e Teto 
+Municipal da Rede de Saúde Mental). Uma eventual mudança nas re gras de aplicação de 
+recursos que pretenda conferir maior liberdade aos gestores est aduais e municipais na 
+aplicação dos recursos, como a proposta do SUS Legal, deverá en frentar a questão do 
+financiamento dos procedimentos de Alta Complexidade, hoje cust eados em grande parte 
+pelos recursos transferidos por meio de 25 linhas de repasse do FAEC, que abrangem i) Terapia 
+Renal Substitutiva; ii) procedimentos regulados pela Central Na cional de Regulação da Alta 
+Complexidade – CNRAC; iii) transplantes e procedimentos vincula dos; iv) ações estratégicas 
+ou emergenciais, de caráter temporário, e implementadas com prazo pré-definido e v) novos 
+procedimentos, não relacionados aos constantes da tabela vigente ou que não possuam 
+UF Total AB MAC AF VS Gestão
+RO 43 33 02 7 1
+AC 51 23 92 7 1
+AM 52 23 64 7 3
+RR 29 11 72 7 2
+PA 34 12 32 7 1
+AP 38 22 53 7 1
+TO 47 13 42 7 3
+MA 34 12 32 7 1
+PI 30 11 72 7 3
+CE 36 12 33 7 2
+RN 37 22 33 7 2
+PB 26 11 42 7 2
+PE 65 74 53 7 3
+AL 30 11 92 7 1
+SE 33 12 13 7 1
+BA 57 34 04 7 3
+MG 51 13 63 8 3
+ES 48 13 62 8 1
+RJ 32 02 13 7 1
+SP 67 25 03 9 3
+PR 54 14 23 7 1
+SC 56 14 42 8 1
+RS 46 13 52 7 1
+MS 26 01 62 7 1
+MT 36 12 32 7 3
+GO 32 12 12 7 1
+DF 70 15 38 3 13 1
+---PAGE 8---
+9 
+ 
+parâmetros para permitir a definição de limite de financiamento , por um período de seis 
+m e s e s ,  c o m  v i s t a s  a  p e r m i t i r  a  f o r m a ç ã o  d e  s é r i e  h i s t ó r i c a  n e c essária à sua agregação ao 
+Limite Financeiro de MAC. A eliminação das regras específicas d e aplicação de recursos dos 
+procedimentos de Alta Complexida de, cuja demanda é incerta, pod e afetar a capacidade de 
+financiamento dos gestores caso não haja um recurso específico definido para esses 
+procedimentos de menor frequência. 
+TABELA 5A  
+Transferências do FNS para o Bloco de Média e Alta Complexidade  em 2016 – componente 
+Limite Financeiro da MAC 
+ 
+Fonte: FNS. Elaboração própria. 
+ 
+  
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+BLOCO DE MÉDIA E ALTA COMPLEXIDADE 42.686,26 15.341,55 27 27.344,71 4.229 64,1%
+Limite Financeiro da MAC 37.780,76 13.560,55 24.220,21 64,1%
+TETO MUNICIPAL DA MÉDIA E ALTA COMPLEXIDADE AMBULATORIAL E HOSPITALAR 17.968,31 0 17.968,31 3.542 100,0%
+TETO ESTADUAL DA MÉDIA E ALTA COMPLEXIDADE AMBULATORIAL E HOSPITALAR 10.633,14 10.633,14 27 0 0,0%
+TETO MUNICIPAL REDE DE URGÊNCIA (RAU-HOSP) 1.389,94 0 1.389,94 266 100,0%
+TETO ESTADUAL REDE DE URGÊNCIA (RAU-HOSP) 1.095,02 1.095,02 27 0 0,0%
+TETO MUNICIPAL LIMITE UPA - PO 00098585 1.043,65 0 1.043,65 261 100,0%
+TETO MUNICIPAL REDE SAUDE MENTAL (RSME) 892,03 0 892,03 1.497 100,0%
+SERVIÇOS DE ATENDIMENTO MÓVEL ÀS URGÊNC SAMU 192 (RAU-SAMU)- MUNICIPAL 489,96 0 489,96 1.300 100,0%
+TETO MUNICIPAL REDE CEGONHA (RCE-RCEG) 466,55 0 466,55 166 100,0%
+INCREMENTO TEMPORÁRIO DO LIMITE FINANCEIRO DO MAC - PARCELA ÚNICA 423,58 156,63 20 266,95 574 63,0%
+TETO ESTADUAL REDE CEGONHA (RCE-RCEG) 378,40 378,40 24 0 0,0%
+TETO ESTADUAL LIMITE UPA - PO 00098585 370,30 370,30 13 0 0,0%
+TETO MUNICIPAL MELHOR EM CASA 333,03 0 333,03 328 100,0%
+SERVIÇOS DE ATENDIMENTO MÓVEL ÀS URGÊNCIAS - SAMU 192 (MAC)- MUNICIPAL 312,09 0 312,09 559 100,0%
+TETO MUNICIPAL REDE VIVER SEM LIMITES (RDEF) 257,70 0 257,70 180 100,0%
+TETO ESTADUAL REDE SAUDE MENTAL (RSME) 197,06 197,06 27 0 0,0%
+TETO ESTADUAL REDE DE URGÊNCIA (RAU-SOS) 174,32 174,32 16 0 0,0%
+CEO - CENTRO DE ESPECIALIDADES ODONTOLÓGICAS - MUNICIPAL 173,08 0 173,08 874 100,0%
+TETO MUNICIPAL REDE BRASIL SEM MISERIA (BSOR-SM) 130,53 0 130,53 1.535 100,0%
+TETO MUNICIPAL REDE PSICOSSOCIAL (RSM-CRAC) 125,88 0 125,88 140 100,0%
+TETO MUNICIPAL REDE DE URGÊNCIA (RAU-SOS) 106,65 0 106,65 15 100,0%
+SERVIÇOS DE ATENDIMENTO MÓVEL ÀS URGÊNCIAS SAMU192 (RAU-SAMU)-ESTADUAL 102,94 102,94 22 0 0,0%
+TETO MUNICIPAL LIMITE CONTROLE DO CANCER - PO 00088585 96,00 0 96,00 29 100,0%
+TETO ESTADUAL REDE VIVER SEM LIMITES (RDEF) 92,33 92,33 21 0 0,0%
+INCREMENTO TEMPORÁRIO DO LIMITE FINANCEIRO DA MAC 84,24 41,93 7 42,30 149 50,2%
+TETO MUNICIPAL REDE PREV DIAG TRAT CANCER COLO DE MAMA (RCA-RCA N) 81,85 0 81,85 98 100,0%
+SERVIÇOS DE ATENDIMENTO MÓVEL AS URGÊNCIAS - SAMU 192 (MAC) 78,57 78,57 14 0 0,0%
+TETO ESTADUAL REDE PREV DIAG TRAT CANCER COLO DE MAMA (RCA-RCAN ) 75,69 75,69 19 0 0,0%
+AQUISIÇÃO DE PRODUTOS MÉDICOS DE USO ÚNICO 47,88 12,06 6 35,82 83 74,8%
+TETO ESTADUAL REDE BRASIL SEM MISERIA (BSOR-SM) 33,81 33,81 25 0 0,0%
+TETO ESTADUAL REDE PSICOSSOCIAL (RSM-CRAC) 33,58 33,58 15 0 0,0%
+TETO ESTADUAL MELHOR EM CASA 31,83 31,83 8 0 0,0%
+OPERACIONALIZAÇÃO DAS AMBULÂNCIAS NOS JOGOS OLÍMPICOS E PARALÍMPICOS 20,00 20,00 1 0 0,0%
+TETO ESTADUAL LIMITE CONTROLE DO CANCER - PO 00088585 16,55 16,55 7 0 0,0%
+CEO - CENTRO DE ESPECIALIDADES ODONTOLÓGICAS ESTADUAL 14,75 14,75 13 0 0,0%
+REDE VIVER SEM LIMITES - REDEF - CEO MUNICIPAL 6,93 0 6,93 216 100,0%
+REDE VIVER SEM LIMITES - RDEF - CEO ESTADUAL 1,55 1,55 9 0 0,0%
+PAGAMENTOS ADMINISTRATIVOS (AIH) 1,03 0,08 1 0,95 2 91,9%
+Total R$ 
+milhões
+Estados Municípios % transf. 
+aos 
+municípios
+Limite 
+Financeiro 
+da MAC
+Compo- 
+nente Bloco / Componente / Linha de repasse
+---PAGE 9---
+10 
+ 
+TABELA 5B 
+Transferências do FNS para o Bloco de Média e Alta Complexidade  em 2016 – componente 
+Fundo de Ações Estratégicas e Compensação (FAEC) 
+  
+Fonte: FNS. Elaboração própria. 
+Foram transferidos, por meio do Bloco de Atenção Básica (tabela 6), R$ 16,74 bilhões em 2016, 
+dos quais 99,2% para os municípios. O Bloco é composto por 29 linhas de repasse, sendo que 
+as sete de maior valor são transferidas para mais de três mil municípios e representam 91,2% 
+do valor total repassado no Bloco de AB. O Piso de Atenção Básica (PAB) Fixo representa pouco 
+mais de ¼ do valor do Bloco, e o restante, em quase sua totalid ade, refere-se a diferentes 
+linhas de repasse para a Estratégia Saúde da Família (ESF): Saú de da Família, Agentes 
+Comunitários de Saúde, Programa de Melhoria do Acesso e da Qualidade (PMAQ), Núcleos de 
+Apoio à Saúde da Família (NASF), Saúde Bucal (SB) e repasses ad icionais, temporários ou 
+complementares relacionados a essas linhas de repasse. A elimin ação de linhas de repasse e 
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+FAEC 4.905,50 1.781,00 3.124,50 63,7%
+Subtotal FAEC SIA 3.877,64 1.307,87 2.569,76 66,3%
+FAEC SIA - NEFROLOGIA 2.979,76 978,71 23 2.001,05 253 67,2%
+FAEC SIA - TRANSPLANTES DE ORGÃOS, TECIDOS E CÉLULAS 209,83 90,36 25 119,47 83 56,9%
+FAEC SIA - TRATAMENTO DE DOENÇAS DO APARELHO DA VISÃO 196,01 28,01 12 168,00 114 85,7%
+FAEC SIA - MAMOGRAFIA PARA RASTREAMENTO (RCA-RCAN PO 0008) 129,85 50,07 24 79,78 826 61,4%
+FAEC SIA - TRANSPLANTE HISTOCOMPATIBILIDADE 125,88 48,89 10 76,99 16 61,2%
+FAEC SIA - TRATAMENTO EM ONCOLOGIA (RCA - RCAN - PO 0008) 38,95 20,57 20 18,38 94 47,2%
+FAEC SIA - CADEIRAS DE RODAS 31,24 10,87 17 20,37 50 65,2%
+FAEC SIA - CONSULTAS MÉDICAS/OUTROS PROFISSIONAIS DE NÍVEL SUPERIOR 30,39 8,51 12 21,88 114 72,0%
+FAEC SIA - SANGUE E HEMODERIVADOS 28,20 28,20 12 0 0,0%
+FAEC SIA - EXAME CITOPATOLÓGICO DO COLO DE ÚTERO 27,95 10,38 16 17,57 223 62,9%
+FAEC SIA - DIAGNÓSTICO EM LABORATÓRIO CLÍNICO 24,30 9,40 11 14,90 10 61,3%
+FAEC SIA - SISTEMA DE FREQÜÊNCIA MODULADA PESSOAL - FM 13,65 6,44 15 7,20 57 52,8%
+FAEC SIA - TRATAMENTOS ODONTOLÓGICOS 10,54 2,42 10 8,13 43 77,1%
+FAEC SIA - CIRURGIAS ELETIVAS - COMPONENTE ÚNICO 10,34 5,56 7 4,79 75 46,3%
+FAEC SIA - EXAMES DO LEITE MATERNO 6,79 3,19 22 3,60 151 53,0%
+FAEC SIA - OPM EM ODONTOLOGIA 3,97 0,57 3 3,40 18 85,6%
+FAEC SIA - OPM PARA TRANSPLANTES 3,44 1,75 8 1,69 15 49,1%
+FAEC SIA - ATENDIMENTO/ACOMP EM REABILITAÇÃO FÍSICA, MENTAL (PO 0006) 2,00 0,92 13 1,08 33 54,1%
+FAEC SIA - ATENDIMENTO/ACOMP DE DOENÇAS ENDOC/METABOL E NUTRICIONAIS 1,32 0,61 6 0,71 12 53,6%
+FAEC SIA - PROJETO OLHAR BRASIL 1,05 1,05 1 0 0,0%
+FAEC SIA - ATENÇÃO ÀS PESSOAS EM SITUAÇÃO DE VIOLÊNCIA SEXUAL 1,00 0,60 8 0,40 31 40,0%
+FAEC SIA - TRIAGEM NEONATAL 0,95 0,67 9 0,28 10 29,6%
+FAEC SIA - REDESIGNAÇÃO E ACOMPANHAMENTO 0,13 0,12 1 0,01 1 5,6%
+FAEC SIA - CENTRAL NACIONAL DE REGULAÇÃO DE ALTA COMPLEXIDADE - CNRAC 0,08 0,01 2 0,07 4 91,8%
+FAEC SIA - CIRURGIA DO APARELHO DIGESTIVO, ORGÃOS ANEXOS E PAREDE ABDO 0,00 0 0,00 2 100,0%
+FAEC SIA - PRÓTESE MAMÁRIA - EXAMES 0,00 0 0,00 3 100,0%
+Subtotal FAEC AIH 1.027,86 473,12 554,74 54,0%
+FAEC AIH - TRANSPLANTES DE ORGÃOS, TECIDOS E CÉLULAS 661,88 308,26 20 353,62 133 53,4%
+FAEC - CIRURGIAS ELETIVAS - COMPONENTE ÚNICO 143,61 44,44 11 99,17 231 69,1%
+FAEC AIH - CIRURGIA DO APARELHO CIRCULATÓRIO 69,59 38,20 11 31,39 42 45,1%
+FAEC AIH - CIRURGIA DO APARELHO DIGESTIVO, ORGÃOS ANEXOS E PAREDE ABDO 62,24 37,75 8 24,49 21 39,4%
+FAEC AIH - CIRURGIAS ELETIVAS - COMPONENTE ÚNICO 53,72 21,30 14 32,43 306 60,4%
+PLANO NACIONAL DE APOIO AS CENTRAIS DE TRANSPLANTES 13,24 13,24 27 0 0,0%
+FAEC AIH - CENTRAL NACIONAL DE REGULAÇÃO DE ALTA COMPLEXIDADE - CNRAC 11,50 4,58 4 6,92 12 60,1%
+FAEC AIH - CIRURGIA OROFACIAL 4,78 2,33 23 2,45 197 51,3%
+FAEC AIH - TRATAMENTOS ODONTOLÓGICOS 3,37 1,36 22 2,01 191 59,7%
+FAEC AIH - TRATAMENTO DE DOENÇAS DO SISTEMA NERVOSO CENTRAL E PERIFÉRI 1,97 0,67 11 1,30 45 66,0%
+FAEC AIH - OUTRAS CIRURGIAS PLÁSTICAS/REPARADORAS 1,19 0,59 7 0,60 19 50,3%
+FAEC AIH - TRATAMENTO EM ONCOLOGIA (RCA - RCAN - PO 0008) 0,26 0,23 5 0,03 2 9,9%
+FAEC SIH - ATENDIMENTO/ACOMPANHAMENTO EM REABILITAÇÃO FÍSICA, MENTAL 0,23 0 0,23 1 100,0%
+FAEC AIH - PRÓTESE MAMÁRIA - CIRURGIA 0,22 0,12 15 0,10 56 43,7%
+FAEC AIH - REDESIGNAÇÃO E ACOMPANHAMENTO 0,05 0,04 1 0,01 1 11,5%
+FAEC AIH - SEQUENCIAIS 0,01 0,01 3 0 0,0%
+FAEC AIH
+Compo- 
+nente Bloco / Componente / Linha de repasse Total R$ 
+milhões
+Estados Municípios % transf. 
+aos 
+municípios
+FAEC SIA 
+---PAGE 10---
+11 
+ 
+sua agregação podem facilitar a gestão local; a eliminação dos blocos de financiamento, 
+entretanto, traz o risco de absorção dos recursos da atenção básica pelos serviços de média e 
+alta complexidade, dada a demanda crescente e o contexto de forte restrição de recursos para 
+as políticas de saúde em decorrência do teto de gastos (EC 95),  que podem levar os gestores 
+municipais a priorizar o financiamento dos serviços assistencia is de maior complexidade em 
+detrimento da atenção primária. 
+TABELA 6  
+Transferências do FNS para o Bloco de Atenção Básica em 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+Foram transferidos, por meio do Bloco de Assistência Farmacêutica (tabela 7), R$ 1,97 bilhão 
+em 2016, dos quais 50,3% para os municípios. É composto por seis linhas de repasse, das quais 
+duas são transferidas para mais de mil municípios – Programa de  Assistência Farmacêutica 
+Básica (PAFB), em 4,3 mil municípios, e Programa Nacional de Qualificação da AF (QUALIFAR-
+S U S )  –  e  o u t r a s  d u a s  e m  t o d o s  o s  e s t a d o s  –  P r o g r a m a  d e  A q u i s i ç ão de Medicamentos 
+E x c e p c i o n a i s  e  P e s s o a s  P r i v a d a s  de Liberdade (PNAISP). Duas lin h a s  d e  r e p a s s e  –  P A F B  e  
+Programa de Aquisição de Medicamentos Excepcionais – concentram  94,7% das 
+transferências para estados e municípios. 
+  
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+BLOCO DE ATENÇÃO BÁSICA 16.740,16 140,60 25 16.599,55 5.568 99,2%
+Piso de Atenção Básica Fixo 5.714,65 61,78 5.652,87 98,9%
+PAB FIXO 4.838,66 60,98 2 4.777,68 5.568 98,7%
+PROGRAMA DE REQUALIFICAÇÃO DE UBS - REFORMAS 57,98 0 57,98 412 100,0%
+INCREMENTO TEMPORÁRIO DO PISO DE ATENÇÃO BÁSICA - PARCELA ÚNICA 600,45 0 600,45 1.722 100,0%
+INCREMENTO TEMPORÁRIO DO PISO DE ATENÇÃO  BÁSICA 217,57 0,80 1 216,77 633 99,6%
+Piso de Atenção Básica Fixo 11.025,50 78,82 10.946,68 99,3%
+SAÚDE DA FAMÍLIA - SF 3.450,46 18,49 2 3.431,97 5.502 99,5%
+ASSISTÊNCIA FINANCEIRA COMPLEMENTAR - ACS - 95 POR CENTO 1.893,88 4,47 1 1.889,41 4.590 99,8%
+PROGRAMA DE MELHORIA DO ACESSO E DA QUALIDADE - PMAQ (RAB-PMAQ-SM) 1.804,90 4,09 2 1.800,82 5.350 99,8%
+AGENTES COMUNITÁRIOS DE SAÚDE - ACS 1.515,97 8,13 2 1.507,84 4.013 99,5%
+NÚCLEOS DE APOIO À SAÚDE DA FAMÍLIA - NASF 884,59 0,98 1 883,61 3.517 99,9%
+SAÚDE BUCAL - SB 872,50 2,46 2 870,04 5.097 99,7%
+INC ADIC ASSISTÊNCIA FINANCEIRA COMPLEMENTAR - ACS - 95 POR CENTO 155,75 0,41 1 155,34 4.488 99,7%
+INCENTIVO ADCIONAL AO PROGRAMA DE AGENTES COMUNITARIOS DE SAUDE 106,02 0,55 2 105,47 3.266 99,5%
+FORTALEC. DE POL. AFETAS À ATUAÇÃO DA ESTRATÉGIA DE ACS - 5 POR CENTO 99,67 0,24 1 99,44 4.590 99,8%
+ATENÇÃO DOMICILIAR (EMAD)  RAU-ADOM 53,22 4,55 7 48,67 308 91,5%
+INCENTIVO PARA ATENÇÃO À SAÚDE NO SISTEMA PENITENCIÁRIO 52,89 33,52 23 19,36 98 36,6%
+EQUIPES DE CONSULTÓRIOS NA RUA (RSM-CRAC-SM) 42,79 0,66 1 42,12 83 98,5%
+INCENTIVO ADICIONAL PSF 20,49 0 20,49 459 100,0%
+INCENTIVO AO PROGRAMA ACADEMIA DA SAÚDE - RAB-ACAD 18,68 0 18,68 577 100,0%
+EQUIPES DE SAÚDE DA FAMÍLIA PARA POPULAÇÕES RIBEIRINHAS 11,00 0 11,00 39 100,0%
+INC ADIC FORT POL AFETAS À ATUAÇÃO DA ESTRAT DE ACS - 5 POR CENTO 8,20 0,02 1 8,18 4.488 99,7%
+INCENTIVO FINANCEIRO DE INCLUSÃO DO MICROSCOPISTA NA ATENÇÃO BÁSICA 6,79 0 6,79 107 100,0%
+PROGRAMA SAÚDE NA ESCOLA (RAB-SESC-SM) 5,25 0 5,25 512 100,0%
+UNIDADE DE SAÚDE DA FAMÍLIA (FLUVIAL) 4,95 0 4,95 5 100,0%
+EQUIPE DE SAÚDE BUCAL - UNIDADE ODONTOLÓGICA MÓVEL (UOM) (RAB-UODM-SM) 4,95 0 4,95 109 100,0%
+INCENTIVO FINANCEIRO PARA A ATENÇÃO Á SAÚDE DE ADOLESCENTE 3,66 0 3,66 32 100,0%
+EMAP - EQUIPES MULTIPROFISSIONAIS DE APOIO (RAU-ADOM) 3,61 0,24 5 3,37 251 93,3%
+INCENTIVO ADICIONAL SAÚDE BUCAL 3,16 0 3,16 190 100,0%
+INCENTIVO DE IMPLANTAÇÃO AOS NÚCLEOS DE APOIO À SAÚDE DA FAMÍLI A-NASF 1,62 0 1,62 98 100,0%
+INCENTIVO ADICIONAL DO MICROSCOPISTA NA ATENÇÃO BÁSICA 0,52 0 0,52 101 100,0%
+Piso de 
+Atenção 
+Básica 
+Variável
+Municípios % transf. 
+aos 
+municípios
+Compo- 
+nente Bloco / Linha de repasse Total R$ 
+milhões
+Estados
+Piso de 
+Atenção 
+Básica 
+Fixo
+---PAGE 11---
+12 
+ 
+TABELA 7  
+Transferências do FNS para o Bloco de Assistência Farmacêutica em 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+Foram transferidos, por meio do Bloco de Gestão do SUS (tabela 8), R$ 63,0 milhões em 2016, 
+o que representa 0,09% dos recursos transferidos pelo FNS no an o, dos quais 53,9% para os 
+municípios. É composto por 19 linhas de repasse, entre as quais  duas concentram 70,8% do 
+valor total: Incentivo à Implantação de Complexos Reguladores – recebido por oito estados e 
+25 municípios – e Programa de Financiamento de Ações de Alimentação e Nutrição – recebido 
+por 26 estados e 179 municípios. 
+TABELA 8  
+Transferências do FNS para o Bloco de Gestão do SUS em 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+Foram transferidos, por meio do Bloco de Vigilância em Saúde (t abela 9), R$ 2,72 bilhões em 
+2016, dos quais 75,6% para os municípios. É composto por 15 linhas de repasse, sendo que os 
+governos estaduais recebem 72,1% do valor total em três delas e  o s  g o v e r n o s  m u n i c i p a i s  
+recebem 65,1% em duas. 
+  
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+BLOCO DE ASSISTÊNCIA FARMACÊUTICA 1.969,49 978,50 27 990,99 4.684 50, 3%
+Assistência Farmacêutica Básica 1.123,95 193,77 930,18 82,8%
+PROGRAMA DE ASSISTÊNCIA FARMACEUTICA BÁSICA (PARCELAS) 1.083,27 182,23 8 901,04 4.291 83,2%
+PROG NAC DE QUALIFICAÇÃO DA ASSISTÊNCIA FARMACÊUTICA (QUALIFAR-SUS) 25,09 0 25,09 1.230 100,0%
+PESSOAS PRIVADAS DE LIBERDADE PRISIONAL - (PNAISP) 11,32 10,35 27 0,97 111 8,6%
+PROGRAMA NACIONAL DE PLANTAS MEDICINAIS E FITOTERÁPICOS 4,26 1,19 2 3,07 15 72,0%
+Medic. Disp. Excepcional PROGRAMA DE AQUISIÇÃO DE MEDICAMENTOS EXCEPCIONAIS 782,78 782,78 27 0 0,0%
+Farmácia Popular PROGRAMA FARMÁCIA POPULAR DO BRASIL 62,76 1,95 4 60,81 362 96,9%
+Assistência 
+Farmacêutica Básica
+Municípios % transf. 
+aos 
+municípios
+Componente Bloco / Linha de repasse Total R$ 
+milhões
+Estados
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+BLOCO DE GESTÃO DO SUS 63,02 29,04 27 33,99 360 53,9%
+Qualificação da Gestão do SUS 41,70 25,36 16,34 39,2%
+INCENTIVO A IMPLANTAÇÃO OU IMPLEMENTAÇÃO DE COMPLEXOS REGULADOR ES 34,87 18,93 8 15,94 25 45,7%
+FORMAÇÃO PROFISSIONAL DOS AGENTES COMUNITÁRIOS  DE SAÚDE 5,63 5,63 4 0 0,0%
+PROJETOS DE PLANOS DE CARREIRA E DESPRECARIZAÇÃO DO TRABALHO EM  SAÚDE 0,80 0,80 1 0 0,0%
+CONCURSO PRÊMIO INOVASUS 0,27 0 0,27 2 100,0%
+PROGRAMA NACIONAL DE REORIENTAÇÃO PROF. EM SAUDE - PRÓ-SAÚDE (C USTEIO) 0,13 0 0,13 1 100,0%
+Implantação de Ações e Serviços de Saúde 21,33 3,68 17,65 82,7%
+PROGRAMA DE FINANCIAMENTO DAS AÇÕES DE ALIMENTAÇÃO E NUTRIÇÃO ( FAN) 9,76 3,10 26 6,66 179 68,2%
+INCENTIVO DE REABILITAÇÃO PSICOSSOCIAL (PI) - RSM-RSME 3,47 0,07 1 3,41 101 98,1%
+AMBIENCIA DOS SERVIÇOS DE PARTO (REFORMA) 2,87 0,20 1 2,67 15 93,0%
+INCENTIVO FINANCEIRO AOS SERVIÇOS RESIDÊNCIAIS TERAPÊUTICOS (PI) 1,90 0,12 1 1,78 37 93,7%
+CAPS I - INCENTIVO  AO CUSTEIO DOS CENTROS DE AT. PSICOSSOCIAL (PI) 0,66 0 0,66 33 100,0%
+IMPLANTAÇÃO DE LEITOS DE SAÚDE MENTAL (PI) - RSM-RSME 0,65 0,20 5 0,45 18 69,8%
+CAPS AD III - ENFRENTAMENTO AO CRACK E OUTRAS DROGAS (PI) 0,38 0 0,38 3 100,0%
+CAPS AD - INCENTIVO DEST. AOS CENTROS DE ATENÇÃO PSICOSSOCIAL (PI) 0,35 0 0,35 7 100,0%
+UNIDADE DE ACOLHIMENTO ADULTO - UAA (PI) 0,35 0 0,35 5 100,0%
+CENTRO DE PARTO NORMAL (REFORMA) 0,34 0 0,34 2 100,0%
+CAPS IN - INCENTIVO AO CUSTEIO DOS CENTROS DE AT. PSICOSSOCIAL (PI) 0,30 0 0,30 10 100,0%
+UNIDADE DE ACOLHIMENTO INFANTO-JUVENIL - UAI (PI) 0,14 0 0,14 2 100,0%
+CAPS III - INCENTIVO AO CUSTEIO DOS CENTROS DE AT. PSICOSSOCIAL (PI) 0,09 0 0,09 3 100,0%
+CAPS II - INCENTIVO AO CUSTEIO DOS CENTROS DE AT. PSICOSSOCIAL (PI) 0,08 0 0,08 4 100,0%
+Implantação 
+de Ações e 
+Serviços de 
+Saúde
+Municípios % transf. 
+aos 
+municípios
+Componente Bloco / Linha de repasse Total R$ 
+milhões
+Estados
+Qualificação 
+da Gestão do 
+SUS
+---PAGE 12---
+13 
+ 
+TABELA 9  
+Transferências do FNS para o Bloco de Vigilância em Saúde em 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+Foram transferidos por meio do Bloco de Investimentos (tabela 10) R$ 2,65 bilhões em 2016, 
+dos quais 87,1% para os 4.375 municípios que receberam algum valor no Bloco em 2016. 
+  
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+BLOCO DE VIGILÂNCIA EM SAÚDE 2.720,60 662,70 27 2.057,90 5.569 75,6%
+Vigilância em Saúde 2.476,96 557,42 1.919,54
+PISO FIXO DE VIGILANCIA EM SAUDE (PFVS) PARCELA 1.107,00 270,85 27 836,15 5.568 75,5%
+ASSISTÊNCIA FINANCEIRA COMPLEMENTAR - ACE - 95 POR CENTO 508,35 3,80 1 504,55 4.126 99,3%
+INC.AS AÇÕES DE VIG.PREV  E CONT DAS DST/AIDS E HEPATITE VIRAIS (PVVS) 193,33 50,40 27 142,93 931 73,9%
+PROGRAMA DE QUALIFICAÇÃO DAS AÇÕES DE VIGILANCIA EM SAUDE (PVVS) 164,51 21,25 27 143,26 5.521 87,1%
+INCENTIVOS PONTUAIS PARA AÇÕES DE SERVIÇOS DE VIGILÃNCIA EM SAÚDE IPVS 143,73 2,02 2 141,72 5.557 98,6%
+INC.PARA IMPLANT.E MANUT.AÇÕES SERV.PUBLIC.ESTRAT.DE VIG.(PVVS) 136,53 106,68 27 29,85 326 21,9%
+IMPLEMENTAÇÃO DE AÇÕES DE PREVENÇÃO CONTROLE COMBATE AO AEDES AEGYPTI 100,00 100,00 1 0 0,0%
+INC. ADIC. ASSISTÊNCIA FINANCEIRA COMPLEMENTAR - ACE - 95 POR CENTO 75,27 0,48 1 74,79 4.081 99,4%
+FORTALEC. DE POL. AFETAS À ATUAÇÃO DA ESTRATÉGIA DE ACE - 5 POR CENTO 26,76 0,20 1 26,56 4.126 99,3%
+AÇÕES CONTINGENCIAIS DE VIGILANCIA EM SAUDE (PVVS) 17,52 1,71 2 15,81 2.216 90,2%
+INC. ADIC. FORT. POL. AFETAS À ATUAÇÃO DA ESTRAT DE ACE - 5 POR CENTO 3,96 0,03 1 3,94 4.081 99,4%
+Piso Fixo de Vigilância Sanitária 241,61 104,78 136,83
+PISO FIXO DE VIGILÂNCIA SANITÁRIA PARTE - FNS (PARCELA) 178,60 64,58 27 114,03 5.259 63,8%
+PISO FIXO DE VIGILÂNCIA SANITÁRIA - PARTE ANVISA (PARCELA) 40,17 17,37 27 22,81 5.268 56,8%
+REDE NACIONAL DE LABORATÓRIOS DE VIGILÃNCIA SANITÁRIA - FINLACEN (P) 22,84 22,84 27 0 0,0%
+Piso Variável 
+Vigil. Sanitária APERFEIÇOAMENTO DO SISTEMA ÚNICO DE SAÚDE (SUS) 2,03 0,50 2 1,53 30 75,3%
+Piso Fixo de 
+Vigilância 
+Sanitária
+Municípios % transf. 
+aos 
+municípios
+Componente Bloco / Linha de repasse Total R$ 
+milhões
+Estados
+Vigilância em 
+Saúde
+---PAGE 13---
+14 
+ 
+TABELA 10 
+Transferências do FNS para o Bloco de Investimentos em 2016 
+ 
+Fonte: FNS. Elaboração própria. 
+Na tabela 11, a seguir, são apresentados os valores médios por habitante transferidos para os 
+municípios por Bloco de Financiamento e por faixa populacional. Com relação ao valor total, 
+as médias por habitante são maiores nos municípios de maior porte em decorrência da maior 
+concentração dos serviços de média e alta complexidade nesses municípios. 
+Na Atenção Básica, os maiores valores estão concentrados nos me nores municípios devido à 
+elevada cobertura da Estratégia Saúde da Família (ESF) nesses municípios e da transferência 
+relativa ao PMAQ. O Bloco de MAC concentra os maiores valores por habitante nos municípios 
+mais populosos, com maior valor (R$ 241) na penúltima faixa (de  500 mil a 1 milhão de 
+habitantes). O Bloco de Assistência Farmacêutica registra valores per capita nas diversas faixas 
+R$ 
+milhões
+Quantos 
+recebem
+R$ 
+milhões
+Quantos 
+recebem
+INVESTIMENTO 2.652,53 340,99 26 2.311,54 4.375 87,1%
+ESTRUTURAÇÃO DA REDE DE SERVIÇOS DE ATENÇÃO BÁSICA DE SAÚDE 971,99 47,09 10 924,90 2.806 95,2%
+ESTRUTURAÇÃO DE UNIDADES DE ATENÇÃO ESPECIALIZADA EM SAÚDE 811,05 249,14 26 561,91 953 69,3%
+PROGRAMA DE REQUALIFICAÇÃO DE UBS - CONSTRUÇÃO 391,94 3,04 3 388,89 1.593 99,2%
+UNIDADE DE PRONTO ATENDIMENTO - UPA 75,59 0,42 2 75,17 108 99,4%
+UNIDADES BÁSICAS DE SAÚDE - UBS 70,33 0 70,33 488 100,0%
+CENTRO ESPECIALIZADO EM REABILITAÇÃO (CONSTRUÇÃO) 64,13 0,25 1 63,88 38 99,6%
+PROGRAMA DE REQUALIFICAÇÃO DE UBS - AMPLIAÇÃO 57,92 0,00 0 57,92 559 100,0%
+SERVIÇOS DE ATENÇÃO ÀS URGÊNCIAS E EMERGÊNCIAS NA REDE HOSPITALAR 29,86 6,00 5 23,86 49 79,9%
+CAPS  (CONSTRUÇÃO) 24,56 0 24,56 51 100,0%
+INCENTIVO PARA CONSTRUÇÃO DA ACADEMIA DA SAÚDE - AMPLIADA (PI) 22,07 0 22,07 332 100,0%
+INCENTIVO PARA CONSTRUÇÃO DE ACADEMIAS DA SAÚDE - INTERMEDIÁRIA (PI) 15,79 0 15,79 346 100,0%
+AÇÕES DE INVESTIMENTO DE VIGILANCIA EM SAUDE 14,76 13,48 14 1,29 9 8,7%
+IMPLEMENTAÇÃO DE POLÍTICAS DE ATENÇÃO À  SAÚDE 13,59 0 13,59 10 100,0%
+UA - UNIDADE DE ACOLHIMENTO (CONSTRUÇÃO) 12,30 0 12,30 32 100,0%
+PROGRAMA DE FINANCIAMENTO DAS AÇÕES DE ALIMENTAÇÃO E NUTRIÇÃO ( VAN) 9,20 0 9,20 970 100,0%
+APOIO À IMPLEMENTAÇÃO DA REDE CEGONHA 8,63 6,27 6 2,35 13 27,3%
+IMPLEMENTAÇÃO DE COMPLEXOS REGULADORES - CAPITAL 8,62 4,54 1 4,07 24 47,3%
+ESTRUTURAÇÃO DE SERVIÇOS DE HEMATOLOGIA E HEMOTERAPIA. 7,41 7,41 18 0,00 0 0,0%
+INCENTIVO PARA CONSTRUÇÃO DE POLOS DE ACADEMIA DA SAÚDE - BASICA (PI) 6,84 0 6,84 193 100,0%
+CENTRO ESPECIALIZADO EM REABILITAÇÃO (AMPLIAÇÃO) 5,67 0,79 1 4,88 8 86,1%
+CONSTRUÇÃO DE UBS FLUVIAL 4,99 0 4,99 6 100,0%
+UPA - AMPLIAÇÃO 3,99 0 3,99 5 100,0%
+CENTRO DE PARTO NORMAL (AMPLIAÇÃO) 3,12 0 3,12 10 100,0%
+CAPS AD III (CONSTRUÇÃO) 2,56 0,60 2 1,96 8 76,6%
+CASA DE GESTANTE E BEBÊ (AMPLIAÇÃO) 2,54 0,80 1 1,74 5 68,4%
+CENTRO ESPECIALIZADO EM REABILITAÇÃO (REFORMA) 2,20 0,80 1 1,40 3 63,6%
+CENTRO ESPECIALIZADO EM REABILITAÇÃO (EQUIPAMENTO) 1,50 0 1,50 1 100,0%
+CAPS 1 (CONSTRUÇÃO) 1,28 0 1,28 8 100,0%
+OFICINA ORTOPÉDICA (CONSTRUÇÃO) 1,23 0 1,23 7 100,0%
+CAPS 2 (CONSTRUÇÃO) 1,12 0 1,12 5 100,0%
+AQUISIÇÃO DE EQUIPAMENTOS ODONTOLÓGICOS 1,09 0 1,09 50 100,0%
+PROGRAMA NACIONAL DE PLANTAS MEDICINAIS E FITOTERÁPICOS 0,80 0,17 2 0,63 14 78,7%
+REFORMA DE CENTRAL DO SAMU 0,78 0 0,78 3 100,0%
+PROGRAMA NACIONAL DE REORIENTAÇÃO PROF. EM SAUDE - PRÓ-SAÚDE (C APITAL) 0,61 0 0,61 15 100,0%
+CAPS 3 (CONSTRUÇÃO) 0,60 0 0,60 3 100,0%
+AMBIÊNCIA DOS SERVIÇOS DE PARTO (AMPLIAÇÃO) 0,44 0 0,44 3 100,0%
+CAPS AD (CONSTRUÇÃO) 0,32 0 0,32 2 100,0%
+CAPS I (CONSTRUÇÃO) 0,32 0,16 1 0,16 1 50,0%
+REFERENTE À AQUISIÇÃO DE EQUIPAMENTOS DE TECNOLOGIA 0,30 0 0,30 3 100,0%
+SISTEMA INTEGRADO DE SAÚDE DAS FRONTEIRAS - (FASE III) CAPITAL INV 0,25 0 0,25 11 100,0%
+IMPLANTAÇÃO DO CENTRO DE ESPECIALIDADE ODONTOLÓGICA - CEO 0,12 0 0,12 2 100,0%
+SISTEMA INTEGRADO DE SAÚDE DAS FRONTEIRAS - (FASE II) CAPITAL INV 0,09 0 0,09 3 100,0%
+REFERENTE À AQUISIÇÃO DE MATERIAIS E MOBILIÁRIOS 0,08 0,02 1 0,05 3 70,9%
+Bloco / Linha de repasse Total R$ 
+milhões
+Estados Municípios % transf. 
+aos 
+municípios
+---PAGE 14---
+15 
+ 
+populacionais bastante próximos à média, em torno de R$ 5, com valores ligeiramente 
+inferiores nos municípios com população entre 5 e 50 mil habitantes. O Bloco de Vigilância em 
+Saúde também registra valores per capita por faixa populacional bastante próximos à média, 
+em torno de R$ 10, com valores ligeiramente superiores nos municípios da faixa populacional 
+até 5 mil habitantes. No Bloco de Gestão do SUS, os maiores val o r e s  e s t ã o  n o s  m a i o r e s  
+municípios. O Bloco de Investimentos registra valores per capita mais altos nos municípios 
+menores, variando de R$ 33,3 na faixa de municípios de até 5 mil habitantes a R$ 2,2 naqueles 
+com mais de um milhão de habitantes. 
+Uma eventual unificação dos blocos de financiamento em uma únic a funcional programática 
+d o  o r ç a m e n t o  n ã o  p e r m i t i r i a  e s s e  t i p o  d e  a n á l i s e  c o m  i n f o r m a ç õ es do Fundo Nacional de 
+Saúde, e somente poderia ser feita a posteriori, a partir das i nformações coletadas por meio 
+do SIOPS, e dependeria da qualidad e dessa informação, afetada p elos diferentes 
+entendimentos dos contadores em relação à classificação da despesa11. 
+TABELA 11  
+Transferências do FNS para os governos municipais em 2016, por Bloco de Financiamento  
+(por faixa populacional – em R$ por habitante) 
+ 
+Fonte: FNS. Elaboração própria. 
+A tabela 12, a seguir, apresenta os valores médios por habitant e transferidos para cada UF, 
+considerando os repasses para os governos estaduais e municipai s. Os maiores valores 
+concentram-se nos estados das regiões Norte (com exceção de Ama zonas e Pará, que estão 
+entre os menores valores do país) e Nordeste (com exceção de Ma ranhão e Bahia). O menor 
+valor per capita foi registrado no Distrito Federal (R$ 242), seguido das UFs j á mencionadas, 
+Pará (R$ 251) e Amazonas (R$ 266). Os valores per capita devem ser analisados em conjunto 
+com o financiamento com recursos  próprios, e no caso do Distrit o Federal também se deve 
+considerar que o ente recebe tra nsferência (constitucional) da União para pagamento de 
+pessoal da saúde12. 
+  
+                                                            
+11 A despesa com pessoal, por exemplo, é classificada por muitos municípios nas subfunções administrativas, e em outros nas subfunções 
+vinculadas à saúde. 
+12 Além da saúde, o DF recebe transferências também para pagamento de pessoal da educação e da segurança pública. 
+Total AB MAC AF VS Gestão Investi- 
+mento
+Número % do 
+total
+Em 
+milhões
+% do 
+total
+Total 242,9  81,7  134,6 4 ,9 10,1  0 , 1 7 11,4  5.569 100,0% 203,1  100,0%
+Acima de 1 milhão de hab 273,9 50,7  205,3 5 ,4 10,0  0 , 3 0 2 ,2 16 0,3% 42,2  20,8%
+De 500 mil a 1 milhão de hab 319,6 55,6  241,4 5 , 3  10,4  0 , 3 0 6 , 5  24 0,4% 16,4  8 , 1 %
+De 200 mil a 500 mil hab 247,5 57,5  166,8 5 , 1  9 , 9  0 , 1 9 8 , 0  107 1,9% 32,8  16,2%
+De 100 mil a 200 mil hab 233,3 66,6  141,0 4 ,8 10,1  0 , 1 4 10,7  161 2,9% 21,7  10,7%
+De 50 mil a 100 mil hab 241,6 82,6  129,1 4 ,9 10,3  0 , 1 1 14,6  350 6,3% 24,2  11,9%
+De 20 mil a 50 mil hab 202,5 108,2  63,7 4 ,3 9 ,7 0 , 0 9 16,4  1.101 19,8% 33,4  16,5%
+De 10 mil a 20 mil hab 201,6 133,8  34,8 4 ,0 9 ,5 0 , 0 4 19,4  1.365 24,5% 19,5  9 , 6 %
+De 5 mil a 10 mil hab 205,4 147,7  19,7 4 ,3 10,8  0 , 0 5 22,7  1.208 21,7% 8,6  4 , 2 %
+Até 5 mil hab 241,4 170,7  16,8 5 ,1 15,5  0 , 0 3 33,3  1.237 22,2% 4,2  2 , 1 %
+Municípios População  Blocos de Financiamento - R$ por habitante
+Faixa de População
+---PAGE 15---
+16 
+TABELA 12  
+Transferências do FNS para os governos estaduais e municipais por Bloco de Financiamento, 
+por UF, 2016  
+(em R$ por habitante) 
+Fonte: FNS. Elaboração própria. 
+4 – Considerações finais 
+As i
+nformações sobre os repasses financeiros do FNS estão disponíveis em diversos formatos, 
+permitindo aos pesquisadores, gestores, conselheiros de saúde, estudantes e ao público em 
+geral o acesso, com relativa facilidade, às informações sobre o s valores transferidos por 
+município, para um conjunto deles ou para todos os municípios do país. Esta Nota Técnica tem 
+caráter empírico, e busca contribuir com o debate sobre a prete nsa unificação dos repasses 
+federais. 
+A proposta de unificação dos blocos de financiamento de custeio , aprovada pela CIT em 
+janeiro desse ano, não depende a penas de mudanças das normas da s transferências do MS, 
+mas também das que regulamentam a execução orçamentária e finan ceira, notadamente da 
+Portaria que define as subfunções13. A proposta dos formuladores do SUS Legal é de criar uma 
+subfunção para as transferências fundo a fundo 14, de forma que os municípios e estados 
+13 Uma das normas que regem o orçamento público que precisaria de mudanças é a Portaria nº 42, de abril de 1999, do Ministério do Orçamento e 
+Gestão, que define as funções e as subfunções, e que se aplica à contabilidade da União, dos estados e dos municípios. 
+14 A Portaria nº 42 define seis subfunções para a saúde: 301 – Atenção Básica; 302 – Assistência Hospitalar e Ambulatorial; 303 – Suporte Profilático 
+e Terapêutico; 304 – Vigilância Sanitária; 305 – Vigilância Epidemiológica; 306 – Alimentação e Nutrição. A proposta do SUS Legal é de criar uma 
+UF Total AB MAC AF VS Gestão Investi-
+mento
+Total 324,2 81,2 207,1 9,6 13,2 0,31 12,9
+RO 339,1 75,5 202,8 6,7 18,7 0,38 35,0
+AC 440,0 129,8 252,5 6,1 21,2 0,31 30,2
+AM 266,0 75,9 152,0 7,0 19,4 0,10 11,6
+RR 454,3 84,2 204,2 6,2 27,9 0,42 131,4
+PA 250,7 75,6 134,6 7,3 17,6 0,08 15,6
+AP 382,3 113,0 170,0 5,7 22,5 0,17 70,9
+TO 442,4 131,0 245,2 7,6 21,1 0,53 37,0
+MA 313,7 116,9 159,9 7,1 17,4 0,08 12,3
+PI 442,0 155,5 232,1 7,5 14,4 0,56 32,0
+CE 357,0 104,0 217,6 8,2 14,3 0,37 12,6
+RN 342,5 121,3 176,6 7,7 14,6 0,77 21,6
+PB 368,5 139,7 185,6 9,1 14,4 0,45 19,3
+PE 371,2 96,9 236,7 7,1 13,9 0,38 16,1
+AL 380,5 106,9 234,8 7,8 14,6 0,62 15,8
+SE 378,9 128,2 212,7 9,1 14,8 0,11 13,9
+BA 318,9 91,7 191,4 6,8 13,6 0,60 14,9
+MG 339,8 96,9 208,1 9,6 13,6 0,67 10,9
+ES 294,0 66,0 192,1 11,7 13,6 0,08 10,5
+RJ 311,9 63,4 218,9 7,9 12,5 0,10 9,1
+SP 296,0 50,3 214,5 13,5 11,2 0,19 6,3
+PR 347,4 82,4 233,6 10,6 10,5 0,19 10,1
+SC 344,2 99,3 215,2 11,1 9,3 0,15 9,1
+RS 314,6 62,8 224,6 7,6 9,2 0,09 10,3
+MS 374,3 88,2 249,8 10,4 15,1 0,09 10,7
+MT 337,9 84,1 198,7 7,3 16,6 0,50 30,6
+GO 317,6 75,7 192,5 10,5 15,3 0,51 23,2
+DF 242,4 35,6 185,0 9,2 8,7 0,12 3,8
+---PAGE 16---
+17 
+ 
+pudessem realizar as despesas em subfunções diferentes (301 – Atenção Básica; 302 – Média 
+e Alta Complexidade; etc) daquela utilizada na execução orçamentária pelo MS. Dessa forma, 
+os valores transferidos fundo a fundo pelo MS, que representam cerca de 2/3 do orçamento 
+do Ministério, somente teriam a finalidade da despesa conhecida  a posteriori, na prestação 
+de contas dos estados e municípios ao SIOPS15.  
+A proposta do SUS Legal prevê também a implementação do planeja mento ascendente 
+(Município → Região de Saúde → Estado → Brasil) por meio de um sistema que integre as 
+informações das programações das ações e serviços de saúde de t odos os entes federados e 
+permita a utilização dessas informações na construção do Plano Nacional de Saúde a partir 
+dos planos estaduais e municipais de saúde, o que evitaria que estes fossem cartoriais e 
+burocráticos – uma mera formalidade –, conforme a situação atua l, criticada pelos 
+formuladores da proposta. Uma mu dança efetiva, portanto, nas normas de financiamento 
+federal do SUS, dependeria da imp lementação do planejamento ascendente, que não é uma 
+medida de aplicação imediata. 
+Outro aspecto que deveria ser con siderado em uma mudança das nor m a s  d e  r e p a s s e  d o s  
+recursos federais é o dos critérios e da metodologia de repartição, um debate que existe desde 
+a criação do SUS16. A mudança da metodologia de repartição dos recursos federais alteraria a 
+atual situação de partilha e geraria perdas para alguns entes federados e ganhos para outros; 
+uma vez que os blocos de financiamento sejam unificados, e dado  q u e  e x i s t e m  c r i t é r i o s  
+derivados das regras atuais que determinam os valores a serem t ransferidos para cada ente 
+federado, as dificuldades de implementação dessa transição não devem ser ignoradas, tendo 
+em vista o congelamento da aplicação mínima da União por 20 ano s, como decorrência do 
+i n í c i o  d a  v i g ê n c i a  d a  E C  9 5 / 2 0 1 6  e m  2 0 1 7 .  O s  f o r m u l a d o r e s  d a  p roposta, entretanto, 
+defendem a aplicação imediata das mudanças já a partir do exercício de 201817, mesmo antes 
+da revisão dos critérios e da metodologia de repartição dos recursos.  
+As questões levantadas acima demandam tempo e muito debate para uma flexibilização 
+prudente das normas de aplicação dos recursos por estados e mun icípios. Se, por um lado, o 
+excesso de regulamentação para a aplicação dos recursos transfe ridos cria dificuldades para 
+a execução das políticas localmente e configura um exagero do poder de indução das políticas 
+por parte do Ministério da Saúde, por outro, o gestor federal p recisa de instrumentos para 
+coordenar a implementação das políticas de saúde por meio da alocação de recursos. 
+  
+                                                            
+subfunção específica para as transferências  fundo a fundo e permitir que  os estados e municípios ap liquem os recursos em subfun ções diversas 
+dessa. 
+15 Atualmente há muitas diferenças metodológicas na classificação das despesas por parte de estado s e municípios, de forma que hav eriam 
+dificuldades na consolidação das informações sobre o gasto público com saúde por subfunção. 
+16 O debate sobre os critérios e a metodologia de repartição de recu rsos federais está fora do escopo de análise desta Nota Técnica . Uma discussão 
+mais aprofundada sobre o tema pode ser encontrada em PIOLA (2017), MENDES (2017), BARROS e PIOLA (2016),  MARQUES, PIOLA e 
+OCKÉ-REIS (2016) e VIANA, FAUSTO e LIMA (2003). 
+17 O pleito foi objeto de ofício (DONIZETTI e JUNQUEIRA, 2017) a ssinado conjuntamente pela Frente Nacional de Prefeitos e pelo 
+CONASEMS, enviado ao Presidente da República, solicitando a mudança já para o exercício financeiro de 2018. O ofício cita o número equivocado 
+de “882 formas de alocação de recursos federais destinadas a estados e municípios”. 
+---PAGE 17---
+18 
+ 
+5 – Referências 
+BARROS, Maria Elizabeth Diniz; PIO LA, Sergio Francisco. “O fina nciamento dos serviços de 
+saúde no Brasil”. In: MARQUES, Rosa Maria; PIOLA, Sergio Franci sco; ROA, Alejandra Carrillo. 
+Sistema de saúde no Brasil: organização e financiamento. Rio de  Janeiro: ABrES; Brasília: 
+Ministério da Saúde; OPAS/OMS no Brasil, 2016, p. 101-138. 
+BRASIL. Fundo Nacional de Saúde. < https://consultafns.saude.gov.br/#/consolidada> e 
+<http://portalfns.saude.gov.br/arquivos-de-repasse-anual-fundo-a-fundo>. Acessado em 
+set/2017. 
+_____. Lei Complementar nº 141, de 13 de janeiro de 2012. Regulamenta o § 3º do art. 198 
+da Constituição Federal para dispor sobre os valores mínimos a serem aplicados anualmente 
+pela União, Estados, Distrito Federal e Municípios em ações e s erviços públicos de saúde; 
+estabelece os critérios de rateio dos recursos de transferência s para a saúde e as normas de 
+fiscalização, avaliação e controle das despesas com saúde nas t rês esferas de governo; e dá 
+outras providências. Disponível em:< 
+http://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp141.htm>. Acesso em: 21 out. 2016. 
+______. Lei nº 8.080, de 19 de setembro de 1990. Dispõe sobre as condições para a promoção, 
+proteção e recuperação da saúde, a organização e o funcionament o dos serviços 
+correspondentes. Brasília, 1990. Disponível em:< 
+http://www.planalto.gov.br/ccivil_03/leis/L8080.htm>. Acesso em: 21 out. 2016. 
+CONASEMS. “SUS Legal: Conasems, Conass e Ministério pactuam novo modelo de repasse de 
+recursos do SUS”. Brasília, 2017. Disponível em: http://www.conasems.org.br/sus-legal-
+conasems-conass-e-ministerio-pactuam-novo-modelo-de-repasse-do-sus. Acesso em: 26 mai. 
+2017. 
+DONIZETTE, J. e JUNQUEIRA, M. Ofício da Frente Nacional de Pref eitos FNP nº 1124/2017, 
+23/08/2017, Brasília, para TEMER, M. 3 páginas. Solicita alteração da Lei Orçamentária Anual 
+da União para o exercício de 2018, de forma a viabilizar a impl antação da proposta do SUS 
+Legal. 
+MARQUES, Rosa Maria; PIOLA, Sérgio Francisco; OCKÉ-REIS, Carlos  Octávio. “Desafios e 
+perspectivas futuras no financia m e n t o  d o  S U S ” .  I n :  M A R Q U E S ,  R o sa Maria; PIOLA, Sergio 
+Francisco; ROA, Alejandra Carrillo. Sistema de saúde no Brasil:  organização e financiamento. 
+Rio de Janeiro: ABrES; Brasília: Ministério da Saúde; OPAS/OMS no Brasil, 2016, p. 247-260. 
+MENDES, A. “O grande problema é a falta de dinheiro para o SUS,  e não a forma de repasse 
+d e s s e s  r e c u r s o s ” .  E n t r e v i s t a .  R i o  d e  j a n e i r o ,  1 7 / 0 2 / 2 0 1 7 .  D i s p onível em: 
+http://www.epsjv.fiocruz.br/noticias/entrevista/o-grande-problema-e-a-falta-de-dinheiro-
+para-o-sus-e-nao-a-forma-de-repasse. Acesso em: 26 mai. 2017. 
+PIOLA, S.F. “Transferências de recursos federais do Sistema Úni co de Saúde para estados, 
+D i s t r i t o  F e d e r a l  e  m u n i c í p i o s :  o s  d e s a f i o s  p a r a  a  i m p l e m e n t a ç ã o d o s  c r i t é r i o s  d a  L e i  
+Complementar nº 141/2012”. Brasília: Ipea, 2017. (Texto para Discussão, n. 2298). 
+---PAGE 18---
+19 
+ 
+SANTOS, L. “Não temos como falar sobre gestão de saúde eficiente quando o dinheiro fraciona 
+o sistema e a própria gestão”. Revista do CONASEMS jan-mar/2017  (p. 31-33). ISSN 1679-
+9259. 
+VIANA, Ana Luiza d'Ávila; FAUSTO, Márcia Cristina Rodrigues; LIMA, Luciana Dias de. “Política 
+de Saúde e Equidade”. São Paulo em Perspectiva, v. 17, n. 1, p. 58-68, 2003. 
+  
+---PAGE 19---
+20 
+

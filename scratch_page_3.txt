@@ -1,0 +1,4 @@
+[Folha destinada à inserção da ficha catalográfica. 
+Gere a ficha catalográfica no site: https://ficha.uffs.edu.br/
+Aqui no LibreOffice Writer, vá em Inserir → Figura e selecione o arquivo pdf gerado
+no site acima. Depois apague todo esse texto.]

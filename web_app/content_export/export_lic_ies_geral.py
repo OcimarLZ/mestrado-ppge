@@ -1,6 +1,6 @@
 """
 Exporta o resultado de sqls/cap5/lic_ies_geral.sql (panorama das IES federais que ofertam
-licenciatura -- matriculas, cursos, campus e polos EaD/UAB, comparando 2014 e 2024) para um
+licenciatura -- matriculas, cursos, campus e polos EaD/UAB, comparando 2014, 2016, 2022 e 2024) para um
 JSON estatico consumido pelos indicadores/graficos/tabela em Pesquisa > Dados por IES.
 
 bdados/INEP.db tem 2,8 GB e esta no .gitignore (nao existe no runner do GitHub Actions),
@@ -65,8 +65,8 @@ def main():
 
     payload = {
         "gerado_em": datetime.date.today().isoformat(),
-        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014 e 2024)",
-        "anos": [2014, 2024],
+        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014, 2016, 2022 e 2024)",
+        "anos": [2014, 2016, 2022, 2024],
         "colunas": {
             **COLUMN_LABELS,
             "perc_licenciatura": "% Licenciatura",

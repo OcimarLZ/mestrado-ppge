@@ -9,6 +9,9 @@ import PesquisaTema from './pages/PesquisaTema';
 import PesquisaDadosIES from './pages/PesquisaDadosIES';
 import PesquisaPolosIES from './pages/PesquisaPolosIES';
 import PaineisInterativos from './pages/PaineisInterativos';
+import ProducaoAcademica from './pages/ProducaoAcademica';
+import Forum from './pages/Forum';
+import ForumTopico from './pages/ForumTopico';
 import Glossario from './pages/Glossario';
 import Abreviaturas from './pages/Abreviaturas';
 
@@ -29,6 +32,9 @@ function App() {
           <Route path="pesquisa/dados-ies/polos" element={<PesquisaPolosIES />} />
           <Route path="pesquisa/:slug" element={<PesquisaTema />} />
           <Route path="paineis-interativos" element={<PaineisInterativos />} />
+          <Route path="producao-academica" element={<ProducaoAcademica />} />
+          <Route path="forum" element={<Forum />} />
+          <Route path="forum/:slug" element={<ForumTopico />} />
           <Route path="glossario" element={<Glossario />} />
           <Route path="abreviaturas" element={<Abreviaturas />} />
           <Route path="capitulo/:slug" element={<GenericChapterPage />} />

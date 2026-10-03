@@ -3,6 +3,7 @@ import { FileText, GraduationCap, Building2, BookOpen, Users, Award, Languages, 
 
 import * as LucideIcons from 'lucide-react';
 import { getSiteSettings, getHomeCards, assetUrl } from '../lib/content';
+import ZoomableImage from '../components/ZoomableImage';
 
 interface SiteSettings {
   hero_title: string;
@@ -78,6 +79,16 @@ const Home: React.FC = () => {
               Baixar Dissertação
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="section-block" style={{ paddingTop: '1.5rem', paddingBottom: 0 }}>
+        <div style={{ maxWidth: 420, margin: '0 auto' }}>
+          <ZoomableImage
+            src={assetUrl('assets/graficos_originais/convite_defesa.png')}
+            alt="Convite para a defesa de dissertação"
+            style={{ width: '100%', height: 'auto', borderRadius: '12px', display: 'block' }}
+          />
         </div>
       </section>
 

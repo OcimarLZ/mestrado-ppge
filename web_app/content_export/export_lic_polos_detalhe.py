@@ -39,13 +39,13 @@ def main():
 
     payload = {
         "gerado_em": datetime.date.today().isoformat(),
-        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014 e 2024)",
+        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014, 2016, 2022 e 2024)",
         "nota_metodologica": (
             "Polos UAB e EaD próprio são distinguidos pelo flag fl_uab do curso no censo. "
             "Municípios com curso cadastrado mas sem matrícula ativa no ano aparecem com "
             "matriculas=0 (presença registrada, sem alunos correntes)."
         ),
-        "anos": [2014, 2024],
+        "anos": [2014, 2016, 2022, 2024],
         "registros": registros,
     }
 

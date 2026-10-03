@@ -241,6 +241,8 @@ No test runner is configured anywhere in the repo.
 
 ## Working conventions specific to this repo
 
+- Communicate with the user in Portuguese (pt-BR) — all chat replies, explanations, and summaries,
+  not just file content.
 - Prose, UI copy, commit messages, and variable/domain names throughout the codebase are in Portuguese
   (pt-BR) — match that for content, labels, or docstrings meant for the dissertation site.
 - **Never present a statistic or claim as fact unless it is verifiably present in the extracted

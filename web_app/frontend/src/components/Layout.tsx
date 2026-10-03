@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Home, BookText, Presentation, BarChart3, LayoutDashboard, BookOpenText, ListOrdered } from 'lucide-react';
+import { Home, BookText, Presentation, BarChart3, LayoutDashboard, BookOpenText, ListOrdered, GraduationCap, MessagesSquare } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import themes from '../themes';
 import { getTree, getSiteSettings, assetUrl } from '../lib/content';
@@ -138,6 +138,17 @@ const Layout: React.FC = () => {
               <NavLink to="/paineis-interativos" className={({ isActive }) => isActive ? 'active' : ''}>
                 <LayoutDashboard size={18} /> Painéis Interativos
                 <span className="nav-badge">Em construção</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/producao-academica" className={({ isActive }) => isActive ? 'active' : ''}>
+                <GraduationCap size={18} /> Produção Acadêmica
+                <span className="nav-badge">Em construção</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/forum" className={({ isActive }) => isActive ? 'active' : ''}>
+                <MessagesSquare size={18} /> Fórum de Discussões
               </NavLink>
             </li>
 

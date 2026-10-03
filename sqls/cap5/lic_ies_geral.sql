@@ -1,6 +1,6 @@
--- Panorama das IES publicas federais (UFs) que ofertam licenciatura, comparando 2014 e 2024:
--- matriculas (totais e por modalidade), numero de cursos, campus presenciais e polos EaD
--- (proprios x UAB). Uma linha por IES por ano_censo (2014 e 2024).
+-- Panorama das IES publicas federais (UFs) que ofertam licenciatura, comparando 2014, 2016,
+-- 2022 e 2024: matriculas (totais e por modalidade), numero de cursos, campus presenciais e
+-- polos EaD (proprios x UAB). Uma linha por IES por ano_censo.
 --
 -- v2: versao anterior deste script trazia so um "ultimo ano ofertado" por modalidade (uma
 -- unica linha por IES, sem filtro de ano). Reescrito para o modelo ano-a-ano usado em
@@ -21,8 +21,9 @@ WITH base AS (
 ),
 anos AS (
     SELECT 2014 AS ano_censo
-    UNION ALL
-    SELECT 2024
+    UNION ALL SELECT 2016
+    UNION ALL SELECT 2022
+    UNION ALL SELECT 2024
 ),
 metricas AS (
     SELECT
@@ -39,7 +40,7 @@ metricas AS (
         SUM(CASE WHEN cc.tp_grau_academico = 2 AND cc.tp_modalidade_ensino = 2 AND c.fl_uab = 'S' THEN cc.qt_mat ELSE 0 END) AS mat_lic_uab
     FROM superior_curso_censo cc
     JOIN superior_curso c ON c.codigo = cc.curso
-    WHERE cc.ano_censo IN (2014, 2024)
+    WHERE cc.ano_censo IN (2014, 2016, 2022, 2024)
     GROUP BY cc.ies, cc.ano_censo
 )
 SELECT

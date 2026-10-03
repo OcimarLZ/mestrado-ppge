@@ -40,8 +40,8 @@ def main():
 
     payload = {
         "gerado_em": datetime.date.today().isoformat(),
-        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014 e 2024)",
-        "anos": [2014, 2024],
+        "fonte": "Elaborado pelo autor a partir dos microdados do INEP (Censo da Educação Superior, 2014, 2016, 2022 e 2024)",
+        "anos": [2014, 2016, 2022, 2024],
         "registros": registros,
     }
 

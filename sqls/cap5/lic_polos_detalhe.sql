@@ -1,6 +1,6 @@
--- Detalhamento por campus/polo das licenciaturas das IES publicas federais (UFs), 2014 e
--- 2024: uma linha por IES x ano x municipio x tipo de oferta (Presencial / EaD proprio /
--- UAB), com o numero de cursos e o total de matriculas (qt_mat) naquele polo.
+-- Detalhamento por campus/polo das licenciaturas das IES publicas federais (UFs), 2014,
+-- 2016, 2022 e 2024: uma linha por IES x ano x municipio x tipo de oferta (Presencial / EaD
+-- proprio / UAB), com o numero de cursos e o total de matriculas (qt_mat) naquele polo.
 --
 -- Complementa sqls/cap5/lic_ies_geral.sql (que traz totais por IES) descendo ao nivel de
 -- cada campus/polo -- e a base de dados de web_app/content_export/export_lic_polos_detalhe.py.
@@ -22,7 +22,7 @@ FROM superior_curso_censo cc
 JOIN superior_curso c ON c.codigo = cc.curso
 JOIN superior_ies i ON i.codigo = cc.ies
 JOIN comum_municipio m ON m.codigo = cc.municipio
-WHERE cc.ano_censo IN (2014, 2024)
+WHERE cc.ano_censo IN (2014, 2016, 2022, 2024)
   AND cc.tp_grau_academico = 2
   AND i.categoria = 1
   AND i.org_academica = 1
