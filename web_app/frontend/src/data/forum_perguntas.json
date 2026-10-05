@@ -1,5 +1,13 @@
 {
   "ead-e-qualidade-da-formacao": [],
   "publico-x-privado-na-educacao-superior": [],
-  "duvidas-sobre-a-pesquisa": []
+  "duvidas-sobre-a-pesquisa": [
+    {
+      "id": "82b2a37092",
+      "pergunta": "[TESTE AUTOMATICO - PODE IGNORAR]",
+      "autor": "Teste",
+      "data": "2026-10-05T23:01:37.582909+00:00",
+      "respostas": []
+    }
+  ]
 }
