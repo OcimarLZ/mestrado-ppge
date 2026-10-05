@@ -27,8 +27,10 @@ const perguntasPorTopico = perguntasPorTopicoJson as Record<string, Pergunta[]>;
 // banco de dados nem conta exigida de quem participa. Ver web_app/forum_api/main.py, onde
 // FORUM_PROJETO precisa corresponder exatamente a uma chave do dicionário PROJETOS.
 // Enquanto FORUM_API_BASE estiver vazio (serviço ainda não publicado no Render), o
-// formulário mostra um aviso em vez de tentar enviar.
-const FORUM_API_BASE = '';
+// formulário mostra um aviso em vez de tentar enviar. Serviço gratuito do Render dorme
+// após 15 min sem uso -- a primeira pergunta depois de um tempo ocioso pode demorar
+// ~30-60s para responder (o backend "acorda"), isso é esperado.
+const FORUM_API_BASE = 'https://forum-dissertacoes-api.onrender.com';
 const FORUM_PROJETO = 'ocimar-mestrado-ppge';
 const isConfigured = Boolean(FORUM_API_BASE);
 
