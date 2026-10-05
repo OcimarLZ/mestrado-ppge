@@ -12,4 +12,4 @@ services:
       - key: GITHUB_BRANCH
         value: main
       - key: ALLOWED_ORIGINS
-        value: https://ocimarlz.github.io,http://localhost:5173
+        value: https://ocimarlz.github.io,https://acsylva.github.io,http://localhost:5173,http://localhost:5174

@@ -41,7 +41,7 @@ from pydantic import BaseModel, Field
 
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]  # fine-grained PAT com Contents:read/write nos repos de PROJETOS
 GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main")
-DATA_PATH_IN_REPO = "web_app/frontend/src/data/forum_perguntas.json"
+DATA_PATH_IN_REPO = "web_app/frontend/src/data/forum_perguntas.json"  # caminho padrão (projeto original)
 
 GITHUB_HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -62,6 +62,7 @@ ALLOWED_ORIGINS = [
 class Projeto:
     repo: str  # "dono/repositorio" no GitHub
     topicos: frozenset[str]  # slugs válidos, sincronizados com forumTopicos.ts daquele site
+    data_path: str = DATA_PATH_IN_REPO  # caminho do forum_perguntas.json dentro do repo
 
 
 # Um projeto por landing page que usa este serviço compartilhado.
@@ -75,6 +76,21 @@ PROJETOS: dict[str, Projeto] = {
                 "duvidas-sobre-a-pesquisa",
             }
         ),
+    ),
+    # Landing page da dissertação de Ana Cristina (PPGE/UFFS) -- frontend em "frontend/" na raiz
+    # do repo, por isso o data_path próprio (sem o prefixo "web_app/" do projeto original).
+    "acsylva-mestrado-ppge": Projeto(
+        repo="ACSylva/mestrado-ppge",
+        topicos=frozenset(
+            {
+                "expansao-do-ensino-superior-em-chapeco",
+                "ead-e-a-formacao-superior",
+                "publico-e-privado-no-ensino-superior",
+                "politicas-de-acesso-e-permanencia",
+                "duvidas-sobre-a-pesquisa",
+            }
+        ),
+        data_path="frontend/src/data/forum_perguntas.json",
     ),
     # "nome-do-proximo-projeto": Projeto(repo="dono/outro-repo", topicos=frozenset({...})),
 }
@@ -126,7 +142,7 @@ class NovaResposta(BaseModel):
 
 
 def url_arquivo(projeto: Projeto) -> str:
-    return f"https://api.github.com/repos/{projeto.repo}/contents/{DATA_PATH_IN_REPO}"
+    return f"https://api.github.com/repos/{projeto.repo}/contents/{projeto.data_path}"
 
 
 async def buscar_arquivo(projeto: Projeto) -> tuple[dict, str]:
