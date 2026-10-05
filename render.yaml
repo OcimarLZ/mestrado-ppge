@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: forum-dissertacoes-api
+    runtime: python
+    rootDir: web_app/forum_api
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_BRANCH
+        value: main
+      - key: ALLOWED_ORIGINS
+        value: https://ocimarlz.github.io,http://localhost:5173

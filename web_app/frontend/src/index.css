@@ -619,6 +619,58 @@ p {
   margin-bottom: 0.5rem;
 }
 
+/* Tabelas estáticas embutidas no texto corrido (ex: tipologias institucionais), extraídas
+   do .odt como tabelas reais -- diferente das tabelas que já vêm como imagem PNG. O
+   wrapper com overflow-x:auto evita que uma tabela larga force o scroll horizontal da
+   página inteira em telas estreitas (ver nota de .main-content/.body no topo deste arquivo). */
+.tabela-scroll {
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+}
+
+.text-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.text-content th,
+.text-content td {
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.text-content th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.text-content td {
+  color: var(--text-secondary);
+}
+
+/* Números/percentuais de dados quantitativos no texto de análise: azul = positivo
+   (crescimento/expansão), vermelho = negativo (queda/retração/redução) -- sempre em
+   negrito para destacar. */
+.dado-positivo {
+  color: var(--accent-secondary, #3b82f6);
+  font-weight: 700;
+}
+
+.dado-negativo {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.tabela-fonte {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
 /* Links dentro do corpo do texto (ex: URLs "Disponível em:" nas Referências), que abrem em
    nova aba -- sem isso ficam com o azul/sublinhado padrão do navegador, destoando do tema. */
 .text-content a {

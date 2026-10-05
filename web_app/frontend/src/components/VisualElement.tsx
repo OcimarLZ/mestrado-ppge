@@ -93,6 +93,22 @@ const VisualElement: React.FC<{ visual: VisualData }> = ({ visual }) => {
           </>
         );
       }
+      // Figuras 10-14 (mapas de presença das UFs/UAB) seguem o mesmo padrão simples das
+      // Figuras 1-3 -- dois mapas lado a lado, 2014 à esquerda e 2024 à direita, sem
+      // legenda compartilhada -- então um único regex cobre as cinco.
+      const figurasComparacao = visual.image_url.match(/figura_(1[0-4])\.png$/);
+      if (figurasComparacao) {
+        const num = figurasComparacao[1];
+        return (
+          <ComparisonSlider
+            beforeSrc={visual.image_url.replace(`figura_${num}.png`, `figura_${num}_2014.png`)}
+            afterSrc={visual.image_url.replace(`figura_${num}.png`, `figura_${num}_2024.png`)}
+            beforeLabel="2014"
+            afterLabel="2024"
+            alt={visual.title}
+          />
+        );
+      }
       return (
         <ZoomableImage
           src={visual.image_url}

@@ -10,9 +10,8 @@ const Forum: React.FC = () => {
       <div className="chapter-header">
         <h1><MessagesSquare size={28} style={{ marginRight: '0.5rem', verticalAlign: 'middle', color: 'var(--accent-primary)' }} />Fórum de Discussões</h1>
         <p className="lead" style={{ color: 'var(--text-secondary)' }}>
-          Um espaço de diálogo sobre os temas desta pesquisa. Escolha um tópico, faça uma
-          pergunta ou responda a quem já perguntou — não é necessário criar conta, basta um
-          nome para comentar.
+          Um espaço de diálogo sobre os temas desta pesquisa. Escolha um tópico, pergunte ou
+          responda a quem já perguntou — sem necessidade de criar conta.
         </p>
       </div>
 
