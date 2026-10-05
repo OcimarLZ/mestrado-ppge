@@ -14,7 +14,14 @@
       "pergunta": "Qual foi o site utilizado para fazer o Download dos microdados da educação superior do INEP?",
       "autor": "Ocimar",
       "data": "2026-10-05T23:18:44.573190+00:00",
-      "respostas": []
+      "respostas": [
+        {
+          "id": "27ae1263ba",
+          "texto": "Os dados foram baixados no link https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior, sendo ano a ano",
+          "autor": "Ocimar",
+          "data": "2026-10-05T23:27:12.104422+00:00"
+        }
+      ]
     }
   ]
 }
