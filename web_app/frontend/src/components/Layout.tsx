@@ -137,7 +137,6 @@ const Layout: React.FC = () => {
             <li>
               <NavLink to="/paineis-interativos" className={({ isActive }) => isActive ? 'active' : ''}>
                 <LayoutDashboard size={18} /> Painéis Interativos
-                <span className="nav-badge">Em construção</span>
               </NavLink>
             </li>
             <li>
