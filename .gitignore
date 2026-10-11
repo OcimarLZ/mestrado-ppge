@@ -25,6 +25,11 @@ web_app/backend/static/graficos/
 web_app/frontend/public/assets/
 web_app/frontend/src/data/site-content.json
 
+# Power BI (powerbi/painel_cursos.*) -- cache local do modelo (.pbi/, inclui cache.abf,
+# que pode passar de 25MB com a fato carregada) e configuracoes de maquina, nunca os
+# arquivos de definicao (.tmdl/.pbip/.pbir), que sao o que deve ser versionado
+powerbi/**/.pbi/
+
 # OS
 .DS_Store
 Thumbs.db

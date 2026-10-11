@@ -1,0 +1,66 @@
+table dim_cine
+	lineageTag: 6a1979c0-b72b-4819-9622-df32481f86e3
+
+	column codigo_cine_rotulo
+		dataType: string
+		lineageTag: c34d2466-5d0a-421d-b763-983625fa1fee
+		summarizeBy: none
+		sourceColumn: codigo_cine_rotulo
+
+	column nome_cine_rotulo
+		dataType: string
+		lineageTag: 6b103681-dfad-4555-a7a3-e4b7f1ae0a0a
+		summarizeBy: none
+		sourceColumn: nome_cine_rotulo
+
+	column codigo_area_detalhada
+		dataType: string
+		lineageTag: 2677ae4f-d2de-4527-9d97-e18610761671
+		summarizeBy: none
+		sourceColumn: codigo_area_detalhada
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_area_detalhada
+		dataType: string
+		lineageTag: db77b57d-5f07-4817-b537-3a9adb26b81c
+		summarizeBy: none
+		sourceColumn: nome_area_detalhada
+
+	column codigo_area_especifica
+		dataType: string
+		lineageTag: 328eb195-7cc4-402d-a026-5daea2c5a983
+		summarizeBy: none
+		sourceColumn: codigo_area_especifica
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_area_especifica
+		dataType: string
+		lineageTag: 7713d409-e277-482b-a210-da0cd6ca5b44
+		summarizeBy: none
+		sourceColumn: nome_area_especifica
+
+	column codigo_area_geral
+		dataType: string
+		lineageTag: 2fa09379-ba5b-495a-91bb-10650cda3842
+		summarizeBy: none
+		sourceColumn: codigo_area_geral
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_area_geral
+		dataType: string
+		lineageTag: 1d851209-ff85-4ff9-9e9b-43d41542c943
+		summarizeBy: none
+		sourceColumn: nome_area_geral
+
+	partition dim_cine = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_cine. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# cine_rotulo (tipo padronizado de curso) -> area_detalhada -> area_especifica ->#(lf)# area_geral, tudo achatado numa unica tabela (modelo em estrela).#(lf)# superior_cine_rotulo so tem (codigo, nome) -- SEM FK para area_detalhada. A ligacao e#(lf)# implicita: os digitos 2-4 do codigo do cine_rotulo (ex: ""0113P01"" -> ""113"") correspondem#(lf)# ao codigo de area_detalhada (113 = ""Formacao de professores sem areas especificas"").#(lf)# LIMITACAO CONHECIDA: esse parsing cobre ~91% dos rotulos (715 de 785). Quando a area#(lf)# geral tem 2 digitos (codigo 10 = ""Servicos""), o codigo do cine_rotulo NAO tem o zero de#(lf)# preenchimento (ex: ""1032S03"" = area 1032, nao ""032"") -- inconsistencia real da fonte de#(lf)# dados do INEP, nao um bug de parsing. Nesses ~70 casos, nao ha area correspondente.#(lf)# Em vez de deixar NULL (pandas vira float64 por causa do NaN, e o Power BI rejeitou a#(lf)# conversao desses nulos para ""double""/""Int64 anulavel"" ao carregar o PBIP -- testado e#(lf)# nao funcionou), usamos COALESCE(..., -1) direto no SQL: -1 = ""sem area mapeada"", mantendo#(lf)# a coluna como inteiro comum (int64), sem nenhum nulo.#(lf)dim_cine = pd.read_sql_query(#(lf)    """"""#(lf)    SELECT#(lf)        cr.codigo                      AS codigo_cine_rotulo,#(lf)        cr.nome                        AS nome_cine_rotulo,#(lf)        COALESCE(ad.codigo, -1)        AS codigo_area_detalhada,#(lf)        COALESCE(ad.nome, 'Sem area mapeada') AS nome_area_detalhada,#(lf)        COALESCE(ae.codigo, -1)        AS codigo_area_especifica,#(lf)        COALESCE(ae.nome, 'Sem area mapeada') AS nome_area_especifica,#(lf)        COALESCE(ag.codigo, -1)        AS codigo_area_geral,#(lf)        COALESCE(ag.nome, 'Sem area mapeada') AS nome_area_geral#(lf)    FROM superior_cine_rotulo cr#(lf)    LEFT JOIN superior_area_detalhada ad ON ad.codigo = CAST(SUBSTR(cr.codigo, 2, 3) AS INTEGER)#(lf)    LEFT JOIN superior_area_especifica ae ON ae.codigo = ad.area_especifica#(lf)    LEFT JOIN superior_area ag ON ag.codigo = ae.area#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_cine"]}[Value]
+				in
+					Tabela
+

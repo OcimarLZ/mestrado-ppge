@@ -1,0 +1,26 @@
+table dim_modalidade_ensino
+	lineageTag: 73868b4d-b084-43d1-a616-3aab67b85123
+
+	column codigo_modalidade_ensino
+		dataType: string
+		lineageTag: cd4388d9-636f-4f2b-a5fa-7354c59baae6
+		summarizeBy: none
+		sourceColumn: codigo_modalidade_ensino
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_modalidade_ensino
+		dataType: string
+		lineageTag: 6a460c24-efa4-49cf-8246-0a179018e7b3
+		summarizeBy: none
+		sourceColumn: nome_modalidade_ensino
+
+	partition dim_modalidade_ensino = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_modalidade_ensino. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_modalidade_ensino = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_modalidade_ensino, nome AS nome_modalidade_ensino FROM superior_tp_modal_ensino"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_modalidade_ensino"]}[Value]
+				in
+					Tabela
+

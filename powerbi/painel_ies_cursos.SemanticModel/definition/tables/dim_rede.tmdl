@@ -1,0 +1,26 @@
+table dim_rede
+	lineageTag: f7c15ab1-3002-45c6-984d-185ffa90e2d8
+
+	column codigo_rede
+		dataType: string
+		lineageTag: 78fbd664-2b5a-426b-8fa4-25e0962236d3
+		summarizeBy: none
+		sourceColumn: codigo_rede
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_rede
+		dataType: string
+		lineageTag: 7d149389-ed7d-4cb8-bfc7-6b863036469a
+		summarizeBy: none
+		sourceColumn: nome_rede
+
+	partition dim_rede = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_rede. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_rede = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_rede, nome AS nome_rede FROM superior_tp_rede"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_rede"]}[Value]
+				in
+					Tabela
+

@@ -1,0 +1,26 @@
+table dim_categoria_administrativa
+	lineageTag: 59873374-606d-4cc5-82e4-bb6af2dba18e
+
+	column codigo_categoria_administrativa
+		dataType: string
+		lineageTag: 2ff2d2d7-6550-495a-8d50-ae93af039477
+		summarizeBy: none
+		sourceColumn: codigo_categoria_administrativa
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_categoria_administrativa
+		dataType: string
+		lineageTag: 5e4f94a2-bd71-4d49-b10c-970eb68acf40
+		summarizeBy: none
+		sourceColumn: nome_categoria_administrativa
+
+	partition dim_categoria_administrativa = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_categoria_administrativa. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_categoria_administrativa = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_categoria_administrativa, nome AS nome_categoria_administrativa FROM superior_tp_categoria_administrativa"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_categoria_administrativa"]}[Value]
+				in
+					Tabela
+

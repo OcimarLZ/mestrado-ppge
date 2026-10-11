@@ -1,0 +1,40 @@
+relationship 0446a1ca-4bd0-418b-9a95-b731aee45f2f
+	fromColumn: fato_curso_censo.codigo_ano
+	toColumn: dim_ano.codigo_ano
+
+relationship 585fe67a-87a7-412d-90b5-63fbe2e1f477
+	fromColumn: fato_curso_censo.codigo_municipio
+	toColumn: dim_territorio.codigo_municipio
+
+relationship 07c81e27-bfe7-499a-a098-3c26a21fa276
+	fromColumn: fato_curso_censo.codigo_ies
+	toColumn: dim_ies.codigo_ies
+
+relationship 9abece56-ab2b-444e-ac8e-e0ed84d7f919
+	fromColumn: fato_curso_censo.codigo_curso
+	toColumn: dim_curso.codigo_curso
+
+relationship 6a23d765-9ea5-44f8-b3ef-78eaa9796459
+	fromColumn: fato_curso_censo.codigo_cine_rotulo
+	toColumn: dim_cine.codigo_cine_rotulo
+
+relationship 8013c58a-7511-4656-ab8b-0cb2d29cf24f
+	fromColumn: fato_curso_censo.codigo_grau_academico
+	toColumn: dim_grau_academico.codigo_grau_academico
+
+relationship fcd41182-7621-4f08-ba29-4dfbd7172e19
+	fromColumn: fato_curso_censo.codigo_modalidade_ensino
+	toColumn: dim_modalidade_ensino.codigo_modalidade_ensino
+
+relationship 86c99fd0-7186-4a9f-a3c0-af8bb141852f
+	fromColumn: fato_curso_censo.codigo_organizacao_academica
+	toColumn: dim_organizacao_academica.codigo_organizacao_academica
+
+relationship 97a446e1-5557-4d75-ba84-de262ba5fdab
+	fromColumn: fato_curso_censo.codigo_categoria_administrativa
+	toColumn: dim_categoria_administrativa.codigo_categoria_administrativa
+
+relationship 6441006e-469c-4321-b4d2-21956e27634f
+	fromColumn: fato_curso_censo.codigo_rede
+	toColumn: dim_rede.codigo_rede
+

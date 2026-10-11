@@ -1,0 +1,407 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "matriz_ies_cursos",
+  "position": {
+    "x": 0,
+    "y": 310,
+    "z": 20000,
+    "height": 410,
+    "width": 1280,
+    "tabOrder": 20000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_ies"
+                    }
+                  },
+                  "Property": "nome_ies"
+                }
+              },
+              "queryRef": "dim_ies.nome_ies",
+              "nativeQueryRef": "Nome da Instituição",
+              "active": true,
+              "displayName": "Nome da Instituição"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_curso"
+                    }
+                  },
+                  "Property": "nome_curso"
+                }
+              },
+              "queryRef": "dim_curso.nome_curso",
+              "nativeQueryRef": "Nome do Curso",
+              "active": false,
+              "displayName": "Nome do Curso"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Sigla"
+                }
+              },
+              "queryRef": "fato_curso_censo.Sigla",
+              "nativeQueryRef": "Sigla"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "UF"
+                }
+              },
+              "queryRef": "fato_curso_censo.UF",
+              "nativeQueryRef": "UF"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Qtde Cursos"
+                }
+              },
+              "queryRef": "fato_curso_censo.Qtde Cursos",
+              "nativeQueryRef": "Qtde Cursos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Vagas Totais"
+                }
+              },
+              "queryRef": "fato_curso_censo.Vagas Totais",
+              "nativeQueryRef": "Vagas Totais"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Ingressantes"
+                }
+              },
+              "queryRef": "fato_curso_censo.Ingressantes",
+              "nativeQueryRef": "Ingressantes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Matrículas"
+                }
+              },
+              "queryRef": "fato_curso_censo.Matrículas",
+              "nativeQueryRef": "Matrículas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Concluintes"
+                }
+              },
+              "queryRef": "fato_curso_censo.Concluintes",
+              "nativeQueryRef": "Concluintes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Trancadas"
+                }
+              },
+              "queryRef": "fato_curso_censo.Trancadas",
+              "nativeQueryRef": "Trancadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Desligados"
+                }
+              },
+              "queryRef": "fato_curso_censo.Desligados",
+              "nativeQueryRef": "Desligados"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_ies"
+                  }
+                },
+                "Property": "nome_ies"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "dim_ies.nome_ies"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_ies"
+                    }
+                  },
+                  "Property": "nome_ies"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dim_curso.nome_curso"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "rowHeaders": [
+        {
+          "properties": {
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "537.428572937236D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_ies.nome_ies"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Titulo Matriz"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fato_curso_censo"
+                    }
+                  },
+                  "Property": "Subtitulo Filtros"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A5F7A'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#CDDFF1'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

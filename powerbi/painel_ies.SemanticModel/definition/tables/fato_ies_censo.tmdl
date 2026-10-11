@@ -1,0 +1,187 @@
+table fato_ies_censo
+	lineageTag: 8ffffa60-604a-44ae-ba75-270853b14c63
+
+	measure 'Valor Selecionado' = VAR _metrica = SELECTEDVALUE(dim_metricas[Metrica]) VAR _qt_doc_total = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_total])) VAR _qt_doc_exe = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_exe])) VAR _qt_doc_ex_femi = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_femi])) VAR _qt_doc_ex_masc = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_masc])) VAR _qt_doc_ex_dout = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_dout])) VAR _qt_doc_ex_mest = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_mest])) VAR _qt_doc_ex_esp = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_esp])) VAR _qt_doc_ex_grad = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_grad])) VAR _qt_doc_ex_sem_grad = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_sem_grad])) VAR _qt_doc_ex_int = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_int])) VAR _qt_doc_ex_int_de = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_int_de])) VAR _qt_doc_ex_parc = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_parc])) VAR _qt_doc_ex_hor = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_hor])) VAR _qt_doc_ex_com_deficiencia = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_com_deficiencia])) VAR _qt_doc_ex_est = SUMX(fato_ies_censo, VALUE(fato_ies_censo[qt_doc_ex_est])) RETURN SWITCH(_metrica, "Docentes (total)", _qt_doc_total, "Docentes em exercício", _qt_doc_exe, "Docentes mulheres", _qt_doc_ex_femi, "Docentes homens", _qt_doc_ex_masc, "Doutores", _qt_doc_ex_dout, "Mestres", _qt_doc_ex_mest, "Especialistas", _qt_doc_ex_esp, "Graduados", _qt_doc_ex_grad, "Sem graduação", _qt_doc_ex_sem_grad, "Regime integral", _qt_doc_ex_int, "Integral com DE", _qt_doc_ex_int_de, "Regime parcial", _qt_doc_ex_parc, "Horistas", _qt_doc_ex_hor, "Com deficiência", _qt_doc_ex_com_deficiencia, "Estrangeiros", _qt_doc_ex_est, _qt_doc_total)
+		formatString: #,0
+		lineageTag: fbe98d94-80d2-432f-bf9b-5bc7e3d13443
+
+	measure 'Valor Acumulado' = VAR _ano = MAX(dim_ano[codigo_ano]) RETURN CALCULATE([Valor Selecionado], FILTER(ALL(dim_ano[codigo_ano]), dim_ano[codigo_ano] <= _ano))
+		formatString: #,0
+		lineageTag: b6854316-c29b-4b6a-8e0d-5836fb5a966d
+
+	measure 'Qtde IES' = CALCULATE(DISTINCTCOUNT(fato_ies_censo[codigo_ies]), fato_ies_censo[codigo_ies] <> 0)
+		formatString: #,0
+		lineageTag: 0aec61b3-8740-44d8-8bcb-e81da67e6d33
+
+	measure 'Titulo Metrica' = SELECTEDVALUE(dim_metricas[Metrica], "Docentes (total)")
+		lineageTag: 8b4a0ead-d5a8-4c85-83a9-e908e4e81a9f
+
+	measure 'Filtros Selecionados' = VAR _v0 = IF(ISFILTERED(dim_territorio[nome_regiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_regiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_regiao]), dim_territorio[nome_regiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_regiao])) & " itens"), "") VAR _v1 = IF(ISFILTERED(dim_territorio[sigla_uf]), IF(COUNTROWS(VALUES(dim_territorio[sigla_uf])) <= 3, CONCATENATEX(VALUES(dim_territorio[sigla_uf]), dim_territorio[sigla_uf], ", "), COUNTROWS(VALUES(dim_territorio[sigla_uf])) & " itens"), "") VAR _v2 = IF(ISFILTERED(dim_territorio[nome_mesorregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_mesorregiao]), dim_territorio[nome_mesorregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) & " itens"), "") VAR _v3 = IF(ISFILTERED(dim_territorio[nome_microrregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_microrregiao]), dim_territorio[nome_microrregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) & " itens"), "") VAR _v4 = IF(ISFILTERED(dim_territorio[nome_municipio]), IF(COUNTROWS(VALUES(dim_territorio[nome_municipio])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_municipio]), dim_territorio[nome_municipio], ", "), COUNTROWS(VALUES(dim_territorio[nome_municipio])) & " itens"), "") VAR _v5 = IF(ISFILTERED(dim_rede[nome_rede]), IF(COUNTROWS(VALUES(dim_rede[nome_rede])) <= 3, CONCATENATEX(VALUES(dim_rede[nome_rede]), dim_rede[nome_rede], ", "), COUNTROWS(VALUES(dim_rede[nome_rede])) & " itens"), "") VAR _v6 = IF(ISFILTERED(dim_categoria_administrativa[nome_categoria_administrativa]), IF(COUNTROWS(VALUES(dim_categoria_administrativa[nome_categoria_administrativa])) <= 3, CONCATENATEX(VALUES(dim_categoria_administrativa[nome_categoria_administrativa]), dim_categoria_administrativa[nome_categoria_administrativa], ", "), COUNTROWS(VALUES(dim_categoria_administrativa[nome_categoria_administrativa])) & " itens"), "") VAR _v7 = IF(ISFILTERED(dim_organizacao_academica[nome_organizacao_academica]), IF(COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) <= 3, CONCATENATEX(VALUES(dim_organizacao_academica[nome_organizacao_academica]), dim_organizacao_academica[nome_organizacao_academica], ", "), COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) & " itens"), "") VAR _a = IF(_v0 <> "", _v0 & "/", "") & IF(_v1 <> "", _v1 & "/", "") & IF(_v2 <> "", _v2 & "/", "") & IF(_v3 <> "", _v3 & "/", "") & IF(_v4 <> "", _v4 & "/", "") & IF(_v5 <> "", _v5 & "/", "") & IF(_v6 <> "", _v6 & "/", "") & IF(_v7 <> "", _v7 & "/", "") RETURN IF(_a = "", "", LEFT(_a, LEN(_a) - 1))
+		lineageTag: c7fbb79a-50d9-41e5-bc99-d04512248d20
+
+	measure 'Subtitulo Filtros' = VAR _f = [Filtros Selecionados] RETURN IF(_f = "", "", "(" & _f & ")")
+		lineageTag: 07d1deea-71ba-4082-82a6-0a2f2413b15e
+
+	column codigo_ano
+		dataType: int64
+		formatString: 0
+		lineageTag: d8866f91-f73b-4f0c-8429-1b667225e15d
+		summarizeBy: none
+		sourceColumn: codigo_ano
+
+	column codigo_municipio
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e5c5c3c-30f9-4016-a75a-fef7ca926a09
+		summarizeBy: none
+		sourceColumn: codigo_municipio
+
+	column codigo_ies
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a507627-0b03-4efd-9dd9-be3935b48ce6
+		summarizeBy: none
+		sourceColumn: codigo_ies
+
+	column codigo_mantenedora
+		dataType: int64
+		formatString: 0
+		lineageTag: 79291886-bdb6-4e5c-9585-b0d2cb2344ae
+		summarizeBy: none
+		sourceColumn: codigo_mantenedora
+
+	column codigo_organizacao_academica
+		dataType: int64
+		formatString: 0
+		lineageTag: f5305901-c048-480b-9b78-7f9714ae316e
+		summarizeBy: none
+		sourceColumn: codigo_organizacao_academica
+
+	column codigo_categoria_administrativa
+		dataType: int64
+		formatString: 0
+		lineageTag: e87f4a37-e54d-4d63-876f-fa169495e648
+		summarizeBy: none
+		sourceColumn: codigo_categoria_administrativa
+
+	column codigo_rede
+		dataType: int64
+		formatString: 0
+		lineageTag: bbfe7d0c-af65-4ce0-835f-cfd665d2902d
+		summarizeBy: none
+		sourceColumn: codigo_rede
+
+	column qt_doc_total
+		dataType: double
+		formatString: 0
+		lineageTag: 616d58cf-d532-4f2f-83d0-1f957045090a
+		summarizeBy: sum
+		sourceColumn: qt_doc_total
+
+	column qt_doc_exe
+		dataType: double
+		formatString: 0
+		lineageTag: 5a787de1-8a19-4918-96d8-7dba6b8dd701
+		summarizeBy: sum
+		sourceColumn: qt_doc_exe
+
+	column qt_doc_ex_femi
+		dataType: double
+		formatString: 0
+		lineageTag: 3c19d1e0-3ead-4aa9-ad19-834de4ef0040
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_femi
+
+	column qt_doc_ex_masc
+		dataType: double
+		formatString: 0
+		lineageTag: 172aa87d-dde6-45ad-a628-76db59f24430
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_masc
+
+	column qt_doc_ex_dout
+		dataType: double
+		formatString: 0
+		lineageTag: 7f63a00b-76b1-4700-8005-69b198d7777b
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_dout
+
+	column qt_doc_ex_mest
+		dataType: double
+		formatString: 0
+		lineageTag: 9aa87b17-e577-44af-94b8-a9828fe05c00
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_mest
+
+	column qt_doc_ex_esp
+		dataType: double
+		formatString: 0
+		lineageTag: 14c7ff0c-3b8c-4557-92ee-1e62a8130c8f
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_esp
+
+	column qt_doc_ex_grad
+		dataType: double
+		formatString: 0
+		lineageTag: 07a995db-2cd8-4454-9bb8-71f0d260571f
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_grad
+
+	column qt_doc_ex_sem_grad
+		dataType: double
+		formatString: 0
+		lineageTag: a4bfb889-48b1-4b7a-b319-4550f68fc4c0
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_sem_grad
+
+	column qt_doc_ex_int
+		dataType: double
+		formatString: 0
+		lineageTag: 12f4bb5d-644f-435a-a40a-fbe9eb5efbeb
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_int
+
+	column qt_doc_ex_int_de
+		dataType: double
+		formatString: 0
+		lineageTag: 51f88666-3919-4c29-b110-6a74f475a785
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_int_de
+
+	column qt_doc_ex_parc
+		dataType: double
+		formatString: 0
+		lineageTag: 5e275d28-b924-46a8-8a31-ebe2da00af02
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_parc
+
+	column qt_doc_ex_hor
+		dataType: double
+		formatString: 0
+		lineageTag: 00a6c274-c8b2-4bb9-a7fc-e9e707a851a4
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_hor
+
+	column qt_doc_ex_com_deficiencia
+		dataType: int64
+		formatString: 0
+		lineageTag: f7f80b14-59c7-4d7f-b7c1-c9a39fe4fd4f
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_com_deficiencia
+
+	column qt_doc_ex_est
+		dataType: double
+		formatString: 0
+		lineageTag: 121dfda6-35d5-421b-b989-6941bf70ef2e
+		summarizeBy: sum
+		sourceColumn: qt_doc_ex_est
+
+	partition fato_ies_censo = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)fato_ies_censo. Grao: uma linha por IES x ano_censo (~50 mil linhas), com a quantidade#(lf)de docentes em varios recortes (sexo, titulacao, regime de trabalho etc.).#(lf)#(lf)Observacoes sobre os dados de origem: nao ha registros do Censo 2009; em 2005 cada IES#(lf)aparece em 2 linhas com valores fracionados (.5) que, somadas, preservam o total; e#(lf)`ies = 0` agrupa instituicoes nao identificadas.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)ANO_MIN = 2004#(lf)ANO_MAX = 2024#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)fato_ies_censo = pd.read_sql_query(#(lf)    f""""""#(lf)    SELECT#(lf)        ano_censo                          AS codigo_ano,#(lf)        CAST(municipio AS INTEGER)         AS codigo_municipio,#(lf)        ies                                AS codigo_ies,#(lf)        mantenedora                        AS codigo_mantenedora,#(lf)        org_academica                      AS codigo_organizacao_academica,#(lf)        categoria                          AS codigo_categoria_administrativa,#(lf)        tp_rede                            AS codigo_rede,#(lf)        qt_doc_total,#(lf)        qt_doc_exe,#(lf)        qt_doc_ex_femi,#(lf)        qt_doc_ex_masc,#(lf)        qt_doc_ex_dout,#(lf)        qt_doc_ex_mest,#(lf)        qt_doc_ex_esp,#(lf)        qt_doc_ex_grad,#(lf)        qt_doc_ex_sem_grad,#(lf)        qt_doc_ex_int,#(lf)        qt_doc_ex_int_de,#(lf)        qt_doc_ex_parc,#(lf)        qt_doc_ex_hor,#(lf)        qt_doc_ex_com_deficiencia,#(lf)        qt_doc_ex_est#(lf)    FROM superior_ies_censo#(lf)    WHERE ano_censo BETWEEN {ANO_MIN} AND {ANO_MAX}#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)# Menor dtype que comporta os valores (colunas com .5 de 2005 permanecem float).#(lf)for _col in fato_ies_censo.columns:#(lf)    fato_ies_censo[_col] = pd.to_numeric(fato_ies_censo[_col], downcast=""integer"")#(lf)"),
+					Tabela = Source{[Name="fato_ies_censo"]}[Value]
+				in
+					Tabela
+

@@ -1,0 +1,31 @@
+table dim_ies
+	lineageTag: 74fee349-b69d-4907-8100-554d6d80171b
+
+	column codigo_ies
+		dataType: int64
+		formatString: 0
+		lineageTag: 747a5d8b-fe67-4d3f-8f66-4203e057efea
+		summarizeBy: none
+		sourceColumn: codigo_ies
+
+	column nome_ies
+		dataType: string
+		lineageTag: 1de768b9-ef1d-4f05-ba66-7c22e2958b0a
+		summarizeBy: none
+		sourceColumn: nome_ies
+
+	column sigla_ies
+		dataType: string
+		lineageTag: f98d4b34-1b9e-475e-92d7-f2b6fd7d9504
+		summarizeBy: none
+		sourceColumn: sigla_ies
+
+	partition dim_ies = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_ies. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Modelo em ESTRELA, nao em terceira forma normal (snowflake): cada dimensao se relaciona#(lf)# SO com a fato, nunca com outra dimensao. Por isso NAO trazemos aqui o municipio da IES#(lf)# como FK para dim_territorio (o territorio relevante para os paineis e o da OFERTA do#(lf)# curso, que a fato ja liga direto a dim_territorio via codigo_municipio) -- mantemos so#(lf)# atributos proprios da IES.#(lf)dim_ies = pd.read_sql_query(#(lf)    """"""#(lf)    SELECT#(lf)        codigo          AS codigo_ies,#(lf)        nome            AS nome_ies,#(lf)        sigla           AS sigla_ies#(lf)    FROM superior_ies#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)# Codigo 0 = instituicoes nao identificadas no Censo (existe na fato, nao em superior_ies).#(lf)dim_ies = pd.concat(#(lf)    [dim_ies, pd.DataFrame({""codigo_ies"": [0], ""nome_ies"": [""IES não identificada""], ""sigla_ies"": [None]})],#(lf)    ignore_index=True,#(lf))#(lf)"),
+					Tabela = Source{[Name="dim_ies"]}[Value]
+				in
+					Tabela
+

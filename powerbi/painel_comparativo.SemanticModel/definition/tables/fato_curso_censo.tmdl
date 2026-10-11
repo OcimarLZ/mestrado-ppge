@@ -1,0 +1,215 @@
+table fato_curso_censo
+	lineageTag: f7b828d4-274c-4c5e-90f4-9ca50ea60a23
+
+	measure 'Qtde Matrículas' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_mat]))
+		formatString: #,0
+		lineageTag: 6187fdbc-e052-43df-aee8-a467f68f3891
+
+	measure 'Qtde Ingressantes' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_ing]))
+		formatString: #,0
+		lineageTag: 3758b293-3fe6-4c60-90ed-26784d538d61
+
+	measure 'Qtde Vagas Totais' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_total]))
+		formatString: #,0
+		lineageTag: c5e61de8-70d5-4581-9478-c5821fa01d97
+
+	measure 'Qtde Inscritos' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_inscrito_total]))
+		formatString: #,0
+		lineageTag: 556c3c5e-b378-45f5-a213-cdf0c3cad6db
+
+	measure 'Qtde Concluintes' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_conc]))
+		formatString: #,0
+		lineageTag: 32d0f4da-28de-4acd-a6ed-e2425015844d
+
+	measure 'Situação Trancada' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_sit_trancada]))
+		formatString: #,0
+		lineageTag: b8685b65-165c-40f4-8da6-1d1606e881f4
+
+	measure 'Situação Desligado' = SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_sit_desligado]))
+		formatString: #,0
+		lineageTag: 51c8d12a-171a-4a91-bdf1-f316a7d6e681
+
+	measure 'Valor Base' = SWITCH(SELECTEDVALUE(dim_comparacao[Metrica]), "Qtde Matrículas", [Qtde Matrículas], "Qtde Ingressantes", [Qtde Ingressantes], "Qtde Vagas Totais", [Qtde Vagas Totais], "Qtde Inscritos", [Qtde Inscritos], "Qtde Concluintes", [Qtde Concluintes], "Situação Trancada", [Situação Trancada], "Situação Desligado", [Situação Desligado], BLANK())
+		formatString: #,0
+		lineageTag: 8dcaf8de-07b5-4e3b-9642-3842180d77d5
+
+	measure 'Valor Comparativo' = VAR _n = CALCULATE(COUNTROWS(dim_comparacao), REMOVEFILTERS(dim_comparacao[Rotulo])) VAR _mod = SELECTEDVALUE(dim_comparacao[Modalidade]) VAR _cat = SELECTEDVALUE(dim_comparacao[Categoria]) VAR _catTodas = _cat IN {"Ambas", "Pública (todas)", "Privada (todas)"} VAR _rede = SWITCH(_cat, "Pública (todas)", "Pública", "Privada (todas)", "Privada", "") RETURN IF(_n > 5 || ISBLANK(_mod) || ISBLANK(_cat), BLANK(), CALCULATE([Valor Base], FILTER(ALL(dim_modalidade_ensino[nome_modalidade_ensino]), _mod = "Ambas" || dim_modalidade_ensino[nome_modalidade_ensino] = _mod), FILTER(ALL(dim_categoria_administrativa[nome_categoria_administrativa]), _catTodas || dim_categoria_administrativa[nome_categoria_administrativa] = _cat), FILTER(ALL(dim_rede[nome_rede]), _rede = "" || dim_rede[nome_rede] = _rede)))
+		formatString: #,0
+		lineageTag: b0909e45-1ec8-43cf-ab9b-8306b0760e81
+
+	measure 'Titulo Comparativo' = VAR _n = COUNTROWS(dim_comparacao) RETURN IF(_n > 5, "Comparativo anual: " & _n & " combinações marcadas — marque no máximo 5", "Comparativo anual por ano do Censo (" & _n & IF(_n = 1, " linha)", " linhas)"))
+		lineageTag: 6f00acee-925a-4414-a318-cc086906e1b4
+
+	measure 'Filtros Selecionados' = VAR _v0 = IF(ISFILTERED(dim_territorio[nome_regiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_regiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_regiao]), dim_territorio[nome_regiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_regiao])) & " itens"), "") VAR _v1 = IF(ISFILTERED(dim_territorio[sigla_uf]), IF(COUNTROWS(VALUES(dim_territorio[sigla_uf])) <= 3, CONCATENATEX(VALUES(dim_territorio[sigla_uf]), dim_territorio[sigla_uf], ", "), COUNTROWS(VALUES(dim_territorio[sigla_uf])) & " itens"), "") VAR _v2 = IF(ISFILTERED(dim_territorio[nome_mesorregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_mesorregiao]), dim_territorio[nome_mesorregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) & " itens"), "") VAR _v3 = IF(ISFILTERED(dim_territorio[nome_microrregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_microrregiao]), dim_territorio[nome_microrregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) & " itens"), "") VAR _v4 = IF(ISFILTERED(dim_territorio[nome_municipio]), IF(COUNTROWS(VALUES(dim_territorio[nome_municipio])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_municipio]), dim_territorio[nome_municipio], ", "), COUNTROWS(VALUES(dim_territorio[nome_municipio])) & " itens"), "") VAR _v5 = IF(ISFILTERED(dim_organizacao_academica[nome_organizacao_academica]), IF(COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) <= 3, CONCATENATEX(VALUES(dim_organizacao_academica[nome_organizacao_academica]), dim_organizacao_academica[nome_organizacao_academica], ", "), COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) & " itens"), "") VAR _v6 = IF(ISFILTERED(dim_grau_academico[nome_grau_academico]), IF(COUNTROWS(VALUES(dim_grau_academico[nome_grau_academico])) <= 3, CONCATENATEX(VALUES(dim_grau_academico[nome_grau_academico]), dim_grau_academico[nome_grau_academico], ", "), COUNTROWS(VALUES(dim_grau_academico[nome_grau_academico])) & " itens"), "") VAR _v7 = IF(ISFILTERED(dim_cine[nome_area_geral]), IF(COUNTROWS(VALUES(dim_cine[nome_area_geral])) <= 3, CONCATENATEX(VALUES(dim_cine[nome_area_geral]), dim_cine[nome_area_geral], ", "), COUNTROWS(VALUES(dim_cine[nome_area_geral])) & " itens"), "") VAR _v8 = IF(ISFILTERED(dim_cine[nome_cine_rotulo]), IF(COUNTROWS(VALUES(dim_cine[nome_cine_rotulo])) <= 3, CONCATENATEX(VALUES(dim_cine[nome_cine_rotulo]), dim_cine[nome_cine_rotulo], ", "), COUNTROWS(VALUES(dim_cine[nome_cine_rotulo])) & " itens"), "") VAR _a = IF(_v0 <> "", _v0 & "/", "") & IF(_v1 <> "", _v1 & "/", "") & IF(_v2 <> "", _v2 & "/", "") & IF(_v3 <> "", _v3 & "/", "") & IF(_v4 <> "", _v4 & "/", "") & IF(_v5 <> "", _v5 & "/", "") & IF(_v6 <> "", _v6 & "/", "") & IF(_v7 <> "", _v7 & "/", "") & IF(_v8 <> "", _v8 & "/", "") RETURN IF(_a = "", "", LEFT(_a, LEN(_a) - 1))
+		lineageTag: e2696766-b23a-49e3-b6ca-0cda1905319e
+
+	measure 'Subtitulo Filtros' = VAR _f = [Filtros Selecionados] RETURN IF(_f = "", "", "(" & _f & ")")
+		lineageTag: 7a124fff-6999-42c7-939c-37aaca52bafa
+
+	column codigo_ano
+		dataType: string
+		lineageTag: d137e7b7-8fd0-4e04-8168-ec0bab58e29f
+		summarizeBy: none
+		sourceColumn: codigo_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_municipio
+		dataType: string
+		lineageTag: 4bd15ee5-422e-4279-9900-b08097739d4d
+		summarizeBy: none
+		sourceColumn: codigo_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_ies
+		dataType: string
+		lineageTag: 9fb07856-f9b3-4337-90e8-0c6c0285ecc3
+		summarizeBy: none
+		sourceColumn: codigo_ies
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_curso
+		dataType: string
+		lineageTag: 28b4fc56-2d4a-4d64-822d-4f98f92630fd
+		summarizeBy: none
+		sourceColumn: codigo_curso
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_cine_rotulo
+		dataType: string
+		lineageTag: 48a2318f-c51c-4019-b31f-5e50f0cba117
+		summarizeBy: none
+		sourceColumn: codigo_cine_rotulo
+
+	column codigo_grau_academico
+		dataType: string
+		lineageTag: e5f79b82-89bd-48f5-9ad5-0bf9717469f0
+		summarizeBy: none
+		sourceColumn: codigo_grau_academico
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_modalidade_ensino
+		dataType: string
+		lineageTag: 34b49611-ba24-4537-8f46-7bfa3200b9c3
+		summarizeBy: none
+		sourceColumn: codigo_modalidade_ensino
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_nivel_academico
+		dataType: string
+		lineageTag: 2138bd87-c8b5-4dfd-abcc-e1c80fe085b0
+		summarizeBy: none
+		sourceColumn: codigo_nivel_academico
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_organizacao_academica
+		dataType: string
+		lineageTag: 95e1535c-e2f4-4350-b64e-f53cf26d9cf8
+		summarizeBy: none
+		sourceColumn: codigo_organizacao_academica
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_categoria_administrativa
+		dataType: string
+		lineageTag: ed857675-3ed4-4209-baf2-b023fddcad1e
+		summarizeBy: none
+		sourceColumn: codigo_categoria_administrativa
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_rede
+		dataType: string
+		lineageTag: cec244a1-b6d3-4e5e-92d9-2c74ea99dcdf
+		summarizeBy: none
+		sourceColumn: codigo_rede
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimensao
+		dataType: string
+		lineageTag: 08f4ebb7-af53-474a-9426-f39395f34679
+		summarizeBy: none
+		sourceColumn: dimensao
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_gratuito
+		dataType: string
+		lineageTag: 039334a0-69d4-48b8-9c97-7c15e0976a9c
+		summarizeBy: none
+		sourceColumn: in_gratuito
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_total
+		dataType: string
+		lineageTag: f4ff851e-4337-4aa4-9384-298d8e9fd29d
+		summarizeBy: none
+		sourceColumn: qt_vg_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_inscrito_total
+		dataType: string
+		lineageTag: 31b7215a-4946-4ff9-9e16-580b5944cb97
+		summarizeBy: none
+		sourceColumn: qt_inscrito_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_mat
+		dataType: string
+		lineageTag: 0720c1ac-f31a-43b3-8efb-384f4ed8bdf4
+		summarizeBy: none
+		sourceColumn: qt_vg_mat
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_ing
+		dataType: string
+		lineageTag: 110b6c64-81f1-4f87-9e45-043c7dfcefe7
+		summarizeBy: none
+		sourceColumn: qt_vg_ing
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_conc
+		dataType: string
+		lineageTag: 5e65cc84-2080-4fff-aeed-7a2aefcb3ee7
+		summarizeBy: none
+		sourceColumn: qt_vg_conc
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_sit_trancada
+		dataType: string
+		lineageTag: 6d50f832-35bc-41af-8b75-e0ad4e109696
+		summarizeBy: none
+		sourceColumn: qt_sit_trancada
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_sit_desligado
+		dataType: string
+		lineageTag: 7670e79f-18cc-4f0b-9fe4-423c1125e769
+		summarizeBy: none
+		sourceColumn: qt_sit_desligado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_curso_censo = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)fato_curso_censo. Cada tabela do modelo tem seu proprio script (ver README.md na pasta#(lf)powerbi/) porque o conector Python do Power BI reavalia a arvore de dependencias inteira#(lf)do script a cada tabela carregada -- um unico script com 12 variaveis fazia a fato de#(lf)~3,9M linhas ser relida/reprocessada uma vez por tabela, esgotando a memoria disponivel#(lf)(ArrayMemoryError) mesmo para as dimensoes pequenas.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)ANO_MIN = 2005#(lf)ANO_MAX = 2024#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Grao: uma linha por curso-oferta x IES x ano_censo. Mantem o codigo de `curso` (a#(lf)# oferta especifica, com nome dado pela propria instituicao) ALEM do cine_rotulo (tipo#(lf)# padronizado) -- os dois sao necessarios: para contar ""quantos cursos distintos"" por#(lf)# IES usa-se `curso`; para comparar por ""tipo de curso"" entre IES/anos usa-se cine_rotulo.#(lf)fato_curso_censo = pd.read_sql_query(#(lf)    f""""""#(lf)    SELECT#(lf)        ano_censo                          AS codigo_ano,#(lf)        CAST(municipio AS INTEGER)         AS codigo_municipio,#(lf)        ies                                 AS codigo_ies,#(lf)        curso                               AS codigo_curso,#(lf)        cine_rotulo                         AS codigo_cine_rotulo,#(lf)        tp_grau_academico                   AS codigo_grau_academico,#(lf)        tp_modalidade_ensino                AS codigo_modalidade_ensino,#(lf)        tp_nivel_academico                  AS codigo_nivel_academico,#(lf)        org_academica                       AS codigo_organizacao_academica,#(lf)        categoria                           AS codigo_categoria_administrativa,#(lf)        tp_rede                             AS codigo_rede,#(lf)        dimensao,#(lf)        in_gratuito,#(lf)        qt_vg_total,#(lf)        qt_inscrito_total,#(lf)        qt_mat                              AS qt_vg_mat,#(lf)        qt_ing                              AS qt_vg_ing,#(lf)        qt_conc                             AS qt_vg_conc,#(lf)        qt_sit_trancada,#(lf)        qt_sit_desvinculado                 AS qt_sit_desligado#(lf)    FROM superior_curso_censo#(lf)    WHERE ano_censo BETWEEN {ANO_MIN} AND {ANO_MAX}#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)# Reduz drasticamente o uso de memoria (essencial numa fato de ~3,9M linhas): sem isso,#(lf)# o conector Python do Power BI precisa converter o DataFrame (que tem 2 colunas string#(lf)# misturadas com 15 numericas) para um array unico, forcando TUDO para dtype ""object"".#(lf)# codigo_cine_rotulo vira ""category"" (so 785 valores distintos repetidos ~4M vezes --#(lf)# ideal para category, que guarda so um indice inteiro por linha). As colunas inteiras#(lf)# recebem o menor dtype que comporta seus valores (downcast).#(lf)fato_curso_censo[""codigo_cine_rotulo""] = fato_curso_censo[""codigo_cine_rotulo""].astype(""category"")#(lf)for _col in [c for c in fato_curso_censo.columns if c != ""codigo_cine_rotulo""]:#(lf)    fato_curso_censo[_col] = pd.to_numeric(fato_curso_censo[_col], downcast=""integer"")#(lf)"),
+					Tabela = Source{[Name="fato_curso_censo"]}[Value]
+				in
+					Tabela
+

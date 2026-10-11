@@ -1,0 +1,178 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 50,
+            "y": 451.73431441847373
+          },
+          "nodeIndex": "dim_ano",
+          "nodeLineageTag": "77f9003b-7348-43ec-b30e-875ede392e29",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 570.971093370406,
+            "y": 657.24782018274755
+          },
+          "nodeIndex": "dim_categoria_administrativa",
+          "nodeLineageTag": "46230e3c-df6d-4514-a411-c7804ce9d99d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 713.56783133309136,
+            "y": -49.932724180695914
+          },
+          "nodeIndex": "dim_cine",
+          "nodeLineageTag": "051eabd1-2c66-4b78-8931-8ba83f3d1dd6",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 127.529840318603,
+            "y": 39.841464508240279
+          },
+          "nodeIndex": "dim_curso",
+          "nodeLineageTag": "80a72a54-4f25-419d-99b4-399f156e0088",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 692.69961916943635,
+            "y": 477.584940957264
+          },
+          "nodeIndex": "dim_grau_academico",
+          "nodeLineageTag": "bbaeb8da-ef5f-437e-bd07-9b731170525e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.001719436520773,
+            "y": 245.85520089135537
+          },
+          "nodeIndex": "dim_ies",
+          "nodeLineageTag": "e465dbde-1df4-4f40-b518-6bfc2ab252d6",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 161.98405356382938,
+            "y": 657.240131516893
+          },
+          "nodeIndex": "dim_modalidade_ensino",
+          "nodeLineageTag": "3525e8a1-2ddf-4fd4-b78f-45efb200deb9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 417.40866799141327,
+            "y": -50
+          },
+          "nodeIndex": "dim_organizacao_academica",
+          "nodeLineageTag": "84f936f0-a2d1-4bc6-a9bb-00950639affa",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 358.78881896970933,
+            "y": 838.0326383709471
+          },
+          "nodeIndex": "dim_rede",
+          "nodeLineageTag": "3338bf11-72f9-47fc-9dab-2ea6a7f57d48",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 981.453852058353,
+            "y": 278.96669694307735
+          },
+          "nodeIndex": "dim_territorio",
+          "nodeLineageTag": "09853dfc-7dfe-448c-8efd-5c1d5e5397cf",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1215.4538520583533,
+            "y": 420.01631918547355
+          },
+          "nodeIndex": "dim_versao",
+          "nodeLineageTag": "890fb58a-70d3-431e-a71b-526c1f6a28e1",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 358.11301457210192,
+            "y": 301.70589728181051
+          },
+          "nodeIndex": "fato_curso_censo",
+          "nodeLineageTag": "8b3523a1-9ff7-43d5-aceb-25870f48a59e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

@@ -1,0 +1,17 @@
+table dim_metricas
+	lineageTag: 404a9bfd-4495-490e-bbf7-812c49e6fad5
+
+	column Metrica
+		lineageTag: 4c6fbaa5-d5c0-4c24-b509-a356adbde163
+		isNameInferred
+		sourceColumn: [Metrica]
+
+	column Ordem
+		lineageTag: 9d144a8f-c306-47da-9d0f-a695ddcff005
+		isNameInferred
+		sourceColumn: [Ordem]
+
+	partition dim_metricas = calculated
+		mode: import
+		source = DATATABLE("Metrica", STRING, "Ordem", INTEGER, {{"Qtde Matrículas", 1}, {"Qtde Ingressantes", 2}, {"Qtde Vagas Totais", 3}, {"Qtde Concluintes", 4}, {"Situação Trancada", 5}, {"Situação Desligado", 6}})
+

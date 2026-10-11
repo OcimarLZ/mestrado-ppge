@@ -1,0 +1,22 @@
+table 'Metricas Parametro'
+	lineageTag: 21bb52cb-21d6-41d4-bea6-1a0b2f7d1a50
+
+	column 'Metricas Parametro'
+		dataType: string
+		lineageTag: 51d750da-bc19-4d57-a947-db9660c06527
+		summarizeBy: none
+		sourceColumn: [Metricas Parametro]
+		sortByColumn: Ordem
+
+	column Ordem
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a13ac587-9e96-4d78-9b99-877d59473de0
+		summarizeBy: none
+		sourceColumn: [Ordem]
+
+	partition 'Metricas Parametro' = calculated
+		mode: import
+		source = DATATABLE("Metricas Parametro", STRING, "Ordem", INTEGER, {{"Qtde Matrículas", 0}, {"Qtde Ingressantes", 1}, {"Qtde Vagas Totais", 2}, {"Qtde Inscritos", 3}, {"Qtde Concluintes", 4}, {"Situação Trancada", 5}, {"Situação Desligado", 6}})
+

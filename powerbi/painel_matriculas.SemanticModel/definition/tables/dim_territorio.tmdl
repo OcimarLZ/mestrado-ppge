@@ -1,0 +1,96 @@
+table dim_territorio
+	lineageTag: 67a6764a-f40e-4e39-89a6-421d994df436
+
+	column codigo_municipio
+		dataType: string
+		lineageTag: b2771d8a-b32a-448c-88dc-904188f8d2b4
+		summarizeBy: none
+		sourceColumn: codigo_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_municipio
+		dataType: string
+		lineageTag: d1f1f62a-ca6f-4d0d-8ca5-5c72e3c73dc4
+		summarizeBy: none
+		sourceColumn: nome_municipio
+
+	column codigo_microrregiao
+		dataType: string
+		lineageTag: 373e7cbf-cfff-4b28-82f7-438eba208aeb
+		summarizeBy: none
+		sourceColumn: codigo_microrregiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_microrregiao
+		dataType: string
+		lineageTag: 6ccc24f0-709d-4bfe-bae6-41fc3633813d
+		summarizeBy: none
+		sourceColumn: nome_microrregiao
+
+	column codigo_mesorregiao
+		dataType: string
+		lineageTag: 1ea0727c-3f4e-4c71-a60f-4e3ed29af8ef
+		summarizeBy: none
+		sourceColumn: codigo_mesorregiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_mesorregiao
+		dataType: string
+		lineageTag: 279604ea-1088-4b59-a5ee-6f1510d8b797
+		summarizeBy: none
+		sourceColumn: nome_mesorregiao
+
+	column sigla_uf
+		dataType: string
+		lineageTag: 05870b2e-43f0-4026-90b1-a60a0a1a5d24
+		summarizeBy: none
+		sourceColumn: sigla_uf
+
+	column nome_uf
+		dataType: string
+		lineageTag: 94012676-9289-4743-90b1-fb081067e4f3
+		summarizeBy: none
+		sourceColumn: nome_uf
+
+	column codigo_regiao
+		dataType: string
+		lineageTag: 3c106287-defb-461c-9cef-913d07b92ae1
+		summarizeBy: none
+		sourceColumn: codigo_regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_regiao
+		dataType: string
+		lineageTag: c12e4d55-943a-4e6a-b5a0-9861418b8571
+		summarizeBy: none
+		sourceColumn: nome_regiao
+
+	column regiao_intermediaria
+		dataType: string
+		lineageTag: 9c1ff2d9-73b9-43e2-8c13-34996b695ae6
+		summarizeBy: none
+		sourceColumn: regiao_intermediaria
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao_imediata
+		dataType: string
+		lineageTag: be8b7ef5-6fb9-4b4a-8b1c-c848056c22a4
+		summarizeBy: none
+		sourceColumn: regiao_imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_territorio = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_territorio. Ver README.md na pasta powerbi/ para o porque de cada tabela ter seu#(lf)proprio script em vez de um unico script com todas as variaveis.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Hierarquia territorial completa (municipio -> microrregiao -> mesorregiao -> UF ->#(lf)# regiao) numa UNICA tabela ja achatada -- modelo em estrela: liga direto na fato por#(lf)# codigo_municipio, sem nenhuma dimensao encadeada em outra dimensao.#(lf)dim_territorio = pd.read_sql_query(#(lf)    """"""#(lf)    SELECT#(lf)        CAST(m.codigo AS INTEGER) AS codigo_municipio,#(lf)        m.nome          AS nome_municipio,#(lf)        mic.codigo      AS codigo_microrregiao,#(lf)        mic.nome        AS nome_microrregiao,#(lf)        mes.codigo      AS codigo_mesorregiao,#(lf)        mes.nome        AS nome_mesorregiao,#(lf)        uf.sigla        AS sigla_uf,#(lf)        uf.nome         AS nome_uf,#(lf)        r.codigo        AS codigo_regiao,#(lf)        r.nome          AS nome_regiao,#(lf)        m.regiao_intermediaria,#(lf)        m.regiao_imediata#(lf)    FROM comum_municipio m#(lf)    LEFT JOIN comum_microrregiao mic ON mic.codigo = m.microrregiao#(lf)    LEFT JOIN comum_mesorregiao mes ON mes.codigo = m.mesorregiao#(lf)    LEFT JOIN comum_uf uf ON uf.sigla = m.uf#(lf)    LEFT JOIN comum_regiao r ON r.codigo = uf.regiao#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)dim_territorio[""codigo_municipio""] = pd.to_numeric(dim_territorio[""codigo_municipio""], downcast=""integer"")#(lf)"),
+					Tabela = Source{[Name="dim_territorio"]}[Value]
+				in
+					Tabela
+

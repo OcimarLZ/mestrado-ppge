@@ -1,0 +1,242 @@
+cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_grau_academico.nome_grau_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_grau_academico",
+			          "ConceptualProperty": "nome_grau_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Grau Acadêmico": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_regiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_regiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Região": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Município": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.sigla_uf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "sigla_uf"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "UF": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_microrregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_microrregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Microrregião": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_mesorregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_mesorregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mesorregião": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano.periodo_pne_2014_2024": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano",
+			          "ConceptualProperty": "periodo_pne_2014_2024"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PNE 2014": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano.codigo_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano",
+			          "ConceptualProperty": "codigo_ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ano": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica.nome_organizacao_academica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organizacao_academica",
+			          "ConceptualProperty": "nome_organizacao_academica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Organização Acadêmica": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_cine.nome_cine_rotulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_cine",
+			          "ConceptualProperty": "nome_cine_rotulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CINE rótulo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_cine.nome_area_geral": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_cine",
+			          "ConceptualProperty": "nome_area_geral"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Grande área": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

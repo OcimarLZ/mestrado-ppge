@@ -1,0 +1,19 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_ano
+ref table dim_categoria_administrativa
+ref table dim_ies
+ref table dim_mantenedora
+ref table dim_metricas
+ref table dim_organizacao_academica
+ref table dim_rede
+ref table dim_territorio
+ref table dim_versao
+ref table fato_ies_censo
+
+ref cultureInfo pt-BR
+

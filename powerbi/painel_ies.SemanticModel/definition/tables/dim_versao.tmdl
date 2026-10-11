@@ -1,0 +1,38 @@
+table dim_versao
+	lineageTag: 3776c47c-cef1-4a76-9ebb-7f3762db9f8e
+
+	column data_extracao
+		dataType: string
+		lineageTag: 05f0dadf-5891-41d6-8688-5894a894103b
+		summarizeBy: none
+		sourceColumn: data_extracao
+
+	column fonte
+		dataType: string
+		lineageTag: 98eca479-5650-4902-b947-d30cc77f9719
+		summarizeBy: none
+		sourceColumn: fonte
+
+	column ano_min
+		dataType: int64
+		formatString: 0
+		lineageTag: 93a8768e-6b1c-40ad-907e-798a35b76d57
+		summarizeBy: none
+		sourceColumn: ano_min
+
+	column ano_max
+		dataType: int64
+		formatString: 0
+		lineageTag: 7785febc-deab-418b-995b-6d79e54f502a
+		summarizeBy: none
+		sourceColumn: ano_max
+
+	partition dim_versao = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_versao (rastreabilidade: quando os dados foram extraidos do banco). Ver README.md na#(lf)pasta powerbi/.#(lf)""""""#(lf)from datetime import datetime, timezone#(lf)#(lf)import pandas as pd#(lf)#(lf)ANO_MIN = 2004#(lf)ANO_MAX = 2024#(lf)#(lf)dim_versao = pd.DataFrame(#(lf)    {#(lf)        ""data_extracao"": [datetime.now(timezone.utc).isoformat()],#(lf)        ""fonte"": [""INEP - Censo da Educação Superior (microdados)""],#(lf)        ""ano_min"": [ANO_MIN],#(lf)        ""ano_max"": [ANO_MAX],#(lf)    }#(lf))#(lf)"),
+					Tabela = Source{[Name="dim_versao"]}[Value]
+				in
+					Tabela
+

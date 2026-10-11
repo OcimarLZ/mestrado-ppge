@@ -1,0 +1,32 @@
+table dim_curso
+	lineageTag: badfdad3-baf8-43d0-b174-9f308b29c88b
+
+	column codigo_curso
+		dataType: string
+		lineageTag: 077ef328-27e0-4d8d-bb1a-b886689c8d79
+		summarizeBy: none
+		sourceColumn: codigo_curso
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_curso
+		dataType: string
+		lineageTag: 7fbcd044-2748-45a0-8914-07ef1d866b37
+		summarizeBy: none
+		sourceColumn: nome_curso
+
+	column fl_uab
+		dataType: string
+		lineageTag: 5f4dfb85-a3f9-42e1-933d-6890b89c89ce
+		summarizeBy: none
+		sourceColumn: fl_uab
+
+	partition dim_curso = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_curso. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Oferta especifica do curso, com o nome bruto dado pela propria instituicao (ex: ""3#(lf)# cursos de Pedagogia"" na mesma IES tem 3 codigos de curso diferentes aqui, mesmo#(lf)# compartilhando o mesmo cine_rotulo). A ligacao curso -> cine_rotulo (tipo padronizado)#(lf)# ja vem direto na FATO (fato_curso_censo.codigo_cine_rotulo), nao precisa repetir aqui.#(lf)dim_curso = pd.read_sql_query(#(lf)    """"""#(lf)    SELECT#(lf)        codigo          AS codigo_curso,#(lf)        nome            AS nome_curso,#(lf)        fl_uab#(lf)    FROM superior_curso#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_curso"]}[Value]
+				in
+					Tabela
+

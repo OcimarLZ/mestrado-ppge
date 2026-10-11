@@ -1,0 +1,4829 @@
+cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_grau_academico.nome_grau_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_grau_academico",
+			          "ConceptualProperty": "nome_grau_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome grau academico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_grau_academico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Grau Acadêmico": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino.nome_modalidade_ensino": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_modalidade_ensino",
+			          "ConceptualProperty": "nome_modalidade_ensino"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome modalidade ensino": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_modalidade_ensino": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Modalidade": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_regiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_regiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome regiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_regiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Região": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_municipio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Município": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.sigla_uf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "sigla_uf"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sigla uf": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sigla_uf": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "UF": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_microrregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_microrregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome microrregiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_microrregiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Microrregião": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_mesorregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_mesorregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome mesorregiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_mesorregiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Mesorregião": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano.periodo_pne_2014_2024": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano",
+			          "ConceptualProperty": "periodo_pne_2014_2024"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "periodo pne 2014 2024": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "periodo_pne_2014_2024": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PNE 2014": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano.codigo_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano",
+			          "ConceptualProperty": "codigo_ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Ano": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_rede.nome_rede": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_rede",
+			          "ConceptualProperty": "nome_rede"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome rede": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_rede": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Rede": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica.nome_organizacao_academica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organizacao_academica",
+			          "ConceptualProperty": "nome_organizacao_academica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome organizacao academica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_organizacao_academica": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Organização Acadêmica": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa.nome_categoria_administrativa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_categoria_administrativa",
+			          "ConceptualProperty": "nome_categoria_administrativa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome categoria administrativa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_categoria_administrativa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Categoria": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ano.decada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ano",
+			          "ConceptualProperty": "decada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "decada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_curso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_curso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim curso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_curso": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_curso.codigo_curso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_curso",
+			          "ConceptualProperty": "codigo_curso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo curso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_curso": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_curso.nome_curso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_curso",
+			          "ConceptualProperty": "nome_curso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome curso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_curso": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Nome do Curso": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_curso.fl_uab": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_curso",
+			          "ConceptualProperty": "fl_uab"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fl uab": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fl_uab": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_grau_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_grau_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim grau academico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_grau_academico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_grau_academico.codigo_grau_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_grau_academico",
+			          "ConceptualProperty": "codigo_grau_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo grau academico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_grau_academico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "IE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "dim_IE.codigo_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ies",
+			          "ConceptualProperty": "codigo_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_IE.nome_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ies",
+			          "ConceptualProperty": "nome_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "IE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Nome da Instituição": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_IE.sigla_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ies",
+			          "ConceptualProperty": "sigla_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sigla IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sigla_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_IE.sigla_uf_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_ies",
+			          "ConceptualProperty": "sigla_uf_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sigla uf IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sigla_uf_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_modalidade_ensino"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim modalidade ensino": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_modalidade_ensino": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino.codigo_modalidade_ensino": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_modalidade_ensino",
+			          "ConceptualProperty": "codigo_modalidade_ensino"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo modalidade ensino": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_modalidade_ensino": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organizacao_academica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim organizacao academica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_organizacao_academica": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica.codigo_organizacao_academica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_organizacao_academica",
+			          "ConceptualProperty": "codigo_organizacao_academica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo organizacao academica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_organizacao_academica": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_rede": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_rede"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim rede": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_rede": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_rede.codigo_rede": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_rede",
+			          "ConceptualProperty": "codigo_rede"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo rede": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_rede": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim territorio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_territorio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.codigo_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "codigo_municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_municipio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.codigo_microrregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "codigo_microrregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo microrregiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_microrregiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.codigo_mesorregiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "codigo_mesorregiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo mesorregiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_mesorregiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.nome_uf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "nome_uf"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome uf": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nome_uf": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.codigo_regiao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "codigo_regiao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo regiao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_regiao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.regiao_intermediaria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "regiao_intermediaria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "regiao intermediaria": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "regiao_intermediaria": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_territorio.regiao_imediata": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_territorio",
+			          "ConceptualProperty": "regiao_imediata"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "regiao imediata": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "regiao_imediata": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_versao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_versao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim versao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_versao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_versao.data_extracao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_versao",
+			          "ConceptualProperty": "data_extracao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data extracao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data_extracao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "information extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record extracao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_versao.fonte": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_versao",
+			          "ConceptualProperty": "fonte"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fonte": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_versao.ano_min": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_versao",
+			          "ConceptualProperty": "ano_min"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano min": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ano_min": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ano minimum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_versao.ano_max": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_versao",
+			          "ConceptualProperty": "ano_max"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano max": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ano_max": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ano maximum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fato curso censo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fato_curso_censo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_ano": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_municipio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_IE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_ies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo IE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_ies": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_curso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_curso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo curso": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_curso": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_cine_rotulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_cine_rotulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo cine rotulo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_cine_rotulo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_grau_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_grau_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo grau academico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_grau_academico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_modalidade_ensino": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_modalidade_ensino"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo modalidade ensino": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_modalidade_ensino": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_nivel_academico": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_nivel_academico"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo nivel academico": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_nivel_academico": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_organizacao_academica": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_organizacao_academica"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo organizacao academica": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_organizacao_academica": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_categoria_administrativa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_categoria_administrativa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo categoria administrativa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_categoria_administrativa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.codigo_rede": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "codigo_rede"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "codigo rede": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_rede": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.dimensao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "dimensao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dimensao": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.in_gratuito": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "in_gratuito"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "in gratuito": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "in_gratuito": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_vg_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_vg_total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt vg total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_vg_total": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "qt vg aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "qt vg overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_vg_mat": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_vg_mat"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt vg mat": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_vg_mat": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "qt vg doormat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qt vg bathmat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qt vg runner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qt vg floorcovering": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qt vg rug": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qt vg carpet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qt vg floor-covering": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qt vg placemat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "qt vg doyly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "qt vg doily": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_vg_ing": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_vg_ing"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt vg ing": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_vg_ing": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_vg_conc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_vg_conc"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt vg conc": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_vg_conc": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_sit_trancada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_sit_trancada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt sit trancada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_sit_trancada": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qt_sit_desligado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "qt_sit_desligado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qt sit desligado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qt_sit_desligado": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.qtde_cursos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Qtde Cursos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtde cursos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.vagas_totais": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Vagas Totais"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vagas totais": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.ingressantes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Ingressantes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ingressantes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.matrículas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Matrículas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "matrículas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.concluintes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Concluintes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "concluintes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.trancadas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Trancadas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trancadas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.desligados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Desligados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desligados": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.titulo_matriz": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Titulo Matriz"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "titulo matriz": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.filtros_selecionados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Filtros Selecionados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "filtros selecionados": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.subtitulo_filtros": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Subtitulo Filtros"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "subtitulo filtros": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.sigla": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "Sigla"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sigla": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fato_curso_censo.uf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fato_curso_censo",
+			          "ConceptualProperty": "UF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "uf": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_categoria_administrativa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim categoria administrativa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dim_categoria_administrativa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa.codigo_categoria_administrativa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_categoria_administrativa",
+			          "ConceptualProperty": "codigo_categoria_administrativa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo categoria administrativa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_categoria_administrativa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "fato_curso_censo_has_dim_categoria_administrativa": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria_administrativa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_categoria_administrativas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria_administrativa"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categoria_administrativas_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_organizacao_academica": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_organizacao_academica"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_organizacao_academicas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organizacao_academica"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizacao_academicas_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_modalidade_ensino": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_modalidade_ensino"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_modalidade_ensinos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_modalidade_ensino"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_modalidade_ensinos_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_grau_academico": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_grau_academico"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_grau_academicos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_grau_academico"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_grau_academicos_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_curso": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_curso": {
+			          "Target": {
+			            "Entity": "dim_curso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_curso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_cursos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_curso"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_cursos_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_IE": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          },
+			          "Nouns": [
+			            {
+			              "codigo IE": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_IE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_IE"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_territorio": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_territorios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_ano": {
+			          "Target": {
+			            "Entity": "dim_ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_anos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_anos_have_fato_curso_censos"
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa_has_codigo_categoria_administrativa": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_categoria_administrativa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa"
+			          }
+			        },
+			        "dim_categoria_administrativa.codigo_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa.codigo_categoria_administrativa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria_administrativa"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria_administrativa.codigo_categoria_administrativa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categoria_administrativas_have_codigo_categoria_administrativas"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_uf": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.uf": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.uf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.uf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_uf"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_fato_curso_censo_uf": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "fato_curso_censo.uf": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.uf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.uf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_uf"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_sigla": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.sigla": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.sigla"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.sigla"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_sigla"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_fato_curso_censo_sigla": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "fato_curso_censo.sigla": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.sigla"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.sigla"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_sigla"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_rede_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_rede"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_rede": {
+			          "Target": {
+			            "Entity": "dim_rede"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_rede"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_redes_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organizacao_academica"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organizacao_academica"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizacao_academicas_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_modalidade_ensino"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_modalidade_ensino"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_modalidade_ensinos_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_grau_academico_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_grau_academico"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_grau_academico"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_grau_academicos_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa_has_fato_curso_censo_subtitulo_filtros": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_categoria_administrativa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa"
+			          }
+			        },
+			        "fato_curso_censo.subtitulo_filtros": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.subtitulo_filtros"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria_administrativa"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.subtitulo_filtros"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categoria_administrativas_have_subtitulo_filtros"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_rede_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_rede"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_rede": {
+			          "Target": {
+			            "Entity": "dim_rede"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_rede"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_redes_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organizacao_academica"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organizacao_academica"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizacao_academicas_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_modalidade_ensino"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_modalidade_ensino"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_modalidade_ensinos_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_grau_academico_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_grau_academico"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_grau_academico"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_grau_academicos_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa_has_fato_curso_censo_filtros_selecionados": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_categoria_administrativa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa"
+			          }
+			        },
+			        "fato_curso_censo.filtros_selecionados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.filtros_selecionados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria_administrativa"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.filtros_selecionados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categoria_administrativas_have_filtros_selecionados"
+			        }
+			      ]
+			    },
+			    "dim_ano_has_fato_curso_censo_titulo_matriz": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ano"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ano": {
+			          "Target": {
+			            "Entity": "dim_ano"
+			          }
+			        },
+			        "fato_curso_censo.titulo_matriz": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.titulo_matriz"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.titulo_matriz"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_anos_have_titulo_matriz"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_desligados": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.desligados": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.desligados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.desligados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_desligados"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_trancadas": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.trancadas": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.trancadas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.trancadas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_trancadas"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_concluintes": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.concluintes": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.concluintes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.concluintes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_concluintes"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_matrículas": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.matrículas": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.matrículas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.matrículas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_matrículas"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_ingressantes": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.ingressantes": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.ingressantes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.ingressantes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_ingressantes"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_vagas_totais": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.vagas_totais": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.vagas_totais"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.vagas_totais"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_vagas_totais"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qtde_cursos": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qtde_cursos": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qtde_cursos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qtde_cursos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qtde_cursos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_sit_desligado": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_sit_desligado": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_sit_desligado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_sit_desligado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_sit_desligados"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_sit_trancada": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_sit_trancada": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_sit_trancada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_sit_trancada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_sit_trancadas"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_vg_conc": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_vg_conc": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_vg_conc"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_vg_conc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_vg_concs"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_vg_ing": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_vg_ing": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_vg_ing"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_vg_ing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_vg_ings"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_vg_mat": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_vg_mat": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_vg_mat"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_vg_mat"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_vg_mats"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_qt_vg_total": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.qt_vg_total": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.qt_vg_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.qt_vg_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_qt_vg_totals"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_in_gratuito": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.in_gratuito": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.in_gratuito"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.in_gratuito"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_in_gratuito"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dimensao": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.dimensao": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.dimensao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.dimensao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dimensaos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_codigo_nivel_academico": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.codigo_nivel_academico": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.codigo_nivel_academico"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.codigo_nivel_academico"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_codigo_nivel_academicos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_codigo_cine_rotulo": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "fato_curso_censo.codigo_cine_rotulo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo.codigo_cine_rotulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo.codigo_cine_rotulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_codigo_cine_rotulos"
+			        }
+			      ]
+			    },
+			    "dim_versao_has_ano_max": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_versao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_versao": {
+			          "Target": {
+			            "Entity": "dim_versao"
+			          }
+			        },
+			        "dim_versao.ano_max": {
+			          "Target": {
+			            "Entity": "dim_versao.ano_max"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_versao"
+			            },
+			            "Object": {
+			              "Role": "dim_versao.ano_max"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_versaos_have_ano_maxes"
+			        }
+			      ]
+			    },
+			    "dim_versao_has_ano_min": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_versao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_versao": {
+			          "Target": {
+			            "Entity": "dim_versao"
+			          }
+			        },
+			        "dim_versao.ano_min": {
+			          "Target": {
+			            "Entity": "dim_versao.ano_min"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_versao"
+			            },
+			            "Object": {
+			              "Role": "dim_versao.ano_min"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_versaos_have_ano_mins"
+			        }
+			      ]
+			    },
+			    "dim_versao_has_fonte": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_versao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_versao": {
+			          "Target": {
+			            "Entity": "dim_versao"
+			          }
+			        },
+			        "dim_versao.fonte": {
+			          "Target": {
+			            "Entity": "dim_versao.fonte"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_versao"
+			            },
+			            "Object": {
+			              "Role": "dim_versao.fonte"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_versaos_have_fontes"
+			        }
+			      ]
+			    },
+			    "dim_versao_has_data_extracao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_versao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_versao": {
+			          "Target": {
+			            "Entity": "dim_versao"
+			          }
+			        },
+			        "dim_versao.data_extracao": {
+			          "Target": {
+			            "Entity": "dim_versao.data_extracao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_versao"
+			            },
+			            "Object": {
+			              "Role": "dim_versao.data_extracao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_versaos_have_data_extracaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_regiao_imediata": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.regiao_imediata": {
+			          "Target": {
+			            "Entity": "dim_territorio.regiao_imediata"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.regiao_imediata"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_regiao_imediatas"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_regiao_intermediaria": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.regiao_intermediaria": {
+			          "Target": {
+			            "Entity": "dim_territorio.regiao_intermediaria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.regiao_intermediaria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_regiao_intermediarias"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_codigo_regiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.codigo_regiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.codigo_regiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.codigo_regiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_codigo_regiaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_nome_uf": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.nome_uf": {
+			          "Target": {
+			            "Entity": "dim_territorio.nome_uf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.nome_uf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_nome_ufs"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_codigo_mesorregiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.codigo_mesorregiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.codigo_mesorregiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.codigo_mesorregiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_codigo_mesorregiaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_codigo_microrregiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.codigo_microrregiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.codigo_microrregiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.codigo_microrregiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_codigo_microrregiaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_codigo_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.codigo_municipio": {
+			          "Target": {
+			            "Entity": "dim_territorio.codigo_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.codigo_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_codigo_municipios"
+			        }
+			      ]
+			    },
+			    "dim_rede_has_codigo_rede": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_rede"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_rede": {
+			          "Target": {
+			            "Entity": "dim_rede"
+			          }
+			        },
+			        "dim_rede.codigo_rede": {
+			          "Target": {
+			            "Entity": "dim_rede.codigo_rede"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_rede"
+			            },
+			            "Object": {
+			              "Role": "dim_rede.codigo_rede"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_redes_have_codigo_redes"
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica_has_codigo_organizacao_academica": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organizacao_academica"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica"
+			          }
+			        },
+			        "dim_organizacao_academica.codigo_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica.codigo_organizacao_academica"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organizacao_academica"
+			            },
+			            "Object": {
+			              "Role": "dim_organizacao_academica.codigo_organizacao_academica"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizacao_academicas_have_codigo_organizacao_academicas"
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino_has_codigo_modalidade_ensino": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_modalidade_ensino"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino"
+			          }
+			        },
+			        "dim_modalidade_ensino.codigo_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino.codigo_modalidade_ensino"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_modalidade_ensino"
+			            },
+			            "Object": {
+			              "Role": "dim_modalidade_ensino.codigo_modalidade_ensino"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_modalidade_ensinos_have_codigo_modalidade_ensinos"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_sigla_uf_IE": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "dim_IE.sigla_uf_IE": {
+			          "Target": {
+			            "Entity": "dim_IE.sigla_uf_IE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "dim_IE.sigla_uf_IE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_sigla_uf_IE"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_sigla_IE": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "dim_IE.sigla_IE": {
+			          "Target": {
+			            "Entity": "dim_IE.sigla_IE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "dim_IE.sigla_IE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_sigla_IE"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_nome_IE": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "dim_IE.nome_IE": {
+			          "Target": {
+			            "Entity": "dim_IE.nome_IE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "dim_IE.nome_IE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_nome_IE"
+			        }
+			      ]
+			    },
+			    "dim_IE_has_codigo_IE": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_IE": {
+			          "Target": {
+			            "Entity": "dim_IE"
+			          }
+			        },
+			        "dim_IE.codigo_IE": {
+			          "Target": {
+			            "Entity": "dim_IE.codigo_IE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_IE"
+			            },
+			            "Object": {
+			              "Role": "dim_IE.codigo_IE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_IE_have_codigo_IE"
+			        }
+			      ]
+			    },
+			    "dim_grau_academico_has_codigo_grau_academico": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_grau_academico"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico"
+			          }
+			        },
+			        "dim_grau_academico.codigo_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico.codigo_grau_academico"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_grau_academico"
+			            },
+			            "Object": {
+			              "Role": "dim_grau_academico.codigo_grau_academico"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_grau_academicos_have_codigo_grau_academicos"
+			        }
+			      ]
+			    },
+			    "dim_curso_has_fl_uab": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_curso"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_curso": {
+			          "Target": {
+			            "Entity": "dim_curso"
+			          }
+			        },
+			        "dim_curso.fl_uab": {
+			          "Target": {
+			            "Entity": "dim_curso.fl_uab"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_curso"
+			            },
+			            "Object": {
+			              "Role": "dim_curso.fl_uab"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_cursos_have_fl_uabs"
+			        }
+			      ]
+			    },
+			    "dim_curso_has_nome_curso": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_curso"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_curso": {
+			          "Target": {
+			            "Entity": "dim_curso"
+			          }
+			        },
+			        "dim_curso.nome_curso": {
+			          "Target": {
+			            "Entity": "dim_curso.nome_curso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_curso"
+			            },
+			            "Object": {
+			              "Role": "dim_curso.nome_curso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_cursos_have_nome_cursos"
+			        }
+			      ]
+			    },
+			    "dim_curso_has_codigo_curso": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_curso"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_curso": {
+			          "Target": {
+			            "Entity": "dim_curso"
+			          }
+			        },
+			        "dim_curso.codigo_curso": {
+			          "Target": {
+			            "Entity": "dim_curso.codigo_curso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_curso"
+			            },
+			            "Object": {
+			              "Role": "dim_curso.codigo_curso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_cursos_have_codigo_cursos"
+			        }
+			      ]
+			    },
+			    "dim_ano_has_decada": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ano"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ano": {
+			          "Target": {
+			            "Entity": "dim_ano"
+			          }
+			        },
+			        "dim_ano.decada": {
+			          "Target": {
+			            "Entity": "dim_ano.decada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Object": {
+			              "Role": "dim_ano.decada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_anos_have_decadas"
+			        }
+			      ]
+			    },
+			    "dim_categoria_administrativa_has_nome_categoria_administrativa": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_categoria_administrativa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa"
+			          }
+			        },
+			        "dim_categoria_administrativa.nome_categoria_administrativa": {
+			          "Target": {
+			            "Entity": "dim_categoria_administrativa.nome_categoria_administrativa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria_administrativa"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria_administrativa.nome_categoria_administrativa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categoria_administrativas_have_nome_categoria_administrativas"
+			        }
+			      ]
+			    },
+			    "dim_organizacao_academica_has_nome_organizacao_academica": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_organizacao_academica"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica"
+			          }
+			        },
+			        "dim_organizacao_academica.nome_organizacao_academica": {
+			          "Target": {
+			            "Entity": "dim_organizacao_academica.nome_organizacao_academica"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_organizacao_academica"
+			            },
+			            "Object": {
+			              "Role": "dim_organizacao_academica.nome_organizacao_academica"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_organizacao_academicas_have_nome_organizacao_academicas"
+			        }
+			      ]
+			    },
+			    "dim_rede_has_nome_rede": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_rede"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_rede": {
+			          "Target": {
+			            "Entity": "dim_rede"
+			          }
+			        },
+			        "dim_rede.nome_rede": {
+			          "Target": {
+			            "Entity": "dim_rede.nome_rede"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_rede"
+			            },
+			            "Object": {
+			              "Role": "dim_rede.nome_rede"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_redes_have_nome_redes"
+			        }
+			      ]
+			    },
+			    "dim_ano_has_codigo_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ano"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ano": {
+			          "Target": {
+			            "Entity": "dim_ano"
+			          }
+			        },
+			        "dim_ano.codigo_ano": {
+			          "Target": {
+			            "Entity": "dim_ano.codigo_ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Object": {
+			              "Role": "dim_ano.codigo_ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_anos_have_codigo_anos"
+			        }
+			      ]
+			    },
+			    "dim_ano_has_periodo_pne_2014_2024": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_ano"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ano": {
+			          "Target": {
+			            "Entity": "dim_ano"
+			          }
+			        },
+			        "dim_ano.periodo_pne_2014_2024": {
+			          "Target": {
+			            "Entity": "dim_ano.periodo_pne_2014_2024"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Object": {
+			              "Role": "dim_ano.periodo_pne_2014_2024"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_anos_have_periodo_pne_2014_2024"
+			        },
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "dim_ano"
+			            },
+			            "Adjective": {
+			              "Role": "dim_ano.periodo_pne_2014_2024"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periodo_pne_2014_2024_describe_dim_anos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_nome_mesorregiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.nome_mesorregiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.nome_mesorregiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.nome_mesorregiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_nome_mesorregiaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_nome_microrregiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.nome_microrregiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.nome_microrregiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.nome_microrregiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_nome_microrregiaos"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_sigla_uf": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.sigla_uf": {
+			          "Target": {
+			            "Entity": "dim_territorio.sigla_uf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.sigla_uf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_sigla_ufs"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_nome_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.nome_municipio": {
+			          "Target": {
+			            "Entity": "dim_territorio.nome_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.nome_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_nome_municipios"
+			        }
+			      ]
+			    },
+			    "dim_territorio_has_nome_regiao": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_territorio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_territorio": {
+			          "Target": {
+			            "Entity": "dim_territorio"
+			          }
+			        },
+			        "dim_territorio.nome_regiao": {
+			          "Target": {
+			            "Entity": "dim_territorio.nome_regiao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_territorio"
+			            },
+			            "Object": {
+			              "Role": "dim_territorio.nome_regiao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_territorios_have_nome_regiaos"
+			        }
+			      ]
+			    },
+			    "dim_modalidade_ensino_has_nome_modalidade_ensino": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_modalidade_ensino"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino"
+			          }
+			        },
+			        "dim_modalidade_ensino.nome_modalidade_ensino": {
+			          "Target": {
+			            "Entity": "dim_modalidade_ensino.nome_modalidade_ensino"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_modalidade_ensino"
+			            },
+			            "Object": {
+			              "Role": "dim_modalidade_ensino.nome_modalidade_ensino"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_modalidade_ensinos_have_nome_modalidade_ensinos"
+			        }
+			      ]
+			    },
+			    "dim_grau_academico_has_nome_grau_academico": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_grau_academico"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico"
+			          }
+			        },
+			        "dim_grau_academico.nome_grau_academico": {
+			          "Target": {
+			            "Entity": "dim_grau_academico.nome_grau_academico"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_grau_academico"
+			            },
+			            "Object": {
+			              "Role": "dim_grau_academico.nome_grau_academico"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_grau_academicos_have_nome_grau_academicos"
+			        }
+			      ]
+			    },
+			    "fato_curso_censo_has_dim_rede": {
+			      "Binding": {
+			        "ConceptualEntity": "fato_curso_censo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fato_curso_censo": {
+			          "Target": {
+			            "Entity": "fato_curso_censo"
+			          }
+			        },
+			        "dim_rede": {
+			          "Target": {
+			            "Entity": "dim_rede"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fato_curso_censo"
+			            },
+			            "Object": {
+			              "Role": "dim_rede"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fato_curso_censos_have_dim_redes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_rede"
+			            },
+			            "Object": {
+			              "Role": "fato_curso_censo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_redes_have_fato_curso_censos"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

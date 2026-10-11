@@ -1,0 +1,90 @@
+table dim_territorio
+	lineageTag: 274fd89b-dab0-47e2-a249-ff773393cc1e
+
+	column codigo_municipio
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f2cb36c-2525-45c0-a131-70ee36ae33fa
+		summarizeBy: none
+		sourceColumn: codigo_municipio
+
+	column nome_municipio
+		dataType: string
+		lineageTag: 08862b3a-2132-4075-850e-30cb699a30ef
+		summarizeBy: none
+		sourceColumn: nome_municipio
+
+	column codigo_microrregiao
+		dataType: int64
+		formatString: 0
+		lineageTag: 296d488b-2441-461a-b5ba-001abd936ca7
+		summarizeBy: none
+		sourceColumn: codigo_microrregiao
+
+	column nome_microrregiao
+		dataType: string
+		lineageTag: e14f54f6-1bc9-4041-8364-6e5edb5b0055
+		summarizeBy: none
+		sourceColumn: nome_microrregiao
+
+	column codigo_mesorregiao
+		dataType: int64
+		formatString: 0
+		lineageTag: bef85b5f-9b56-4828-b0e5-eaccbd885d58
+		summarizeBy: none
+		sourceColumn: codigo_mesorregiao
+
+	column nome_mesorregiao
+		dataType: string
+		lineageTag: 48f68556-e34e-4bfa-a912-68db07be0c1a
+		summarizeBy: none
+		sourceColumn: nome_mesorregiao
+
+	column sigla_uf
+		dataType: string
+		lineageTag: dc462e86-0597-4c77-9e33-4bc0eb0dc2e1
+		summarizeBy: none
+		sourceColumn: sigla_uf
+
+	column nome_uf
+		dataType: string
+		lineageTag: 33a156f7-5b2a-44af-9043-eb39ddcf4d2d
+		summarizeBy: none
+		sourceColumn: nome_uf
+
+	column codigo_regiao
+		dataType: int64
+		formatString: 0
+		lineageTag: b53eda2c-64f7-49fb-9845-2b28225ab59e
+		summarizeBy: none
+		sourceColumn: codigo_regiao
+
+	column nome_regiao
+		dataType: string
+		lineageTag: 75124149-49bb-44e8-b6c2-723d45dfe218
+		summarizeBy: none
+		sourceColumn: nome_regiao
+
+	column regiao_intermediaria
+		dataType: int64
+		formatString: 0
+		lineageTag: e728f33b-f75d-4dd0-a48b-732555eb8f7b
+		summarizeBy: none
+		sourceColumn: regiao_intermediaria
+
+	column regiao_imediata
+		dataType: int64
+		formatString: 0
+		lineageTag: 56ef3691-3d1e-470c-99d7-45e238670857
+		summarizeBy: none
+		sourceColumn: regiao_imediata
+
+	partition dim_territorio = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_territorio. Ver README.md na pasta powerbi/ para o porque de cada tabela ter seu#(lf)proprio script em vez de um unico script com todas as variaveis.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Hierarquia territorial completa (municipio -> microrregiao -> mesorregiao -> UF ->#(lf)# regiao) numa UNICA tabela ja achatada -- modelo em estrela: liga direto na fato por#(lf)# codigo_municipio, sem nenhuma dimensao encadeada em outra dimensao.#(lf)dim_territorio = pd.read_sql_query(#(lf)    """"""#(lf)    SELECT#(lf)        CAST(m.codigo AS INTEGER) AS codigo_municipio,#(lf)        m.nome          AS nome_municipio,#(lf)        mic.codigo      AS codigo_microrregiao,#(lf)        mic.nome        AS nome_microrregiao,#(lf)        mes.codigo      AS codigo_mesorregiao,#(lf)        mes.nome        AS nome_mesorregiao,#(lf)        uf.sigla        AS sigla_uf,#(lf)        uf.nome         AS nome_uf,#(lf)        r.codigo        AS codigo_regiao,#(lf)        r.nome          AS nome_regiao,#(lf)        m.regiao_intermediaria,#(lf)        m.regiao_imediata#(lf)    FROM comum_municipio m#(lf)    LEFT JOIN comum_microrregiao mic ON mic.codigo = m.microrregiao#(lf)    LEFT JOIN comum_mesorregiao mes ON mes.codigo = m.mesorregiao#(lf)    LEFT JOIN comum_uf uf ON uf.sigla = m.uf#(lf)    LEFT JOIN comum_regiao r ON r.codigo = uf.regiao#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)dim_territorio[""codigo_municipio""] = pd.to_numeric(dim_territorio[""codigo_municipio""], downcast=""integer"")#(lf)"),
+					Tabela = Source{[Name="dim_territorio"]}[Value]
+				in
+					Tabela
+

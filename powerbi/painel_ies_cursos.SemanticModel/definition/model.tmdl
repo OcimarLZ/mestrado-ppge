@@ -1,0 +1,28 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim_ano","dim_curso","dim_grau_academico","dim_ies","dim_modalidade_ensino","dim_organizacao_academica","dim_rede","dim_territorio","dim_versao","fato_curso_censo","dim_categoria_administrativa"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_ano
+ref table dim_curso
+ref table dim_grau_academico
+ref table dim_ies
+ref table dim_modalidade_ensino
+ref table dim_organizacao_academica
+ref table dim_rede
+ref table dim_territorio
+ref table dim_versao
+ref table fato_curso_censo
+ref table dim_categoria_administrativa
+
+ref cultureInfo pt-BR
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "painel_ies_cursos"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e314e4d4-e9d4-4e2c-8f86-f867a6983ee7"
+  }
+}

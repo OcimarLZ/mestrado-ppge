@@ -1,0 +1,28 @@
+relationship 01236514-8d1e-44df-b387-6be0e2f960fb
+	fromColumn: fato_ies_censo.codigo_ano
+	toColumn: dim_ano.codigo_ano
+
+relationship b98b55ce-c6a3-4317-ba95-b4ba611df80b
+	fromColumn: fato_ies_censo.codigo_municipio
+	toColumn: dim_territorio.codigo_municipio
+
+relationship bda2b1a2-40a9-40f5-b09e-3c33d6c53385
+	fromColumn: fato_ies_censo.codigo_ies
+	toColumn: dim_ies.codigo_ies
+
+relationship 1ef47c02-c972-4557-b701-228b129eefaa
+	fromColumn: fato_ies_censo.codigo_mantenedora
+	toColumn: dim_mantenedora.codigo_mantenedora
+
+relationship cdadd50a-0466-4564-8818-dc97b5910286
+	fromColumn: fato_ies_censo.codigo_organizacao_academica
+	toColumn: dim_organizacao_academica.codigo_organizacao_academica
+
+relationship 47956aba-60aa-4215-b258-bb9d2f1c8911
+	fromColumn: fato_ies_censo.codigo_categoria_administrativa
+	toColumn: dim_categoria_administrativa.codigo_categoria_administrativa
+
+relationship 262f6d48-bf67-47cb-a1e3-570b9fae59b7
+	fromColumn: fato_ies_censo.codigo_rede
+	toColumn: dim_rede.codigo_rede
+

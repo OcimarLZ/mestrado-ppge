@@ -1,0 +1,31 @@
+table dim_ano
+	lineageTag: db001592-7551-4223-ace1-94576514cb91
+
+	column codigo_ano
+		dataType: int64
+		formatString: 0
+		lineageTag: f14d54b5-6488-4e26-8564-bb88f6bc5647
+		summarizeBy: none
+		sourceColumn: codigo_ano
+
+	column decada
+		dataType: string
+		lineageTag: bb8f488e-4c5f-4189-8701-0717e4187086
+		summarizeBy: none
+		sourceColumn: decada
+
+	column periodo_pne_2014_2024
+		dataType: boolean
+		lineageTag: 36f4959d-4e96-47e9-9f58-64d385177c1f
+		summarizeBy: none
+		sourceColumn: periodo_pne_2014_2024
+
+	partition dim_ano = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_ano (tabela calendario simplificada -- so ano, sem mes/dia). Ver README.md na pasta#(lf)powerbi/.#(lf)""""""#(lf)import pandas as pd#(lf)#(lf)ANO_MIN = 2004#(lf)ANO_MAX = 2024#(lf)#(lf)dim_ano = pd.DataFrame({""codigo_ano"": range(ANO_MIN, ANO_MAX + 1)})#(lf)dim_ano[""decada""] = (dim_ano[""codigo_ano""] // 10 * 10).astype(str) + ""s""#(lf)dim_ano[""periodo_pne_2014_2024""] = dim_ano[""codigo_ano""].between(2014, 2024)#(lf)"),
+					Tabela = Source{[Name="dim_ano"]}[Value]
+				in
+					Tabela
+

@@ -1,0 +1,26 @@
+table dim_organizacao_academica
+	lineageTag: d0643d03-91c6-4a6e-8b8b-49c180d830a1
+
+	column codigo_organizacao_academica
+		dataType: string
+		lineageTag: b1308dab-f37e-46e5-9ea8-4c226f1dcb7c
+		summarizeBy: none
+		sourceColumn: codigo_organizacao_academica
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_organizacao_academica
+		dataType: string
+		lineageTag: ee78e88e-390f-4842-80b9-a976fb6a8d82
+		summarizeBy: none
+		sourceColumn: nome_organizacao_academica
+
+	partition dim_organizacao_academica = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_organizacao_academica. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_organizacao_academica = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_organizacao_academica, nome AS nome_organizacao_academica FROM superior_tp_organizacao_academica"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_organizacao_academica"]}[Value]
+				in
+					Tabela
+

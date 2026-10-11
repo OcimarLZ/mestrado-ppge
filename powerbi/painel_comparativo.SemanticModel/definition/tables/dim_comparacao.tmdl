@@ -1,0 +1,71 @@
+table dim_comparacao
+	lineageTag: 9d3a794e-f87b-415b-8cd7-b8b061df0c17
+
+	column Modalidade
+		dataType: string
+		lineageTag: 4d4e07b3-7cd9-4e4e-814b-c04d233adc5c
+		summarizeBy: none
+		sourceColumn: [Modalidade]
+		sortByColumn: OrdM
+
+	column OrdM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 45be4e67-bc3d-4b20-847b-6b1996229d51
+		summarizeBy: none
+		sourceColumn: [OrdM]
+
+	column Categoria
+		dataType: string
+		lineageTag: e45d2b19-1a6e-45af-8886-9c988a052305
+		summarizeBy: none
+		sourceColumn: [Categoria]
+		sortByColumn: OrdC
+
+	column OrdC
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3748fd19-0053-46cf-9caa-2ec9f6c4b106
+		summarizeBy: none
+		sourceColumn: [OrdC]
+
+	column Metrica
+		dataType: string
+		lineageTag: cb3f3dc2-e019-479d-bd1a-d5fb6ba6bcfc
+		summarizeBy: none
+		sourceColumn: [Metrica]
+		sortByColumn: OrdK
+
+	column OrdK
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5ab841d9-be22-474b-810a-c57cfcfb7026
+		summarizeBy: none
+		sourceColumn: [OrdK]
+
+	column Rotulo
+		dataType: string
+		lineageTag: d7b14101-2ccf-477a-8f16-e4e7d95a4d66
+		summarizeBy: none
+		sourceColumn: [Rotulo]
+		sortByColumn: Ordem
+
+	column Ordem
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9db0241c-4614-46f5-ba63-90583437d350
+		summarizeBy: none
+		sourceColumn: [Ordem]
+
+	partition dim_comparacao = calculated
+		mode: import
+		source =
+				VAR _m = DATATABLE("Modalidade", STRING, "OrdM", INTEGER, "ModC", STRING, {{"Presencial", 1, "Presencial"}, {"Curso a distância", 2, "A distância"}, {"Ambas", 3, "Ambas"}})
+				VAR _c = DATATABLE("Categoria", STRING, "OrdC", INTEGER, "CatC", STRING, {{"Pública (todas)", 1, "Todas públicas"}, {"Pública Federal", 2, "Púb. Federal"}, {"Pública Estadual", 3, "Púb. Estadual"}, {"Pública Municipal", 4, "Púb. Municipal"}, {"Privada (todas)", 5, "Todas privadas"}, {"Privada com fins lucrativos", 6, "Priv. c/ fins lucr."}, {"Privada sem fins lucrativos", 7, "Priv. s/ fins lucr."}, {"Privada - Particular em sentido estrito", 8, "Priv. particular"}, {"Privada comunitária", 9, "Priv. comunitária"}, {"Privada confessional", 10, "Priv. confessional"}, {"Especial", 11, "Especial"}, {"Ambas", 12, "Ambas"}})
+				VAR _k = DATATABLE("Metrica", STRING, "OrdK", INTEGER, "MetC", STRING, {{"Qtde Matrículas", 1, "Matrículas"}, {"Qtde Ingressantes", 2, "Ingressantes"}, {"Qtde Vagas Totais", 3, "Vagas"}, {"Qtde Inscritos", 4, "Inscritos"}, {"Qtde Concluintes", 5, "Concluintes"}, {"Situação Trancada", 6, "Trancadas"}, {"Situação Desligado", 7, "Desligados"}})
+				RETURN SELECTCOLUMNS(ADDCOLUMNS(CROSSJOIN(_m, _c, _k), "Rotulo", [ModC] & " · " & [CatC] & " · " & [MetC], "Ordem", [OrdM] * 10000 + [OrdC] * 100 + [OrdK]), "Modalidade", [Modalidade], "OrdM", [OrdM], "Categoria", [Categoria], "OrdC", [OrdC], "Metrica", [Metrica], "OrdK", [OrdK], "Rotulo", [Rotulo], "Ordem", [Ordem])
+

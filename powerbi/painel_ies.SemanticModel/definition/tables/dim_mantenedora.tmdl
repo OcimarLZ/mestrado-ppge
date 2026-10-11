@@ -1,0 +1,25 @@
+table dim_mantenedora
+	lineageTag: 55b7513c-e080-4160-b1dc-5355fc08206a
+
+	column codigo_mantenedora
+		dataType: int64
+		formatString: 0
+		lineageTag: 74a8ecbc-9424-4449-9f8d-72c1f11dcdf0
+		summarizeBy: none
+		sourceColumn: codigo_mantenedora
+
+	column nome_mantenedora
+		dataType: string
+		lineageTag: bf2a9a1e-910a-4866-a21a-58ac6c06f5d4
+		summarizeBy: none
+		sourceColumn: nome_mantenedora
+
+	partition dim_mantenedora = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_mantenedora (entidade mantenedora da IES). Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_mantenedora = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_mantenedora, nome AS nome_mantenedora FROM superior_mantenedora"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_mantenedora"]}[Value]
+				in
+					Tabela
+

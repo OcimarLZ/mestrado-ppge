@@ -1,0 +1,26 @@
+table dim_grau_academico
+	lineageTag: 2aa2bc94-0c39-44d2-915f-a98595dc8503
+
+	column codigo_grau_academico
+		dataType: string
+		lineageTag: a2c36548-dfe5-47c8-b8cb-365c5396c29f
+		summarizeBy: none
+		sourceColumn: codigo_grau_academico
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_grau_academico
+		dataType: string
+		lineageTag: 40617256-9e8a-4874-ae78-4a794883261d
+		summarizeBy: none
+		sourceColumn: nome_grau_academico
+
+	partition dim_grau_academico = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)dim_grau_academico. Ver README.md na pasta powerbi/.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)dim_grau_academico = pd.read_sql_query(#(lf)    ""SELECT codigo AS codigo_grau_academico, nome AS nome_grau_academico FROM superior_tp_grau_academico"",#(lf)    con,#(lf))#(lf)con.close()#(lf)"),
+					Tabela = Source{[Name="dim_grau_academico"]}[Value]
+				in
+					Tabela
+

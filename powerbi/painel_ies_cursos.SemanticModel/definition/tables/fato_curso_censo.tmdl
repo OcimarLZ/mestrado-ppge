@@ -1,0 +1,205 @@
+table fato_curso_censo
+	lineageTag: 63cb2f4b-f5e9-48b0-9cd0-2c3eb154acfd
+
+	measure 'Qtde Cursos' = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(DISTINCTCOUNT(fato_curso_censo[codigo_curso]), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: 491eae1f-82c6-423f-9025-52344e84bf03
+
+	measure 'Vagas Totais' = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_total])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: 28628417-2fac-4369-9cee-8587cca337d1
+
+	measure Ingressantes = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_ing])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: 42a517f8-b79f-4080-bdd3-84d3a2404bed
+
+	measure Matrículas = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_mat])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: b0df07ff-cde8-48de-a49a-622dacd4153c
+
+	measure Concluintes = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_vg_conc])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: 4114a0d4-88bd-44d7-a034-dfb5c6af4e00
+
+	measure Trancadas = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_sit_trancada])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: ccb81416-c959-4900-b45f-51256ea0d09f
+
+	measure Desligados = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), CALCULATE(SUMX(fato_curso_censo, VALUE(fato_curso_censo[qt_sit_desligado])), dim_ano[codigo_ano] = _ano))
+		formatString: #,0
+		lineageTag: 7f2570a5-37b2-408b-ad3d-4d3031728d70
+
+	measure 'Titulo Matriz' = "IES e cursos (ano de referência: " & MAX(dim_ano[codigo_ano]) & ")"
+		lineageTag: 12e2ab6d-dacc-4170-8ccd-f6b0f0f78182
+
+	measure 'Filtros Selecionados' = VAR _v0 = IF(ISFILTERED(dim_territorio[nome_regiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_regiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_regiao]), dim_territorio[nome_regiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_regiao])) & " itens"), "") VAR _v1 = IF(ISFILTERED(dim_territorio[sigla_uf]), IF(COUNTROWS(VALUES(dim_territorio[sigla_uf])) <= 3, CONCATENATEX(VALUES(dim_territorio[sigla_uf]), dim_territorio[sigla_uf], ", "), COUNTROWS(VALUES(dim_territorio[sigla_uf])) & " itens"), "") VAR _v2 = IF(ISFILTERED(dim_territorio[nome_mesorregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_mesorregiao]), dim_territorio[nome_mesorregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_mesorregiao])) & " itens"), "") VAR _v3 = IF(ISFILTERED(dim_territorio[nome_microrregiao]), IF(COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_microrregiao]), dim_territorio[nome_microrregiao], ", "), COUNTROWS(VALUES(dim_territorio[nome_microrregiao])) & " itens"), "") VAR _v4 = IF(ISFILTERED(dim_territorio[nome_municipio]), IF(COUNTROWS(VALUES(dim_territorio[nome_municipio])) <= 3, CONCATENATEX(VALUES(dim_territorio[nome_municipio]), dim_territorio[nome_municipio], ", "), COUNTROWS(VALUES(dim_territorio[nome_municipio])) & " itens"), "") VAR _v5 = IF(ISFILTERED(dim_rede[nome_rede]), IF(COUNTROWS(VALUES(dim_rede[nome_rede])) <= 3, CONCATENATEX(VALUES(dim_rede[nome_rede]), dim_rede[nome_rede], ", "), COUNTROWS(VALUES(dim_rede[nome_rede])) & " itens"), "") VAR _v6 = IF(ISFILTERED(dim_categoria_administrativa[nome_categoria_administrativa]), IF(COUNTROWS(VALUES(dim_categoria_administrativa[nome_categoria_administrativa])) <= 3, CONCATENATEX(VALUES(dim_categoria_administrativa[nome_categoria_administrativa]), dim_categoria_administrativa[nome_categoria_administrativa], ", "), COUNTROWS(VALUES(dim_categoria_administrativa[nome_categoria_administrativa])) & " itens"), "") VAR _v7 = IF(ISFILTERED(dim_organizacao_academica[nome_organizacao_academica]), IF(COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) <= 3, CONCATENATEX(VALUES(dim_organizacao_academica[nome_organizacao_academica]), dim_organizacao_academica[nome_organizacao_academica], ", "), COUNTROWS(VALUES(dim_organizacao_academica[nome_organizacao_academica])) & " itens"), "") VAR _v8 = IF(ISFILTERED(dim_grau_academico[nome_grau_academico]), IF(COUNTROWS(VALUES(dim_grau_academico[nome_grau_academico])) <= 3, CONCATENATEX(VALUES(dim_grau_academico[nome_grau_academico]), dim_grau_academico[nome_grau_academico], ", "), COUNTROWS(VALUES(dim_grau_academico[nome_grau_academico])) & " itens"), "") VAR _v9 = IF(ISFILTERED(dim_modalidade_ensino[nome_modalidade_ensino]), IF(COUNTROWS(VALUES(dim_modalidade_ensino[nome_modalidade_ensino])) <= 3, CONCATENATEX(VALUES(dim_modalidade_ensino[nome_modalidade_ensino]), dim_modalidade_ensino[nome_modalidade_ensino], ", "), COUNTROWS(VALUES(dim_modalidade_ensino[nome_modalidade_ensino])) & " itens"), "") VAR _a = IF(_v0 <> "", _v0 & "/", "") & IF(_v1 <> "", _v1 & "/", "") & IF(_v2 <> "", _v2 & "/", "") & IF(_v3 <> "", _v3 & "/", "") & IF(_v4 <> "", _v4 & "/", "") & IF(_v5 <> "", _v5 & "/", "") & IF(_v6 <> "", _v6 & "/", "") & IF(_v7 <> "", _v7 & "/", "") & IF(_v8 <> "", _v8 & "/", "") & IF(_v9 <> "", _v9 & "/", "") RETURN IF(_a = "", "", LEFT(_a, LEN(_a) - 1))
+		lineageTag: afb9e78e-7e3c-45a5-8eba-d9f7562a2ea5
+
+	measure 'Subtitulo Filtros' = VAR _f = [Filtros Selecionados] RETURN IF(_f = "", "", "(" & _f & ")")
+		lineageTag: ca17f8d1-49b8-4cd4-947f-4cd07e7ced10
+
+	measure Sigla = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0, BLANK(), IF(ISINSCOPE(dim_ies[nome_ies]), SELECTEDVALUE(dim_ies[sigla_ies]), FORMAT(CALCULATE(DISTINCTCOUNT(fato_curso_censo[codigo_ies]), dim_ano[codigo_ano] = _ano), "#,0") & " IES"))
+		lineageTag: 47bdec63-94ee-4d73-8a3e-139bdf4b1c94
+
+	measure UF = VAR _ano = MAX(dim_ano[codigo_ano]) VAR _n = CALCULATE(COUNTROWS(fato_curso_censo), dim_ano[codigo_ano] = _ano) RETURN IF(_n = 0 || NOT ISINSCOPE(dim_ies[nome_ies]) , BLANK(), SELECTEDVALUE(dim_ies[sigla_uf_ies]))
+		lineageTag: 1cb30643-9cd0-4258-b184-b6d2ee3e909e
+
+	column codigo_ano
+		dataType: string
+		lineageTag: 8cd5bb6b-deb3-4a5a-99ff-58f898f9c1e6
+		summarizeBy: none
+		sourceColumn: codigo_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_municipio
+		dataType: string
+		lineageTag: 788fc152-8ae8-45a5-b5ed-6198de29de53
+		summarizeBy: none
+		sourceColumn: codigo_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_ies
+		dataType: string
+		lineageTag: bfd6dc79-253b-4108-971a-bce022006d4a
+		summarizeBy: none
+		sourceColumn: codigo_ies
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_curso
+		dataType: string
+		lineageTag: e90e72a2-9486-4058-a7ba-4a0b05a7b864
+		summarizeBy: none
+		sourceColumn: codigo_curso
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_cine_rotulo
+		dataType: string
+		lineageTag: b2c58d3f-ebda-4482-80e3-fc8655f50c84
+		summarizeBy: none
+		sourceColumn: codigo_cine_rotulo
+
+	column codigo_grau_academico
+		dataType: string
+		lineageTag: 7b5cf0f9-f24c-4179-b7e5-ff6882f87503
+		summarizeBy: none
+		sourceColumn: codigo_grau_academico
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_modalidade_ensino
+		dataType: string
+		lineageTag: e22fa7f3-7453-4920-b6f5-c21ef254515d
+		summarizeBy: none
+		sourceColumn: codigo_modalidade_ensino
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_nivel_academico
+		dataType: string
+		lineageTag: 9f954a73-72f1-45d7-865c-e35ffd96da3d
+		summarizeBy: none
+		sourceColumn: codigo_nivel_academico
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_organizacao_academica
+		dataType: string
+		lineageTag: a83d6b65-8900-4932-97ac-f431b8968e8b
+		summarizeBy: none
+		sourceColumn: codigo_organizacao_academica
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_categoria_administrativa
+		dataType: string
+		lineageTag: a2a7a187-6097-4571-853a-d0fe9021e8ad
+		summarizeBy: none
+		sourceColumn: codigo_categoria_administrativa
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_rede
+		dataType: string
+		lineageTag: d5378b36-cd7e-4d35-9008-4fd2dcb21030
+		summarizeBy: none
+		sourceColumn: codigo_rede
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimensao
+		dataType: string
+		lineageTag: d670ddc3-87e5-459f-a285-79bd1058e10f
+		summarizeBy: none
+		sourceColumn: dimensao
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_gratuito
+		dataType: string
+		lineageTag: 6547a27b-b678-4dd4-9aa6-cdb80d94a570
+		summarizeBy: none
+		sourceColumn: in_gratuito
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_total
+		dataType: string
+		lineageTag: fe4afbce-6d42-454e-b0ca-1dd23b308033
+		summarizeBy: none
+		sourceColumn: qt_vg_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_mat
+		dataType: string
+		lineageTag: 95933529-37f0-4e51-a1c1-6918a327d20b
+		summarizeBy: none
+		sourceColumn: qt_vg_mat
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_ing
+		dataType: string
+		lineageTag: 61d4dced-7ef0-4ce9-a75f-88a1002d19a3
+		summarizeBy: none
+		sourceColumn: qt_vg_ing
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_vg_conc
+		dataType: string
+		lineageTag: b58a606b-9a9c-43bd-9a51-533a22a86493
+		summarizeBy: none
+		sourceColumn: qt_vg_conc
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_sit_trancada
+		dataType: string
+		lineageTag: 6015a6a5-4fb6-498c-8a24-ccedbc645b90
+		summarizeBy: none
+		sourceColumn: qt_sit_trancada
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_sit_desligado
+		dataType: string
+		lineageTag: 5cff08dd-ce83-420c-a67f-542bfa8b98b5
+		summarizeBy: none
+		sourceColumn: qt_sit_desligado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_curso_censo = m
+		mode: import
+		source =
+				let
+					Source = Python.Execute("# -*- coding: utf-8 -*-#(lf)""""""Script INDIVIDUAL para o Power Query (Get Data > Python script). Gera SO a tabela#(lf)fato_curso_censo. Cada tabela do modelo tem seu proprio script (ver README.md na pasta#(lf)powerbi/) porque o conector Python do Power BI reavalia a arvore de dependencias inteira#(lf)do script a cada tabela carregada -- um unico script com 12 variaveis fazia a fato de#(lf)~3,9M linhas ser relida/reprocessada uma vez por tabela, esgotando a memoria disponivel#(lf)(ArrayMemoryError) mesmo para as dimensoes pequenas.#(lf)""""""#(lf)import sqlite3#(lf)#(lf)import pandas as pd#(lf)#(lf)DB_PATH = ""D:/Mestrado/Dados/bdados/INEP.db""#(lf)ANO_MIN = 2005#(lf)ANO_MAX = 2024#(lf)#(lf)con = sqlite3.connect(DB_PATH)#(lf)#(lf)# Grao: uma linha por curso-oferta x IES x ano_censo. Mantem o codigo de `curso` (a#(lf)# oferta especifica, com nome dado pela propria instituicao) ALEM do cine_rotulo (tipo#(lf)# padronizado) -- os dois sao necessarios: para contar ""quantos cursos distintos"" por#(lf)# IES usa-se `curso`; para comparar por ""tipo de curso"" entre IES/anos usa-se cine_rotulo.#(lf)fato_curso_censo = pd.read_sql_query(#(lf)    f""""""#(lf)    SELECT#(lf)        ano_censo                          AS codigo_ano,#(lf)        CAST(municipio AS INTEGER)         AS codigo_municipio,#(lf)        ies                                 AS codigo_ies,#(lf)        curso                               AS codigo_curso,#(lf)        cine_rotulo                         AS codigo_cine_rotulo,#(lf)        tp_grau_academico                   AS codigo_grau_academico,#(lf)        tp_modalidade_ensino                AS codigo_modalidade_ensino,#(lf)        tp_nivel_academico                  AS codigo_nivel_academico,#(lf)        org_academica                       AS codigo_organizacao_academica,#(lf)        categoria                           AS codigo_categoria_administrativa,#(lf)        tp_rede                             AS codigo_rede,#(lf)        dimensao,#(lf)        in_gratuito,#(lf)        qt_vg_total,#(lf)        qt_mat                              AS qt_vg_mat,#(lf)        qt_ing                              AS qt_vg_ing,#(lf)        qt_conc                             AS qt_vg_conc,#(lf)        qt_sit_trancada,#(lf)        qt_sit_desvinculado                 AS qt_sit_desligado#(lf)    FROM superior_curso_censo#(lf)    WHERE ano_censo BETWEEN {ANO_MIN} AND {ANO_MAX}#(lf)    """""",#(lf)    con,#(lf))#(lf)con.close()#(lf)#(lf)# Reduz drasticamente o uso de memoria (essencial numa fato de ~3,9M linhas): sem isso,#(lf)# o conector Python do Power BI precisa converter o DataFrame (que tem 2 colunas string#(lf)# misturadas com 15 numericas) para um array unico, forcando TUDO para dtype ""object"".#(lf)# codigo_cine_rotulo vira ""category"" (so 785 valores distintos repetidos ~4M vezes --#(lf)# ideal para category, que guarda so um indice inteiro por linha). As colunas inteiras#(lf)# recebem o menor dtype que comporta seus valores (downcast).#(lf)fato_curso_censo[""codigo_cine_rotulo""] = fato_curso_censo[""codigo_cine_rotulo""].astype(""category"")#(lf)for _col in [c for c in fato_curso_censo.columns if c != ""codigo_cine_rotulo""]:#(lf)    fato_curso_censo[_col] = pd.to_numeric(fato_curso_censo[_col], downcast=""integer"")#(lf)"),
+					Tabela = Source{[Name="fato_curso_censo"]}[Value]
+				in
+					Tabela
+

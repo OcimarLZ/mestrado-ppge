@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Métricas ocultas",
+  "name": "met_fechado",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "grafico_comparativo",
+      "grafico_comparativo_largo",
+      "slicer_modalidade",
+      "slicer_categoria",
+      "slicer_metrica",
+      "btn_ocultar_metricas",
+      "btn_mostrar_metricas"
+    ],
+    "suppressActiveSection": true,
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.0",
+    "activeSection": "pagina1",
+    "sections": {
+      "pagina1": {
+        "visualContainers": {
+          "grafico_comparativo": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "grafico_comparativo_largo": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            }
+          },
+          "slicer_modalidade": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "slicer_categoria": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "slicer_metrica": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "btn_ocultar_metricas": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "btn_mostrar_metricas": {
+            "singleVisual": {
+              "visualType": "actionButton"
+            }
+          }
+        }
+      }
+    }
+  }
+}

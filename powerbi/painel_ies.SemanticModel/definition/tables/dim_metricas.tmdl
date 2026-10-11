@@ -1,0 +1,17 @@
+table dim_metricas
+	lineageTag: fb234a2a-8e81-44e5-b94f-1a79d2bc5a34
+
+	column Metrica
+		lineageTag: bd145395-a0b3-4db6-97b4-8ae167c7340f
+		isNameInferred
+		sourceColumn: [Metrica]
+
+	column Ordem
+		lineageTag: 3bcdd2c4-d7ed-4a0a-91df-2d6ebbc51bfd
+		isNameInferred
+		sourceColumn: [Ordem]
+
+	partition dim_metricas = calculated
+		mode: import
+		source = DATATABLE("Metrica", STRING, "Ordem", INTEGER, {{"Docentes (total)", 1}, {"Docentes em exercício", 2}, {"Docentes mulheres", 3}, {"Docentes homens", 4}, {"Doutores", 5}, {"Mestres", 6}, {"Especialistas", 7}, {"Graduados", 8}, {"Sem graduação", 9}, {"Regime integral", 10}, {"Integral com DE", 11}, {"Regime parcial", 12}, {"Horistas", 13}, {"Com deficiência", 14}, {"Estrangeiros", 15}})
+
