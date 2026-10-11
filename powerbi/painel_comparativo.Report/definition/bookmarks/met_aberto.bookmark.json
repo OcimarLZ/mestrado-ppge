@@ -50,11 +50,6 @@
               "visualType": "slicer"
             }
           },
-          "btn_ocultar_metricas": {
-            "singleVisual": {
-              "visualType": "actionButton"
-            }
-          },
           "btn_mostrar_metricas": {
             "singleVisual": {
               "visualType": "actionButton",

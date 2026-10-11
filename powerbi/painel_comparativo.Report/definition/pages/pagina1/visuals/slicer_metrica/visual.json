@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "slicer_metrica",
   "position": {
-    "x": 1128.6734693877552,
+    "x": 1142.4489795918369,
     "y": 437.14285714285717,
     "z": 12001,
     "height": 282.85714285714289,
-    "width": 151.53061224489798,
+    "width": 137.75510204081633,
     "tabOrder": 12001
   },
   "visual": {

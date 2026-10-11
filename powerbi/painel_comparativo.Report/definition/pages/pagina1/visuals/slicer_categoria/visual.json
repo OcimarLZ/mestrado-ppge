@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "slicer_categoria",
   "position": {
-    "x": 942.24489795918373,
+    "x": 956.02040816326542,
     "y": 310.40816326530614,
     "z": 12001,
     "height": 409.59183673469391,
