@@ -74,7 +74,7 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
       case 'closing':
         return (
           <div
-            className={`slide-cover ${slide.kind === 'cover' ? 'slide-cover-opening' : ''} ${slide.backgroundImage ? 'slide-cover-with-bg' : ''}`}
+            className={`slide-cover ${slide.kind === 'cover' ? 'slide-cover-opening' : ''} ${slide.kind === 'closing' ? 'slide-cover-closing' : ''} ${slide.backgroundImage ? 'slide-cover-with-bg' : ''}`}
             style={slide.backgroundImage ? { backgroundImage: `url(${imgUrl(slide.backgroundImage)})` } : undefined}
           >
             {slide.showLogos && renderLogos('lg')}
@@ -82,6 +82,22 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             {slide.subtitle && <p className="slide-subtitle">{slide.subtitle}</p>}
             {renderBullets(slide.bullets)}
             {slide.footerNote && <p className="slide-footer-note">{slide.footerNote}</p>}
+            {slide.links && slide.links.length > 0 && (
+              <div className="slide-links-wrap">
+                <div className="slide-links slide-links-vertical">
+                  {slide.links.map((l, i) => (
+                    <Link key={i} to={l.to} className="slide-link-pill">
+                      {l.label} <ArrowRight size={16} />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            {slide.contactInfo && slide.contactInfo.length > 0 && (
+              <div className="slide-contact-info">
+                {slide.contactInfo.map((c, i) => <p key={i}>{c}</p>)}
+              </div>
+            )}
           </div>
         );
       case 'text':

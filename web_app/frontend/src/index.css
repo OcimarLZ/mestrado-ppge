@@ -941,6 +941,10 @@ footer {
   color: #ffffff;
 }
 
+.slide-cover-closing .slide-subtitle {
+  font-size: 1.8rem;
+}
+
 .slide-cover-opening .slide-bullets li {
   font-size: 2rem;
 }
@@ -1338,6 +1342,12 @@ footer {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.slide-links-vertical {
+  flex-direction: column;
+  align-items: center;
 }
 
 .slide-link-pill {
@@ -1356,6 +1366,17 @@ footer {
 
 .slide-link-pill:hover {
   background: var(--uffs-green);
+}
+
+.slide-contact-info {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.slide-contact-info p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--slide-text-secondary);
 }
 
 .slide-image-area-multi {

@@ -48,6 +48,7 @@ export interface Slide {
   imageMaxHeight?: string;
   secondaryImages?: SlideImage[];
   secondaryImageMaxHeight?: string;
+  contactInfo?: string[];
 }
 
 const slides: Slide[] = [
@@ -674,15 +675,20 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'image',
+    kind: 'images',
     title: 'UFs × setor privado — comparativo direto',
     centerContent: true,
     centerBullets: true,
     raiseContent: true,
-    image: { file: 'grafico_49', caption: 'Matrículas em licenciaturas: UFs × privadas com e sem fins lucrativos (2014-2024)' },
+    imageMaxHeight: '32vh',
+    images: [
+      { file: 'grafico_49', caption: 'Matrículas em licenciaturas: UFs × privadas com e sem fins lucrativos (2014-2024)' },
+      { file: 'tabela_26', caption: 'Tabela 26 — Síntese comparativa: matrículas, ingressos EaD, concluintes e evasão por categoria (2014-2024)' },
+    ],
     bullets: [
-      'Em 2014, o mercado era relativamente equilibrado: privadas com fins lucrativos 40,7%, sem fins lucrativos 30,1%, UFs 23,5%, demais IES públicas 5,8%',
-      'Em 2024: privadas com fins lucrativos controlam <span class="slide-pos">66,2%</span> do mercado, as UFs encolhem para <span class="slide-neg">17,3%</span>',
+      'Em 2014, o mercado era relativamente equilibrado: privadas com fins lucrativos <span class="slide-neg">40,7%</span>, sem fins lucrativos <span class="slide-neg">30,1%</span>, UFs <span class="slide-neg">23,5%</span>, demais IES públicas <span class="slide-neg">5,8%</span>',
+      'Em 2024: privadas com fins lucrativos controlam <span class="slide-neg">66,2%</span> do mercado, as UFs encolhem para <span class="slide-neg">17,3%</span>',
+      'Nos ingressos em EaD especificamente, o monopólio é ainda maior: <span class="slide-neg">88%</span> vão para as privadas com fins lucrativos, e as UFs caem de <span class="slide-neg">9,1%</span> para apenas <span class="slide-neg">2,7%</span>',
     ],
   },
   {
@@ -700,15 +706,28 @@ const slides: Slide[] = [
   },
   {
     kind: 'icons',
+    title: 'A "triangulação da inércia": corpo docente, gestão e estudantes',
+    centerContent: true,
+    raiseContent: true,
+    wideItems: true,
+    items: [
+      { icon: 'BookUser', text: 'Corpo docente: maior capital simbólico do campo, vê a EaD como "degradação" formativa — mas o próprio presencial forma mal (taxa de conclusão de apenas <span class="slide-neg">8,7% a 13,6%</span>). Comparando público × privado: as UFs (majoritariamente presenciais) têm <span class="slide-pos">3,5</span> evadidos por concluinte, contra <span class="slide-pos">5,7</span> nas privadas com fins lucrativos (majoritariamente EaD) — que, mesmo assim, formam mais: <span class="slide-pos">116.068</span> concluintes contra <span class="slide-pos">31.094</span> das UFs (<span class="slide-pos">56,4%</span> de todos os diplomas de licenciatura do país)' },
+      { icon: 'Building2', text: 'Gestão universitária: sabe que a EaD seria vantajosa, mas trava entre a resistência docente, a infraestrutura insuficiente e o orçamento congelado pela EC 95/2016 — com incentivo à opacidade sobre a evasão' },
+      { icon: 'Users', text: 'Estudantes: posição mais subordinada do campo; pedem flexibilidade por sobrevivência acadêmica (conciliar trabalho e família), não por preferência pedagógica — demanda real que o setor privado capturou' },
+      { icon: 'CircleOff', text: 'O resultado não é consenso, é paralisia: cada grupo trava a mudança por um motivo diferente, e a EC 95/2016 transforma a falta de recursos em justificativa institucional para a inércia' },
+    ],
+  },
+  {
+    kind: 'icons',
     title: 'Da retração à desuniversitarização: a redistribuição dos capitais no campo',
     centerContent: true,
     raiseContent: true,
     wideItems: true,
     items: [
-      { icon: 'TrendingDown', text: 'Retração estrutural = perda de posição no campo (Bourdieu): as UFs perdem <span class="slide-neg">6,7 pontos percentuais</span> de participação enquanto o setor privado lucrativo ganha <span class="slide-pos">26,8 pontos</span> (43,2% → 70,0%)' },
-      { icon: 'ShieldOff', text: '"Resistência sem apropriação": apenas <span class="slide-neg">6 das 69 UFs</span> tentaram EaD própria — e mesmo essas colapsam <span class="slide-neg">89%</span> nas matrículas' },
-      { icon: 'Unplug', text: 'Fragilidade institucional = descapitalização seletiva do Estado: polos próprios caem de 117 para <span class="slide-neg">39 (-66,7%)</span>; conclusão de apenas <span class="slide-neg">9,4%</span> (UAB) e <span class="slide-neg">4,5%</span> (EaD própria)' },
-      { icon: 'GraduationCap', text: '"Desuniversitarização" (Giolo; Bianchetti e Sguissardi): mais de <span class="slide-neg">70%</span> dos futuros professores do Brasil já se formam fora do ambiente universitário' },
+      { icon: 'TrendingDown', text: 'Retração estrutural = perda de posição no campo (Bourdieu): as UFs perdem <span class="slide-red">6,7 pontos percentuais</span> de participação enquanto o setor privado lucrativo ganha <span class="slide-red">26,8 pontos</span> (<span class="slide-red">43,2%</span> → <span class="slide-red">70,0%</span>)' },
+      { icon: 'ShieldOff', text: '"Resistência sem apropriação": apenas <span class="slide-red">6 das 69</span> UFs tentaram EaD própria — e mesmo essas colapsam <span class="slide-red">89%</span> nas matrículas' },
+      { icon: 'Unplug', text: 'Fragilidade institucional = descapitalização seletiva do Estado: polos próprios caem de <span class="slide-red">117</span> para <span class="slide-red">39 (-66,7%)</span>; conclusão de apenas <span class="slide-red">9,4%</span> (UAB) e <span class="slide-red">4,5%</span> (EaD própria)' },
+      { icon: 'GraduationCap', text: '"Desuniversitarização" (Termo definido pelo autor a partir das ideias defendidas por Giolo; Bianchetti e Sguissardi): mais de <span class="slide-red">70%</span> dos futuros professores do Brasil já se formam fora do ambiente universitário' },
     ],
   },
   {
@@ -729,18 +748,31 @@ const slides: Slide[] = [
     ],
   },
   {
+    kind: 'icons',
+    title: 'Respostas às questões de pesquisa',
+    centerContent: true,
+    raiseContent: true,
+    wideItems: true,
+    items: [
+      { label: 'Q1', text: 'O domínio privado na EaD não foi evolução espontânea do mercado, mas engenharia política: três ondas de flexibilização regulatória (1996-2004, 2005-2013, 2014-2024), a EC 95/2016 asfixiando o orçamento público e o FIES/ProUni subsidiando a demanda privada' },
+      { label: 'Q2', text: 'O SINAES foi capturado pela performatividade (Ball) e passou a premiar escala, não qualidade; os Decretos 9.057/2017 e 9.235/2017 foram redigidos com participação do setor privado — a massificação ocorreu por meio da regulação, com sua chancela' },
+      { label: 'Q3', text: 'Os microdados confirmam uma reconfiguração estrutural e irreversível: UFs <span class="slide-neg">-10,4%</span> nas matrículas contra <span class="slide-pos">+98,3%</span> das privadas com fins lucrativos; mais de <span class="slide-pos">80%</span> dos ingressantes em licenciatura já entram pela EaD; apenas <span class="slide-neg">6 das 69</span> UFs têm EaD próprio' },
+      { label: 'Q4', text: 'As UFs praticaram uma "abstenção estratégica": cinco tipologias institucionais, quatro ausências estratégicas e a "triangulação da inércia" (corpo docente, gestão, estudantes) bloquearam qualquer resposta competitiva à expansão privada' },
+    ],
+  },
+  {
     kind: 'stats',
     title: 'Síntese dos achados',
     centerContent: true,
     centerBullets: true,
     raiseContent: true,
     stats: [
-      { value: '<span class="slide-pos">+286,73%</span>', label: 'Matrículas EaD (Brasil, 2014-2024)' },
+      { value: '<span class="slide-red">+286,73%</span>', label: 'Matrículas EaD (Brasil, 2014-2024)' },
       { value: '<span class="slide-neg">-22,47%</span>', label: 'Matrículas presenciais (Brasil, 2014-2024)' },
-      { value: '<span class="slide-pos">+117,74%</span>', label: 'Matrículas EaD em licenciaturas (2014-2024)' },
+      { value: '<span class="slide-red">+117,74%</span>', label: 'Matrículas EaD em licenciaturas (2014-2024)' },
       { value: '<span class="slide-neg">-41,54%</span>', label: 'Matrículas presenciais em licenciaturas (2014-2024)' },
-      { value: '<span class="slide-pos">80%+</span>', label: 'Dos ingressantes em licenciaturas via EaD em 2024' },
-      { value: '<span class="slide-pos">66,2%</span>', label: 'Das matrículas em formação docente em IES privadas com fins lucrativos' },
+      { value: '<span class="slide-red">80%+</span>', label: 'Dos ingressantes em licenciaturas via EaD em 2024' },
+      { value: '<span class="slide-red">66,2%</span>', label: 'Das matrículas em formação docente em IES privadas com fins lucrativos' },
     ],
     bullets: [
       'O Estado não foi árbitro neutro: foi arquiteto do mercado — metas do PNE sem recursos, flexibilização regulatória, EC 95/2016',
@@ -780,10 +812,21 @@ const slides: Slide[] = [
     bullets: [
       'Ocimar Luis Zolin',
       'Orientador: Prof. Dr. Joviles Vitório Trevisol',
-      'Banca: Prof. Dr. Jaime Giolo (UFFS) · Prof. Dr. Lucídio Bianchetti (UFSC) · Prof. Dr. Derlan Trombeta (UFFS)',
       'Programa de Pós-Graduação em Educação — UFFS',
     ],
     showLogos: true,
+    links: [
+      { label: 'Visualizar as Referências Bibliográficas', to: '/capitulo/referencias' },
+      { label: 'Conhecer os dados da pesquisa', to: '/pesquisa' },
+      { label: 'Explorar os Painéis Interativos', to: '/paineis-interativos' },
+      { label: 'Ver o Apêndice I — ferramentas da pesquisa', to: '/capitulo/apendice-i' },
+    ],
+    contactInfo: [
+      'ocimar.zolin@gmail.com',
+      'ocimar.zolin@uffs.edu.br',
+      'ocimar.zolin@estudante.uffs.edu.br',
+      '(49) 98855-8025',
+    ],
   },
 ];
 
