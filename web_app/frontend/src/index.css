@@ -924,7 +924,10 @@ footer {
 
 .slide-cover-opening h1 {
   font-size: 4.5rem;
-  color: #ffffff;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #fb923c;
+  color: #fb923c;
 }
 
 .slide-subtitle {
@@ -1010,6 +1013,7 @@ footer {
 
 .slide-body h2 {
   font-size: clamp(1.9rem, 2.7cqw, 3rem);
+  margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
@@ -1235,7 +1239,7 @@ footer {
 
 .slide-image-area-secondary {
   margin-top: -0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .slide-cards-image {
@@ -1250,13 +1254,40 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .slide-image-flanked .slide-image-area {
   margin-bottom: 0;
   flex: 1 1 auto;
   min-width: 0;
+}
+
+.slide-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: clamp(0.8rem, 1.1cqw, 1.05rem);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide-table th,
+.slide-table td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  color: var(--slide-text-secondary);
+}
+
+.slide-table th {
+  background: rgba(0, 146, 63, 0.25);
+  color: var(--slide-text-primary);
+  font-weight: 700;
+}
+
+.slide-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .slide-flank-text {
@@ -1279,6 +1310,16 @@ footer {
 
 .slide-neg {
   color: #fb923c;
+  font-weight: 700;
+}
+
+.slide-red {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.slide-green {
+  color: #4ade80;
   font-weight: 700;
 }
 

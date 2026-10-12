@@ -15,6 +15,9 @@ export type SlideLink = { label: string; to: string };
 // Variante do slide 'stats' em que os cards sao agrupados sob um card maior por grupo
 // (ex: um grupo por Meta do PNE, com os indicadores daquela meta como sub-cards).
 export type StatGroup = { title: string; stats: { value: string; label: string }[] };
+// Tabela HTML (nao imagem) para dados que nao existem como figura/tabela numerada na
+// dissertacao -- renderizada no lugar da imagem nos slides kind:'image' com sideBullets.
+export type SlideTable = { headers: string[]; rows: string[][] };
 
 export interface Slide {
   kind: 'cover' | 'section' | 'text' | 'icons' | 'image' | 'images' | 'comparison' | 'stats' | 'cards' | 'columns' | 'closing';
@@ -26,6 +29,7 @@ export interface Slide {
   columns?: Column[];
   image?: SlideImage;
   images?: SlideImage[];
+  table?: SlideTable;
   comparison?: ComparisonImage;
   stats?: { value: string; label: string }[];
   statGroups?: StatGroup[];
@@ -42,7 +46,8 @@ export interface Slide {
   sideBullets?: boolean;
   links?: SlideLink[];
   imageMaxHeight?: string;
-  secondaryImage?: SlideImage;
+  secondaryImages?: SlideImage[];
+  secondaryImageMaxHeight?: string;
 }
 
 const slides: Slide[] = [
@@ -273,9 +278,12 @@ const slides: Slide[] = [
     centerBullets: true,
     sideBullets: true,
     image: { file: 'grafico_02', caption: 'Orçamento destinado à educação superior (em bilhões de R$), 2006-2024' },
-    secondaryImage: { file: 'tabela_03', caption: 'Tabela 3 — Orçamento destinado à educação superior (em bilhões de R$): 2006-2024' },
+    secondaryImages: [
+      { file: 'tabela_03', caption: 'Tabela 3 — Orçamento destinado à educação superior (em bilhões de R$): 2006-2024' },
+      { file: 'tabela_04', caption: 'Tabela 4 — Orçamento das maiores UFs brasileiras (em bilhões de R$): 2006-2024' },
+    ],
     bullets: [
-      'O PIB brasileiro cresce <span class="slide-pos">112,72%</span> entre 2006 e 2024, mas o orçamento da educação superior avança apenas <span class="slide-pos">49,93%</span> — e os investimentos do MEC recuam <span class="slide-neg">48,71%</span>',
+      'O PIB brasileiro cresce <span class="slide-pos">112,72%</span> entre 2006 e 2024, mas o orçamento da educação superior avança apenas <span class="slide-pos">49,93%</span> — e os investimentos do MEC recuam <span class="slide-neg">48,71%</span>, considerando o orçamento de 2024 e 2014',
       'Emenda Constitucional nº 95/2016 congela os gastos federais por vinte anos: asfixia orçamentária das Universidades Federais justamente quando o PNE demandava expansão',
       'A partir de 2011, a expansão da EBSERH desloca parte da força de trabalho dos hospitais universitários do regime estatutário para contratos celetistas sob métricas empresariais — mesma racionalidade gerencial que atinge o restante da rede federal',
     ],
@@ -337,26 +345,26 @@ const slides: Slide[] = [
       {
         title: 'Meta 12 — Expansão da educação superior',
         stats: [
-          { value: '<span class="slide-pos">31% → 48%</span>', label: 'Taxa bruta de matrícula (meta: 50%)' },
-          { value: '<span class="slide-pos">17% → 21%</span>', label: 'Taxa líquida de matrícula (meta: 33%)' },
-          { value: '<span class="slide-neg">13%</span>', label: 'Participação do setor público no total de matrículas (meta: 40%)' },
+          { value: '<span class="slide-neg">31% → 48%</span>', label: 'Taxa bruta de matrícula (meta: 50%)' },
+          { value: '<span class="slide-red">17% → 21%</span>', label: 'Taxa líquida de matrícula (meta: 33%)' },
+          { value: '<span class="slide-red">13%</span>', label: 'Participação do setor público no total de matrículas (meta: 40%)' },
         ],
       },
       {
         title: 'Meta 15 — Formação inicial de professores',
         stats: [
-          { value: '<span class="slide-pos">68%+</span>', label: 'Das matrículas em licenciaturas são EaD (2024)' },
-          { value: '<span class="slide-pos">~90%</span>', label: 'Dessa EaD em licenciaturas é privada com fins lucrativos' },
-          { value: '<span class="slide-neg">-41,54%</span>', label: 'Matrículas presenciais em licenciaturas (2014-2024)' },
+          { value: '<span class="slide-red">68%+</span>', label: 'Das matrículas em licenciaturas são EaD (2024)' },
+          { value: '<span class="slide-red">~90%</span>', label: 'Dessa EaD em licenciaturas é privada com fins lucrativos' },
+          { value: '<span class="slide-red">-41,54%</span>', label: 'Matrículas presenciais em licenciaturas (2014-2024)' },
         ],
       },
       {
         title: 'Meta 16 — Pós-graduação de professores',
         stats: [
           { value: '<span class="slide-pos">31,4% → 48%</span>', label: 'Docentes com pós-graduação (2014-2024)' },
-          { value: '43,5%', label: 'Com especialização lato sensu (majoritariamente EaD privada)' },
-          { value: '3,4%', label: 'Com mestrado' },
-          { value: '1,1%', label: 'Com doutorado' },
+          { value: '<span class="slide-neg">43,5%</span>', label: 'Com especialização lato sensu (majoritariamente EaD privada)' },
+          { value: '<span class="slide-red">3,4%</span>', label: 'Com mestrado' },
+          { value: '<span class="slide-red">1,1%</span>', label: 'Com doutorado' },
         ],
       },
     ],
@@ -470,6 +478,9 @@ const slides: Slide[] = [
   {
     kind: 'image',
     title: 'A trajetória das Universidades Federais',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
     image: { file: 'grafico_27', caption: 'Evolução da criação de UFs por década (1920-2019)' },
     bullets: [
       'Rede federal expandida em duas grandes ondas: 1960-1969 e 2000-2009',
@@ -478,7 +489,48 @@ const slides: Slide[] = [
   },
   {
     kind: 'image',
+    title: 'Expansão institucional das Universidades Federais',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    image: { file: 'figura_10', caption: 'Municípios com campus federal ofertando licenciaturas (2014×2024)' },
+    bullets: [
+      'Municípios com campus federal: <span class="slide-pos">580 → 673</span> (+16%) — a rede federal se torna mais capilar como instituição',
+    ],
+  },
+  {
+    kind: 'image',
+    title: 'A retração da licenciatura presencial no território',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    image: { file: 'figura_11', caption: 'Municípios com oferta presencial de licenciaturas nas UFs (2014×2024)' },
+    bullets: [
+      'Municípios com licenciatura presencial: <span class="slide-neg">223 → 206</span> (-7,6%) — o campus continua, a formação presencial recua',
+    ],
+  },
+  {
+    kind: 'images',
+    title: 'A instabilidade territorial do EaD público (UAB)',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    imageMaxHeight: '32vh',
+    images: [
+      { file: 'tabela_19', caption: 'Tabela 19 — Evolução territorial das UFs e dos polos UAB com cursos de licenciaturas (2014-2024)' },
+      { file: 'grafico_oscilacao_polos_uab', caption: 'Elaborado pelo autor a partir da Tabela 19 — oscilação dos municípios com polos UAB (2014-2024)' },
+    ],
+    bullets: [
+      'Municípios com polos UAB (geral): <span class="slide-green">354</span> (2014) → <span class="slide-pos">494</span> (2024), oscilando entre um mínimo de <span class="slide-neg">121 (2016)</span> e um máximo de <span class="slide-pos">589</span> (2023)',
+      'Municípios com polos UAB vinculados às UFs: <span class="slide-green">275</span> → <span class="slide-green">320</span>, com quedas para <span class="slide-neg">68 (2015)</span> e saltos para <span class="slide-green">368</span> (2017) — oscilação ano a ano, sem padrão',
+    ],
+  },
+  {
+    kind: 'image',
     title: 'Licenciaturas nas UFs: presencial, EaD e UAB',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
     image: { file: 'grafico_40', caption: 'Evolução das matrículas nas licenciaturas das UFs por modalidade (2014-2024)' },
     bullets: [
       'Trajetória de estabilidade e leve retração, sem movimentos expansivos significativos',
@@ -486,28 +538,65 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'image',
-    title: 'Ingressos nas licenciaturas das UFs',
-    image: { file: 'grafico_42', caption: 'Dinâmica dos ingressantes nos cursos de licenciatura nas UFs por modalidade de ensino (2014-2024)' },
+    kind: 'images',
+    title: 'Retração seletiva dos cursos presenciais: o Sul na contramão',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    imageMaxHeight: '34vh',
+    images: [
+      { file: 'grafico_30', caption: 'Evolução dos cursos de licenciaturas presenciais nas UFs (2014-2024)' },
+      { file: 'grafico_31', caption: 'Evolução dos cursos de licenciaturas presenciais por região nas UFs (2014-2024)' },
+    ],
     bullets: [
-      'Capacidade de atração das licenciaturas federais analisada ao longo da década',
-      'Contraste direto com o crescimento exponencial de ingressantes no setor privado',
+      'Cursos presenciais no Brasil: <span class="slide-neg">1.538 → 1.420</span> (-7,7%); Nordeste -56 cursos (-12,2%), Norte -38 (-12,0%), Sudeste -30 (-8,4%)',
+      'O Sul é a única região que cresce: <span class="slide-pos">211 → 224</span> cursos (+6,2%) — na contramão de todas as demais',
     ],
   },
   {
     kind: 'image',
-    title: 'Evasão nas licenciaturas das UFs',
-    image: { file: 'grafico_44', caption: 'Evasão total (desligados, transferidos e trancados) nos cursos de licenciatura nas UFs (2014-2024)' },
+    title: 'Nas UFs, o presencial não recua — cresce',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    imageMaxHeight: '38vh',
+    image: { file: 'grafico_35', caption: 'Evolução dos percentuais das matrículas nas UFs por modalidade (2014-2024)' },
     bullets: [
-      'A evasão expõe fragilidades estruturais do campo público diante das transformações do período',
-      'Efeito direto da retração dos campi e do colapso do EaD próprio federal',
+      'Participação do presencial nas matrículas das UFs: <span class="slide-pos">77,9% → 82,8%</span> — cresce, no sentido oposto do que ocorre no Brasil como um todo',
+      'EaD próprio entra em colapso (<span class="slide-neg">1,5% → 0,2%</span>) e a UAB recua (<span class="slide-neg">20,6% → 17,0%</span>) da participação total',
+    ],
+  },
+  {
+    kind: 'image',
+    title: 'Cinco tipologias institucionais das UFs diante do EaD',
+    centerContent: true,
+    centerBullets: true,
+    sideBullets: true,
+    table: {
+      headers: ['Grupo', 'Qtd', 'Característica predominante'],
+      rows: [
+        ['Resistência', '14', 'Ausência de EaD próprio e UAB; presencialidade integral'],
+        ['Alta dependência da UAB', '23', 'Participação da UAB ≥ 20% das matrículas em licenciaturas'],
+        ['Presencial dominante + EaD via UAB', '29', 'Participação da UAB entre 0% e 20%, sem EaD próprio'],
+        ['EaD próprio', '6', 'EaD próprio presente, entre 0,3% e 6,2% das matrículas'],
+        ['Experiências abandonadas', '2', 'Ofertaram EaD próprio e/ou UAB, mas não mais em 2024'],
+      ],
+    },
+    bullets: [
+      '<span class="slide-neg">14</span> — Resistência total: licenciaturas integralmente presenciais, sem EaD própria nem via UAB<br/><br/><span class="slide-neg">23</span> — Dependência estrutural da UAB: um terço das UFs concentra 20% ou mais das matrículas via UAB',
+      '<span class="slide-neg">29</span> — Presencialidade dominante com EaD complementar via UAB: a distância incorporada sem deslocar a centralidade do presencial<br/><br/><span class="slide-neg">6</span> — EaD própria residual (UFGD, UFPEL, UFPR, UFRN, UFSC e UNIVASF), com apenas 0,3% a 6,2% das matrículas',
+      '<span class="slide-neg">2</span> — Experiências abandonadas: UNIFAL (EaD própria até 2022, UAB até 2013) e UFV (EaD própria até 2016) desistiram da modalidade',
     ],
   },
   {
     kind: 'stats',
-    title: 'A retração das Universidades Federais em números',
+    title: 'A retração das Universidades Federais nas Licenciaturas',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
     stats: [
       { value: '<span class="slide-neg">-10,4%</span>', label: 'Matrículas em licenciaturas (<span class="slide-neg">290.966 → 260.741</span>)' },
+      { value: '<span class="slide-neg">-4,7%</span>', label: 'Matrículas presenciais (<span class="slide-neg">226.607 → 215.930</span>)' },
       { value: '<span class="slide-neg">24,9% → 18,2%</span>', label: 'Participação das UFs no total de matrículas' },
       { value: '<span class="slide-neg">-89%</span>', label: 'Matrículas em EaD própria (<span class="slide-neg">4.333 → 472</span>)' },
       { value: '<span class="slide-neg">-66,7%</span>', label: 'Polos de EaD própria' },
@@ -520,23 +609,77 @@ const slides: Slide[] = [
     ],
   },
   {
-    kind: 'icons',
-    title: 'Cinco tipologias institucionais das UFs diante do EaD',
-    items: [
-      { label: '14', text: 'Resistência total: licenciaturas integralmente presenciais, sem EaD própria nem via UAB — legitimidade acadêmica associada à presencialidade' },
-      { label: '23', text: 'Dependência estrutural da UAB: um terço das UFs concentra 20% ou mais das matrículas de licenciatura no sistema federal de polos UAB' },
-      { label: '24', text: 'Presencialidade dominante com EaD complementar via UAB: modalidade a distância incorporada sem deslocar a centralidade do presencial' },
-      { label: '6', text: 'EaD própria residual — UFGD, UFPEL, UFPR, UFRN, UFSC e UNIVASF — mas mesmo aí as matrículas variam de apenas 0,3% a 6,2% do total institucional' },
-      { label: '2', text: 'Experiências abandonadas: UNIFAL (EaD própria até 2022, UAB até 2013) e UFV (EaD própria até 2016) desistiram da modalidade' },
+    kind: 'image',
+    title: 'Matrículas presenciais: Norte em colapso, Sudeste em alta',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    imageMaxHeight: '24vh',
+    image: { file: 'grafico_39', caption: 'Evolução das matrículas presenciais em licenciaturas por região nas UFs (2014-2024)' },
+    secondaryImages: [
+      { file: 'tabela_22', caption: 'Tabela 22 — Matrículas presenciais em licenciaturas, população regional e densidade territorial (2022)' },
+    ],
+    bullets: [
+      'Norte: <span class="slide-neg">60.462 → 42.985</span> matrículas (-28,9%) — a maior queda entre as regiões',
+      'Sudeste cresce (<span class="slide-pos">43.946 → 50.682</span>) e o Nordeste se mantém estável e líder em volume absoluto (<span class="slide-pos">75.548 → 78.094</span>)',
+      'Mesmo com menos matrículas, o Norte tem a maior proporção por habitante (<span class="slide-pos">288,94</span>/100 mil hab. em 2022, contra 60,02 no Sudeste) — mas a menor densidade territorial (13,15/1000 km²)',
+    ],
+  },
+  {
+    kind: 'image',
+    title: 'Ingressos nas licenciaturas das UFs',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    image: { file: 'grafico_42', caption: 'Dinâmica dos ingressantes nos cursos de licenciatura nas UFs por modalidade de ensino (2014-2024)' },
+    bullets: [
+      'Capacidade de atração das licenciaturas federais analisada ao longo da década',
+      'Contraste direto com o crescimento exponencial de ingressantes no setor privado',
+    ],
+  },
+  {
+    kind: 'image',
+    title: 'Concluintes: a baixíssima eficiência formativa',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    sideBullets: true,
+    imageMaxHeight: '18vh',
+    secondaryImageMaxHeight: '19vh',
+    image: { file: 'grafico_43', caption: 'Evolução dos concluintes nas licenciaturas das UFs por modalidade de ensino (2014-2024)' },
+    secondaryImages: [
+      { file: 'tabela_23', caption: 'Tabela 23 — taxa de conclusão implícita, presencial (2018-2024)' },
+      { file: 'tabela_24', caption: 'Tabela 24 — taxa de conclusão implícita, UAB (2018-2024)' },
+      { file: 'tabela_25', caption: 'Tabela 25 — taxa de conclusão implícita, EaD própria (2018-2024)' },
+    ],
+    bullets: [
+      'Concluintes: <span class="slide-neg">33.148 → 31.094</span> (<span class="slide-neg">-6,2%</span>) — presencial estável (<span class="slide-neg">-1,2%</span>), UAB recua <span class="slide-neg">21,5%</span>, EaD própria colapsa <span class="slide-neg">95,6%</span>',
+      'Taxa de conclusão implícita (ingressante → concluinte no prazo): apenas <span class="slide-neg">11,4%</span> no presencial, <span class="slide-neg">9,4%</span> na UAB e <span class="slide-neg">4,5%</span> no EaD próprio',
     ],
   },
   {
     kind: 'images',
-    title: 'UFs × setor privado — comparativo direto',
+    title: 'Evasão: do abandono para a suspensão que não retorna',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    imageMaxHeight: '34vh',
     images: [
-      { file: 'grafico_49', caption: 'Matrículas em licenciaturas: UFs × privadas com e sem fins lucrativos (2014-2024)' },
-      { file: 'tabela_21', caption: 'Tipologias institucionais das UFs diante do EaD em 2024' },
+      { file: 'grafico_44', caption: 'Evasão total por modalidade nas licenciaturas das UFs (2014-2024)' },
+      { file: 'grafico_45', caption: 'Evasão por tipo — desvinculados, trancados e transferidos (2014-2024)' },
     ],
+    bullets: [
+      'Em 2024, a evasão (<span class="slide-neg">109.834</span>) supera os ingressantes (<span class="slide-neg">71.248</span>) em mais de <span class="slide-neg">50%</span> — esvaziamento líquido do sistema',
+      'A evasão mudou de forma, não de volume: desvinculados caem <span class="slide-neg">-10,6%</span>, mas trancamentos saltam <span class="slide-neg">+30,8%</span> — e o pico não foi na pandemia (<span class="slide-neg">2020</span>), foi em <span class="slide-neg">2022</span>, com trancados represados que nunca voltaram',
+    ],
+  },
+  {
+    kind: 'image',
+    title: 'UFs × setor privado — comparativo direto',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
+    image: { file: 'grafico_49', caption: 'Matrículas em licenciaturas: UFs × privadas com e sem fins lucrativos (2014-2024)' },
     bullets: [
       'Em 2014, o mercado era relativamente equilibrado: privadas com fins lucrativos 40,7%, sem fins lucrativos 30,1%, UFs 23,5%, demais IES públicas 5,8%',
       'Em 2024: privadas com fins lucrativos controlam <span class="slide-pos">66,2%</span> do mercado, as UFs encolhem para <span class="slide-neg">17,3%</span>',
@@ -545,6 +688,8 @@ const slides: Slide[] = [
   {
     kind: 'icons',
     title: 'Ações reais e ausências estratégicas das UFs',
+    centerContent: true,
+    raiseContent: true,
     items: [
       { icon: 'CheckCircle2', text: 'Ações efetivamente implementadas: políticas de permanência estudantil (PNAES) — ainda que limitadas e descontinuadas — e iniciativas pontuais e fragmentadas de EaD própria' },
       { icon: 'XCircle', text: 'Ausência 1: nenhuma UF construiu um sistema federal coordenado de EaD própria em escala' },
@@ -554,8 +699,24 @@ const slides: Slide[] = [
     ],
   },
   {
+    kind: 'icons',
+    title: 'Da retração à desuniversitarização: a redistribuição dos capitais no campo',
+    centerContent: true,
+    raiseContent: true,
+    wideItems: true,
+    items: [
+      { icon: 'TrendingDown', text: 'Retração estrutural = perda de posição no campo (Bourdieu): as UFs perdem <span class="slide-neg">6,7 pontos percentuais</span> de participação enquanto o setor privado lucrativo ganha <span class="slide-pos">26,8 pontos</span> (43,2% → 70,0%)' },
+      { icon: 'ShieldOff', text: '"Resistência sem apropriação": apenas <span class="slide-neg">6 das 69 UFs</span> tentaram EaD própria — e mesmo essas colapsam <span class="slide-neg">89%</span> nas matrículas' },
+      { icon: 'Unplug', text: 'Fragilidade institucional = descapitalização seletiva do Estado: polos próprios caem de 117 para <span class="slide-neg">39 (-66,7%)</span>; conclusão de apenas <span class="slide-neg">9,4%</span> (UAB) e <span class="slide-neg">4,5%</span> (EaD própria)' },
+      { icon: 'GraduationCap', text: '"Desuniversitarização" (Giolo; Bianchetti e Sguissardi): mais de <span class="slide-neg">70%</span> dos futuros professores do Brasil já se formam fora do ambiente universitário' },
+    ],
+  },
+  {
     kind: 'stats',
     title: 'Bifurcação formativa: dois circuitos, um só sistema',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
     stats: [
       { value: '3,5 : 1', label: 'Evadidos por concluinte nas UFs (2024)' },
       { value: '5,7 : 1', label: 'Evadidos por concluinte no setor privado lucrativo' },
@@ -570,6 +731,9 @@ const slides: Slide[] = [
   {
     kind: 'stats',
     title: 'Síntese dos achados',
+    centerContent: true,
+    centerBullets: true,
+    raiseContent: true,
     stats: [
       { value: '<span class="slide-pos">+286,73%</span>', label: 'Matrículas EaD (Brasil, 2014-2024)' },
       { value: '<span class="slide-neg">-22,47%</span>', label: 'Matrículas presenciais (Brasil, 2014-2024)' },
@@ -586,6 +750,9 @@ const slides: Slide[] = [
   {
     kind: 'icons',
     title: 'Recomendações para o próximo ciclo de política educacional',
+    centerContent: true,
+    raiseContent: true,
+    wideItems: true,
     items: [
       { icon: 'Landmark', text: 'Reconstruir a UAB como política de Estado permanente, não como programa sujeito a editais e descontinuidades orçamentárias' },
       { icon: 'Banknote', text: 'Recompor o orçamento das Universidades Federais para infraestrutura própria de EaD e permanência estudantil' },
@@ -597,6 +764,9 @@ const slides: Slide[] = [
   {
     kind: 'icons',
     title: 'Contribuições da pesquisa',
+    centerContent: true,
+    raiseContent: true,
+    wideItems: true,
     items: [
       { icon: 'FlaskConical', text: 'Empírica: mapeamento inédito da expansão privada da EaD nas licenciaturas e do recuo presencial, especialmente nas federais' },
       { icon: 'Cpu', text: 'Metodológica: integração de políticas públicas, microdados em larga escala e Data Warehouse próprio, reprodutível por código' },

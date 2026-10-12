@@ -195,7 +195,21 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
                 <div className="slide-image-flanked">
                   <p className="slide-flank-text" dangerouslySetInnerHTML={html(slide.bullets?.[0])} />
                   <div className="slide-image-area">
-                    {slide.image && (
+                    {slide.table ? (
+                      <figure>
+                        <table className="slide-table">
+                          <thead>
+                            <tr>{slide.table.headers.map((h, i) => <th key={i}>{h}</th>)}</tr>
+                          </thead>
+                          <tbody>
+                            {slide.table.rows.map((row, i) => (
+                              <tr key={i}>{row.map((cell, j) => <td key={j} dangerouslySetInnerHTML={html(cell)} />)}</tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        {slide.image?.caption && <figcaption>{slide.image.caption}</figcaption>}
+                      </figure>
+                    ) : slide.image && (
                       <figure>
                         <ZoomableImage src={imgUrl(slide.image.file)} alt={slide.image.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '50vh', width: 'auto', borderRadius: '8px' }} />
                         {slide.image.caption && <figcaption>{slide.image.caption}</figcaption>}
@@ -204,12 +218,14 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
                   </div>
                   <p className="slide-flank-text" dangerouslySetInnerHTML={html(slide.bullets?.[1])} />
                 </div>
-                {slide.secondaryImage && (
-                  <div className="slide-image-area slide-image-area-secondary">
-                    <figure>
-                      <ZoomableImage src={imgUrl(slide.secondaryImage.file)} alt={slide.secondaryImage.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '20vh', width: 'auto', borderRadius: '8px' }} />
-                      {slide.secondaryImage.caption && <figcaption>{slide.secondaryImage.caption}</figcaption>}
-                    </figure>
+                {slide.secondaryImages && slide.secondaryImages.length > 0 && (
+                  <div className="slide-image-area slide-image-area-secondary slide-image-area-multi">
+                    {slide.secondaryImages.map((img, i) => (
+                      <figure key={i}>
+                        <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: slide.secondaryImageMaxHeight || '20vh', width: 'auto', borderRadius: '8px' }} />
+                        {img.caption && <figcaption>{img.caption}</figcaption>}
+                      </figure>
+                    ))}
                   </div>
                 )}
                 {slide.bullets && slide.bullets.length > 2 && renderBullets(slide.bullets.slice(2), slide.centerBullets)}
@@ -224,6 +240,16 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
                     </figure>
                   )}
                 </div>
+                {slide.secondaryImages && slide.secondaryImages.length > 0 && (
+                  <div className="slide-image-area slide-image-area-secondary slide-image-area-multi">
+                    {slide.secondaryImages.map((img, i) => (
+                      <figure key={i}>
+                        <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: slide.secondaryImageMaxHeight || '20vh', width: 'auto', borderRadius: '8px' }} />
+                        {img.caption && <figcaption>{img.caption}</figcaption>}
+                      </figure>
+                    ))}
+                  </div>
+                )}
                 {renderBullets(slide.bullets, slide.centerBullets)}
               </>
             )}
@@ -248,7 +274,7 @@ const SlideViewer: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             <div className="slide-image-area slide-image-area-multi">
               {slide.images?.map((img, i) => (
                 <figure key={i}>
-                  <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: '52vh', width: 'auto', borderRadius: '8px' }} />
+                  <ZoomableImage src={imgUrl(img.file)} alt={img.caption || slide.title} style={{ maxWidth: '100%', maxHeight: slide.imageMaxHeight || '52vh', width: 'auto', borderRadius: '8px' }} />
                   {img.caption && <figcaption>{img.caption}</figcaption>}
                 </figure>
               ))}
