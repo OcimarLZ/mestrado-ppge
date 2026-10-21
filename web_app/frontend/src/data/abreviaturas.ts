@@ -1,5 +1,5 @@
 // Lista de abreviaturas e siglas da dissertacao (paginas 23-27 do PDF), extraida da secao
-// "Lista de abreviaturas e siglas" de docs/OLZ_Defesa_V_2.03.odt (mesmo pipeline de extracao
+// "Lista de abreviaturas e siglas" de docs/OLZ_Defesa_V_2.05.odt (mesmo pipeline de extracao
 // de web_app/content_export/extract_odt_all.py, aplicado a esta lista do texto original).
 
 export interface Abreviatura {

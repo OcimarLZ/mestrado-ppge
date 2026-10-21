@@ -640,7 +640,7 @@ const slides: Slide[] = [
   },
   {
     kind: 'image',
-    title: 'Concluintes: a baixíssima eficiência formativa',
+    title: 'Concluintes: eficiência desigual entre modalidades',
     centerContent: true,
     centerBullets: true,
     raiseContent: true,
@@ -655,7 +655,7 @@ const slides: Slide[] = [
     ],
     bullets: [
       'Concluintes: <span class="slide-neg">33.148 → 31.094</span> (<span class="slide-neg">-6,2%</span>) — presencial estável (<span class="slide-neg">-1,2%</span>), UAB recua <span class="slide-neg">21,5%</span>, EaD própria colapsa <span class="slide-neg">95,6%</span>',
-      'Taxa de conclusão implícita (ingressante → concluinte no prazo): apenas <span class="slide-neg">11,4%</span> no presencial, <span class="slide-neg">9,4%</span> na UAB e <span class="slide-neg">4,5%</span> no EaD próprio',
+      'Taxa de conclusão implícita (ingressante → concluinte no prazo): patamares medianos no presencial (<span class="slide-neg">42,4%</span> em média) e na UAB (<span class="slide-neg">36,7%</span>) — mas apenas <span class="slide-neg">11,8%</span> na pior turma do EaD próprio, reflexo de sua instabilidade estrutural',
     ],
   },
   {
