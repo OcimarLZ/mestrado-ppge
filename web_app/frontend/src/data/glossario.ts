@@ -1,5 +1,5 @@
 // Glossario da dissertacao (paginas 19-22 do PDF), extraido da secao GLOSSARIO de
-// docs/OLZ_Defesa_V_2.05.odt (mesmo pipeline de extracao de web_app/content_export/extract_odt_all.py,
+// docs/OLZ_Final_V_3.17.odt (mesmo pipeline de extracao de web_app/content_export/extract_odt_all.py,
 // so que aplicado a esta lista do texto original em vez do corpo dos capitulos).
 
 export interface VerbeteGlossario {

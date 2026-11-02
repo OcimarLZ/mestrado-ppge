@@ -8,6 +8,8 @@ import Pesquisa from './pages/Pesquisa';
 import PesquisaTema from './pages/PesquisaTema';
 import PesquisaDadosIES from './pages/PesquisaDadosIES';
 import PesquisaPolosIES from './pages/PesquisaPolosIES';
+import PesquisaIndicadoresIES from './pages/PesquisaIndicadoresIES';
+import PesquisaPerfilInstitucional from './pages/PesquisaPerfilInstitucional';
 import PaineisInterativos from './pages/PaineisInterativos';
 import ProducaoAcademica from './pages/ProducaoAcademica';
 import Forum from './pages/Forum';
@@ -30,6 +32,8 @@ function App() {
           <Route path="pesquisa" element={<Pesquisa />} />
           <Route path="pesquisa/dados-ies" element={<PesquisaDadosIES />} />
           <Route path="pesquisa/dados-ies/polos" element={<PesquisaPolosIES />} />
+          <Route path="pesquisa/indicadores-ies" element={<PesquisaIndicadoresIES />} />
+          <Route path="pesquisa/perfil-institucional" element={<PesquisaPerfilInstitucional />} />
           <Route path="pesquisa/:slug" element={<PesquisaTema />} />
           <Route path="paineis-interativos" element={<PaineisInterativos />} />
           <Route path="producao-academica" element={<ProducaoAcademica />} />

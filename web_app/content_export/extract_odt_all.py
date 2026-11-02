@@ -1,5 +1,5 @@
 """
-Extrai da dissertacao (docs/OLZ_Defesa_V_2.05.odt) tanto o texto real quanto as figuras
+Extrai da dissertacao (docs/OLZ_Final_V_3.17.odt) tanto o texto real quanto as figuras
 reais (as coladas do Excel), num UNICO passe pelo documento, para que cada figura fique
 exatamente no lugar em que o texto a referencia -- nao jogada no fim da secao.
 
@@ -41,7 +41,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image, ImageChops
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-ODT_PATH = os.path.join(ROOT, "docs", "OLZ_Defesa_V_2.05.odt")
+ODT_PATH = os.path.join(ROOT, "docs", "OLZ_Final_V_3.17.odt")
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_IMAGES_DIR = os.path.join(ROOT, "docs", "graficos_originais")
 

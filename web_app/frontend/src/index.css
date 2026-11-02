@@ -1794,6 +1794,72 @@ footer {
   color: var(--text-primary);
 }
 
+/* Perfil institucional (Pesquisa > Perfil institucional 2014 x 2024) */
+.perfil-ies-select {
+  flex: 1;
+  min-width: 220px;
+  max-width: 520px;
+}
+
+.perfil-resumo-wrapper {
+  overflow-x: auto;
+}
+
+.perfil-resumo-table td,
+.perfil-resumo-table th {
+  white-space: nowrap;
+}
+
+.perfil-cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.perfil-cursos-coluna {
+  padding: 1rem;
+  min-width: 0;
+}
+
+.perfil-cursos-contagem {
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.perfil-cursos-lista {
+  list-style: none;
+  margin: 0.75rem 0 0 0;
+  padding: 0;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.perfil-cursos-lista li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.82rem;
+}
+
+.perfil-cursos-lista li:last-child {
+  border-bottom: none;
+}
+
+.perfil-curso-nome {
+  color: var(--text-primary);
+}
+
+.perfil-curso-local {
+  color: var(--text-secondary);
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .data-table-search {
   display: flex;
   align-items: center;

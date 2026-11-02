@@ -22,7 +22,7 @@ OUT_JSON = os.path.join(FRONTEND_DIR, "src", "data", "site-content.json")
 
 # A versao oficial da dissertacao e a que esta em docs/ (nao a copia antiga em
 # web_app/backend/static/, que pode ficar desatualizada).
-DISSERTACAO_PDF_SRC = os.path.join(ROOT, "docs", "OLZ_Defesa_V_2.05.pdf")
+DISSERTACAO_PDF_SRC = os.path.join(ROOT, "docs", "OLZ_Final_V_3.17.pdf")
 
 BACKEND_STATIC_PREFIX = "http://127.0.0.1:8000/static/"
 ASSET_PREFIX = "assets/"  # combinado em runtime com import.meta.env.BASE_URL

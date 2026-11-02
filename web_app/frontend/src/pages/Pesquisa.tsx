@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
-import { ArrowRight, Database, MapPinned } from 'lucide-react';
+import { ArrowRight, Database, MapPinned, ListChecks, Building2 } from 'lucide-react';
 import temas from '../data/pesquisa';
 
 const Pesquisa: React.FC = () => {
@@ -36,6 +36,28 @@ const Pesquisa: React.FC = () => {
           </p>
           <span className="pesquisa-index-card-link">
             Abrir detalhamento <ArrowRight size={16} />
+          </span>
+        </Link>
+        <Link to="/pesquisa/indicadores-ies" className="glass-panel pesquisa-index-card pesquisa-index-card-data">
+          <ListChecks color="var(--accent-primary)" size={32} />
+          <h3 style={{ margin: '1rem 0 0.5rem 0' }}>Indicadores por IES (2024)</h3>
+          <p style={{ fontSize: '0.9rem', flex: 1 }}>
+            As 69 universidades federais em 2024: campus, polos e cursos de EaD própria e UAB,
+            matrículas e sua distribuição entre presencial, EaD própria e UAB.
+          </p>
+          <span className="pesquisa-index-card-link">
+            Abrir painel <ArrowRight size={16} />
+          </span>
+        </Link>
+        <Link to="/pesquisa/perfil-institucional" className="glass-panel pesquisa-index-card pesquisa-index-card-data">
+          <Building2 color="var(--accent-primary)" size={32} />
+          <h3 style={{ margin: '1rem 0 0.5rem 0' }}>Perfil institucional: 2014 → 2024</h3>
+          <p style={{ fontSize: '0.9rem', flex: 1 }}>
+            Escolha uma universidade federal e veja a comparação completa de matrículas, cursos,
+            campus e polos, com a lista de cursos e locais de oferta em cada ano.
+          </p>
+          <span className="pesquisa-index-card-link">
+            Abrir painel <ArrowRight size={16} />
           </span>
         </Link>
         {temas.map((tema) => {

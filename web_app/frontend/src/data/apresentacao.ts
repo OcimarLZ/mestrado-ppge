@@ -702,6 +702,7 @@ const slides: Slide[] = [
       { icon: 'XCircle', text: 'Ausência 2: nenhuma UF liderou uma expansão agressiva do sistema UAB' },
       { icon: 'XCircle', text: 'Ausência 3: políticas sistemáticas de permanência e combate à evasão não se consolidaram' },
       { icon: 'XCircle', text: 'Ausência 4: nenhuma UF disputou competitivamente o espaço ocupado pela EaD privada' },
+      { icon: 'Scale', text: 'Para Bourdieu, essas ausências não são falhas de gestão: são tomadas de posição no campo, que preservam o capital simbólico da formação presencial ao custo da relevância quantitativa' },
     ],
   },
   {
@@ -711,7 +712,7 @@ const slides: Slide[] = [
     raiseContent: true,
     wideItems: true,
     items: [
-      { icon: 'BookUser', text: 'Corpo docente: maior capital simbólico do campo, vê a EaD como "degradação" formativa — mas o próprio presencial forma mal (taxa de conclusão de apenas <span class="slide-neg">8,7% a 13,6%</span>). Comparando público × privado: as UFs (majoritariamente presenciais) têm <span class="slide-pos">3,5</span> evadidos por concluinte, contra <span class="slide-pos">5,7</span> nas privadas com fins lucrativos (majoritariamente EaD) — que, mesmo assim, formam mais: <span class="slide-pos">116.068</span> concluintes contra <span class="slide-pos">31.094</span> das UFs (<span class="slide-pos">56,4%</span> de todos os diplomas de licenciatura do país)' },
+      { icon: 'BookUser', text: 'Corpo docente: maior capital simbólico do campo, vê a EaD como "degradação" formativa — mas o próprio presencial converte apenas <span class="slide-neg">32,6% a 49,3%</span> dos ingressantes em concluintes no prazo. Comparando público × privado: as UFs (majoritariamente presenciais) têm <span class="slide-pos">3,5</span> evadidos por concluinte, contra <span class="slide-pos">5,7</span> nas privadas com fins lucrativos (majoritariamente EaD) — que, mesmo assim, formam mais: <span class="slide-pos">116.068</span> concluintes contra <span class="slide-pos">31.094</span> das UFs (<span class="slide-pos">56,4%</span> de todos os diplomas de licenciatura do país)' },
       { icon: 'Building2', text: 'Gestão universitária: sabe que a EaD seria vantajosa, mas trava entre a resistência docente, a infraestrutura insuficiente e o orçamento congelado pela EC 95/2016 — com incentivo à opacidade sobre a evasão' },
       { icon: 'Users', text: 'Estudantes: posição mais subordinada do campo; pedem flexibilidade por sobrevivência acadêmica (conciliar trabalho e família), não por preferência pedagógica — demanda real que o setor privado capturou' },
       { icon: 'CircleOff', text: 'O resultado não é consenso, é paralisia: cada grupo trava a mudança por um motivo diferente, e a EC 95/2016 transforma a falta de recursos em justificativa institucional para a inércia' },
@@ -726,7 +727,7 @@ const slides: Slide[] = [
     items: [
       { icon: 'TrendingDown', text: 'Retração estrutural = perda de posição no campo (Bourdieu): as UFs perdem <span class="slide-red">6,7 pontos percentuais</span> de participação enquanto o setor privado lucrativo ganha <span class="slide-red">26,8 pontos</span> (<span class="slide-red">43,2%</span> → <span class="slide-red">70,0%</span>)' },
       { icon: 'ShieldOff', text: '"Resistência sem apropriação": apenas <span class="slide-red">6 das 69</span> UFs tentaram EaD própria — e mesmo essas colapsam <span class="slide-red">89%</span> nas matrículas' },
-      { icon: 'Unplug', text: 'Fragilidade institucional = descapitalização seletiva do Estado: polos próprios caem de <span class="slide-red">117</span> para <span class="slide-red">39 (-66,7%)</span>; conclusão de apenas <span class="slide-red">9,4%</span> (UAB) e <span class="slide-red">4,5%</span> (EaD própria)' },
+      { icon: 'Unplug', text: 'Fragilidade institucional = descapitalização seletiva do Estado: polos próprios caem de <span class="slide-red">117</span> para <span class="slide-red">39 (-66,7%)</span>; conclusão de <span class="slide-red">36,7%</span> na UAB, mas de apenas <span class="slide-red">11,8%</span> na pior turma da EaD própria' },
       { icon: 'GraduationCap', text: '"Desuniversitarização" (Termo definido pelo autor a partir das ideias defendidas por Giolo; Bianchetti e Sguissardi): mais de <span class="slide-red">70%</span> dos futuros professores do Brasil já se formam fora do ambiente universitário' },
     ],
   },
@@ -757,7 +758,7 @@ const slides: Slide[] = [
       { label: 'Q1', text: 'O domínio privado na EaD não foi evolução espontânea do mercado, mas engenharia política: três ondas de flexibilização regulatória (1996-2004, 2005-2013, 2014-2024), a EC 95/2016 asfixiando o orçamento público e o FIES/ProUni subsidiando a demanda privada' },
       { label: 'Q2', text: 'O SINAES foi capturado pela performatividade (Ball) e passou a premiar escala, não qualidade; os Decretos 9.057/2017 e 9.235/2017 foram redigidos com participação do setor privado — a massificação ocorreu por meio da regulação, com sua chancela' },
       { label: 'Q3', text: 'Os microdados confirmam uma reconfiguração estrutural e irreversível: UFs <span class="slide-neg">-10,4%</span> nas matrículas contra <span class="slide-pos">+98,3%</span> das privadas com fins lucrativos; mais de <span class="slide-pos">80%</span> dos ingressantes em licenciatura já entram pela EaD; apenas <span class="slide-neg">6 das 69</span> UFs têm EaD próprio' },
-      { label: 'Q4', text: 'As UFs praticaram uma "abstenção estratégica": cinco tipologias institucionais, quatro ausências estratégicas e a "triangulação da inércia" (corpo docente, gestão, estudantes) bloquearam qualquer resposta competitiva à expansão privada' },
+      { label: 'Q4', text: 'As UFs não disputaram a hegemonia da EaD — mas essa não entrada não foi ausência de estratégia: cinco tipologias institucionais, quatro dimensões da não entrada e a "triangulação da inércia" (corpo docente, gestão, estudantes) revelam um posicionamento coerente de preservação do capital simbólico, ao custo da relevância quantitativa na formação docente' },
     ],
   },
   {
@@ -786,11 +787,12 @@ const slides: Slide[] = [
     raiseContent: true,
     wideItems: true,
     items: [
-      { icon: 'Landmark', text: 'Reconstruir a UAB como política de Estado permanente, não como programa sujeito a editais e descontinuidades orçamentárias' },
-      { icon: 'Banknote', text: 'Recompor o orçamento das Universidades Federais para infraestrutura própria de EaD e permanência estudantil' },
-      { icon: 'ClipboardCheck', text: 'Redefinir os critérios de avaliação do SINAES, distinguindo formação universitária de mera entrega instrucional' },
-      { icon: 'FileSignature', text: 'Regulamentar exigências de qualidade para o EaD em licenciaturas (Decreto nº 12.456/2025)' },
-      { icon: 'HandCoins', text: 'Fortalecer políticas de permanência no presencial, como o Programa Pé-de-Meia Licenciaturas (R$ 1.050,00 mensais)' },
+      { icon: 'Workflow', text: 'Apropriação crítica da EaD como complemento ao presencial — segunda licenciatura, formação continuada — sem disputar escala com os conglomerados' },
+      { icon: 'Compass', text: 'Interiorização qualificada da oferta pública onde o presencial tem déficit territorial, e não onde há demanda solvente' },
+      { icon: 'ClipboardCheck', text: 'Resistência ativa à EaD massificada, redefinindo os critérios de avaliação do SINAES para distinguir formação universitária de entrega instrucional' },
+      { icon: 'FileSignature', text: 'Garantia de qualidade da EaD em licenciaturas no novo marco regulatório (Decreto nº 12.456/2025)' },
+      { icon: 'HandCoins', text: 'Ampliação das políticas de permanência e combate à evasão, valorizando o presencial (Programa Pé-de-Meia Licenciaturas, R$ 1.050,00 mensais)' },
+      { icon: 'Landmark', text: 'Reconstrução da UAB como política de Estado permanente, não como programa sujeito a editais e descontinuidades orçamentárias' },
     ],
   },
   {
